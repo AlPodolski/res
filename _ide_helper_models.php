@@ -16,9 +16,9 @@ namespace App{
  *
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
- * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|User query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Models\User newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Models\User newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Models\User query()
  */
 	class User extends \Eloquent {}
 }

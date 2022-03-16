@@ -17,4 +17,5 @@ Auth::routes();
 
 Route::domain('{city}.{name}.{domain}')->group(function () {
     Route::get('/',  'SiteController@index');
+    Route::get('/post/{url}',  'PostController@index');
 });

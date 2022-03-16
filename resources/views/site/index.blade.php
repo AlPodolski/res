@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Главная страница')
+
 @section('content')
 
     <div class="popular-list">
@@ -33,8 +35,10 @@
 
     <div class="posts">
         <div class="post-item ">
-            <img src="/img/girl.jpg" alt="">
-            <div class="name">Натали</div>
+            <a href="/post/will-smith">
+                <img src="/img/girl.jpg" alt="">
+            </a>
+            <a href="/post/will-smith" class="name">Натали</a>
             <div class="price">3000 ₽</div>
             <a href="tel:+79637220907" class="phone">Показать телефон</a>
         </div>

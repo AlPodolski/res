@@ -8539,6 +8539,13 @@ a.text-dark:focus, a.text-dark:hover {
     font-style: normal;
     font-display:swap
 }
+
+@font-face {
+    font-family: 'Root-bold';
+    src:  url('../fonts/root-bold.woff2') format('woff2');
+    font-style: normal;
+    font-display:swap
+}
 img{
     max-width: 100%;
 }
@@ -8786,4 +8793,95 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.breadcrumb{
+    background: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.breadcrumb-link{
+    color: #212529;
+}
+.breadcrumb-link:hover{
+    color: #212529;
+}
+.name{
+    color: #212529;
+}
+.name:hover{
+    color: #212529;
+}
+.post-content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.post-content img{
+    border-radius: 7px;
+}
+.left{
+    flex: 0 0 47%;
+    margin-right: 25px;
+}
+.right{
+    flex: 0 0 50%;
+}
+.post-decr{
+    flex: 0 0 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.left img{
+    width: 100%;
+}
+.post-price{
+    font-family: "Root-bold";
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.property-name{
+    font-size: 14px;
+    color: #999999;
+    line-height: 1;
+}
+.property-item {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+.decr-title {
+    font-family: "Root-bold";
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.post-photo-item {
+    width: 191px;
+    flex: 0 0 16.333%;
+}
+.review-list{
+    flex: 0 0 100%;
+}
+.post-photo{
+    display: flex;
+    margin-bottom: 15px;
+}
+.single-phone {
+    margin-bottom: 25px;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    width: 366px;
+    height: 60px;
+    margin-top: 0;
+}
+.add-to-favorite {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+    background: #f7f7f7;
+    border-radius: 5px;
+}
+.add-to-favorite img{
+    max-width: 23px;
 }
