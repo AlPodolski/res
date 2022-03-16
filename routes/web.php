@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SiteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+Route::domain('{city}.{name}.{domain}')->group(function () {
+    Route::get('/',  'SiteController@index');
 });
