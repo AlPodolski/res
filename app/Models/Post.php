@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Mpdels\PostNational;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -41,8 +42,14 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereVes($value)
  * @property int|null $age
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereAge($value)
+ * @property int $city_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereCityId($value)
+ * @property-read PostNational|null $national
  */
 class Post extends Model
 {
-    //
+    public function national(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(PostNational::class, 'post_nationals_id', 'id')->with('national');
+    }
 }

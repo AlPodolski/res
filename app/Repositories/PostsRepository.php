@@ -16,9 +16,11 @@ class PostsRepository
 
     public function getPostForSingle($url)
     {
-        $columns = ['url', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
+        $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
 
-        return Post::select($columns)->where(['url' => $url])->first();
+        $post = Post::with('national')->select($columns)->where(['url' => $url])->first();
+
+        return $post;
     }
 
 }

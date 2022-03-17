@@ -56,7 +56,7 @@
                 </div>
                 <div class="property-item">
                     <div class="property-name">Национальность</div>
-                    <div class="property-value">Русская </div>
+                    <div class="property-value">{{ $post->national->national->value }} </div>
                 </div>
                 <div class="property-item">
                     <div class="property-name">Цвет волос</div>
