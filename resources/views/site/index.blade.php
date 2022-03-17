@@ -1,3 +1,7 @@
+@php
+
+    @endphp
+
 @extends('layouts.app')
 
 @section('title', 'Главная страница')
@@ -34,62 +38,23 @@
     <h1>Модная одежда</h1>
 
     <div class="posts">
-        <div class="post-item ">
-            <a href="/post/will-smith">
-                <img src="/img/girl.jpg" alt="">
-            </a>
-            <a href="/post/will-smith" class="name">Натали</a>
-            <div class="price">3000 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
-        <div class="post-item ">
-            <img src="/img/nigga.jpg" alt="">
-            <div class="name">Вил Смит</div>
-            <div class="price">3500 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
-        <div class="post-item ">
-            <img src="/img/girl.jpg" alt="">
-            <div class="name">Натали</div>
-            <div class="price">3000 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
-        <div class="post-item ">
-            <img src="/img/nigga.jpg" alt="">
-            <div class="name">Вил Смит</div>
-            <div class="price">3500 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
-        <div class="post-item ">
-            <img src="/img/girl.jpg" alt="">
-            <div class="name">Натали</div>
-            <div class="price">3000 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
-        <div class="post-item ">
-            <img src="/img/nigga.jpg" alt="">
-            <div class="name">Вил Смит</div>
-            <div class="price">3500 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
-        <div class="post-item ">
-            <img src="/img/girl.jpg" alt="">
-            <div class="name">Натали</div>
-            <div class="price">3000 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
-        <div class="post-item ">
-            <img src="/img/nigga.jpg" alt="">
-            <div class="name">Вил Смит</div>
-            <div class="price">3500 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
-        <div class="post-item ">
-            <img src="/img/girl.jpg" alt="">
-            <div class="name">Натали</div>
-            <div class="price">3000 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
+
+        @foreach($posts as $post)
+            @php
+                /* @var $post \App\Models\Post */
+            @endphp
+
+            <div class="post-item ">
+                <a href="/post/{{$post->url}}">
+                    <img src="/img/girl.jpg" alt="">
+                </a>
+                <a href="/post/{{$post->url}}" class="name">{{$post->name}}</a>
+                <div class="price">{{ $post->price }} ₽</div>
+                <a href="tel:+{{$post->phone}}" class="phone">Показать телефон</a>
+            </div>
+
+        @endforeach
+
         <div class="post-item ">
             <img src="/img/nigga.jpg" alt="">
             <div class="name">Вил Смит</div>
@@ -98,4 +63,9 @@
         </div>
     </div>
     <div class="get-more">Показать еще <img src="/img/more.svg" alt=""></div>
+    @if($posts->total() > $posts->count())
+
+        {{ $posts->links() }}
+
+    @endif
 @endsection

@@ -8885,3 +8885,28 @@ body{
 .add-to-favorite img{
     max-width: 23px;
 }
+.pagination{
+    justify-content: center;
+    margin-top: 15px;
+}
+.page-link {
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: #000;
+}
+.page-item.active .page-link{
+    background-color: #333;
+    border-color: #333;
+}
+.page-item {
+    margin-left: 10px;
+    border-radius: 50%;
+}
+.page-item:first-child .page-link, .page-item:last-child .page-link{
+    border-radius: 50%;
+}

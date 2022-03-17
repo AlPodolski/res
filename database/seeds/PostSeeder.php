@@ -29,6 +29,7 @@ class PostSeeder extends Seeder
                 'publication_status' => rand(0,1),
                 'rost' => rand(150,180),
                 'ves' => rand(50,80),
+                'age' => rand(20,50),
                 'tarif_id' => rand(1,3),
                 'about' => $faker->realText(500),
                 'breast_size' => rand(1,4),

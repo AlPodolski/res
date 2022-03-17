@@ -15,7 +15,7 @@ use App\Http\Controllers\SiteController;
 
 Auth::routes();
 
-Route::domain('{city}.{name}.{domain}')->group(function () {
+Route::domain('{city}.pr.loc')->group(function () {
     Route::get('/',  'SiteController@index');
-    Route::get('/post/{url}',  'PostController@index');
+    Route::get('/post/{url}',  'PostController@index')->name('post.index');
 });

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Вил Смит')
+@php
+/* @var $post \App\Models\Post */
+@endphp
+
+@section('title', $post->name)
 
 @section('content')
 
@@ -9,7 +13,7 @@
             <a class="breadcrumb-link" title="Главная" href="/">Главная</a>
         </li>
         <li class="breadcrumb-item" data-breadcrumbs="2">
-            Вил Смит
+            {{ $post->name }}
         </li>
     </ul>
 
@@ -18,12 +22,12 @@
             <img src="/img/nigga.jpg" alt="">
         </div>
         <div class="right">
-            <h1>Вил Смит</h1>
+            <h1>{{ $post->name }}</h1>
             <div class="post-price">
-                5 290 ₽
+                {{ $post->price }} ₽
             </div>
             <div class="phone-favorite-wrap d-flex">
-                <a href="tel:+79637220907" class="phone single-phone">Показать телефон</a>
+                <a href="tel:+{{ $post->phone }}" class="phone single-phone">Показать телефон</a>
                 <div class="add-to-favorite">
                     <img src="/img/heart-grey.svg" alt="">
                 </div>
@@ -40,15 +44,15 @@
                 </div>
                 <div class="property-item">
                     <div class="property-name">Возраст</div>
-                    <div class="property-value">22</div>
+                    <div class="property-value">{{ $post->age }}</div>
                 </div>
                 <div class="property-item">
                     <div class="property-name">Вес</div>
-                    <div class="property-value">60</div>
+                    <div class="property-value">{{ $post->ves }}</div>
                 </div>
                 <div class="property-item">
                     <div class="property-name">Размер груди</div>
-                    <div class="property-value">3</div>
+                    <div class="property-value">{{ $post->breast_size }}</div>
                 </div>
                 <div class="property-item">
                     <div class="property-name">Национальность</div>
@@ -69,9 +73,7 @@
                 Описание
             </div>
             <div class="decr-text">
-                Тут описание вашего товара, начните с самого интересного о вашем товаре, зацепите вашего покупателя.
-                Пишите так, чтобы было полезно вашему будущему покупателю. Можно добавить материал который
-                используется в вашем товаре (или состав вашего продукта). Добавьте инструкцию по использованию.
+                {{ $post->about }}
             </div>
         </div>
         <div class="decr-title">

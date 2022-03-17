@@ -39,6 +39,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereUrl($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereVes($value)
+ * @property int|null $age
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereAge($value)
  */
 class Post extends Model
 {

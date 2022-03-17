@@ -25,6 +25,7 @@ class CreatePostsTable extends Migration
             $table->boolean('publication_status')->unsigned();
             $table->smallInteger('rost')->unsigned()->nullable();
             $table->smallInteger('ves')->unsigned()->nullable();
+            $table->smallInteger('age')->unsigned()->nullable();
             $table->smallInteger('breast_size')->unsigned()->nullable();
             $table->timestamps();
         });
