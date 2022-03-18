@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @php
-/* @var $post \App\Models\Post */
+    /* @var $post \App\Models\Post */
 @endphp
 
 @section('title', $post->name)
@@ -35,20 +35,25 @@
 
             <div class="post-property-list">
                 @if($post->metro)
-                <div class="property-item metro-list">
-                    <div class="property-name">Метро</div>
-                    <div class="d-flex">
-                        @foreach($post->metro as $item)
-                            <div class="property-value">{{ $item->metro->value }} </div>
-                        @endforeach
-                    </div>
+                    <div class="property-item metro-list">
+                        <div class="property-name">Метро</div>
+                        <div class="d-flex">
+                            @foreach($post->metro as $item)
+                                <div class="property-value">{{ $item->metro->value }} </div>
+                            @endforeach
+                        </div>
 
-                </div>
+                    </div>
                 @endif
-                <div class="property-item">
-                    <div class="property-name">Район</div>
-                    <div class="property-value">Арбат</div>
-                </div>
+
+                @if($post->rayon)
+                    <div class="property-item metro-list">
+                        <div class="property-name">Район</div>
+                        <div class="property-value">{{ $post->rayon->rayon->value }}</div>
+
+                    </div>
+                @endif
+
                 <div class="property-item">
                     <div class="property-name">Возраст</div>
                     <div class="property-value">{{ $post->age }}</div>
@@ -71,7 +76,7 @@
                 </div>
                 <div class="property-item">
                     <div class="property-name">Интимная стрижка</div>
-                    <div class="property-value">C полной депиляцией </div>
+                    <div class="property-value">C полной депиляцией</div>
                 </div>
             </div>
         </div>

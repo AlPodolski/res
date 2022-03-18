@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлен цвет волос">
-      <change afterPath="$PROJECT_DIR$/app/Models/Metro.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/PostMetro.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_075502_create_metros_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_083047_create_post_metros_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PostsMetroSeeder.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлено метро">
+      <change afterPath="$PROJECT_DIR$/app/Models/PostRayon.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Rayon.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_114838_create_rayons_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_115421_create_post_rayons_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/PostRayonSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +145,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -183,7 +182,7 @@
       <workItem from="1647410461850" duration="24452000" />
       <workItem from="1647497414829" duration="614000" />
       <workItem from="1647518479695" duration="9354000" />
-      <workItem from="1647585298610" duration="7523000" />
+      <workItem from="1647585298610" duration="10441000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -220,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647589744057</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="добавлено метро">
+      <created>1647594791138</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1647594791138</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +250,8 @@
     <MESSAGE value="вывод инфы на деталке" />
     <MESSAGE value="добавлена национальность" />
     <MESSAGE value="добавлен цвет волос" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлен цвет волос" />
+    <MESSAGE value="добавлено метро" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлено метро" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

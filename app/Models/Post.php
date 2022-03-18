@@ -47,6 +47,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\PostHairColor|null $hair
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostMetro[] $metro
  * @property-read int|null $metro_count
+ * @property-read \App\Models\PostRayon|null $rayon
  */
 class Post extends Model
 {
@@ -63,6 +64,11 @@ class Post extends Model
     public function metro(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(PostMetro::class, 'posts_id', 'id')->with('metro');
+    }
+
+    public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(PostRayon::class, 'posts_id', 'id')->with('rayon');
     }
 
 }
