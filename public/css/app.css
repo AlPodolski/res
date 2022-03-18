@@ -8910,3 +8910,6 @@ body{
 .page-item:first-child .page-link, .page-item:last-child .page-link{
     border-radius: 50%;
 }
+.metro-list .property-value{
+    margin-right: 15px;
+}

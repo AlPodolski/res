@@ -45,6 +45,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereCityId($value)
  * @property-read PostNational|null $national
  * @property-read \App\Models\PostHairColor|null $hair
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostMetro[] $metro
+ * @property-read int|null $metro_count
  */
 class Post extends Model
 {
@@ -56,6 +58,11 @@ class Post extends Model
     public function hair(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(PostHairColor::class, 'posts_id', 'id')->with('hair');
+    }
+
+    public function metro(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(PostMetro::class, 'posts_id', 'id')->with('metro');
     }
 
 }

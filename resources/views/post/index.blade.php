@@ -34,10 +34,17 @@
             </div>
 
             <div class="post-property-list">
-                <div class="property-item">
+                @if($post->metro)
+                <div class="property-item metro-list">
                     <div class="property-name">Метро</div>
-                    <div class="property-value">Арбат</div>
+                    <div class="d-flex">
+                        @foreach($post->metro as $item)
+                            <div class="property-value">{{ $item->metro->value }} </div>
+                        @endforeach
+                    </div>
+
                 </div>
+                @endif
                 <div class="property-item">
                     <div class="property-name">Район</div>
                     <div class="property-value">Арбат</div>
