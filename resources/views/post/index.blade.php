@@ -76,7 +76,7 @@
                 </div>
                 <div class="property-item">
                     <div class="property-name">Интимная стрижка</div>
-                    <div class="property-value">C полной депиляцией</div>
+                    <div class="property-value">{{ $post->intimHair->value->value }}</div>
                 </div>
             </div>
         </div>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлено метро">
-      <change afterPath="$PROJECT_DIR$/app/Models/PostRayon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Rayon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_114838_create_rayons_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_115421_create_post_rayons_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PostRayonSeeder.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлен район">
+      <change afterPath="$PROJECT_DIR$/app/Models/IntimHair.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/PostIntimHair.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_121436_create_intim_hairs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_121900_create_post_intim_hairs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/PostIntimHairSeed.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
@@ -182,7 +182,7 @@
       <workItem from="1647410461850" duration="24452000" />
       <workItem from="1647497414829" duration="614000" />
       <workItem from="1647518479695" duration="9354000" />
-      <workItem from="1647585298610" duration="10441000" />
+      <workItem from="1647585298610" duration="11765000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -226,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647594791138</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="добавлен район">
+      <created>1647605279937</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1647605279937</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +258,8 @@
     <MESSAGE value="добавлена национальность" />
     <MESSAGE value="добавлен цвет волос" />
     <MESSAGE value="добавлено метро" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлено метро" />
+    <MESSAGE value="добавлен район" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлен район" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
          $this->call(PostsHairColorSeed::class);
          $this->call(PostsMetroSeeder::class);
          $this->call(PostRayonSeeder::class);
+         $this->call(PostIntimHairSeed::class);
     }
 }

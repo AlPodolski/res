@@ -48,6 +48,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostMetro[] $metro
  * @property-read int|null $metro_count
  * @property-read \App\Models\PostRayon|null $rayon
+ * @property-read \App\Models\PostIntimHair|null $intimHair
  */
 class Post extends Model
 {
@@ -69,6 +70,11 @@ class Post extends Model
     public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(PostRayon::class, 'posts_id', 'id')->with('rayon');
+    }
+
+    public function intimHair(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(PostIntimHair::class, 'posts_id', 'id')->with('value');
     }
 
 }
