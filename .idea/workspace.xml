@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод инфы на деталке">
-      <change afterPath="$PROJECT_DIR$/app/Models/National.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mpdels/PostNational.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_17_131137_create_nationals_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_17_140242_create_post_nationals_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/UserNationalSeed.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлена национальность">
+      <change afterPath="$PROJECT_DIR$/app/Models/HairColor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/PostHairColor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_072545_create_hair_colors_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_073152_create_post_hair_colors_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/PostsHairColorSeed.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mpdels/PostNational.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostNational.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_03_16_120741_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_03_16_120741_create_posts_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PostSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +180,8 @@
       <workItem from="1647342806684" duration="11256000" />
       <workItem from="1647410461850" duration="24452000" />
       <workItem from="1647497414829" duration="614000" />
-      <workItem from="1647518479695" duration="7847000" />
+      <workItem from="1647518479695" duration="9354000" />
+      <workItem from="1647585298610" duration="2718000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -205,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647522534457</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="добавлена национальность">
+      <created>1647526610131</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1647526610131</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +233,8 @@
     <MESSAGE value="верстка главное страницы" />
     <MESSAGE value="детальная страница и заполнение тестовыми данными" />
     <MESSAGE value="вывод инфы на деталке" />
-    <option name="LAST_COMMIT_MESSAGE" value="вывод инфы на деталке" />
+    <MESSAGE value="добавлена национальность" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена национальность" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

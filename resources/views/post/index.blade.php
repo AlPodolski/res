@@ -60,7 +60,7 @@
                 </div>
                 <div class="property-item">
                     <div class="property-name">Цвет волос</div>
-                    <div class="property-value">Блондинка</div>
+                    <div class="property-value">{{ $post->hair->hair->value }}</div>
                 </div>
                 <div class="property-item">
                     <div class="property-name">Интимная стрижка</div>

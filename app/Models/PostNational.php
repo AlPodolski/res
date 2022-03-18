@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Mpdels;
+namespace App\Models;
 
-use App\Models\National;
 use Illuminate\Database\Eloquent\Model;
 
 /**

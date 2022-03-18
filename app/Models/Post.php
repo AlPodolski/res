@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Mpdels\PostNational;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -45,6 +44,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $city_id
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereCityId($value)
  * @property-read PostNational|null $national
+ * @property-read \App\Models\PostHairColor|null $hair
  */
 class Post extends Model
 {
@@ -52,4 +52,10 @@ class Post extends Model
     {
         return $this->hasOne(PostNational::class, 'post_nationals_id', 'id')->with('national');
     }
+
+    public function hair(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(PostHairColor::class, 'posts_id', 'id')->with('hair');
+    }
+
 }
