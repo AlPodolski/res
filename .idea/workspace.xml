@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлен район">
-      <change afterPath="$PROJECT_DIR$/app/Models/IntimHair.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/PostIntimHair.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_121436_create_intim_hairs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_18_121900_create_post_intim_hairs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PostIntimHairSeed.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлена интим стрижка">
+      <change afterPath="$PROJECT_DIR$/app/Models/City.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/CityRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_21_070938_create_cities_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pr.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pr.loc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +129,8 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
       <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
   <component name="ProjectId" id="26PWEzxV0KhIllkTHc2RiqW10eC" />
@@ -145,7 +148,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lara.loc" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -182,7 +185,9 @@
       <workItem from="1647410461850" duration="24452000" />
       <workItem from="1647497414829" duration="614000" />
       <workItem from="1647518479695" duration="9354000" />
-      <workItem from="1647585298610" duration="11765000" />
+      <workItem from="1647585298610" duration="13417000" />
+      <workItem from="1647790037402" duration="5000" />
+      <workItem from="1647846389592" duration="1759000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -233,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647605279937</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="добавлена интим стрижка">
+      <created>1647606696515</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647606696515</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +271,8 @@
     <MESSAGE value="добавлен цвет волос" />
     <MESSAGE value="добавлено метро" />
     <MESSAGE value="добавлен район" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлен район" />
+    <MESSAGE value="добавлена интим стрижка" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена интим стрижка" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

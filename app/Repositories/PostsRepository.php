@@ -6,12 +6,12 @@ use App\Models\Post;
 
 class PostsRepository
 {
-    public function getPostsForMainPage($limit)
+    public function getPostsForMainPage($limit, $cityId)
     {
 
         $columns = ['url', 'name', 'phone', 'price'];
 
-        return Post::select($columns)->paginate($limit);
+        return Post::select($columns)->where(['city_id' => $cityId])->paginate($limit);
     }
 
     public function getPostForSingle($url)
