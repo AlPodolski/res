@@ -19,7 +19,7 @@
 
     <div class="post-content">
         <div class="left">
-            <img src="/img/nigga.jpg" alt="">
+            <img src="{{ $post->avatar->file }}" alt="">
         </div>
         <div class="right">
             <h1>{{ $post->name }}</h1>
@@ -74,7 +74,6 @@
                                 <div class="property-value">{{ $item->place->value }} </div>
                             @endforeach
                         </div>
-
                     </div>
                 @endif
 
@@ -112,47 +111,20 @@
                 {{ $post->about }}
             </div>
         </div>
-        <div class="decr-title">
-            Фото
-        </div>
-        <div class="popular-list post-photo">
-            <div class="post-photo-item">
-                <img src="/img/nigga.jpg" alt="">
+
+        @if($post->gallery)
+            <div class="decr-title">
+                Фото
             </div>
-            <div class="post-photo-item">
-                <img src="/img/girl.jpg" alt="">
+            <div class="popular-list post-photo">
+                @foreach($post->gallery as $item)
+                    <div class="post-photo-item">
+                        <img src="{{ $item->file }}" alt="">
+                    </div>
+                @endforeach
             </div>
-            <div class="post-photo-item">
-                <img src="/img/nigga.jpg" alt="">
-            </div>
-            <div class="post-photo-item">
-                <img src="/img/girl.jpg" alt="">
-            </div>
-            <div class="post-photo-item">
-                <img src="/img/nigga.jpg" alt="">
-            </div>
-            <div class="post-photo-item">
-                <img src="/img/girl.jpg" alt="">
-            </div>
-            <div class="post-photo-item">
-                <img src="/img/nigga.jpg" alt="">
-            </div>
-            <div class="post-photo-item">
-                <img src="/img/girl.jpg" alt="">
-            </div>
-            <div class="post-photo-item">
-                <img src="/img/nigga.jpg" alt="">
-            </div>
-            <div class="post-photo-item">
-                <img src="/img/girl.jpg" alt="">
-            </div>
-            <div class="post-photo-item">
-                <img src="/img/nigga.jpg" alt="">
-            </div>
-            <div class="post-photo-item">
-                <img src="/img/girl.jpg" alt="">
-            </div>
-        </div>
+        @endif
+
         <div class="decr-title">
             Отзывы
         </div>

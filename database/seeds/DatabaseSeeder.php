@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
          $this->call(PostIntimHairSeed::class);
          $this->call(PostTimeSeed::class);
          $this->call(PostPlaceSeeder::class);
+         $this->call(PostPhotoSeeder::class);
     }
 }

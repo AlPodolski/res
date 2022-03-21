@@ -53,9 +53,24 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $time_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostPlace[] $place
  * @property-read int|null $place_count
+ * @property-read \App\Models\Files|null $avatar
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Files[] $gallery
+ * @property-read int|null $gallery_count
  */
 class Post extends Model
 {
+
+    public function gallery()
+    {
+        return $this->hasMany(Files::class, 'related_id', 'id')
+            ->where(['related_class' => self::class, 'type' => Files::GALLERY_PHOTO_TYPE]);
+    }
+    public function avatar(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Files::class, 'related_id', 'id')
+            ->where(['related_class' => self::class, 'type' => Files::MAIN_PHOTO_TYPE]);
+    }
+
     public function national(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(PostNational::class, 'post_nationals_id', 'id')->with('national');

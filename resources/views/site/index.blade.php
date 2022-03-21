@@ -46,7 +46,7 @@
 
             <div class="post-item ">
                 <a href="/post/{{$post->url}}">
-                    <img src="/img/girl.jpg" alt="">
+                    <img src="{{$post->avatar->file}}" alt="">
                 </a>
                 <a href="/post/{{$post->url}}" class="name">{{$post->name}}</a>
                 <div class="price">{{ $post->price }} ₽</div>
@@ -55,12 +55,6 @@
 
         @endforeach
 
-        <div class="post-item ">
-            <img src="/img/nigga.jpg" alt="">
-            <div class="name">Вил Смит</div>
-            <div class="price">3500 ₽</div>
-            <a href="tel:+79637220907" class="phone">Показать телефон</a>
-        </div>
     </div>
     <div class="get-more">Показать еще <img src="/img/more.svg" alt=""></div>
     @if($posts->total() > $posts->count())

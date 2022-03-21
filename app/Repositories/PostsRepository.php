@@ -9,16 +9,18 @@ class PostsRepository
     public function getPostsForMainPage($limit, $cityId)
     {
 
-        $columns = ['url', 'name', 'phone', 'price'];
+        $columns = ['url', 'name', 'phone', 'price', 'id'];
 
-        return Post::select($columns)->where(['city_id' => $cityId])->paginate($limit);
+        return Post::with('avatar')->select($columns)
+            ->where(['city_id' => $cityId])
+            ->paginate($limit);
     }
 
     public function getPostForSingle($url)
     {
         $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
 
-        $post = Post::with('national', 'hair', 'metro', 'rayon', 'intimHair', 'time', 'place')
+        $post = Post::with('national', 'hair', 'metro', 'rayon', 'intimHair', 'time', 'place', 'avatar', 'gallery')
             ->select($columns)
             ->where(['url' => $url])
             ->first();
