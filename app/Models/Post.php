@@ -51,6 +51,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\PostIntimHair|null $intimHair
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostTime[] $time
  * @property-read int|null $time_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostPlace[] $place
+ * @property-read int|null $place_count
  */
 class Post extends Model
 {
@@ -72,6 +74,11 @@ class Post extends Model
     public function time(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(PostTime::class, 'posts_id', 'id')->with('time');
+    }
+
+    public function place(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(PostPlace::class, 'post_id', 'id')->with('place');
     }
 
     public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne

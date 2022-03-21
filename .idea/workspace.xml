@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлены города">
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/PostTime.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Time.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_21_074855_create_times_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_21_075304_create_post_times_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PostTimeSeed.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлено время встречи">
+      <change afterPath="$PROJECT_DIR$/app/Models/Place.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/PostPlace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_21_082958_create_places_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_21_085431_create_post_places_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/PostPlaceSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
@@ -187,7 +186,7 @@
       <workItem from="1647518479695" duration="9354000" />
       <workItem from="1647585298610" duration="13417000" />
       <workItem from="1647790037402" duration="5000" />
-      <workItem from="1647846389592" duration="4662000" />
+      <workItem from="1647846389592" duration="6542000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -252,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647848185616</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="добавлено время встречи">
+      <created>1647851274271</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647851274271</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +286,8 @@
     <MESSAGE value="добавлен район" />
     <MESSAGE value="добавлена интим стрижка" />
     <MESSAGE value="добавлены города" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлены города" />
+    <MESSAGE value="добавлено время встречи" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлено время встречи" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

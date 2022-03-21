@@ -18,7 +18,7 @@ class PostsRepository
     {
         $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
 
-        $post = Post::with('national', 'hair', 'metro', 'rayon', 'intimHair', 'time')
+        $post = Post::with('national', 'hair', 'metro', 'rayon', 'intimHair', 'time', 'place')
             ->select($columns)
             ->where(['url' => $url])
             ->first();

@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
          $this->call(PostRayonSeeder::class);
          $this->call(PostIntimHairSeed::class);
          $this->call(PostTimeSeed::class);
+         $this->call(PostPlaceSeeder::class);
     }
 }
