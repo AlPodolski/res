@@ -49,6 +49,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $metro_count
  * @property-read \App\Models\PostRayon|null $rayon
  * @property-read \App\Models\PostIntimHair|null $intimHair
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostTime[] $time
+ * @property-read int|null $time_count
  */
 class Post extends Model
 {
@@ -65,6 +67,11 @@ class Post extends Model
     public function metro(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(PostMetro::class, 'posts_id', 'id')->with('metro');
+    }
+
+    public function time(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(PostTime::class, 'posts_id', 'id')->with('time');
     }
 
     public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne

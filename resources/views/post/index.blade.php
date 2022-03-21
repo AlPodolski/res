@@ -54,6 +54,18 @@
                     </div>
                 @endif
 
+                @if($post->time)
+                    <div class="property-item metro-list">
+                        <div class="property-name">Время встречи</div>
+                        <div class="d-flex">
+                            @foreach($post->time as $item)
+                                <div class="property-value">{{ $item->time->value }} </div>
+                            @endforeach
+                        </div>
+
+                    </div>
+                @endif
+
                 <div class="property-item">
                     <div class="property-name">Возраст</div>
                     <div class="property-value">{{ $post->age }}</div>
