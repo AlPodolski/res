@@ -17,6 +17,21 @@
                 </li>
                 @endif
 
+                @if($rayonList)
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapseRayon">
+                            Район
+                        </a>
+                        <div id="collapseRayon" class="collapse" data-parent="#accordion">
+                            @foreach($rayonList as $item)
+                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->rayon->value }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+                @endif
+
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971294">
                     <div class="menu__controls">
                         <a href="/page/about-us" class="menu__link" data-navigation-link="/page/about-us">

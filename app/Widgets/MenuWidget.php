@@ -4,6 +4,7 @@ namespace App\Widgets;
 
 use App\Models\Filter;
 use App\Models\Metro;
+use App\Models\Rayon;
 use Illuminate\Http\Request;
 use Klisl\Widgets\Contract\ContractWidget;
 
@@ -30,7 +31,11 @@ class MenuWidget implements ContractWidget{
             ->where(['parent_class' => Metro::class, 'city_id' => $this->city_id])
             ->get();
 
-		return view('Widgets::test', compact('metroList'));
+        $rayonList = Filter::with('rayon')
+            ->where(['parent_class' => Rayon::class, 'city_id' => $this->city_id])
+            ->get();
+
+		return view('Widgets::test', compact('metroList', 'rayonList'));
 
 	}
 }

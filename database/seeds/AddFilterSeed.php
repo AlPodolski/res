@@ -32,5 +32,23 @@ class AddFilterSeed extends Seeder
 
         }
 
+        $dataList = \App\Models\Rayon::get();
+
+        foreach ($dataList as $dataItem){
+
+            $data = [
+                'filter_url' => $filterUrlService->makeUrlForFilterTable($dataItem->value) ,
+                'related_class' => \App\Models\PostRayon::class,
+                'related_param' => 'rayons_id',
+                'search_param' => 'posts_id',
+                'related_id' => $dataItem->id,
+                'parent_class' => \App\Models\Rayon::class,
+                'city_id' => $dataItem->city_id,
+            ];
+
+            DB::table('filters')->insert($data);
+
+        }
+
     }
 }

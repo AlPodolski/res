@@ -28,9 +28,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\Metro|null $metro
  * @method static \Illuminate\Database\Eloquent\Builder|Filter whereCityId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Filter whereParentClass($value)
+ * @property-read \App\Models\Rayon|null $rayon
  */
 class Filter extends Model
 {
+    public function rayon()
+    {
+        return $this->hasOne(Rayon::class, 'id', 'related_id');
+    }
     public function metro()
     {
         return $this->hasOne(Metro::class, 'id', 'related_id');
