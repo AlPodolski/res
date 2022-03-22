@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
          $this->call(PostTimeSeed::class);
          $this->call(PostPlaceSeeder::class);
          $this->call(PostPhotoSeeder::class);
+         $this->call(AddFilterSeed::class);
     }
 }

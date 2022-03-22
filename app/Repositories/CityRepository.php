@@ -8,6 +8,6 @@ class CityRepository
 {
     public function getCityInfoByUrl($url)
     {
-        return City::select('id')->where(['url' => $url])->get()->first();
+        return City::select('id')->where(['url' => $url])->get()->first()->toArray();
     }
 }

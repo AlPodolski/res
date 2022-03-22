@@ -17,7 +17,7 @@ class CreatePostNationalsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('post_nationals_id');
             $table->bigInteger('nationals_id');
-            $table->bigInteger('citys_id');
+            $table->bigInteger('city_id');
         });
     }
 

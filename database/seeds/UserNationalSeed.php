@@ -21,7 +21,7 @@ class UserNationalSeed extends Seeder
             $data[] = [
                 'nationals_id' => $nationals[array_rand($nationals)]->id,
                 'post_nationals_id' => $post->id,
-                'citys_id' => 1
+                'city_id' => 1
             ];
 
         }

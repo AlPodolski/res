@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлено место встречи">
-      <change afterPath="$PROJECT_DIR$/app/Models/Files.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_21_091236_create_files_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PostPhotoSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/aaa/girl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/aaa/nigga.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод фото">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Filter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/FilterRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/FilterUrlService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_21_120816_create_filters_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/AddFilterSeed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pr.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pr.loc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CityRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_03_17_140242_create_post_nationals_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_03_17_140242_create_post_nationals_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UserNationalSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserNationalSeed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +141,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -149,7 +149,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/uploads/aaa" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new-mass" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -189,7 +189,8 @@
       <workItem from="1647518479695" duration="9354000" />
       <workItem from="1647585298610" duration="13417000" />
       <workItem from="1647790037402" duration="5000" />
-      <workItem from="1647846389592" duration="10255000" />
+      <workItem from="1647846389592" duration="20541000" />
+      <workItem from="1647933309855" duration="9147000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -268,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647853330821</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="вывод фото">
+      <created>1647858256045</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1647858256045</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +306,8 @@
     <MESSAGE value="добавлены города" />
     <MESSAGE value="добавлено время встречи" />
     <MESSAGE value="добавлено место встречи" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлено место встречи" />
+    <MESSAGE value="вывод фото" />
+    <option name="LAST_COMMIT_MESSAGE" value="вывод фото" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
