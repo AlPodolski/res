@@ -20,11 +20,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|PostNational wherePostNationalsId($value)
  * @mixin \Eloquent
  * @property-read National|null $national
+ * @property int $city_id
+ * @method static \Illuminate\Database\Eloquent\Builder|PostNational whereCityId($value)
  */
 class PostNational extends Model
 {
     public function national(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(National::class, 'id', 'post_nationals_id');
+        return $this->hasOne(National::class, 'id', 'nationals_id');
     }
 }

@@ -23,8 +23,16 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property string $search_param
  * @method static \Illuminate\Database\Eloquent\Builder|Filter whereSearchParam($value)
+ * @property string $parent_class
+ * @property int|null $city_id
+ * @property-read \App\Models\Metro|null $metro
+ * @method static \Illuminate\Database\Eloquent\Builder|Filter whereCityId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Filter whereParentClass($value)
  */
 class Filter extends Model
 {
-    //
+    public function metro()
+    {
+        return $this->hasOne(Metro::class, 'id', 'related_id');
+    }
 }

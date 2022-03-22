@@ -8913,3 +8913,6 @@ body{
 .metro-list .property-value{
     margin-right: 15px;
 }
+.panel-menu .collapse{
+    padding-left: 15px;
+}

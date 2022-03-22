@@ -26,6 +26,6 @@ class FilterController extends Controller
 
         $posts = $this->filterRepository->getForFilter($filterParams, 15, $cityInfo);
 
-        return view('site.index', compact('posts'));
+        return view('site.index', compact('posts', 'cityInfo'));
     }
 }

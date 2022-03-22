@@ -13,8 +13,8 @@ class SiteController extends Controller
 
         $cityInfo = $cityRepository->getCityInfoByUrl($city);
 
-        $posts = $postsRepository->getPostsForMainPage(15, $cityInfo->id);
+        $posts = $postsRepository->getPostsForMainPage(15, $cityInfo['id']);
 
-        return view('site.index', compact('posts'));
+        return view('site.index', compact('posts', 'cityInfo'));
     }
 }

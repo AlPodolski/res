@@ -1,7 +1,3 @@
-@php
-
-    @endphp
-
 @extends('layouts.app')
 
 @section('title', 'Главная страница')
@@ -62,4 +58,6 @@
         {{ $posts->links() }}
 
     @endif
+
+    @widget('menu', ['city_id' =>  $cityInfo['id']  ])
 @endsection

@@ -2,16 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\CityRepository;
+use App\Repositories\FilterRepository;
 use App\Repositories\PostsRepository;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+    private $cityRepository;
+
+    public function __construct()
+    {
+        $this->cityRepository = new CityRepository();
+    }
+
     public function index($city, $url ,  PostsRepository $postRepository)
     {
 
-        if (!$post = $postRepository->getPostForSingle($url)) abort(404);
+        $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
-        return view('post.index', compact('post'));
+        if (!$post = $postRepository->getPostForSingle($url, $cityInfo['id'])) abort(404);
+
+        return view('post.index', compact('post', 'cityInfo'));
     }
 }

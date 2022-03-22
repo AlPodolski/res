@@ -16,7 +16,7 @@ class PostsRepository
             ->paginate($limit);
     }
 
-    public function getPostForSingle($url)
+    public function getPostForSingle($url, $cityId)
     {
         $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
 

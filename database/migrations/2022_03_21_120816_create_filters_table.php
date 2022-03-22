@@ -21,6 +21,7 @@ class CreateFiltersTable extends Migration
             $table->string('search_param');
             $table->integer('related_id');
             $table->string('parent_class');
+            $table->smallInteger('city_id')->unsigned()->nullable();
         });
     }
 

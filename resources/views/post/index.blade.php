@@ -89,14 +89,17 @@
                     <div class="property-name">Размер груди</div>
                     <div class="property-value">{{ $post->breast_size }}</div>
                 </div>
+
                 <div class="property-item">
                     <div class="property-name">Национальность</div>
                     <div class="property-value">{{ $post->national->national->value }} </div>
                 </div>
+
                 <div class="property-item">
                     <div class="property-name">Цвет волос</div>
                     <div class="property-value">{{ $post->hair->hair->value }}</div>
                 </div>
+
                 <div class="property-item">
                     <div class="property-name">Интимная стрижка</div>
                     <div class="property-value">{{ $post->intimHair->value->value }}</div>
@@ -134,5 +137,5 @@
             </div>
         </div>
     </div>
-
+    @widget('menu', ['city_id' =>  $cityInfo['id']  ])
 @endsection

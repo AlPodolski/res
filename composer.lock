@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "834b40b1322844bb8a5cd71b7eb8be18",
+    "content-hash": "add2542adc297f4d50edf896bea087b9",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -5437,6 +5437,61 @@
                 "source": "https://github.com/justinrainbow/json-schema/tree/5.2.11"
             },
             "time": "2021-07-22T09:24:00+00:00"
+        },
+        {
+            "name": "klisl/laravel-widgets",
+            "version": "1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/klisl/laravel-widgets.git",
+                "reference": "672aef7f813f1037bd41194cfbfaa643b07d6f10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/klisl/laravel-widgets/zipball/672aef7f813f1037bd41194cfbfaa643b07d6f10",
+                "reference": "672aef7f813f1037bd41194cfbfaa643b07d6f10",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.3",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Klisl\\Widgets\\WidgetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Klisl\\Widgets\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Klimenchuk",
+                    "email": "ksl80@ukr.net",
+                    "homepage": "https://github.com/klisl/laravel-widgets",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Package for using widgets in Laravel-5",
+            "keywords": [
+                "laravel",
+                "widget",
+                "widgets"
+            ],
+            "support": {
+                "issues": "https://github.com/klisl/laravel-widgets/issues",
+                "source": "https://github.com/klisl/laravel-widgets/tree/1.7"
+            },
+            "time": "2018-04-03T13:10:51+00:00"
         },
         {
             "name": "maximebf/debugbar",
