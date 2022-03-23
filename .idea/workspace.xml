@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="фильтрация по районам">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/AddFilterSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AddFilterSeed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Filter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +183,7 @@
       <workItem from="1647790037402" duration="5000" />
       <workItem from="1647846389592" duration="20541000" />
       <workItem from="1647933309855" duration="20790000" />
+      <workItem from="1648015231827" duration="2886000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>

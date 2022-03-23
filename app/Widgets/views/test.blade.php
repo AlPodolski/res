@@ -32,6 +32,81 @@
                 </li>
                 @endif
 
+                @if($timeList)
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapseTime">
+                            Время встречи
+                        </a>
+                        <div id="collapseTime" class="collapse" data-parent="#accordion">
+                            @foreach($timeList as $item)
+                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->time->value }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+                @endif
+
+                @if($placeList)
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapsePlace">
+                            Место встречи
+                        </a>
+                        <div id="collapsePlace" class="collapse" data-parent="#accordion">
+                            @foreach($placeList as $item)
+                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->place->value }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+                @endif
+
+                @if($nationalList)
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapseNational">
+                            Национальность
+                        </a>
+                        <div id="collapseNational" class="collapse" data-parent="#accordion">
+                            @foreach($nationalList as $item)
+                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->national->value }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+                @endif
+
+                @if($hairColorList)
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapseHair">
+                            Цвет волос
+                        </a>
+                        <div id="collapseHair" class="collapse" data-parent="#accordion">
+                            @foreach($hairColorList as $item)
+                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->hairColor->value }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+                @endif
+
+                @if($intimHairList)
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapseHairIntim">
+                            Интимная стрижка
+                        </a>
+                        <div id="collapseHairIntim" class="collapse" data-parent="#accordion">
+                            @foreach($intimHairList as $item)
+                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->intimHair->value }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+                @endif
+
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971294">
                     <div class="menu__controls">
                         <a href="/page/about-us" class="menu__link" data-navigation-link="/page/about-us">

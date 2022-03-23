@@ -29,14 +29,45 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Filter whereCityId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Filter whereParentClass($value)
  * @property-read \App\Models\Rayon|null $rayon
+ * @property-read \App\Models\HairColor|null $hairColor
+ * @property-read \App\Models\IntimHair|null $intimHair
+ * @property-read \App\Models\National|null $national
+ * @property-read \App\Models\Place|null $place
+ * @property-read \App\Models\Time|null $time
  */
 class Filter extends Model
 {
-    public function rayon()
+
+    public function time(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Time::class, 'id', 'related_id');
+    }
+
+    public function place(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Place::class, 'id', 'related_id');
+    }
+
+    public function national(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(National::class, 'id', 'related_id');
+    }
+
+    public function hairColor(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(HairColor::class, 'id', 'related_id');
+    }
+
+    public function intimHair(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(IntimHair::class, 'id', 'related_id');
+    }
+
+    public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Rayon::class, 'id', 'related_id');
     }
-    public function metro()
+    public function metro(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Metro::class, 'id', 'related_id');
     }

@@ -3,8 +3,13 @@
 namespace App\Widgets;
 
 use App\Models\Filter;
+use App\Models\HairColor;
+use App\Models\IntimHair;
 use App\Models\Metro;
+use App\Models\National;
+use App\Models\Place;
 use App\Models\Rayon;
+use App\Models\Time;
 use Illuminate\Http\Request;
 use Klisl\Widgets\Contract\ContractWidget;
 
@@ -35,7 +40,34 @@ class MenuWidget implements ContractWidget{
             ->where(['parent_class' => Rayon::class, 'city_id' => $this->city_id])
             ->get();
 
-		return view('Widgets::test', compact('metroList', 'rayonList'));
+        $timeList = Filter::with('time')
+            ->where(['parent_class' => Time::class])
+            ->get();
+
+        $placeList = Filter::with('place')
+            ->where(['parent_class' => Place::class])
+            ->get();
+
+        $nationalList = Filter::with('national')
+            ->where(['parent_class' => National::class])
+            ->get();
+
+        $hairColorList = Filter::with('hairColor')
+            ->where(['parent_class' => HairColor::class])
+            ->get();
+
+        $intimHairList = Filter::with('intimHair')
+            ->where(['parent_class' => IntimHair::class])
+            ->get();
+
+		return view('Widgets::test', compact(
+            'metroList',
+            'rayonList',
+            'timeList',
+            'placeList',
+            'nationalList',
+            'hairColorList',
+            'intimHairList'));
 
 	}
 }

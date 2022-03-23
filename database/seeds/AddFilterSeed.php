@@ -119,6 +119,23 @@ class AddFilterSeed extends Seeder
 
         }
 
+        $dataList = \App\Models\HairColor::get();
+
+        foreach ($dataList as $dataItem) {
+
+            $data = [
+                'filter_url' => $filterUrlService->makeUrlForFilterTable($dataItem->value),
+                'related_class' => \App\Models\PostHairColor::class,
+                'related_param' => 'hair_colors_id',
+                'search_param' => 'posts_id',
+                'related_id' => $dataItem->id,
+                'parent_class' => \App\Models\HairColor::class,
+            ];
+
+            DB::table('filters')->insert($data);
+
+        }
+
     }
 
 }
