@@ -151,6 +151,21 @@ class AddFilterSeed extends Seeder
 
         }
 
+        $dataList = \App\Models\Price::get();
+
+        foreach ($dataList as $dataItem) {
+
+            $data = [
+                'filter_url' => $filterUrlService->makeUrlForFilterTable($dataItem->value),
+                'related_id' => $dataItem->id,
+                'parent_class' => \App\Models\Price::class,
+                'type' => 'custom'
+            ];
+
+            DB::table('filters')->insert($data);
+
+        }
+
     }
 
 }

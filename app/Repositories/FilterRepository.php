@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Age;
 use App\Models\Filter;
 use App\Models\Post;
+use App\Models\Price;
 
 class FilterRepository
 {
@@ -21,11 +22,42 @@ class FilterRepository
 
         $posts = array();
 
-        if ($params->type == 'custom'){
+        if ($params->type == 'custom') {
 
-            if ($params->parent_class == Age::class){
+            $posts = Post::with('avatar')->where(['city_id' => $cityInfo['id']]);
 
-                $posts = Post::with('avatar')->where(['city_id' => $cityInfo['id']]);
+            if ($params->parent_class == Price::class) {
+
+                switch ($params->filter_url) {
+
+                    case "do-1500-rub":
+                        $posts = $posts->where('price', '<=', 1500);
+                        break;
+
+                    case "ot-1500-do-2000-rub":
+                        $posts = $posts->where('price', '>', 1500);
+                        $posts = $posts->where('price', '<=', 2000);
+                        break;
+
+                    case "ot-2000-do-3000-rub":
+                        $posts = $posts->where('price', '>', 2000);
+                        $posts = $posts->where('price', '<=', 3000);
+                        break;
+
+                    case "ot-3000-do-6000-rub":
+                        $posts = $posts->where('price', '>', 3000);
+                        $posts = $posts->where('price', '<=', 6000);
+                        break;
+
+                    case "ot-6000-rub":
+                        $posts = $posts->where('price', '>', 6000);
+                        break;
+
+                }
+
+            }
+
+            if ($params->parent_class == Age::class) {
 
                 switch ($params->filter_url) {
                     case "ot-18-do-20-let":
@@ -64,11 +96,11 @@ class FilterRepository
 
                 }
 
-                return $posts->select($columns)->paginate($limit);
-
             }
 
-        }else{
+            return $posts->select($columns)->paginate($limit);
+
+        } else {
 
             $ids = $params->related_class::where([$params->related_param => $params->related_id, 'city_id' => $cityInfo['id']])
                 ->select($params->search_param)
@@ -78,11 +110,11 @@ class FilterRepository
 
             $resultIds = array();
 
-            if ($ids) foreach ($ids as $id){
+            if ($ids) foreach ($ids as $id) {
                 $resultIds[] = $id[$params->search_param];
             }
 
-            $posts = Post::with('avatar')->whereIn('id' , $resultIds)->select($columns)->paginate($limit);
+            $posts = Post::with('avatar')->whereIn('id', $resultIds)->select($columns)->paginate($limit);
 
         }
 

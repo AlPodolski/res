@@ -60,6 +60,20 @@
                     </div>
                 </li>
                 @endif
+                @if($priceList)
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapsePrice">
+                            Цена
+                        </a>
+                        <div id="collapsePrice" class="collapse" data-parent="#accordion">
+                            @foreach($priceList as $item)
+                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->price->value }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+                @endif
 
                 @if($placeList)
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлены фильтрации и вывод в меню">
-      <change afterPath="$PROJECT_DIR$/app/Models/Age.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_23_070651_create_ages_table.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлены фильтрации по возрасту">
+      <change afterPath="$PROJECT_DIR$/app/Models/Price.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_23_085144_create_prices_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Filter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/FilterRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/FilterRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_03_21_120816_create_filters_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_03_21_120816_create_filters_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/AddFilterSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AddFilterSeed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +187,7 @@
       <workItem from="1647790037402" duration="5000" />
       <workItem from="1647846389592" duration="20541000" />
       <workItem from="1647933309855" duration="20790000" />
-      <workItem from="1648015231827" duration="8517000" />
+      <workItem from="1648015231827" duration="9539000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -302,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648018719985</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="добавлены фильтрации по возрасту">
+      <created>1648025181718</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1648025181718</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +343,8 @@
     <MESSAGE value="виджет меню с выводом метро" />
     <MESSAGE value="фильтрация по районам" />
     <MESSAGE value="добавлены фильтрации и вывод в меню" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлены фильтрации и вывод в меню" />
+    <MESSAGE value="добавлены фильтрации по возрасту" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлены фильтрации по возрасту" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

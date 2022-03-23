@@ -34,6 +34,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\National|null $national
  * @property-read \App\Models\Place|null $place
  * @property-read \App\Models\Time|null $time
+ * @property string|null $type
+ * @property-read \App\Models\Age|null $age
+ * @method static \Illuminate\Database\Eloquent\Builder|Filter whereType($value)
  */
 class Filter extends Model
 {
@@ -41,6 +44,11 @@ class Filter extends Model
     public function age(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Age::class, 'id', 'related_id');
+    }
+
+    public function price(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Price::class, 'id', 'related_id');
     }
 
     public function time(): \Illuminate\Database\Eloquent\Relations\HasOne

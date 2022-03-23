@@ -9,6 +9,7 @@ use App\Models\IntimHair;
 use App\Models\Metro;
 use App\Models\National;
 use App\Models\Place;
+use App\Models\Price;
 use App\Models\Rayon;
 use App\Models\Time;
 use Illuminate\Http\Request;
@@ -65,6 +66,10 @@ class MenuWidget implements ContractWidget{
             ->where(['parent_class' => Age::class])
             ->get();
 
+        $priceList = Filter::with('price')
+            ->where(['parent_class' => Price::class])
+            ->get();
+
 		return view('Widgets::test', compact(
             'metroList',
             'rayonList',
@@ -72,6 +77,7 @@ class MenuWidget implements ContractWidget{
             'placeList',
             'nationalList',
             'ageList',
+            'priceList',
             'hairColorList',
             'intimHairList'));
 
