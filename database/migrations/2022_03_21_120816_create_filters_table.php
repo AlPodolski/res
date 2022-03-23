@@ -16,12 +16,13 @@ class CreateFiltersTable extends Migration
         Schema::create('filters', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('filter_url')->unique();
-            $table->string('related_class');
-            $table->string('related_param');
-            $table->string('search_param');
-            $table->integer('related_id');
+            $table->string('related_class')->nullable();
+            $table->string('related_param')->nullable();
+            $table->string('search_param')->nullable();
+            $table->integer('related_id')->nullable();
             $table->string('parent_class');
             $table->smallInteger('city_id')->unsigned()->nullable();
+            $table->string('type')->nullable();
         });
     }
 

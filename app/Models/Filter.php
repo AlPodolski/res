@@ -38,6 +38,11 @@ use Illuminate\Database\Eloquent\Model;
 class Filter extends Model
 {
 
+    public function age(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Age::class, 'id', 'related_id');
+    }
+
     public function time(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Time::class, 'id', 'related_id');

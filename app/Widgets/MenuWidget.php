@@ -2,6 +2,7 @@
 
 namespace App\Widgets;
 
+use App\Models\Age;
 use App\Models\Filter;
 use App\Models\HairColor;
 use App\Models\IntimHair;
@@ -60,12 +61,17 @@ class MenuWidget implements ContractWidget{
             ->where(['parent_class' => IntimHair::class])
             ->get();
 
+        $ageList = Filter::with('age')
+            ->where(['parent_class' => Age::class])
+            ->get();
+
 		return view('Widgets::test', compact(
             'metroList',
             'rayonList',
             'timeList',
             'placeList',
             'nationalList',
+            'ageList',
             'hairColorList',
             'intimHairList'));
 
