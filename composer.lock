@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "add2542adc297f4d50edf896bea087b9",
+    "content-hash": "3ba02572739ee11edf80c4ba99e79e82",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -4775,6 +4775,53 @@
                 }
             ],
             "time": "2022-02-25T21:32:43+00:00"
+        },
+        {
+            "name": "djmitry/laravel-meta",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/djmitry/laravel-meta.git",
+                "reference": "492b8cb26afcd91939c0d103fbb53b48b7149984"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/djmitry/laravel-meta/zipball/492b8cb26afcd91939c0d103fbb53b48b7149984",
+                "reference": "492b8cb26afcd91939c0d103fbb53b48b7149984",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Djmitry\\Meta\\MetaServiceProvider"
+                    ],
+                    "aliases": {
+                        "Meta": "Djmitry\\Meta\\Meta"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Djmitry\\Meta\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Zagainov",
+                    "email": "d.i.ma.92@mail.ru"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/djmitry/laravel-meta/issues",
+                "source": "https://github.com/djmitry/laravel-meta/tree/master"
+            },
+            "time": "2019-04-21T05:50:41+00:00"
         },
         {
             "name": "doctrine/cache",

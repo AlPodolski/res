@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Главная страница')
+@section('title', $meta['title'])
+@section('des', $meta['des'])
 
 @section('content')
 
@@ -31,7 +32,7 @@
         </div>
     </div>
 
-    <h1>Модная одежда</h1>
+    <h1>{{ $meta['h1'] }}</h1>
 
     <div class="posts">
 

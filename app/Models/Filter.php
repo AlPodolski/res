@@ -37,6 +37,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $type
  * @property-read \App\Models\Age|null $age
  * @method static \Illuminate\Database\Eloquent\Builder|Filter whereType($value)
+ * @property-read \App\Models\Price|null $price
  */
 class Filter extends Model
 {

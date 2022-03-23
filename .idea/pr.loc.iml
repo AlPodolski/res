@@ -109,6 +109,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/laravel-debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/storage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/klisl/laravel-widgets" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/djmitry/laravel-meta" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
