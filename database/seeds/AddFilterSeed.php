@@ -45,6 +45,7 @@ class AddFilterSeed extends Seeder
                 'related_id' => $dataItem->id,
                 'parent_class' => \App\Models\Rayon::class,
                 'city_id' => $dataItem->city_id,
+                'short_name' => 'rayon',
             ];
 
             DB::table('filters')->insert($data);
@@ -63,6 +64,7 @@ class AddFilterSeed extends Seeder
                 'search_param' => 'posts_id',
                 'related_id' => $dataItem->id,
                 'parent_class' => \App\Models\Time::class,
+                'short_name' => 'time',
             ];
 
             DB::table('filters')->insert($data);
@@ -80,6 +82,7 @@ class AddFilterSeed extends Seeder
                 'search_param' => 'post_id',
                 'related_id' => $dataItem->id,
                 'parent_class' => \App\Models\Place::class,
+                'short_name' => 'place',
             ];
 
             DB::table('filters')->insert($data);
@@ -97,6 +100,7 @@ class AddFilterSeed extends Seeder
                 'search_param' => 'post_nationals_id',
                 'related_id' => $dataItem->id,
                 'parent_class' => \App\Models\National::class,
+                'short_name' => 'national',
             ];
 
             DB::table('filters')->insert($data);
@@ -114,6 +118,7 @@ class AddFilterSeed extends Seeder
                 'search_param' => 'posts_id',
                 'related_id' => $dataItem->id,
                 'parent_class' => \App\Models\IntimHair::class,
+                'short_name' => 'intimhair',
             ];
 
             DB::table('filters')->insert($data);
@@ -131,6 +136,7 @@ class AddFilterSeed extends Seeder
                 'search_param' => 'posts_id',
                 'related_id' => $dataItem->id,
                 'parent_class' => \App\Models\HairColor::class,
+                'short_name' => 'hair',
             ];
 
             DB::table('filters')->insert($data);
@@ -145,7 +151,8 @@ class AddFilterSeed extends Seeder
                 'filter_url' => $filterUrlService->makeUrlForFilterTable($dataItem->value),
                 'related_id' => $dataItem->id,
                 'parent_class' => \App\Models\Age::class,
-                'type' => 'custom'
+                'type' => 'custom',
+                'short_name' => 'age',
             ];
 
             DB::table('filters')->insert($data);
@@ -160,7 +167,8 @@ class AddFilterSeed extends Seeder
                 'filter_url' => $filterUrlService->makeUrlForFilterTable($dataItem->value),
                 'related_id' => $dataItem->id,
                 'parent_class' => \App\Models\Price::class,
-                'type' => 'custom'
+                'type' => 'custom',
+                'short_name' => 'price',
             ];
 
             DB::table('filters')->insert($data);

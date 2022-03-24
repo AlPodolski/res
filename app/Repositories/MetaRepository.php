@@ -38,6 +38,16 @@ class MetaRepository
 
             return $this->replaceCity($result, $cityId);
 
+        } else {
+
+            $meta = Meta::where(['url' => 'default'])->select('title', 'des', 'h1')->get()->first();
+
+            $meta = $meta->toArray();
+
+            $result = $this->replaceParams($meta, $filterParams);
+
+            return $this->clean($this->replaceCity($result, $cityId));
+
         }
 
     }
@@ -63,11 +73,35 @@ class MetaRepository
 
                         $metaItem = $this->replaceOne($param, $replaceData[$replace], $metaItem);
 
+                        $pattern = "#\[[^:.]+\]#i";
+
+                        if (preg_match($pattern, $metaItem, $m)) {
+
+                            $m[0] = str_replace('[', '', $m[0]);
+                            $m[0] = str_replace(']', '', $m[0]);
+
+                            $metaItem = preg_replace($pattern, $m[0] . ' [' . $param . '] ', $metaItem);
+
+                        }
+
                     }
 
                 }
 
             }
+
+        }
+
+        return $meta;
+
+    }
+
+    private function clean($meta)
+    {
+
+        foreach ($meta as &$metaItem){
+
+            $metaItem = preg_replace('#\[.*?\]#', '', $metaItem);
 
         }
 
@@ -92,7 +126,7 @@ class MetaRepository
 
         foreach ($meta as $key => $metaItem) {
 
-            $pattern = '#:[a-z-A-Z-0-9]+#';
+            $pattern = '#:[city0-9]+#';
 
             if (preg_match_all($pattern, $metaItem, $marches)) {
 
