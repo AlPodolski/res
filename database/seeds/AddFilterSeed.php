@@ -26,6 +26,7 @@ class AddFilterSeed extends Seeder
                 'related_id' => $dataItem->id,
                 'parent_class' => \App\Models\Metro::class,
                 'city_id' => $dataItem->city_id,
+                'short_name' => 'metro',
             ];
 
             DB::table('filters')->insert($data);

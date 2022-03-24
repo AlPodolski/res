@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="мета теги для главной">
-      <change afterPath="$PROJECT_DIR$/app/Models/Meta.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_23_104329_create_metas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pr.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pr.loc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Filter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CityRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_03_21_120816_create_filters_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_03_21_120816_create_filters_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AddFilterSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AddFilterSeed.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +186,8 @@
       <workItem from="1647790037402" duration="5000" />
       <workItem from="1647846389592" duration="20541000" />
       <workItem from="1647933309855" duration="20790000" />
-      <workItem from="1648015231827" duration="14509000" />
+      <workItem from="1648015231827" duration="21813000" />
+      <workItem from="1648102795966" duration="960000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -320,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648026329940</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="мета теги для главной">
+      <created>1648038914327</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1648038914327</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\CityRepository;
 use App\Repositories\FilterRepository;
+use App\Repositories\MetaRepository;
 use Illuminate\Http\Request;
 
 class FilterController extends Controller
@@ -11,11 +12,13 @@ class FilterController extends Controller
 
     private $filterRepository;
     private $cityRepository;
+    private $metaRepository;
 
     public function __construct()
     {
         $this->filterRepository = new FilterRepository();
         $this->cityRepository = new CityRepository();
+        $this->metaRepository = new MetaRepository();
     }
 
     public function index($city, $search)
@@ -26,6 +29,8 @@ class FilterController extends Controller
 
         $posts = $this->filterRepository->getForFilter($filterParams, 15, $cityInfo);
 
-        return view('site.index', compact('posts', 'cityInfo'));
+        $meta = $this->metaRepository->getForFilter($search, $cityInfo['id'], $filterParams);
+
+        return view('site.index', compact('posts', 'cityInfo', 'meta'));
     }
 }

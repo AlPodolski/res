@@ -23,6 +23,7 @@ class CreateFiltersTable extends Migration
             $table->string('parent_class');
             $table->smallInteger('city_id')->unsigned()->nullable();
             $table->string('type')->nullable();
+            $table->string('short_name')->nullable();
         });
     }
 
