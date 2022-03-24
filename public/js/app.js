@@ -11746,7 +11746,7 @@ function showSearchForm(object){
     let search_field_width = 0;
 
     if (window_w > 1024) {
-        search_field_width = window_w - (window_w - $(object).offset().left) - 300;
+        search_field_width = window_w - (window_w - $(object).offset().left) - 550;
     } else {
         search_field_width = $('.top-nav').find(".logo").innerWidth() - 300;
     }

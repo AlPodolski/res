@@ -135,41 +135,9 @@
                 </li>
                 @endif
 
-                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971294">
-                    <div class="menu__controls">
-                        <a href="/page/about-us" class="menu__link" data-navigation-link="/page/about-us">
-                            О компании
-                        </a>
-                    </div>
-                </li>
-
-                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971297">
-                    <div class="menu__controls">
-                        <a href="/page/contacts" class="menu__link" data-navigation-link="/page/contacts">
-                            Контакты
-                        </a>
-                    </div>
-                </li>
-
-                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971299">
-                    <div class="menu__controls">
-                        <a href="/page/delivery" class="menu__link" data-navigation-link="/page/delivery">
-                            Доставка
-                        </a>
-                    </div>
-                </li>
-
-                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971301">
-                    <div class="menu__controls">
-                        <a href="/page/payment" class="menu__link" data-navigation-link="/page/payment">
-                            Оплата
-                        </a>
-                    </div>
-                </li>
-
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971302">
                     <div class="menu__controls">
-                        <a href="/client_account/login" class="menu__link"
+                        <a href="#" class="menu__link"
                            data-navigation-link="/client_account/login">
                             Личный кабинет
                         </a>
