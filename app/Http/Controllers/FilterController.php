@@ -31,6 +31,6 @@ class FilterController extends Controller
 
         $meta = $this->metaRepository->getForFilter($search, $cityInfo['id'], $filterParams);
 
-        return view('site.index', compact('posts', 'cityInfo', 'meta'));
+        return view('site.index', compact('posts', 'cityInfo', 'meta', 'filterParams'));
     }
 }

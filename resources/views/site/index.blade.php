@@ -32,6 +32,17 @@
         </div>
     </div>
 
+    @isset($filterParams)
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item home">
+                <a class="breadcrumb-link" title="Главная" href="/">Главная</a>
+            </li>
+            <li class="breadcrumb-item" data-breadcrumbs="2">
+                {{ $meta['h1'] }}
+            </li>
+        </ul>
+    @endif
+
     <h1>{{ $meta['h1'] }}</h1>
 
     <div class="posts">
