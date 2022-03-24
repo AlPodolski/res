@@ -18,5 +18,8 @@ Auth::routes();
 Route::domain('{city}.pr.loc')->group(function () {
     Route::get('/',  'SiteController@index');
     Route::get('/post/{url}',  'PostController@index')->name('post.index');
+    Route::get('/robots.txt',  'RobotController@index');
     Route::get('/{search}',  'FilterController@index')->where('search', '.*');
 });
+
+
