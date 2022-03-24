@@ -11743,12 +11743,14 @@ function showSearchForm(object){
     let window_w = $(window).width();
     let search_block = $(object).parents(".header__search");
     let search_form = search_block.find(".header__search-form");
-    let search_field_width = 0;
+    let search_field_width = 250;
 
     if (window_w > 1024) {
         search_field_width = window_w - (window_w - $(object).offset().left) - 550;
-    } else {
-        search_field_width = $('.top-nav').find(".logo").innerWidth() - 300;
+    }
+    else {
+        search_field_width = $('.nav-container').innerWidth() - 100;
+        console.log(search_field_width);
     }
 
     if (search_block.is(".is-show")) {

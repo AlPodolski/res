@@ -28,9 +28,6 @@
             </div>
             <div class="phone-favorite-wrap d-flex">
                 <a href="tel:+{{ $post->phone }}" class="phone single-phone">Показать телефон</a>
-                <div class="add-to-favorite">
-                    <img src="/img/heart-grey.svg" alt="">
-                </div>
             </div>
 
             <div class="post-property-list">
