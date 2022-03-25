@@ -24,8 +24,9 @@ class SiteController extends Controller
         $this->topPostListRepository = new TopPostListRepository();
     }
 
-    public function index($city)
+    public function index($city, Request $request)
     {
+        $path = $request->path();
 
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
@@ -35,6 +36,6 @@ class SiteController extends Controller
 
         $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
 
-        return view('site.index', compact('posts', 'cityInfo', 'meta', 'topList'));
+        return view('site.index', compact('posts', 'cityInfo', 'meta', 'topList', 'path'));
     }
 }

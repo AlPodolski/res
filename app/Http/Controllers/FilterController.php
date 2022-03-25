@@ -24,11 +24,13 @@ class FilterController extends Controller
         $this->topPostListRepository = new TopPostListRepository();
     }
 
-    public function index($city, $search)
+    public function index($city, $search, Request $request)
     {
 
         if (!$filterParams = $this->filterRepository->getFilterParams($search)) abort(404);
         if (!$cityInfo = $this->cityRepository->getCityInfoByUrl($city)) abort(404);
+
+        $path = '/'.$request->path();
 
         $posts = $this->filterRepository->getForFilter($filterParams, 15, $cityInfo);
 
@@ -36,6 +38,9 @@ class FilterController extends Controller
 
         $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
 
-        return view('site.index', compact('posts', 'cityInfo', 'meta', 'filterParams', 'topList'));
+        return view('site.index',
+            compact(
+                'posts', 'cityInfo', 'meta', 'filterParams', 'topList', 'path'
+            ));
     }
 }

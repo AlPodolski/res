@@ -11,6 +11,10 @@
 
     <meta name="description" content="@yield('des')">
 
+    @if(View::hasSection('can'))
+        <meta name="canonical" href="@yield('can')">
+    @endif
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

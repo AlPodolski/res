@@ -3,6 +3,10 @@
 @section('title', $meta['title'])
 @section('des', $meta['des'])
 
+@if(isset($path) and $path)
+    @section('can', $path)
+@endif
+
 @section('content')
 
     @if($topList)
