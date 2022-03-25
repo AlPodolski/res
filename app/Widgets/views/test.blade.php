@@ -32,6 +32,21 @@
                 </li>
                 @endif
 
+                @if($serviceList)
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapseService">
+                            Услуги
+                        </a>
+                        <div id="collapseService" class="collapse" data-parent="#accordion">
+                            @foreach($serviceList as $item)
+                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->service->value }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+                @endif
+
                 @if($timeList)
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">

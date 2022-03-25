@@ -38,6 +38,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\Age|null $age
  * @method static \Illuminate\Database\Eloquent\Builder|Filter whereType($value)
  * @property-read \App\Models\Price|null $price
+ * @property string|null $short_name
+ * @method static \Illuminate\Database\Eloquent\Builder|Filter whereShortName($value)
  */
 class Filter extends Model
 {
@@ -65,6 +67,11 @@ class Filter extends Model
     public function national(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(National::class, 'id', 'related_id');
+    }
+
+    public function service(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Service::class, 'id', 'related_id');
     }
 
     public function hairColor(): \Illuminate\Database\Eloquent\Relations\HasOne

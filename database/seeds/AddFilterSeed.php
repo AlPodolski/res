@@ -52,6 +52,25 @@ class AddFilterSeed extends Seeder
 
         }
 
+        $dataList = \App\Models\Service::get();
+
+        foreach ($dataList as $dataItem) {
+
+            $data = [
+                'filter_url' => $filterUrlService->makeUrlForFilterTable($dataItem->value),
+                'related_class' => \App\Models\PostService::class,
+                'related_param' => 'service_id',
+                'search_param' => 'posts_id',
+                'related_id' => $dataItem->id,
+                'parent_class' => \App\Models\Service::class,
+                'city_id' => $dataItem->city_id,
+                'short_name' => 'service',
+            ];
+
+            DB::table('filters')->insert($data);
+
+        }
+
 
         $dataList = \App\Models\Time::get();
 

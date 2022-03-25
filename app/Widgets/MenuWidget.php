@@ -11,6 +11,7 @@ use App\Models\National;
 use App\Models\Place;
 use App\Models\Price;
 use App\Models\Rayon;
+use App\Models\Service;
 use App\Models\Time;
 use Illuminate\Http\Request;
 use Klisl\Widgets\Contract\ContractWidget;
@@ -70,6 +71,10 @@ class MenuWidget implements ContractWidget{
             ->where(['parent_class' => Price::class])
             ->get();
 
+        $serviceList = Filter::with('service')
+            ->where(['parent_class' => Service::class])
+            ->get();
+
 		return view('Widgets::test', compact(
             'metroList',
             'rayonList',
@@ -78,6 +83,7 @@ class MenuWidget implements ContractWidget{
             'nationalList',
             'ageList',
             'priceList',
+            'serviceList',
             'hairColorList',
             'intimHairList'));
 

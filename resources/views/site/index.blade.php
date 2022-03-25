@@ -5,32 +5,28 @@
 
 @section('content')
 
-    <div class="popular-list">
-        <div class="popular-item">
-            <img class="popular-img" src="/img/w6clkqkf.jpg" alt="">
+    @if($topList)
+
+        <div class="popular-list d-flex">
+
+            @foreach($topList as $topListItem)
+
+                <div class="popular-item post-photo-item">
+                    <a href="/post/{{ $topListItem->url }}">
+                        <picture>
+                            <source srcset="/370-526/thumbs{{$topListItem->avatar->file}}" media="(max-width: 400px)">
+                            <source srcset="/211-300/thumbs{{$topListItem->avatar->file}}">
+                            <img loading="lazy" class="popular-img " srcset="/211-300/thumbs{{$topListItem->avatar->file}}"
+                                 alt="{{ $topListItem->name }}">
+                        </picture>
+                    </a>
+                </div>
+
+            @endforeach
+
         </div>
-        <div class="popular-item">
-            <img class="popular-img" src="/img/rm2tjcx1.jpg" alt="">
-        </div>
-        <div class="popular-item">
-            <img class="popular-img" src="/img/w6clkqkf.jpg" alt="">
-        </div>
-        <div class="popular-item">
-            <img class="popular-img" src="/img/rm2tjcx1.jpg" alt="">
-        </div>
-        <div class="popular-item">
-            <img class="popular-img" src="/img/w6clkqkf.jpg" alt="">
-        </div>
-        <div class="popular-item">
-            <img class="popular-img" src="/img/rm2tjcx1.jpg" alt="">
-        </div>
-        <div class="popular-item">
-            <img class="popular-img" src="/img/w6clkqkf.jpg" alt="">
-        </div>
-        <div class="popular-item">
-            <img class="popular-img" src="/img/rm2tjcx1.jpg" alt="">
-        </div>
-    </div>
+
+    @endif
 
     @isset($filterParams)
         <ul class="breadcrumb">
@@ -57,7 +53,7 @@
                     <picture>
                         <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)">
                         <source srcset="/211-300/thumbs{{$post->avatar->file}}">
-                        <img srcset="/211-300/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
+                        <img loading="lazy" srcset="/211-300/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
                     </picture>
                 </a>
                 <a href="/post/{{$post->url}}" class="name">{{$post->name}}</a>

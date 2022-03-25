@@ -132,9 +132,17 @@ class MetaRepository
 
                 foreach ($marches[0] as $param) {
 
-                    $findValue = str_replace(':', '', $param);
+                    if (strstr($param, 'city')){
 
-                    $result[$key] = str_replace($param, $cityInfo[$findValue], $metaItem);
+                        $findValue = str_replace(':', '', $param);
+
+                        $result[$key] = str_replace($param, $cityInfo[$findValue], $metaItem);
+
+                    }else {
+
+                        $result[$key] = $metaItem;
+
+                    }
 
                 }
 

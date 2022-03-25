@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\CityRepository;
 use App\Repositories\FilterRepository;
 use App\Repositories\MetaRepository;
+use App\Repositories\TopPostListRepository;
 use Illuminate\Http\Request;
 
 class FilterController extends Controller
@@ -13,12 +14,14 @@ class FilterController extends Controller
     private $filterRepository;
     private $cityRepository;
     private $metaRepository;
+    private $topPostListRepository;
 
     public function __construct()
     {
         $this->filterRepository = new FilterRepository();
         $this->cityRepository = new CityRepository();
         $this->metaRepository = new MetaRepository();
+        $this->topPostListRepository = new TopPostListRepository();
     }
 
     public function index($city, $search)
@@ -31,6 +34,8 @@ class FilterController extends Controller
 
         $meta = $this->metaRepository->getForFilter($search, $cityInfo['id'], $filterParams);
 
-        return view('site.index', compact('posts', 'cityInfo', 'meta', 'filterParams'));
+        $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
+
+        return view('site.index', compact('posts', 'cityInfo', 'meta', 'filterParams', 'topList'));
     }
 }

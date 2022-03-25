@@ -22,5 +22,8 @@ class DatabaseSeeder extends Seeder
          $this->call(PostPlaceSeeder::class);
          $this->call(PostPhotoSeeder::class);
          $this->call(AddFilterSeed::class);
+         $this->call(MetaSeeder::class);
+         $this->call(UserServiceSeeder::class);
+         $this->call(TopPostsSeeder::class);
     }
 }
