@@ -8913,6 +8913,9 @@ body{
 .panel-menu .collapse{
     padding-left: 15px;
 }
+.post-item a img{
+    width: 100%;
+}
 @media (max-width: 1199px){
     .post-photo-item {
         flex: 0 0 20%;

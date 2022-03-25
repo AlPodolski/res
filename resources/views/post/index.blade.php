@@ -19,7 +19,12 @@
 
     <div class="post-content">
         <div class="left">
-            <img src="{{ $post->avatar->file }}" alt="">
+
+            <picture>
+                <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)">
+                <source srcset="/521-741/thumbs{{$post->avatar->file}}">
+                <img srcset="/521-741/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
+            </picture>
         </div>
         <div class="right">
             <h1>{{ $post->name }}</h1>
@@ -29,6 +34,10 @@
             <div class="phone-favorite-wrap d-flex">
                 <a href="tel:+{{ $post->phone }}" class="phone single-phone">Показать телефон</a>
             </div>
+
+            @php
+
+            @endphp
 
             <div class="post-property-list">
                 @if($post->metro)
@@ -119,6 +128,12 @@
             <div class="popular-list post-photo">
                 @foreach($post->gallery as $item)
                     <div class="post-photo-item">
+
+                        <picture>
+                            <source srcset="/181-257/thumbs{{$item->file}}">
+                            <img srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
+                        </picture>
+
                         <img src="{{ $item->file }}" alt="">
                     </div>
                 @endforeach

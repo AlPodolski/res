@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SiteController;
+use Intervention\Image\ImageManager;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,13 @@ use App\Http\Controllers\SiteController;
 
 Auth::routes();
 
+Route::get('/{size}/thumbs/{path}', 'ImageController@index')
+    ->where('size', '.*')->where('path', '.*');
+
 Route::domain('{city}.pr.loc')->group(function () {
     Route::get('/',  'SiteController@index');
     Route::get('/post/{url}',  'PostController@index')->name('post.index');
     Route::get('/robots.txt',  'RobotController@index');
     Route::get('/{search}',  'FilterController@index')->where('search', '.*');
 });
-
 

@@ -6,6 +6,8 @@ use App\Repositories\CityRepository;
 use App\Repositories\FilterRepository;
 use App\Repositories\PostsRepository;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+
 
 class PostController extends Controller
 {
