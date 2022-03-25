@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="Крошки">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/imagecache.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pr.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pr.loc.iml" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="подгонка размеров изображений">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/aaa/girl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/aaa/nigga.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +190,7 @@
       <workItem from="1647933309855" duration="20790000" />
       <workItem from="1648015231827" duration="21813000" />
       <workItem from="1648102795966" duration="19242000" />
-      <workItem from="1648191381441" duration="5856000" />
+      <workItem from="1648191381441" duration="6802000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -382,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648126761598</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="подгонка размеров изображений">
+      <created>1648198635577</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1648198635577</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +403,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="детальная страница и заполнение тестовыми данными" />
     <MESSAGE value="вывод инфы на деталке" />
     <MESSAGE value="добавлена национальность" />
     <MESSAGE value="добавлен цвет волос" />
@@ -436,7 +427,8 @@
     <MESSAGE value="адаптив" />
     <MESSAGE value="правки с формой" />
     <MESSAGE value="Крошки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Крошки" />
+    <MESSAGE value="подгонка размеров изображений" />
+    <option name="LAST_COMMIT_MESSAGE" value="подгонка размеров изображений" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

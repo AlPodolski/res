@@ -13,8 +13,7 @@ class ImageController extends Controller
         $path = (storage_path('app/public/'.$path));
 
         if (!is_file($path)) abort(404);
-        if (!is_array($path)) abort(404);
-        if (!is_int($path[0]) or !is_int($path[1])) abort(404);
+        if (!is_array($size)) abort(404);
 
         $img = \Intervention\Image\Facades\Image::cache(function($image) use ($path, $size) {
             return $image->make($path)->resize($size[0], $size[1], function ($constraint) {
