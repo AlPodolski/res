@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="каноника">
-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="равка">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +191,7 @@
       <workItem from="1648015231827" duration="21813000" />
       <workItem from="1648102795966" duration="19242000" />
       <workItem from="1648191381441" duration="19782000" />
-      <workItem from="1648445824421" duration="2232000" />
+      <workItem from="1648445824421" duration="5559000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -396,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648215136195</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="равка">
+      <created>1648450119424</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1648450119424</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +432,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="добавлен цвет волос" />
     <MESSAGE value="добавлено метро" />
     <MESSAGE value="добавлен район" />
     <MESSAGE value="добавлена интим стрижка" />
@@ -450,7 +456,8 @@
     <MESSAGE value="подгонка размеров изображений" />
     <MESSAGE value="добавлены услуги, правки с мета тегами,  блок вверху" />
     <MESSAGE value="каноника" />
-    <option name="LAST_COMMIT_MESSAGE" value="каноника" />
+    <MESSAGE value="равка" />
+    <option name="LAST_COMMIT_MESSAGE" value="равка" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

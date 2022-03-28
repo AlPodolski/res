@@ -19,7 +19,7 @@ Auth::routes();
 Route::get('/{size}/thumbs/{path}', 'ImageController@index')
     ->where('size', '.*')->where('path', '.*');
 
-Route::domain('{city}.pr.loc')->group(function () {
+Route::domain('{city}.'.env('DOMAIN'))->group(function () {
     Route::get('/',  'SiteController@index');
     Route::get('/post/{url}',  'PostController@index')->name('post.index');
     Route::get('/robots.txt',  'RobotController@index');
