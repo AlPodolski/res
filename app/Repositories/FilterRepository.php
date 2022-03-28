@@ -10,6 +10,8 @@ use App\Models\Price;
 class FilterRepository
 {
 
+    private $columns = ['url', 'name', 'phone', 'price', 'id'];
+
     public function getFilterParams($search)
     {
         return Filter::where(['filter_url' => $search])->first();
@@ -18,7 +20,7 @@ class FilterRepository
     public function getForFilter($params, $limit, $cityInfo)
     {
 
-        $columns = ['url', 'name', 'phone', 'price', 'id'];
+        $columns = $this->columns;
 
         $posts = array();
 
@@ -120,5 +122,15 @@ class FilterRepository
 
         return $posts;
 
+    }
+
+    public function getMorePosts($city_id, $limit = 8)
+    {
+        return Post::with('avatar')
+            ->orderByRaw(\DB::raw('RAND()'))
+            ->select($this->columns)
+            ->limit($limit)
+            ->where(['city_id' => $city_id])
+            ->get();
     }
 }

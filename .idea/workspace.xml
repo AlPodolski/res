@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правка с доменом в роутах">
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="показать телефон">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/FilterRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/FilterRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +193,7 @@
       <workItem from="1648015231827" duration="21813000" />
       <workItem from="1648102795966" duration="19242000" />
       <workItem from="1648191381441" duration="19782000" />
-      <workItem from="1648445824421" duration="5913000" />
+      <workItem from="1648445824421" duration="7821000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -439,7 +441,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="добавлен район" />
     <MESSAGE value="добавлена интим стрижка" />
     <MESSAGE value="добавлены города" />
     <MESSAGE value="добавлено время встречи" />
@@ -464,7 +465,8 @@
     <MESSAGE value="каноника" />
     <MESSAGE value="равка" />
     <MESSAGE value="правка с доменом в роутах" />
-    <option name="LAST_COMMIT_MESSAGE" value="правка с доменом в роутах" />
+    <MESSAGE value="показать телефон" />
+    <option name="LAST_COMMIT_MESSAGE" value="показать телефон" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

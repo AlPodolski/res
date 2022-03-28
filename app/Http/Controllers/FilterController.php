@@ -38,9 +38,13 @@ class FilterController extends Controller
 
         $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
 
+        $morePosts = false;
+
+        if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id'], 10);
+
         return view('site.index',
             compact(
-                'posts', 'cityInfo', 'meta', 'filterParams', 'topList', 'path'
+                'posts', 'cityInfo', 'meta', 'filterParams', 'topList', 'path', 'morePosts'
             ));
     }
 }
