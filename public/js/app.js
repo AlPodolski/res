@@ -11767,3 +11767,6 @@ function showSearchForm(object){
     }
 
 }
+function show_phone(object){
+    $(object).text($(object).attr('data-tel'));
+}

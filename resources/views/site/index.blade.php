@@ -62,7 +62,7 @@
                 </a>
                 <a href="/post/{{$post->url}}" class="name">{{$post->name}}</a>
                 <div class="price">{{ $post->price }} ₽</div>
-                <a href="tel:+{{$post->phone}}" class="phone">Показать телефон</a>
+                <a data-tel="{{$post->phone}}" href="tel:+{{$post->phone}}" onclick="show_phone(this)" class="phone">Показать телефон</a>
             </div>
 
         @endforeach

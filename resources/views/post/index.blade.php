@@ -32,7 +32,7 @@
                 {{ $post->price }} ₽
             </div>
             <div class="phone-favorite-wrap d-flex">
-                <a href="tel:+{{ $post->phone }}" class="phone single-phone">Показать телефон</a>
+                <a href="tel:+{{ $post->phone }}" data-tel="{{ $post->phone }}" onclick="show_phone(this)" class="phone single-phone">Показать телефон</a>
             </div>
 
             @php
