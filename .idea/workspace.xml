@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавлены услуги, правки с мета тегами,  блок вверху">
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="каноника">
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +145,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tok" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -193,7 +190,8 @@
       <workItem from="1647933309855" duration="20790000" />
       <workItem from="1648015231827" duration="21813000" />
       <workItem from="1648102795966" duration="19242000" />
-      <workItem from="1648191381441" duration="18714000" />
+      <workItem from="1648191381441" duration="19782000" />
+      <workItem from="1648445824421" duration="2232000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -391,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648208806163</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="каноника">
+      <created>1648215136195</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1648215136195</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +425,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="добавлена национальность" />
     <MESSAGE value="добавлен цвет волос" />
     <MESSAGE value="добавлено метро" />
     <MESSAGE value="добавлен район" />
@@ -445,7 +449,8 @@
     <MESSAGE value="Крошки" />
     <MESSAGE value="подгонка размеров изображений" />
     <MESSAGE value="добавлены услуги, правки с мета тегами,  блок вверху" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлены услуги, правки с мета тегами,  блок вверху" />
+    <MESSAGE value="каноника" />
+    <option name="LAST_COMMIT_MESSAGE" value="каноника" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
