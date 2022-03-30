@@ -14,7 +14,7 @@ class PostPhotoSeeder extends Seeder
         $posts = \App\Models\Post::select('id')->get();
 
         $dataList = array('/uploads/aaa/girl.jpg', '/uploads/aaa/nigga.jpg');
-        $video = '/uploads/aaa/video.mp4';
+        $video = '/storage/uploads/aaa/video.mp4';
 
         $data = array();
 

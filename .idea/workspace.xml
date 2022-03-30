@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Files.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Filter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TopList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TopList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_03_16_120741_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_03_16_120741_create_posts_table.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод видео">
       <change beforePath="$PROJECT_DIR$/database/seeds/PostPhotoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostPhotoSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PostSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +193,7 @@
       <workItem from="1648102795966" duration="19242000" />
       <workItem from="1648191381441" duration="19782000" />
       <workItem from="1648445824421" duration="12874000" />
-      <workItem from="1648623735652" duration="8510000" />
+      <workItem from="1648623735652" duration="8967000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -463,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648630074345</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="вывод видео">
+      <created>1648632375709</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1648632375709</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +490,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="добавлено время встречи" />
     <MESSAGE value="добавлено место встречи" />
     <MESSAGE value="вывод фото" />
     <MESSAGE value="фильтрация по метро" />
@@ -517,7 +514,8 @@
     <MESSAGE value="дополнительные посты" />
     <MESSAGE value="подгрузка карточек при клике на кнопку" />
     <MESSAGE value="правки" />
-    <option name="LAST_COMMIT_MESSAGE" value="правки" />
+    <MESSAGE value="вывод видео" />
+    <option name="LAST_COMMIT_MESSAGE" value="вывод видео" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
