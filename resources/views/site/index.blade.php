@@ -87,7 +87,7 @@
 
     @if($posts->total() > $posts->count())
 
-        <div data-url="{{$posts->nextPageUrl()}}" onclick="getMorePosts(this)" class="get-more">Показать еще <img src="/img/more.svg" alt=""></div>
+        <div data-url="{{ str_replace('http', 'https', $posts->nextPageUrl()) }}" onclick="getMorePosts(this)" class="get-more">Показать еще <img src="/img/more.svg" alt=""></div>
 
         {{ $posts->links() }}
 
