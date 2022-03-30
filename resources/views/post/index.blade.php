@@ -32,12 +32,13 @@
                 {{ $post->price }} ₽
             </div>
             <div class="phone-favorite-wrap d-flex">
-                <a href="tel:+{{ $post->phone }}" data-tel="{{ $post->phone }}" onclick="show_phone(this)" class="phone single-phone">Показать телефон</a>
+                <a href="tel:+{{ $post->phone }}" data-tel="{{ $post->phone }}" onclick="show_phone(this)"
+                   class="phone single-phone">Показать телефон</a>
             </div>
 
             @php
 
-            @endphp
+                @endphp
 
             <div class="post-property-list">
                 @if($post->metro)
@@ -137,6 +138,18 @@
                         <img src="{{ $item->file }}" alt="">
                     </div>
                 @endforeach
+            </div>
+        @endif
+        @if($post->video)
+            <div class="post-decr">
+                <div class="decr-title">
+                    Видео
+                </div>
+                <div class="decr-text">
+                    <video controls="controls" class="video">
+                        <source src="/storage{{ $post->video->file }}">
+                    </video>
+                </div>
             </div>
         @endif
 

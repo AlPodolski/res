@@ -40,6 +40,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\Price|null $price
  * @property string|null $short_name
  * @method static \Illuminate\Database\Eloquent\Builder|Filter whereShortName($value)
+ * @property-read \App\Models\Service|null $service
  */
 class Filter extends Model
 {

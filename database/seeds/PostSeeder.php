@@ -34,6 +34,7 @@ class PostSeeder extends Seeder
                 'tarif_id' => rand(1,3),
                 'about' => $faker->realText(500),
                 'breast_size' => rand(1,4),
+                'old_url' => '123',
             ];
 
             $i++;

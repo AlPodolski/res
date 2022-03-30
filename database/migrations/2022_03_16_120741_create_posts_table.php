@@ -28,6 +28,7 @@ class CreatePostsTable extends Migration
             $table->smallInteger('ves')->unsigned()->nullable();
             $table->smallInteger('age')->unsigned()->nullable();
             $table->smallInteger('breast_size')->unsigned()->nullable();
+            $table->string('old_url')->nullable();
             $table->timestamps();
         });
     }

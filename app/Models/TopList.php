@@ -17,6 +17,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|TopList wherePostId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TopList whereValidTo($value)
  * @mixin \Eloquent
+ * @property int $city_id
+ * @method static \Illuminate\Database\Eloquent\Builder|TopList whereCityId($value)
  */
 class TopList extends Model
 {

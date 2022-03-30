@@ -56,6 +56,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\Files|null $avatar
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Files[] $gallery
  * @property-read int|null $gallery_count
+ * @property string|null $old_url
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereOldUrl($value)
+ * @property-read \App\Models\Files|null $video
  */
 class Post extends Model
 {
@@ -69,6 +72,12 @@ class Post extends Model
     {
         return $this->hasOne(Files::class, 'related_id', 'id')
             ->where(['related_class' => self::class, 'type' => Files::MAIN_PHOTO_TYPE]);
+    }
+
+    public function video(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Files::class, 'related_id', 'id')
+            ->where(['related_class' => self::class, 'type' => Files::VIDEO_TYPE]);
     }
 
     public function national(): \Illuminate\Database\Eloquent\Relations\HasOne

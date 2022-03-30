@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Files.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Filter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/TopList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TopList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_03_16_120741_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_03_16_120741_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PostPhotoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostPhotoSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PostSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,13 +154,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage/uploads/aaa" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\pr.loc\public\storage\uploads\aaa" />
       <recent name="C:\OpenServer\domains\pr.loc\public\uploads\aaa" />
       <recent name="C:\OpenServer\domains\pr.loc\public\img" />
     </key>
@@ -192,7 +202,7 @@
       <workItem from="1648102795966" duration="19242000" />
       <workItem from="1648191381441" duration="19782000" />
       <workItem from="1648445824421" duration="12874000" />
-      <workItem from="1648623735652" duration="6184000" />
+      <workItem from="1648623735652" duration="8510000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -439,7 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648629501581</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="правки">
+      <created>1648629978564</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1648629978564</updated>
+    </task>
+    <task id="LOCAL-00037" summary="правки">
+      <created>1648630074345</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1648630074345</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
