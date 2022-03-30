@@ -11770,3 +11770,33 @@ function showSearchForm(object){
 function show_phone(object){
     $(object).text($(object).attr('data-tel'));
 }
+
+function getMorePosts(object){
+
+    var url = $(object).attr('data-url');
+
+    $.ajax({
+        type: 'POST',
+        url: url, //Путь к обработчику
+        response: 'text',
+        dataType: "html",
+        cache: false,
+        success: function (data) {
+
+            data = JSON.parse(data)
+
+            if (data){
+
+                window.history.pushState('', document.title, url);
+
+                if (data.posts) $('.posts').append(data.posts);
+
+                if (data.next_page) $(object).attr('data-url',data.next_page);
+                else $(object).remove();
+
+            }
+
+        }
+    })
+
+}

@@ -26,7 +26,7 @@ class SiteController extends Controller
 
     public function index($city, Request $request)
     {
-        $path = $request->path();
+        $path = $request->getRequestUri();
 
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
@@ -38,4 +38,18 @@ class SiteController extends Controller
 
         return view('site.index', compact('posts', 'cityInfo', 'meta', 'topList', 'path'));
     }
+
+    public function more($city)
+    {
+        $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
+
+        $posts = $this->postsRepository->getPostsForMainPage(15, $cityInfo['id']);
+
+        $data['posts'] = view('site.more', compact('posts'))->render();
+        $data['next_page'] = $posts->nextPageUrl();
+
+        return json_encode($data);
+
+    }
+
 }
