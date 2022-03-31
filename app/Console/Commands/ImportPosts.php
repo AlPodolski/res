@@ -84,11 +84,11 @@ class ImportPosts extends Command
                 $post = new Post();
 
                 $post->name = $record['name'];
-                $post->age = $record['age'];
+                $post->age = is_int($record['age']) ? $record['age'] : null;
                 $post->phone = $record['phone'];
-                $post->rost = $record['rost'];
-                $post->ves = $record['weght'];
-                $post->breast_size = $record['grud'];
+                $post->rost = is_int($record['rost']) ? $record['rost'] : null;
+                $post->ves = is_int($record['weght']) ? $record['weght'] : null;
+                $post->breast_size = is_int($record['grud']) ? $record['grud'] : null;
                 $post->about = strip_tags($record['deskr']);
                 $post->city_id = $cityId;
                 $post->tarif_id = 1;
