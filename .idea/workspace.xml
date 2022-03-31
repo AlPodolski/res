@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="тест заливки">
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ImportPosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ImportPosts.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +201,7 @@
       <workItem from="1648191381441" duration="19782000" />
       <workItem from="1648445824421" duration="12874000" />
       <workItem from="1648623735652" duration="19327000" />
-      <workItem from="1648708028567" duration="14615000" />
+      <workItem from="1648708028567" duration="15696000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -484,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648721227361</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="правки">
+      <created>1648729544134</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1648729544134</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,11 +540,11 @@
     <MESSAGE value="показать телефон" />
     <MESSAGE value="дополнительные посты" />
     <MESSAGE value="подгрузка карточек при клике на кнопку" />
-    <MESSAGE value="правки" />
     <MESSAGE value="вывод видео" />
     <MESSAGE value="вывод видео правка" />
     <MESSAGE value="тест заливки" />
-    <option name="LAST_COMMIT_MESSAGE" value="тест заливки" />
+    <MESSAGE value="правки" />
+    <option name="LAST_COMMIT_MESSAGE" value="правки" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

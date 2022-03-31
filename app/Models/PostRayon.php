@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\Model;
 class PostRayon extends Model
 {
 
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
