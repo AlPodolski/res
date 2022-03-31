@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод видео">
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод видео правка">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/ImportPosts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Observers/PostsObserver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/rex_import_30_03_2022.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pr.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pr.loc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Files.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Filter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/HairColor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HairColor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/IntimHair.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/IntimHair.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostHairColor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostHairColor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostIntimHair.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostIntimHair.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostMetro.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostMetro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostNational.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostNational.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostPlace.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostPlace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostRayon.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostRayon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostTime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/FilterUrlService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/FilterUrlService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_03_16_120741_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_03_16_120741_create_posts_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/PostPhotoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostPhotoSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +75,6 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
@@ -129,6 +152,13 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/league/csv" />
     </include_path>
   </component>
   <component name="ProjectId" id="26PWEzxV0KhIllkTHc2RiqW10eC" />
@@ -145,18 +175,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage/uploads/aaa" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\pr.loc\app\Console\Commands" />
       <recent name="C:\OpenServer\domains\pr.loc\public\storage\uploads\aaa" />
       <recent name="C:\OpenServer\domains\pr.loc\public\uploads\aaa" />
       <recent name="C:\OpenServer\domains\pr.loc\public\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\pr.loc\storage" />
       <recent name="C:\OpenServer\domains\pr.loc\public\storage" />
       <recent name="C:\OpenServer\domains\pr.loc\app" />
       <recent name="C:\OpenServer\domains\pr.loc\public\fonts" />
@@ -193,7 +225,8 @@
       <workItem from="1648102795966" duration="19242000" />
       <workItem from="1648191381441" duration="19782000" />
       <workItem from="1648445824421" duration="12874000" />
-      <workItem from="1648623735652" duration="8967000" />
+      <workItem from="1648623735652" duration="19327000" />
+      <workItem from="1648708028567" duration="9633000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -461,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648632375709</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="вывод видео правка">
+      <created>1648632887997</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1648632887997</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +530,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="добавлено место встречи" />
     <MESSAGE value="вывод фото" />
     <MESSAGE value="фильтрация по метро" />
     <MESSAGE value="виджет меню с выводом метро" />
@@ -515,7 +554,8 @@
     <MESSAGE value="подгрузка карточек при клике на кнопку" />
     <MESSAGE value="правки" />
     <MESSAGE value="вывод видео" />
-    <option name="LAST_COMMIT_MESSAGE" value="вывод видео" />
+    <MESSAGE value="вывод видео правка" />
+    <option name="LAST_COMMIT_MESSAGE" value="вывод видео правка" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

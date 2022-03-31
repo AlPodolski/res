@@ -23,6 +23,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PostRayon extends Model
 {
+
+    public $timestamps = true;
+
     public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Rayon::class, 'id', 'rayons_id');

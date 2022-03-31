@@ -83,36 +83,45 @@
                         </div>
                     </div>
                 @endif
-
-                <div class="property-item">
-                    <div class="property-name">Возраст</div>
-                    <div class="property-value">{{ $post->age }}</div>
-                </div>
-                <div class="property-item">
-                    <div class="property-name">Вес</div>
-                    <div class="property-value">{{ $post->ves }}</div>
-                </div>
-                <div class="property-item">
-                    <div class="property-name">Размер груди</div>
-                    <div class="property-value">{{ $post->breast_size }}</div>
-                </div>
-
-                <div class="property-item">
-                    <div class="property-name">Национальность</div>
-                    <div class="property-value">{{ $post->national->national->value }} </div>
-                </div>
-
-                <div class="property-item">
-                    <div class="property-name">Цвет волос</div>
-                    <div class="property-value">{{ $post->hair->hair->value }}</div>
-                </div>
-
-                <div class="property-item">
-                    <div class="property-name">Интимная стрижка</div>
-                    <div class="property-value">{{ $post->intimHair->value->value }}</div>
-                </div>
+                @if($post->age)
+                    <div class="property-item">
+                        <div class="property-name">Возраст</div>
+                        <div class="property-value">{{ $post->age }}</div>
+                    </div>
+                @endif
+                @if($post->ves)
+                    <div class="property-item">
+                        <div class="property-name">Вес</div>
+                        <div class="property-value">{{ $post->ves }}</div>
+                    </div>
+                @endif
+                @if($post->breast_size)
+                    <div class="property-item">
+                        <div class="property-name">Размер груди</div>
+                        <div class="property-value">{{ $post->breast_size }}</div>
+                    </div>
+                @endif
+                @if($post->national)
+                    <div class="property-item">
+                        <div class="property-name">Национальность</div>
+                        <div class="property-value">{{ $post->national->national->value }} </div>
+                    </div>
+                @endif
+                @if($post->hair)
+                    <div class="property-item">
+                        <div class="property-name">Цвет волос</div>
+                        <div class="property-value">{{ $post->hair->hair->value }}</div>
+                    </div>
+                @endif
+                @if($post->intimHair)
+                    <div class="property-item">
+                        <div class="property-name">Интимная стрижка</div>
+                        <div class="property-value">{{ $post->intimHair->value->value }}</div>
+                    </div>
+                @endif
             </div>
         </div>
+        @if($post->about)
         <div class="post-decr">
             <div class="decr-title">
                 Описание
@@ -121,6 +130,7 @@
                 {{ $post->about }}
             </div>
         </div>
+        @endif
 
         @if($post->gallery)
             <div class="decr-title">

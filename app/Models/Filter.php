@@ -45,6 +45,8 @@ use Illuminate\Database\Eloquent\Model;
 class Filter extends Model
 {
 
+    public $timestamps = false;
+
     public function age(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Age::class, 'id', 'related_id');

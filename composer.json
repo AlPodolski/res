@@ -23,6 +23,7 @@
         "phpunit/phpunit": "*",
         "barryvdh/laravel-debugbar": "*",
         "intervention/imagecache": "*",
+        "league/csv": "*",
         "klisl/laravel-widgets": "*"
     },
     "config": {

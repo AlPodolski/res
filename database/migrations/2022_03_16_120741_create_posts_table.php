@@ -15,10 +15,10 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->smallInteger('user_id')->unsigned();
+            $table->smallInteger('user_id')->unsigned()->nullable();
             $table->smallInteger('city_id')->unsigned();
             $table->string('name');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('phone');
             $table->text('about')->nullable();
             $table->mediumInteger('price')->unsigned();

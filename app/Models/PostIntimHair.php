@@ -23,6 +23,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PostIntimHair extends Model
 {
+
+    public $timestamps = false;
+
     public function value(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(IntimHair::class, 'id', 'intim_hair_id');

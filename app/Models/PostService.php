@@ -22,5 +22,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PostService extends Model
 {
-    //
+    public $timestamps = false;
 }

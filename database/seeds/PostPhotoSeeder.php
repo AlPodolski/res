@@ -30,6 +30,13 @@ class PostPhotoSeeder extends Seeder
             $data[] = [
                 'related_id' => $post->id,
                 'related_class' => \App\Models\Post::class,
+                'file' => $dataList[array_rand($dataList)],
+                'type' => \App\Models\Files::SELPHI_TYPE
+            ];
+
+            $data[] = [
+                'related_id' => $post->id,
+                'related_class' => \App\Models\Post::class,
                 'file' => $video,
                 'type' => \App\Models\Files::VIDEO_TYPE
             ];

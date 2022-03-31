@@ -23,6 +23,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PostPlace extends Model
 {
+
+    public $timestamps = false;
+
     public function place()
     {
         return $this->hasOne(Place::class, 'id', 'place_id');

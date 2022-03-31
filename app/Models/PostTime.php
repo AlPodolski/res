@@ -23,6 +23,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PostTime extends Model
 {
+
+    public $timestamps = false;
+
     public function time(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Time::class, 'id', 'param_id');

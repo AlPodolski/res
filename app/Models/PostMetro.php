@@ -23,6 +23,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PostMetro extends Model
 {
+
+    public $timestamps = false;
+
     public function metro(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Metro::class, 'id', 'metros_id');
