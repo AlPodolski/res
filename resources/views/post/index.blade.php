@@ -122,34 +122,39 @@
             </div>
         </div>
         @if($post->about)
-        <div class="post-decr">
-            <div class="decr-title">
-                Описание
+            <div class="post-decr">
+                <div class="decr-title">
+                    Описание
+                </div>
+                <div class="decr-text">
+                    {{ $post->about }}
+                </div>
             </div>
-            <div class="decr-text">
-                {{ $post->about }}
-            </div>
-        </div>
         @endif
 
         @if($post->gallery)
-            <div class="decr-title">
-                Фото
-            </div>
-            <div class="popular-list post-photo">
-                @foreach($post->gallery as $item)
-                    <div class="post-photo-item">
 
-                        <picture>
-                            <source srcset="/181-257/thumbs{{$item->file}}">
-                            <img srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
-                        </picture>
+            <div class="photo-wrap">
+                <div class="decr-title">
+                    Фото
+                </div>
+                <div class="popular-list post-photo">
+                    @foreach($post->gallery as $item)
+                        <div class="post-photo-item">
 
-                        <img src="{{ $item->file }}" alt="">
-                    </div>
-                @endforeach
+                            <picture>
+                                <source srcset="/181-257/thumbs{{$item->file}}">
+                                <img srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
+                            </picture>
+
+                            <img src="{{ $item->file }}" alt="">
+                        </div>
+                    @endforeach
+                </div>
             </div>
+
         @endif
+        <div class="col-12"></div>
         @if($post->video)
             <div class="post-decr">
                 <div class="decr-title">

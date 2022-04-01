@@ -8915,6 +8915,13 @@ body{
 .post-item a img{
     width: 100%;
 }
+.photo-wrap{
+    overflow-x: auto;
+    flex: 0 0 100%;
+}
+.photo-wrap .post-photo{
+    margin-bottom: 0px;
+}
 @media (max-width: 1199px){
     .post-photo-item {
         flex: 0 0 20%;
