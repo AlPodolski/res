@@ -4,7 +4,8 @@
     /* @var $post \App\Models\Post */
 @endphp
 
-@section('title', $post->name)
+@section('title', $metaData['title'])
+@section('des', $metaData['des'])
 
 @section('content')
 

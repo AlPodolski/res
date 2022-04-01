@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки">
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод селфи">
+      <change afterPath="$PROJECT_DIR$/app/Services/SingleMetaService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CityRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +206,7 @@
       <workItem from="1648445824421" duration="12874000" />
       <workItem from="1648623735652" duration="19327000" />
       <workItem from="1648708028567" duration="24392000" />
-      <workItem from="1648791018024" duration="4702000" />
+      <workItem from="1648791018024" duration="7358000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -529,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648796539415</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="вывод селфи">
+      <created>1648798651692</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1648798651692</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,7 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="фильтрация по метро" />
     <MESSAGE value="виджет меню с выводом метро" />
     <MESSAGE value="фильтрация по районам" />
     <MESSAGE value="добавлены фильтрации и вывод в меню" />
@@ -583,7 +590,8 @@
     <MESSAGE value="вывод видео правка" />
     <MESSAGE value="тест заливки" />
     <MESSAGE value="правки" />
-    <option name="LAST_COMMIT_MESSAGE" value="правки" />
+    <MESSAGE value="вывод селфи" />
+    <option name="LAST_COMMIT_MESSAGE" value="вывод селфи" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
