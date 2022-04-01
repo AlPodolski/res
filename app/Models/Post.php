@@ -59,15 +59,23 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $old_url
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereOldUrl($value)
  * @property-read \App\Models\Files|null $video
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Files[] $selphi
+ * @property-read int|null $selphi_count
  */
 class Post extends Model
 {
 
+    public function selphi()
+    {
+        return $this->hasMany(Files::class, 'related_id', 'id')
+            ->where(['related_class' => self::class, 'type' => Files::SELPHI_TYPE]);
+    }
     public function gallery()
     {
         return $this->hasMany(Files::class, 'related_id', 'id')
             ->where(['related_class' => self::class, 'type' => Files::GALLERY_PHOTO_TYPE]);
     }
+
     public function avatar(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Files::class, 'related_id', 'id')

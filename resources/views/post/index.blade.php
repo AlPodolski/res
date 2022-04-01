@@ -132,7 +132,7 @@
             </div>
         @endif
 
-        @if($post->gallery)
+        @if($post->gallery and $post->gallery->count())
 
             <div class="photo-wrap">
                 <div class="decr-title">
@@ -140,6 +140,29 @@
                 </div>
                 <div class="popular-list post-photo">
                     @foreach($post->gallery as $item)
+                        <div class="post-photo-item">
+
+                            <picture>
+                                <source srcset="/181-257/thumbs{{$item->file}}">
+                                <img srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
+                            </picture>
+
+                            <img src="{{ $item->file }}" alt="">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+        @endif
+
+        @if($post->selphi and $post->selphi->count())
+
+            <div class="photo-wrap">
+                <div class="decr-title">
+                    Селфи
+                </div>
+                <div class="popular-list post-photo">
+                    @foreach($post->selphi as $item)
                         <div class="post-photo-item">
 
                             <picture>
