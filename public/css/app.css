@@ -8922,6 +8922,9 @@ body{
 .photo-wrap .post-photo{
     margin-bottom: 0px;
 }
+.property-item .d-flex{
+    flex-wrap: wrap;
+}
 @media (max-width: 1199px){
     .post-photo-item {
         flex: 0 0 20%;
