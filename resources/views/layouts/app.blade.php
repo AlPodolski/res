@@ -15,6 +15,10 @@
         <meta name="canonical" href="@yield('can')">
     @endif
 
+    @if(View::hasSection('yandex'))
+        <meta name="yandex-verification" href="@yield('yandex')">
+    @endif
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод селфи">
-      <change afterPath="$PROJECT_DIR$/app/Services/SingleMetaService.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="тайтл и описание для детальной страницы">
+      <change afterPath="$PROJECT_DIR$/app/Models/YandexTag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/YandexRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_04_01_083957_create_yandex_tags_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CityRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +207,7 @@
       <workItem from="1648445824421" duration="12874000" />
       <workItem from="1648623735652" duration="19327000" />
       <workItem from="1648708028567" duration="24392000" />
-      <workItem from="1648791018024" duration="7358000" />
+      <workItem from="1648791018024" duration="8575000" />
     </task>
     <task id="LOCAL-00001" summary="верстка главное страницы">
       <created>1647413045703</created>
@@ -537,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648798651692</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="тайтл и описание для детальной страницы">
+      <created>1648801810314</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1648801810314</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="виджет меню с выводом метро" />
     <MESSAGE value="фильтрация по районам" />
     <MESSAGE value="добавлены фильтрации и вывод в меню" />
     <MESSAGE value="добавлены фильтрации по возрасту" />
@@ -591,7 +598,8 @@
     <MESSAGE value="тест заливки" />
     <MESSAGE value="правки" />
     <MESSAGE value="вывод селфи" />
-    <option name="LAST_COMMIT_MESSAGE" value="вывод селфи" />
+    <MESSAGE value="тайтл и описание для детальной страницы" />
+    <option name="LAST_COMMIT_MESSAGE" value="тайтл и описание для детальной страницы" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

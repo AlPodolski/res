@@ -7,6 +7,10 @@
     @section('can', $path)
 @endif
 
+@if(isset($yandexTag->tag))
+    @section('yandex', $yandexTag->tag)
+@endif
+
 @section('content')
 
     @if($topList)

@@ -6,6 +6,7 @@ use App\Repositories\CityRepository;
 use App\Repositories\MetaRepository;
 use App\Repositories\PostsRepository;
 use App\Repositories\TopPostListRepository;
+use App\Repositories\YandexRepository;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -24,7 +25,7 @@ class SiteController extends Controller
         $this->topPostListRepository = new TopPostListRepository();
     }
 
-    public function index($city, Request $request)
+    public function index($city, Request $request, YandexRepository $yandexRepository)
     {
         $path = $request->getRequestUri();
 
@@ -36,7 +37,9 @@ class SiteController extends Controller
 
         $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
 
-        return view('site.index', compact('posts', 'cityInfo', 'meta', 'topList', 'path'));
+        $yandexTag = $yandexRepository->getTag($cityInfo['id']);
+
+        return view('site.index', compact('posts', 'cityInfo', 'meta', 'topList', 'path', 'yandexTag'));
     }
 
     public function more($city)
