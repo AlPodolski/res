@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод тега яндекс верификации">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="логотип и фавиконы">
+      <change afterPath="$PROJECT_DIR$/public/favicons/android-icon-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/android-icon-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/android-icon-36x36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/android-icon-48x48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/android-icon-72x72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/android-icon-96x96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-114x114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-120x120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-152x152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-180x180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-57x57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-60x60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-72x72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-76x76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/apple-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/browserconfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/favicon-96x96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/ms-icon-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/ms-icon-150x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/ms-icon-310x310.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicons/ms-icon-70x70.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,14 +229,7 @@
       <workItem from="1648623735652" duration="19327000" />
       <workItem from="1648708028567" duration="24392000" />
       <workItem from="1648791018024" duration="12314000" />
-      <workItem from="1649050021421" duration="2760000" />
-    </task>
-    <task id="LOCAL-00001" summary="верстка главное страницы">
-      <created>1647413045703</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1647413045703</updated>
+      <workItem from="1649050021421" duration="3070000" />
     </task>
     <task id="LOCAL-00002" summary="детальная страница и заполнение тестовыми данными">
       <created>1647439020773</created>
@@ -549,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648802964895</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="логотип и фавиконы">
+      <created>1649055940436</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1649055940437</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +603,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="добавлены фильтрации и вывод в меню" />
     <MESSAGE value="добавлены фильтрации по возрасту" />
     <MESSAGE value="добавлены фильтрации по цене" />
     <MESSAGE value="мета теги для главной" />
@@ -603,7 +627,8 @@
     <MESSAGE value="вывод селфи" />
     <MESSAGE value="тайтл и описание для детальной страницы" />
     <MESSAGE value="вывод тега яндекс верификации" />
-    <option name="LAST_COMMIT_MESSAGE" value="вывод тега яндекс верификации" />
+    <MESSAGE value="логотип и фавиконы" />
+    <option name="LAST_COMMIT_MESSAGE" value="логотип и фавиконы" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
