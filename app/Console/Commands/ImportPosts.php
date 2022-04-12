@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\City;
 use App\Models\Files;
 use App\Models\HairColor;
 use App\Models\IntimHair;
@@ -58,8 +59,7 @@ class ImportPosts extends Command
     public function handle()
     {
 
-
-        $stream = \fopen(storage_path('rex_import_30_03_2022.csv'), 'r');
+        $stream = \fopen(storage_path('rex_import_04_04_2022.csv'), 'r');
 
         $csv = Reader::createFromStream($stream);
         $csv->setDelimiter(';');
@@ -71,21 +71,39 @@ class ImportPosts extends Command
 
         $price = array(1000, 1500, 2000, 3000, 5000, 6000, 7000, 10000);
 
-        $cityId = 1;
 
         $serviceList = Service::all();
         $placeList = Place::all();
         $timeList = Time::all();
 
+        $cityList = City::where('id', '<>', 1)->select('id')->get()->toArray();
+
+        $posts = array();
+
         foreach ($records as $record) {
 
             if ($record['name']) {
+
+                $posts[] = $record;
+
+            }
+        }
+
+        foreach ($cityList as $cityItem) {
+
+            $cityId = $cityItem['id'];
+
+            $i = 0;
+
+            shuffle($posts);
+
+            foreach ($posts as $record){
 
                 $post = new Post();
 
                 $post->name = $record['name'];
                 $post->age = $record['age'];
-                $post->phone = $record['phone'];
+                //$post->phone = $record['phone'];
                 $post->rost = $record['rost'];
                 $post->ves = $record['weght'];
                 $post->breast_size = $record['grud'];
@@ -291,9 +309,11 @@ class ImportPosts extends Command
 
                     }
 
-                    dd($dataList);
-
                 }
+
+                if ($i > 1) break;
+
+                $i++;
 
             }
 
