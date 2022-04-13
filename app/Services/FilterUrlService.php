@@ -32,13 +32,13 @@ class FilterUrlService
         return  $value;
     }
 
-    public function makeUrlForPostsTable($value)
+    public function makeUrlForPostsTable($value, $city_id)
     {
         $i = 0;
 
         $value = \Str::slug($value);
 
-        if ($this->findValueInPosts($value)){
+        if ($this->findValueInPosts($value, $city_id)){
 
             $i++;
 
@@ -48,7 +48,7 @@ class FilterUrlService
 
             $name = $value . '-' .$i;
 
-            if ($this->findValueInPosts($name)) goto a;
+            if ($this->findValueInPosts($name, $city_id)) goto a;
 
             return $name;
 
@@ -67,10 +67,10 @@ class FilterUrlService
 
     }
 
-    public function findValueInPosts($name): bool
+    public function findValueInPosts($name, $city_id): bool
     {
 
-        if (Post::where(['url' => $name])->first()) return true;
+        if (Post::where(['url' => $name, 'city_id' => $city_id])->first()) return true;
 
         return false;
 
