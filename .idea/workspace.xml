@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="логотип и фавиконы">
-      <change afterPath="$PROJECT_DIR$/storage/phones_16_02_2022.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/rex_import_04_04_2022.csv" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="тест заливки на города">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/ImportPhone.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ImportPosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ImportPosts.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +151,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -209,14 +207,8 @@
       <workItem from="1648791018024" duration="12314000" />
       <workItem from="1649050021421" duration="6366000" />
       <workItem from="1649757938498" duration="7000" />
-      <workItem from="1649758976018" duration="5229000" />
-    </task>
-    <task id="LOCAL-00003" summary="вывод инфы на деталке">
-      <created>1647522534457</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1647522534457</updated>
+      <workItem from="1649758976018" duration="5891000" />
+      <workItem from="1649829142878" duration="2478000" />
     </task>
     <task id="LOCAL-00004" summary="добавлена национальность">
       <created>1647526610131</created>
@@ -554,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649056244226</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="тест заливки на города">
+      <created>1649770044666</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1649770044666</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="добавлены фильтрации по возрасту" />
     <MESSAGE value="добавлены фильтрации по цене" />
     <MESSAGE value="мета теги для главной" />
     <MESSAGE value="мета теги для шаблона" />
@@ -608,7 +606,8 @@
     <MESSAGE value="тайтл и описание для детальной страницы" />
     <MESSAGE value="вывод тега яндекс верификации" />
     <MESSAGE value="логотип и фавиконы" />
-    <option name="LAST_COMMIT_MESSAGE" value="логотип и фавиконы" />
+    <MESSAGE value="тест заливки на города" />
+    <option name="LAST_COMMIT_MESSAGE" value="тест заливки на города" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
