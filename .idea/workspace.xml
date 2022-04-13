@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="проверка @if(isset($post-&gt;avatar-&gt;file)" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки с урл сервисом">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CityRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/FilterRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/FilterRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/TopPostListRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/TopPostListRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,21 +212,7 @@
       <workItem from="1649050021421" duration="6366000" />
       <workItem from="1649757938498" duration="7000" />
       <workItem from="1649758976018" duration="5891000" />
-      <workItem from="1649829142878" duration="10128000" />
-    </task>
-    <task id="LOCAL-00008" summary="добавлена интим стрижка">
-      <created>1647606696515</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1647606696515</updated>
-    </task>
-    <task id="LOCAL-00009" summary="добавлены города">
-      <created>1647848185616</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1647848185616</updated>
+      <workItem from="1649829142878" duration="21442000" />
     </task>
     <task id="LOCAL-00010" summary="добавлено время встречи">
       <created>1647851274271</created>
@@ -550,7 +543,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649844734958</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="правки с урл сервисом">
+      <created>1649845764423</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1649845764423</updated>
+    </task>
+    <task id="LOCAL-00058" summary="правки с урл сервисом">
+      <created>1649845795413</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1649845795413</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="фильтрация" />
     <MESSAGE value="роботс" />
     <MESSAGE value="адаптив" />
     <MESSAGE value="правки с формой" />
@@ -604,7 +610,8 @@
     <MESSAGE value="импорт телефонов" />
     <MESSAGE value="добавление вебмастера" />
     <MESSAGE value="проверка @if(isset($post-&gt;avatar-&gt;file)" />
-    <option name="LAST_COMMIT_MESSAGE" value="проверка @if(isset($post-&gt;avatar-&gt;file)" />
+    <MESSAGE value="правки с урл сервисом" />
+    <option name="LAST_COMMIT_MESSAGE" value="правки с урл сервисом" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -6,6 +6,8 @@ use App\Models\Age;
 use App\Models\Filter;
 use App\Models\Post;
 use App\Models\Price;
+use Carbon\Carbon;
+use Cache;
 
 class FilterRepository
 {
@@ -14,7 +16,17 @@ class FilterRepository
 
     public function getFilterParams($search)
     {
-        return Filter::where(['filter_url' => $search])->first();
+
+
+        $expire = Carbon::now()->addMinutes(1000);
+
+        $data = Cache::remember('filter_url_cache_'.$search, $expire, function() use ($search) {
+
+            return  Filter::where(['filter_url' => $search])->first();
+
+        });
+
+        return $data;
     }
 
     public function getForFilter($params, $limit, $cityInfo)
@@ -126,11 +138,21 @@ class FilterRepository
 
     public function getMorePosts($city_id, $limit = 8)
     {
-        return Post::with('avatar')
-            ->orderByRaw(\DB::raw('RAND()'))
-            ->select($this->columns)
-            ->limit($limit)
-            ->where(['city_id' => $city_id])
-            ->get();
+
+        $expire = Carbon::now()->addMinutes(60);
+
+        $data = Cache::remember('more_posts_'.$city_id, $expire, function() use ($city_id, $limit) {
+
+            return  Post::with('avatar')
+                ->orderByRaw(\DB::raw('RAND()'))
+                ->select($this->columns)
+                ->limit($limit)
+                ->where(['city_id' => $city_id])
+                ->get();;
+
+        });
+
+        return $data;
+
     }
 }

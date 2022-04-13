@@ -3,6 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\Meta;
+use Cache;
+use Carbon\Carbon;
 
 class MetaRepository
 {
@@ -16,9 +18,20 @@ class MetaRepository
 
     public function getForMain($url, $cityId)
     {
-        $meta = Meta::where(['url' => $url])->select('title', 'des', 'h1')->get()->first()->toArray();
 
-        return $this->replaceCity($meta, $cityId);
+        if ($value = \Cache::get('meta_'.$url.'_'.$cityId)) return $value;
+
+        else{
+
+            $meta = Meta::where(['url' => $url])->select('title', 'des', 'h1')->get()->first()->toArray();
+
+            $value = $this->replaceCity($meta, $cityId);
+
+            \Cache::set('meta_'.$url.'_'.$cityId, $value);
+
+        }
+
+        return $value;
 
     }
 
@@ -67,7 +80,15 @@ class MetaRepository
 
                     if (strstr($findValue, $filterParams->short_name)) {
 
-                        $replaceData = $filterParams->parent_class::where(['id' => $filterParams->related_id])->get()->first()->toArray();
+                        $expire = Carbon::now()->addMinutes(1000);
+
+                        $replaceData = Cache::remember($filterParams->parent_class.'_'.$filterParams->related_id, $expire, function() use ($filterParams) {
+
+                            return $filterParams->parent_class::where(['id' => $filterParams->related_id])
+                                ->get()->first()->toArray();
+
+                        });
+
 
                         $replace = 'value' . str_replace($filterParams->short_name, '', $findValue);
 
