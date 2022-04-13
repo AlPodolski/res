@@ -4,7 +4,7 @@
 
 <div class="post-item ">
     <a href="/post/{{$post->url}}" class="d-block">
-        @if($post->avatar)
+        @if(isset($post->avatar->file))
         <picture>
             <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)">
             <source srcset="/211-300/thumbs{{$post->avatar->file}}">
