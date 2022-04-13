@@ -19,7 +19,7 @@ class PostsObserver
         $filterUrlService = new FilterUrlService();
 
         $post->phone = preg_replace('/[^0-9]/', '',  $post->phone);
-        $post->url = $filterUrlService->makeUrlForPostsTable($post->name);
+        $post->url = $filterUrlService->makeUrlForPostsTable($post->name,  $post->city_id);
 
     }
 
