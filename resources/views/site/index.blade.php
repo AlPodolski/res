@@ -19,16 +19,22 @@
 
             @foreach($topList as $topListItem)
 
-                <div class="popular-item post-photo-item">
-                    <a href="/post/{{ $topListItem->url }}">
-                        <picture>
-                            <source srcset="/370-526/thumbs{{$topListItem->avatar->file}}" media="(max-width: 400px)">
-                            <source srcset="/211-300/thumbs{{$topListItem->avatar->file}}">
-                            <img loading="lazy" class="popular-img " srcset="/211-300/thumbs{{$topListItem->avatar->file}}"
-                                 alt="{{ $topListItem->name }}">
-                        </picture>
-                    </a>
-                </div>
+                @if(isset($topListItem->avatar->file))
+
+                    <div class="popular-item post-photo-item">
+                        <a href="/post/{{ $topListItem->url }}">
+                            <picture>
+                                <source srcset="/370-526/thumbs{{$topListItem->avatar->file}}"
+                                        media="(max-width: 400px)">
+                                <source srcset="/211-300/thumbs{{$topListItem->avatar->file}}">
+                                <img loading="lazy" class="popular-img "
+                                     srcset="/211-300/thumbs{{$topListItem->avatar->file}}"
+                                     alt="{{ $topListItem->name }}">
+                            </picture>
+                        </a>
+                    </div>
+
+                @endif
 
             @endforeach
 
@@ -75,7 +81,8 @@
 
     @if($posts->total() > $posts->count())
 
-        <div data-url="{{ str_replace('http', 'https', $posts->nextPageUrl()) }}" onclick="getMorePosts(this)" class="get-more">Показать еще <img src="/img/more.svg" alt=""></div>
+        <div data-url="{{ str_replace('http', 'https', $posts->nextPageUrl()) }}" onclick="getMorePosts(this)"
+             class="get-more">Показать еще <img src="/img/more.svg" alt=""></div>
 
         {{ $posts->links() }}
 
