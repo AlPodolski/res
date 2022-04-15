@@ -63,6 +63,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $selphi_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostService[] $service
  * @property-read int|null $service_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Comment[] $comments
+ * @property-read int|null $comments_count
  */
 class Post extends Model
 {
@@ -118,6 +120,12 @@ class Post extends Model
     public function service(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(PostService::class, 'posts_id', 'id')->with('service');
+    }
+
+    public function comments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Comment::class, 'related_id', 'id')
+            ->where(['related_class' => self::class, 'status' => Comment::PUBLICATION_STATUS]);
     }
 
     public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne

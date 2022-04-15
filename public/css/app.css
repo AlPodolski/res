@@ -8855,7 +8855,9 @@ body{
 }
 .review-list{
     flex: 0 0 100%;
-    margin-bottom: 15px;
+}
+.review-item .name{
+    font-family: "Root-bold";
 }
 .post-photo{
     display: flex;
@@ -8933,6 +8935,7 @@ body{
     padding: 1.2rem 2rem;
     background: #f7f7f7;
     flex: 0 0 100%;
+    border-radius: 10px;
 }
 .form-review-title{
     font-size: 2rem;
@@ -8956,6 +8959,9 @@ body{
 .field label{
     margin-bottom: 3px;
     font-size: 14px;
+}
+.review-item{
+    margin-bottom: 15px;
 }
 .send-btn {
     background: #ff6163;

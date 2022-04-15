@@ -37,9 +37,6 @@
         <meta name="yandex-verification" href="@yield('yandex')">
     @endif
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -102,4 +99,6 @@
 
 </div>
 </body>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
 </html>

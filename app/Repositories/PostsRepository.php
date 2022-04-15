@@ -22,7 +22,7 @@ class PostsRepository
 
         $relation = ['national', 'hair', 'metro', 'rayon',
             'intimHair', 'time', 'place', 'avatar',
-            'gallery', 'video', 'selphi', 'service'];
+            'gallery', 'video', 'selphi', 'service', 'comments'];
 
         $post = Post::with($relation)
             ->select($columns)

@@ -25,9 +25,15 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Comment whereText($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Comment whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $name
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment whereName($value)
  */
 class Comment extends Model
 {
+
+    const MODERATION_STATUS = 0;
+    const PUBLICATION_STATUS = 1;
+
     protected $fillable = [
         'name', 'related_id', 'related_class', 'text'
     ];

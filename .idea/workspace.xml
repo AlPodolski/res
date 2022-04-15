@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод услуг и вывод свойств ссылками">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/AddCommentRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_04_15_091038_create_comments_table.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="добавление комментариев">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,14 +223,7 @@
       <workItem from="1649829142878" duration="21911000" />
       <workItem from="1649914064003" duration="13389000" />
       <workItem from="1649935665647" duration="6081000" />
-      <workItem from="1650001783553" duration="13586000" />
-    </task>
-    <task id="LOCAL-00012" summary="вывод фото">
-      <created>1647858256045</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1647858256045</updated>
+      <workItem from="1650001783553" duration="16330000" />
     </task>
     <task id="LOCAL-00013" summary="фильтрация по метро">
       <created>1647943857586</created>
@@ -569,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650003704118</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="добавление комментариев">
+      <created>1650019741471</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1650019741471</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +597,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="правки с формой" />
     <MESSAGE value="Крошки" />
     <MESSAGE value="подгонка размеров изображений" />
     <MESSAGE value="добавлены услуги, правки с мета тегами,  блок вверху" />
@@ -623,7 +621,8 @@
     <MESSAGE value="правки с урл сервисом" />
     <MESSAGE value="кеширование запросов" />
     <MESSAGE value="вывод услуг и вывод свойств ссылками" />
-    <option name="LAST_COMMIT_MESSAGE" value="вывод услуг и вывод свойств ссылками" />
+    <MESSAGE value="добавление комментариев" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавление комментариев" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

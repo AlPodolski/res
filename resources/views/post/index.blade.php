@@ -240,9 +240,24 @@
             Отзывы
         </div>
         <div class="review-list">
+            @if($post->comments->first())
+
+                @foreach($post->comments as $item)
+                    <div class="review-item review-form">
+                        <div class="name">
+                            {{ $item->name }}
+                        </div>
+                        <div class="text">
+                            {{ $item->text }}
+                        </div>
+                    </div>
+                @endforeach
+
+            @else
             <div class="review-item">
                 Отзывов еще никто не оставлял
             </div>
+            @endif
         </div>
         <form action="/comment/add" class="review-form" method="post">
             @csrf
