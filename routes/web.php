@@ -19,6 +19,8 @@ Auth::routes();
 Route::get('/{size}/thumbs/{path}', 'ImageController@index')
     ->where('size', '.*')->where('path', '.*');
 
+Route::post('/comment/add', 'CommentController@add')->name('comment.add');
+
 Route::domain('{city}.'.env('DOMAIN'))->group(function () {
     Route::get('/',  'SiteController@index');
     Route::post('/',  'SiteController@more');

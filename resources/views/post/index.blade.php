@@ -18,6 +18,28 @@
         </li>
     </ul>
 
+    @if($errors->any())
+
+        <div class="col-12 alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span area-hidden="true">x</span>
+            </button>
+            {{ $errors->first() }}
+        </div>
+
+    @endif
+
+    @if(session('success'))
+
+        <div class="col-12 alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span area-hidden="true">x</span>
+            </button>
+            {{ session()->get('success') }}
+        </div>
+
+    @endif
+
     <div class="post-content">
         <div class="left">
 
@@ -47,7 +69,8 @@
                         <div class="property-name">Метро</div>
                         <div class="d-flex">
                             @foreach($post->metro as $item)
-                                <a class="property-value" href="/{{ $item->metro->filterUrl->filter_url }}">{{ $item->metro->value }} </a>
+                                <a class="property-value"
+                                   href="/{{ $item->metro->filterUrl->filter_url }}">{{ $item->metro->value }} </a>
                             @endforeach
                         </div>
                     </div>
@@ -56,7 +79,8 @@
                 @if($post->rayon)
                     <div class="property-item metro-list">
                         <div class="property-name">Район</div>
-                        <a class="property-value" href="/{{ $post->rayon->rayon->filterUrl->filter_url }}">{{ $post->rayon->rayon->value }}</a>
+                        <a class="property-value"
+                           href="/{{ $post->rayon->rayon->filterUrl->filter_url }}">{{ $post->rayon->rayon->value }}</a>
 
                     </div>
                 @endif
@@ -66,7 +90,8 @@
                         <div class="property-name">Время встречи</div>
                         <div class="d-flex">
                             @foreach($post->time as $item)
-                                <a href="/{{ $item->time->filterUrl->filter_url }}" class="property-value">{{ $item->time->value }} </a>
+                                <a href="/{{ $item->time->filterUrl->filter_url }}"
+                                   class="property-value">{{ $item->time->value }} </a>
                             @endforeach
                         </div>
 
@@ -78,7 +103,8 @@
                         <div class="property-name">Место встречи</div>
                         <div class="d-flex">
                             @foreach($post->place as $item)
-                                <a href="/{{ $item->place->filterUrl->filter_url }}" class="property-value">{{ $item->place->value }} </a>
+                                <a href="/{{ $item->place->filterUrl->filter_url }}"
+                                   class="property-value">{{ $item->place->value }} </a>
                             @endforeach
                         </div>
                     </div>
@@ -104,19 +130,22 @@
                 @if($post->national)
                     <div class="property-item">
                         <div class="property-name">Национальность</div>
-                        <a href="/{{ $post->national->national->filterUrl->filter_url }}" class="property-value">{{ $post->national->national->value }} </a>
+                        <a href="/{{ $post->national->national->filterUrl->filter_url }}"
+                           class="property-value">{{ $post->national->national->value }} </a>
                     </div>
                 @endif
                 @if($post->hair)
                     <div class="property-item">
                         <div class="property-name">Цвет волос</div>
-                        <a href="/{{ $post->hair->hair->filterUrl->filter_url }}" class="property-value">{{ $post->hair->hair->value }}</a>
+                        <a href="/{{ $post->hair->hair->filterUrl->filter_url }}"
+                           class="property-value">{{ $post->hair->hair->value }}</a>
                     </div>
                 @endif
                 @if($post->intimHair)
                     <div class="property-item">
                         <div class="property-name">Интимная стрижка</div>
-                        <a href="/{{ $post->intimHair->value->filterUrl->filter_url }}" class="property-value">{{ $post->intimHair->value->value }}</a>
+                        <a href="/{{ $post->intimHair->value->filterUrl->filter_url }}"
+                           class="property-value">{{ $post->intimHair->value->value }}</a>
                     </div>
                 @endif
             </div>
@@ -130,7 +159,8 @@
                 </div>
                 <div class="d-flex">
                     @foreach($post->service as $item)
-                        <a class="property-value" href="/{{ $item->service->filterUrl->filter_url }}">{{ $item->service->value }} </a>
+                        <a class="property-value"
+                           href="/{{ $item->service->filterUrl->filter_url }}">{{ $item->service->value }} </a>
                     @endforeach
                 </div>
             </div>
@@ -214,6 +244,28 @@
                 Отзывов еще никто не оставлял
             </div>
         </div>
+        <form action="/comment/add" class="review-form" method="post">
+            @csrf
+            <div class="form-review-title">
+                Оставить отзыв
+            </div>
+            <div class="field d-flex">
+                <label for="name-{{ $post->id }}">Имя</label>
+                <input type="text" required id="name-{{ $post->id }}" name="name" value="{{ old('name', '')  }}"
+                       placeholder="Имя">
+            </div>
+
+            <input type="hidden" name="related_id" value="{{ $post->id }}">
+            <input type="hidden" name="related_class" value="{{ \App\Models\Post::class }}">
+
+            <div class="field d-flex">
+                <label for="text-{{ $post->id }}">Комментарий</label>
+                <textarea class="comment-text" required placeholder="Комментарий" name="text" id="text-{{ $post->id }}">
+                    {{ old('text', '')  }}
+                </textarea>
+            </div>
+            <button class="send-btn">Отправить</button>
+        </form>
     </div>
     @widget('menu', ['city_id' =>  $cityInfo['id']  ])
 @endsection

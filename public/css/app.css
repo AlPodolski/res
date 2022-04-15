@@ -8855,6 +8855,7 @@ body{
 }
 .review-list{
     flex: 0 0 100%;
+    margin-bottom: 15px;
 }
 .post-photo{
     display: flex;
@@ -8927,6 +8928,42 @@ body{
 }
 .property-value{
     color: #212529;
+}
+.review-form{
+    padding: 1.2rem 2rem;
+    background: #f7f7f7;
+    flex: 0 0 100%;
+}
+.form-review-title{
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Root-bold";
+    margin-bottom: 15px;
+}
+.field{
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+.field input , .comment-text{
+    border: none;
+    padding: 6px 8px;
+    border-radius: 5px;
+    max-width: 330px;
+}
+.comment-text{
+    max-width: 450px;
+}
+.field label{
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+.send-btn {
+    background: #ff6163;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px 20px;
+    cursor: pointer;
 }
 @media (max-width: 1199px){
     .post-photo-item {
