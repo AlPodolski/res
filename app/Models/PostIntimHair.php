@@ -28,6 +28,6 @@ class PostIntimHair extends Model
 
     public function value(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(IntimHair::class, 'id', 'intim_hair_id');
+        return $this->hasOne(IntimHair::class, 'id', 'intim_hair_id')->with('filterUrl');
     }
 }

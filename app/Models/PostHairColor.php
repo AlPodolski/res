@@ -28,6 +28,6 @@ class PostHairColor extends Model
 
     public function hair(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(HairColor::class, 'id', 'hair_colors_id');
+        return $this->hasOne(HairColor::class, 'id', 'hair_colors_id')->with('filterUrl');
     }
 }

@@ -28,6 +28,6 @@ class PostRayon extends Model
 
     public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(Rayon::class, 'id', 'rayons_id');
+        return $this->hasOne(Rayon::class, 'id', 'rayons_id')->with('filterUrl');
     }
 }

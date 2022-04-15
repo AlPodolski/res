@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки с урл сервисом">
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="кеширование запросов">
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CityRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/FilterRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/FilterRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/TopPostListRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/TopPostListRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/HairColor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HairColor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/IntimHair.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/IntimHair.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Metro.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Metro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/National.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/National.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Place.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Place.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostHairColor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostHairColor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostIntimHair.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostIntimHair.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostMetro.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostMetro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostNational.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostNational.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostPlace.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostPlace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostRayon.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostRayon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PostTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostTime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Rayon.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Rayon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Time.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Time.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/imagecache.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/imagecache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +38,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_carousel.scss" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/lightgallery/index.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/bootstrap.scss" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -155,9 +178,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../true" />
+    <property name="last_opened_file_path" value="D:/node/node.exe" />
+    <property name="nodejs_interpreter_path" value="D:/node/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -169,11 +194,11 @@
       <recent name="C:\OpenServer\domains\pr.loc\public\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\pr.loc\storage\app\public\521-741\uploads" />
       <recent name="C:\OpenServer\domains\pr.loc\storage" />
       <recent name="C:\OpenServer\domains\pr.loc\public\storage" />
       <recent name="C:\OpenServer\domains\pr.loc\app" />
       <recent name="C:\OpenServer\domains\pr.loc\public\fonts" />
-      <recent name="C:\OpenServer\domains\pr.loc\public\img" />
     </key>
   </component>
   <component name="RunManager">
@@ -212,14 +237,10 @@
       <workItem from="1649050021421" duration="6366000" />
       <workItem from="1649757938498" duration="7000" />
       <workItem from="1649758976018" duration="5891000" />
-      <workItem from="1649829142878" duration="21442000" />
-    </task>
-    <task id="LOCAL-00010" summary="добавлено время встречи">
-      <created>1647851274271</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1647851274271</updated>
+      <workItem from="1649829142878" duration="21911000" />
+      <workItem from="1649914064003" duration="13389000" />
+      <workItem from="1649935665647" duration="6081000" />
+      <workItem from="1650001783553" duration="1052000" />
     </task>
     <task id="LOCAL-00011" summary="добавлено место встречи">
       <created>1647853330821</created>
@@ -557,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649845795413</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="кеширование запросов">
+      <created>1649858302492</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1649858302492</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +614,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="роботс" />
     <MESSAGE value="адаптив" />
     <MESSAGE value="правки с формой" />
     <MESSAGE value="Крошки" />
@@ -611,7 +638,8 @@
     <MESSAGE value="добавление вебмастера" />
     <MESSAGE value="проверка @if(isset($post-&gt;avatar-&gt;file)" />
     <MESSAGE value="правки с урл сервисом" />
-    <option name="LAST_COMMIT_MESSAGE" value="правки с урл сервисом" />
+    <MESSAGE value="кеширование запросов" />
+    <option name="LAST_COMMIT_MESSAGE" value="кеширование запросов" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

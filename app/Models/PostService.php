@@ -19,8 +19,14 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|PostService wherePostsId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PostService whereServiceId($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Service|null $service
  */
 class PostService extends Model
 {
     public $timestamps = false;
+
+    public function service()
+    {
+        return $this->hasOne(Service::class, 'id', 'service_id')->with('filterUrl');
+    }
 }

@@ -28,6 +28,6 @@ class PostPlace extends Model
 
     public function place()
     {
-        return $this->hasOne(Place::class, 'id', 'place_id');
+        return $this->hasOne(Place::class, 'id', 'place_id')->with('filterUrl');
     }
 }

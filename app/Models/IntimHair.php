@@ -19,8 +19,15 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|IntimHair whereValue($value)
  * @method static \Illuminate\Database\Eloquent\Builder|IntimHair whereValue2($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Filter|null $filterUrl
  */
 class IntimHair extends Model
 {
     public $timestamps = false;
+
+    public function filterUrl(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Filter::class, 'related_id', 'id')
+            ->where(['parent_class' => self::class]);
+    }
 }

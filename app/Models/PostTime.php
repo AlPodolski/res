@@ -28,6 +28,6 @@ class PostTime extends Model
 
     public function time(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(Time::class, 'id', 'param_id');
+        return $this->hasOne(Time::class, 'id', 'param_id')->with('filterUrl');
     }
 }

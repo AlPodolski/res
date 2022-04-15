@@ -61,6 +61,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\Files|null $video
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Files[] $selphi
  * @property-read int|null $selphi_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostService[] $service
+ * @property-read int|null $service_count
  */
 class Post extends Model
 {
@@ -111,6 +113,11 @@ class Post extends Model
     public function place(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(PostPlace::class, 'post_id', 'id')->with('place');
+    }
+
+    public function service(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(PostService::class, 'posts_id', 'id')->with('service');
     }
 
     public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne

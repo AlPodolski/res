@@ -28,6 +28,6 @@ class PostMetro extends Model
 
     public function metro(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(Metro::class, 'id', 'metros_id');
+        return $this->hasOne(Metro::class, 'id', 'metros_id')->with('filterUrl');
     }
 }

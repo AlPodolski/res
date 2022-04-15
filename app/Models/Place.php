@@ -17,8 +17,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Place whereUrl($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Place whereValue($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Filter|null $filterUrl
  */
 class Place extends Model
 {
-    //
+    public function filterUrl()
+    {
+        return $this->hasOne(Filter::class, 'related_id', 'id')
+            ->where(['parent_class' => self::class]);
+    }
 }

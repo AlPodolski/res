@@ -17,8 +17,15 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|HairColor whereUrl($value)
  * @method static \Illuminate\Database\Eloquent\Builder|HairColor whereValue($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Filter|null $filterUrl
  */
 class HairColor extends Model
 {
     public $timestamps = true;
+
+    public function filterUrl()
+    {
+        return $this->hasOne(Filter::class, 'related_id', 'id')
+            ->where(['parent_class' => self::class]);
+    }
 }

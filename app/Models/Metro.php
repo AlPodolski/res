@@ -25,8 +25,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Metro whereX($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Metro whereY($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Filter|null $filterUrl
  */
 class Metro extends Model
 {
-    //
+    public function filterUrl()
+    {
+        return $this->hasOne(Filter::class, 'related_id', 'id')
+            ->where(['parent_class' => self::class]);
+    }
 }

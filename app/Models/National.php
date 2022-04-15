@@ -19,8 +19,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|National whereValue($value)
  * @method static \Illuminate\Database\Eloquent\Builder|National whereValue2($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Filter|null $filterUrl
  */
 class National extends Model
 {
-    //
+    public function filterUrl()
+    {
+        return $this->hasOne(Filter::class, 'related_id', 'id')
+            ->where(['parent_class' => self::class]);
+    }
 }

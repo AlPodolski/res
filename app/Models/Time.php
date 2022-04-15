@@ -17,8 +17,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Time whereUrl($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Time whereValue($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Filter|null $filterUrl
  */
 class Time extends Model
 {
-    //
+    public function filterUrl(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Filter::class, 'related_id', 'id')
+            ->where(['parent_class' => self::class]);
+    }
 }

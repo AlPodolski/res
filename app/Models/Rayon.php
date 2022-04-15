@@ -21,8 +21,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Rayon whereValue($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Rayon whereValue2($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Filter|null $filterUrl
  */
 class Rayon extends Model
 {
-    //
+    public function filterUrl(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Filter::class, 'related_id', 'id')
+            ->where(['parent_class' => self::class]);
+    }
 }

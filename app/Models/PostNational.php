@@ -30,6 +30,6 @@ class PostNational extends Model
 
     public function national(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(National::class, 'id', 'nationals_id');
+        return $this->hasOne(National::class, 'id', 'nationals_id')->with('filterUrl');
     }
 }

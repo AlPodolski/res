@@ -66,6 +66,6 @@ return [
     |
     */
 
-    'lifetime' => 43200,
+    'lifetime' => 43200 * 365,
 
 ];

@@ -42,22 +42,21 @@
                 @endphp
 
             <div class="post-property-list">
-                @if($post->metro)
+                @if($post->metro->first())
                     <div class="property-item metro-list">
                         <div class="property-name">Метро</div>
                         <div class="d-flex">
                             @foreach($post->metro as $item)
-                                <div class="property-value">{{ $item->metro->value }} </div>
+                                <a class="property-value" href="/{{ $item->metro->filterUrl->filter_url }}">{{ $item->metro->value }} </a>
                             @endforeach
                         </div>
-
                     </div>
                 @endif
 
                 @if($post->rayon)
                     <div class="property-item metro-list">
                         <div class="property-name">Район</div>
-                        <div class="property-value">{{ $post->rayon->rayon->value }}</div>
+                        <a class="property-value" href="/{{ $post->rayon->rayon->filterUrl->filter_url }}">{{ $post->rayon->rayon->value }}</a>
 
                     </div>
                 @endif
@@ -67,7 +66,7 @@
                         <div class="property-name">Время встречи</div>
                         <div class="d-flex">
                             @foreach($post->time as $item)
-                                <div class="property-value">{{ $item->time->value }} </div>
+                                <a href="/{{ $item->time->filterUrl->filter_url }}" class="property-value">{{ $item->time->value }} </a>
                             @endforeach
                         </div>
 
@@ -79,7 +78,7 @@
                         <div class="property-name">Место встречи</div>
                         <div class="d-flex">
                             @foreach($post->place as $item)
-                                <div class="property-value">{{ $item->place->value }} </div>
+                                <a href="/{{ $item->place->filterUrl->filter_url }}" class="property-value">{{ $item->place->value }} </a>
                             @endforeach
                         </div>
                     </div>
@@ -105,23 +104,38 @@
                 @if($post->national)
                     <div class="property-item">
                         <div class="property-name">Национальность</div>
-                        <div class="property-value">{{ $post->national->national->value }} </div>
+                        <a href="/{{ $post->national->national->filterUrl->filter_url }}" class="property-value">{{ $post->national->national->value }} </a>
                     </div>
                 @endif
                 @if($post->hair)
                     <div class="property-item">
                         <div class="property-name">Цвет волос</div>
-                        <div class="property-value">{{ $post->hair->hair->value }}</div>
+                        <a href="/{{ $post->hair->hair->filterUrl->filter_url }}" class="property-value">{{ $post->hair->hair->value }}</a>
                     </div>
                 @endif
                 @if($post->intimHair)
                     <div class="property-item">
                         <div class="property-name">Интимная стрижка</div>
-                        <div class="property-value">{{ $post->intimHair->value->value }}</div>
+                        <a href="/{{ $post->intimHair->value->filterUrl->filter_url }}" class="property-value">{{ $post->intimHair->value->value }}</a>
                     </div>
                 @endif
             </div>
         </div>
+
+
+        @if($post->service->first())
+            <div class="property-item metro-list">
+                <div class="decr-title">
+                    Услуги
+                </div>
+                <div class="d-flex">
+                    @foreach($post->service as $item)
+                        <a class="property-value" href="/{{ $item->service->filterUrl->filter_url }}">{{ $item->service->value }} </a>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
         @if($post->about)
             <div class="post-decr">
                 <div class="decr-title">
