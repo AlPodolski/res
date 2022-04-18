@@ -11771,6 +11771,42 @@ function show_phone(object){
     $(object).text($(object).attr('data-tel'));
 }
 
+function getMorePost(){
+
+    var id = '';
+    var price;
+
+    $('[data-id]').each(function() {
+        id = id + $(this).attr('data-id') + ',';
+    });
+
+    $.ajax({
+        type: 'POST',
+        url: '/post/more',
+        data: 'id='+id,
+        async:false,
+        dataType: "html",
+        cache: false,
+        success: function (data){
+
+            if(data !== ''){
+
+                $('.post-wrap').append(data);
+
+            }else{
+
+                $('.get-more-post-btn').remove();
+
+            }
+
+            // window.history.pushState("object or string", "Title", "/page-2");
+
+        },
+
+    })
+
+}
+
 function getMorePosts(object){
 
     var url = $(object).attr('data-url');

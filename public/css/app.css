@@ -8937,6 +8937,17 @@ body{
     flex: 0 0 100%;
     border-radius: 10px;
 }
+.get-more-post-btn{
+    background: #ff6163;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px 20px;
+    cursor: pointer;
+    max-width: 150px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
 .form-review-title{
     font-size: 2rem;
     font-weight: 700;
