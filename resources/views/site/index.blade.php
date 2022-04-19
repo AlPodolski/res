@@ -24,7 +24,7 @@
                     <div class="popular-item post-photo-item">
                         <a href="/post/{{ $topListItem->url }}">
                             <picture>
-                                <source srcset="/330-462/thumbs{{$topListItem->avatar->file}}"
+                                <source srcset="/165-224/thumbs{{$topListItem->avatar->file}}"
                                         media="(max-width: 361px)">
                                 <source srcset="/370-526/thumbs{{$topListItem->avatar->file}}"
                                         media="(max-width: 400px)">
