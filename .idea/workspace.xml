@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правка">
-      <change afterPath="$PROJECT_DIR$/public/css/lightbox.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/lightbox.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/post-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/post-item.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="галерея" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,14 +226,7 @@
       <workItem from="1650001783553" duration="21443000" />
       <workItem from="1650262493454" duration="14745000" />
       <workItem from="1650288620219" duration="14000" />
-      <workItem from="1650346099433" duration="13180000" />
-    </task>
-    <task id="LOCAL-00024" summary="правки с формой">
-      <created>1648126416745</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1648126416745</updated>
+      <workItem from="1650346099433" duration="13566000" />
     </task>
     <task id="LOCAL-00025" summary="Крошки">
       <created>1648126761598</created>
@@ -578,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650363264152</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="галерея">
+      <created>1650368453477</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1650368453477</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +600,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="вывод видео" />
     <MESSAGE value="вывод видео правка" />
     <MESSAGE value="тест заливки" />
     <MESSAGE value="вывод селфи" />
@@ -632,7 +624,8 @@
     <MESSAGE value="горизантальный скрол" />
     <MESSAGE value="правка с поиском" />
     <MESSAGE value="правка" />
-    <option name="LAST_COMMIT_MESSAGE" value="правка" />
+    <MESSAGE value="галерея" />
+    <option name="LAST_COMMIT_MESSAGE" value="галерея" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

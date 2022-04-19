@@ -145,10 +145,11 @@
             <div class="popular-list post-photo">
                 @foreach($post->gallery as $item)
                     <div class="post-photo-item">
-                        <a href="/600-600/thumbs{{$item->file}}" data-lightbox="image-1">
+                        <a href="/600-600/thumbs{{$item->file}}" data-lightbox="image-{{ $post->id }}">
                             <picture>
                                 <source srcset="/181-257/thumbs{{$item->file}}">
-                                <img data-lightbox="roadtrip" title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}"
+                                <img data-lightbox="roadtrip" title="Проститутка {{ $post->name }}"
+                                     srcset="/181-257/thumbs{{$item->file}}"
                                      alt="{{ $post->name }}">
                             </picture>
 
@@ -171,14 +172,13 @@
             <div class="popular-list post-photo">
                 @foreach($post->selphi as $item)
                     <div class="post-photo-item">
-
-                        <picture>
-                            <source srcset="/181-257/thumbs{{$item->file}}">
-                            <img title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}"
-                                 alt="{{ $post->name }}">
-                        </picture>
-
-                        <img src="{{ $item->file }}" alt="">
+                        <a href="/600-600/thumbs{{$item->file}}" data-lightbox="image-{{ $post->id }}">
+                            <picture>
+                                <source srcset="/181-257/thumbs{{$item->file}}">
+                                <img title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}"
+                                     alt="{{ $post->name }}">
+                            </picture>
+                        </a>
                     </div>
                 @endforeach
             </div>
