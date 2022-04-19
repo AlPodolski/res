@@ -61,7 +61,7 @@
                     <form action="/search" method="get" class="header__search-form">
                         <input type="text" autocomplete="off"
                                class="form-control form-control_size-l header__search-field" name="q" value=""
-                               placeholder="Поиск">
+                               placeholder="Введите имя или телефон">
                         <input type="hidden" name="lang" value="ru">
                     </form>
                     <div class="action-form-btn header__search-btn js-show-search">
