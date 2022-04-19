@@ -21,6 +21,10 @@ class ImageController extends Controller
             });
         }, 3600 * 365, true);
 
-        return $img->response('jpg');
+        header('Content-type: ' . 'image/jpeg');
+
+        echo ($img->response('jpg')->content());
+        exit();
+        return $img->response('jpg')->header('cache-control','max-age=31536000, public');
     }
 }
