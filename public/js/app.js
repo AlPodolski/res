@@ -11774,16 +11774,20 @@ function show_phone(object){
 function getMorePost(){
 
     var id = '';
-    var price;
+    var rayon = '';
+    var price = '';
 
     $('[data-id]').each(function() {
         id = id + $(this).attr('data-id') + ',';
     });
 
+    rayon = $('.post-content').attr('data-rayon-id');
+    price = $('.post-content').attr('data-price');
+
     $.ajax({
         type: 'POST',
         url: '/post/more',
-        data: 'id='+id,
+        data: 'id=' +id + '&rayon=' + rayon + '&price=' + price,
         async:false,
         dataType: "html",
         cache: false,

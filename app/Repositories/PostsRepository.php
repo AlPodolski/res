@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Post;
+use App\Models\PostRayon;
 
 class PostsRepository
 {
@@ -43,8 +44,33 @@ class PostsRepository
         $post = Post::with($relation)
             ->select($columns)
             ->where(['city_id' => $cityId])
-            ->whereNotIn('id', $ids)
-            ->first();
+            ->whereNotIn('id', $ids);
+
+        $resultIds = false;
+
+        if ($rayonId){
+
+            $postsId = PostRayon::where(['rayons_id' => $rayonId])
+                ->whereNotIn('posts_id', $ids)
+                ->select('posts_id')
+                ->get();
+
+            if ($postsId) foreach ($postsId as $id) {
+                $resultIds[] = $id['posts_id'];
+            }
+
+            if ($resultIds) $post = $post->whereIn('id', $resultIds);
+
+        }
+
+        if ($price and !$resultIds){
+
+            $post = $post->where('price', '>', $price - 500);
+            $post = $post->where('price', '<=', $price + 500);
+
+        }
+
+        $post = $post->first();
 
         return $post;
     }

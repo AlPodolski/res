@@ -2,7 +2,7 @@
     /* @var $post \App\Models\Post */
 @endphp
 
-<div class="post-content" data-id="{{ $post->id }}">
+<div class="post-content" data-price="{{ $post->price }}" data-id="{{ $post->id }}" data-rayon-id="{{ $post->rayon->rayon->id ?? '' }}">
     <div class="left">
 
         <picture>

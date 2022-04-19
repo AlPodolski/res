@@ -40,11 +40,14 @@ class PostController extends Controller
     {
 
         $ids = explode(',', $request->id);
+        $rayon = $request->rayon;
+        $price = $request->price;
 
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
-        $post = $this->postRepository->getPostForSingleMore($cityInfo['id'], $ids);
+        $post = $this->postRepository->getPostForSingleMore($cityInfo['id'], $ids, $price, $rayon);
 
-        return view('post.post-item', compact('post'))->render();
+        if ($post) return view('post.post-item', compact('post'))->render();
+
     }
 }
