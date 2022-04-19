@@ -1,14 +1,15 @@
 @php
     /* @var $post \App\Models\Post */
 @endphp
-
-<div class="post-content" data-price="{{ $post->price }}" data-id="{{ $post->id }}" data-rayon-id="{{ $post->rayon->rayon->id ?? '' }}">
+@section('lightbox', '/js/lightbox.min.js')
+<div class="post-content" data-price="{{ $post->price }}" data-id="{{ $post->id }}"
+     data-rayon-id="{{ $post->rayon->rayon->id ?? '' }}">
     <div class="left">
-
         <picture>
             <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)">
             <source srcset="/521-741/thumbs{{$post->avatar->file}}">
-            <img title="Проститутка {{ $post->name }}" srcset="/521-741/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
+            <img title="Проститутка {{ $post->name }}" srcset="/521-741/thumbs{{$post->avatar->file}}"
+                 alt="{{ $post->name }}">
         </picture>
     </div>
     <div class="right">
@@ -144,13 +145,16 @@
             <div class="popular-list post-photo">
                 @foreach($post->gallery as $item)
                     <div class="post-photo-item">
+                        <a href="/600-600/thumbs{{$item->file}}" data-lightbox="image-1">
+                            <picture>
+                                <source srcset="/181-257/thumbs{{$item->file}}">
+                                <img data-lightbox="roadtrip" title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}"
+                                     alt="{{ $post->name }}">
+                            </picture>
 
-                        <picture>
-                            <source srcset="/181-257/thumbs{{$item->file}}">
-                            <img title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
-                        </picture>
+                            <img src="{{ $item->file }}" alt="">
+                        </a>
 
-                        <img src="{{ $item->file }}" alt="">
                     </div>
                 @endforeach
             </div>
@@ -170,7 +174,8 @@
 
                         <picture>
                             <source srcset="/181-257/thumbs{{$item->file}}">
-                            <img title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
+                            <img title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}"
+                                 alt="{{ $post->name }}">
                         </picture>
 
                         <img src="{{ $item->file }}" alt="">
@@ -240,3 +245,5 @@
         <button class="send-btn">Отправить</button>
     </form>
 </div>
+
+<link href="{{ asset('css/lightbox.min.css') }}" rel="stylesheet">

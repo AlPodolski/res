@@ -8989,6 +8989,12 @@ body{
 video{
     max-width: 100%;
 }
+.lb-nav a.lb-next{
+    background: url(../img/next.png) right 48% no-repeat!important;
+}
+.lb-nav a.lb-prev{
+    background: url(../img/prev.png) left 48% no-repeat!important;
+}
 @media (max-width: 1199px){
     .post-photo-item {
         flex: 0 0 20%;
