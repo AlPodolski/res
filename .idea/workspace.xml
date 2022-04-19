@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="поиск по имени или телефону">
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="тайтл для картинок">
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,14 +219,7 @@
       <workItem from="1650001783553" duration="21443000" />
       <workItem from="1650262493454" duration="14745000" />
       <workItem from="1650288620219" duration="14000" />
-      <workItem from="1650346099433" duration="9266000" />
-    </task>
-    <task id="LOCAL-00020" summary="мета теги для шаблона">
-      <created>1648103791752</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1648103791752</updated>
+      <workItem from="1650346099433" duration="9613000" />
     </task>
     <task id="LOCAL-00021" summary="фильтрация">
       <created>1648111695106</created>
@@ -565,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650362022248</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="тайтл для картинок">
+      <created>1650362344790</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1650362344790</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +593,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="правка с доменом в роутах" />
     <MESSAGE value="показать телефон" />
     <MESSAGE value="дополнительные посты" />
     <MESSAGE value="подгрузка карточек при клике на кнопку" />
@@ -619,7 +617,8 @@
     <MESSAGE value="подгрузка анкет с учетом цены и района" />
     <MESSAGE value="сортировка в случайном порядке" />
     <MESSAGE value="поиск по имени или телефону" />
-    <option name="LAST_COMMIT_MESSAGE" value="поиск по имени или телефону" />
+    <MESSAGE value="тайтл для картинок" />
+    <option name="LAST_COMMIT_MESSAGE" value="тайтл для картинок" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

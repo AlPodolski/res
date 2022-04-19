@@ -8810,6 +8810,7 @@ body{
 .post-content{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 25px;
 }
 .post-content img{
     border-radius: 7px;
@@ -8981,6 +8982,12 @@ body{
     border-radius: 5px;
     padding: 7px 20px;
     cursor: pointer;
+}
+.pagination{
+    flex-wrap: wrap;
+}
+video{
+    max-width: 100%;
 }
 @media (max-width: 1199px){
     .post-photo-item {
