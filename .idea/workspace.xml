@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="сортировка в случайном порядке">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/SearchRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="поиск по имени или телефону">
+      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,14 +220,7 @@
       <workItem from="1650001783553" duration="21443000" />
       <workItem from="1650262493454" duration="14745000" />
       <workItem from="1650288620219" duration="14000" />
-      <workItem from="1650346099433" duration="8916000" />
-    </task>
-    <task id="LOCAL-00019" summary="мета теги для главной">
-      <created>1648038914327</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1648038914327</updated>
+      <workItem from="1650346099433" duration="9266000" />
     </task>
     <task id="LOCAL-00020" summary="мета теги для шаблона">
       <created>1648103791752</created>
@@ -570,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650349563276</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="поиск по имени или телефону">
+      <created>1650362022248</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1650362022248</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,7 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="равка" />
     <MESSAGE value="правка с доменом в роутах" />
     <MESSAGE value="показать телефон" />
     <MESSAGE value="дополнительные посты" />
@@ -624,7 +618,8 @@
     <MESSAGE value="ajax загрузка карточек" />
     <MESSAGE value="подгрузка анкет с учетом цены и района" />
     <MESSAGE value="сортировка в случайном порядке" />
-    <option name="LAST_COMMIT_MESSAGE" value="сортировка в случайном порядке" />
+    <MESSAGE value="поиск по имени или телефону" />
+    <option name="LAST_COMMIT_MESSAGE" value="поиск по имени или телефону" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

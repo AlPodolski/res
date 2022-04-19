@@ -8,7 +8,7 @@
         <picture>
             <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)">
             <source srcset="/521-741/thumbs{{$post->avatar->file}}">
-            <img srcset="/521-741/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
+            <img title="Проститутка {{ $post->name }}" srcset="/521-741/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
         </picture>
     </div>
     <div class="right">
@@ -20,10 +20,6 @@
             <a href="tel:+{{ $post->phone }}" data-tel="{{ $post->phone }}" onclick="show_phone(this)"
                class="phone single-phone">Показать телефон</a>
         </div>
-
-        @php
-
-            @endphp
 
         <div class="post-property-list">
             @if($post->metro->first())
@@ -151,7 +147,7 @@
 
                         <picture>
                             <source srcset="/181-257/thumbs{{$item->file}}">
-                            <img srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
+                            <img title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
                         </picture>
 
                         <img src="{{ $item->file }}" alt="">
@@ -174,7 +170,7 @@
 
                         <picture>
                             <source srcset="/181-257/thumbs{{$item->file}}">
-                            <img srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
+                            <img title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}" alt="{{ $post->name }}">
                         </picture>
 
                         <img src="{{ $item->file }}" alt="">

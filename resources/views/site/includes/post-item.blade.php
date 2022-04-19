@@ -8,7 +8,7 @@
         <picture>
             <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)">
             <source srcset="/211-300/thumbs{{$post->avatar->file}}">
-            <img loading="lazy" srcset="/211-300/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
+            <img loading="lazy" title="Проститутка {{ $post->name }}" srcset="/211-300/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
         </picture>
         @endif
     </a>

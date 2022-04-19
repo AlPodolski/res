@@ -27,7 +27,7 @@
                                 <source srcset="/370-526/thumbs{{$topListItem->avatar->file}}"
                                         media="(max-width: 400px)">
                                 <source srcset="/211-300/thumbs{{$topListItem->avatar->file}}">
-                                <img loading="lazy" class="popular-img "
+                                <img title="Проститутка {{ $topListItem->name }}" loading="lazy" class="popular-img "
                                      srcset="/211-300/thumbs{{$topListItem->avatar->file}}"
                                      alt="{{ $topListItem->name }}">
                             </picture>
