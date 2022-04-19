@@ -12,7 +12,9 @@ class PostsRepository
 
         $columns = ['url', 'name', 'phone', 'price', 'id'];
 
-        return Post::with('avatar')->select($columns)
+        return Post::with('avatar')
+            ->orderByRaw('RAND()')
+            ->select($columns)
             ->where(['city_id' => $cityId])
             ->paginate($limit);
     }

@@ -128,7 +128,11 @@ class FilterRepository
                 $resultIds[] = $id[$params->search_param];
             }
 
-            $posts = Post::with('avatar')->whereIn('id', $resultIds)->select($columns)->paginate($limit);
+            $posts = Post::with('avatar')
+                ->orderByRaw('RAND()')
+                ->whereIn('id', $resultIds)
+                ->select($columns)
+                ->paginate($limit);
 
         }
 
