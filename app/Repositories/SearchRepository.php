@@ -12,9 +12,9 @@ class SearchRepository
         return Post::with('avatar')
             ->orderByRaw('RAND()')
             ->select($columns)
-            ->where(['city_id' => $cityId])
             ->where('name' , 'like', '%'.$search.'%')
             ->orWhere('phone' , 'like', '%'.$search.'%')
+            ->where(['city_id' => $cityId])
             ->paginate($limit);
     }
 }

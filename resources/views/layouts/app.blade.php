@@ -38,7 +38,7 @@
     @endif
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?v=2') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?v=3') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -100,5 +100,5 @@
 </div>
 </body>
 <!-- Scripts -->
-<script src="{{ asset('js/app.js?v=1') }}" defer></script>
+<script src="{{ asset('js/app.js?v=2') }}" defer></script>
 </html>
