@@ -152,8 +152,6 @@
                                      srcset="/181-257/thumbs{{$item->file}}"
                                      alt="{{ $post->name }}">
                             </picture>
-
-                            <img src="{{ $item->file }}" alt="">
                         </a>
 
                     </div>
