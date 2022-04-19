@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="горизантальный скрол">
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правка с поиском" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,14 +217,7 @@
       <workItem from="1650001783553" duration="21443000" />
       <workItem from="1650262493454" duration="14745000" />
       <workItem from="1650288620219" duration="14000" />
-      <workItem from="1650346099433" duration="9912000" />
-    </task>
-    <task id="LOCAL-00022" summary="правки">
-      <created>1648113122935</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1648113122935</updated>
+      <workItem from="1650346099433" duration="10316000" />
     </task>
     <task id="LOCAL-00023" summary="роботс">
       <created>1648114204450</created>
@@ -564,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650362767531</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="правка с поиском">
+      <created>1650363040687</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1650363040687</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +591,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="дополнительные посты" />
     <MESSAGE value="подгрузка карточек при клике на кнопку" />
     <MESSAGE value="вывод видео" />
     <MESSAGE value="вывод видео правка" />
@@ -618,7 +615,8 @@
     <MESSAGE value="поиск по имени или телефону" />
     <MESSAGE value="тайтл для картинок" />
     <MESSAGE value="горизантальный скрол" />
-    <option name="LAST_COMMIT_MESSAGE" value="горизантальный скрол" />
+    <MESSAGE value="правка с поиском" />
+    <option name="LAST_COMMIT_MESSAGE" value="правка с поиском" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

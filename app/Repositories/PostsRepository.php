@@ -45,6 +45,7 @@ class PostsRepository
 
         $post = Post::with($relation)
             ->select($columns)
+            ->orderByRaw('RAND()')
             ->where(['city_id' => $cityId])
             ->whereNotIn('id', $ids);
 
