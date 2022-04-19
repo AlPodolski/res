@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="галерея" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="галерея правки">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -226,14 +229,7 @@
       <workItem from="1650001783553" duration="21443000" />
       <workItem from="1650262493454" duration="14745000" />
       <workItem from="1650288620219" duration="14000" />
-      <workItem from="1650346099433" duration="13566000" />
-    </task>
-    <task id="LOCAL-00025" summary="Крошки">
-      <created>1648126761598</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1648126761598</updated>
+      <workItem from="1650346099433" duration="14951000" />
     </task>
     <task id="LOCAL-00026" summary="подгонка размеров изображений">
       <created>1648198635577</created>
@@ -571,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650368453477</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="галерея правки">
+      <created>1650368905113</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1650368905113</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +603,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="вывод видео правка" />
     <MESSAGE value="тест заливки" />
     <MESSAGE value="вывод селфи" />
     <MESSAGE value="тайтл и описание для детальной страницы" />
@@ -625,7 +627,8 @@
     <MESSAGE value="правка с поиском" />
     <MESSAGE value="правка" />
     <MESSAGE value="галерея" />
-    <option name="LAST_COMMIT_MESSAGE" value="галерея" />
+    <MESSAGE value="галерея правки" />
+    <option name="LAST_COMMIT_MESSAGE" value="галерея правки" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

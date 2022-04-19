@@ -6,6 +6,8 @@
     <a href="/post/{{$post->url}}" class="d-block">
         @if(isset($post->avatar->file))
         <picture>
+            <source srcset="/330-462/thumbs{{$topListItem->avatar->file}}"
+                    media="(max-width: 361px)">
             <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)">
             <source srcset="/211-300/thumbs{{$post->avatar->file}}">
             <img loading="lazy" title="Проститутка {{ $post->name }}" srcset="/211-300/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
