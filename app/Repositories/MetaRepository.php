@@ -37,31 +37,42 @@ class MetaRepository
 
     public function getForFilter($url, $cityId, $filterParams)
     {
-        if ($meta = Meta::where(['url' => $url])->select('title', 'des', 'h1')->get()->first()) {
 
-            $meta = $meta->toArray();
+        if ($value = \Cache::get('meta_'.$url.'_'.$cityId)) return $value;
 
-            return $this->replaceCity($meta, $cityId);
+        else{
 
-        } elseif ($meta = Meta::where(['url' => $filterParams->short_name])->select('title', 'des', 'h1')->get()->first()) {
+            if ($meta = Meta::where(['url' => $url])->select('title', 'des', 'h1')->get()->first()) {
 
-            $meta = $meta->toArray();
+                $meta = $meta->toArray();
 
-            $result = $this->replaceParams($meta, $filterParams);
+                return $this->replaceCity($meta, $cityId);
 
-            return $this->replaceCity($result, $cityId);
+            } elseif ($meta = Meta::where(['url' => $filterParams->short_name])->select('title', 'des', 'h1')->get()->first()) {
 
-        } else {
+                $meta = $meta->toArray();
 
-            $meta = Meta::where(['url' => 'default'])->select('title', 'des', 'h1')->get()->first();
+                $result = $this->replaceParams($meta, $filterParams);
 
-            $meta = $meta->toArray();
+                $value = $this->replaceCity($result, $cityId);
 
-            $result = $this->replaceParams($meta, $filterParams);
+            } else {
 
-            return $this->clean($this->replaceCity($result, $cityId));
+                $meta = Meta::where(['url' => 'default'])->select('title', 'des', 'h1')->get()->first();
+
+                $meta = $meta->toArray();
+
+                $result = $this->replaceParams($meta, $filterParams);
+
+                $value = $this->clean($this->replaceCity($result, $cityId));
+
+            }
+
+            \Cache::set('meta_'.$url.'_'.$cityId, $value);
 
         }
+
+        return $value;
 
     }
 
