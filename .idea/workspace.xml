@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="мета теги для районов и метро">
-      <change beforePath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="кеш мета тегов">
+      <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,14 +231,7 @@
       <workItem from="1650346099433" duration="18118000" />
       <workItem from="1650449745816" duration="990000" />
       <workItem from="1650453639877" duration="4451000" />
-      <workItem from="1650518006778" duration="9917000" />
-    </task>
-    <task id="LOCAL-00033" summary="подгрузка карточек при клике на кнопку">
-      <created>1648627767058</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1648627767059</updated>
+      <workItem from="1650518006778" duration="10482000" />
     </task>
     <task id="LOCAL-00034" summary="правки">
       <created>1648629072762</created>
@@ -576,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650536049130</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="кеш мета тегов">
+      <created>1650536490582</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1650536490582</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,7 +605,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="вывод тега яндекс верификации" />
     <MESSAGE value="логотип и фавиконы" />
     <MESSAGE value="тест заливки на города" />
     <MESSAGE value="импорт телефонов" />
@@ -630,7 +629,8 @@
     <MESSAGE value="правки с картинками" />
     <MESSAGE value="мета теги" />
     <MESSAGE value="мета теги для районов и метро" />
-    <option name="LAST_COMMIT_MESSAGE" value="мета теги для районов и метро" />
+    <MESSAGE value="кеш мета тегов" />
+    <option name="LAST_COMMIT_MESSAGE" value="кеш мета тегов" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -21,18 +21,28 @@ class PostsRepository
 
     public function getPostForSingle($url, $cityId)
     {
-        $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
 
-        $relation = ['national', 'hair', 'metro', 'rayon',
-            'intimHair', 'time', 'place', 'avatar',
-            'gallery', 'video', 'selphi', 'service', 'comments'];
+        if ($post = \Cache::get('post_'.$url.'_'.$cityId)) return $post;
 
-        $post = Post::with($relation)
-            ->select($columns)
-            ->where(['url' => $url, 'city_id' => $cityId])
-            ->first();
+        else{
+
+            $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
+
+            $relation = ['national', 'hair', 'metro', 'rayon',
+                'intimHair', 'time', 'place', 'avatar',
+                'gallery', 'video', 'selphi', 'service', 'comments'];
+
+            $post = Post::with($relation)
+                ->select($columns)
+                ->where(['url' => $url, 'city_id' => $cityId])
+                ->first();
+
+            \Cache::set('post_'.$url.'_'.$cityId, $post);
+
+        }
 
         return $post;
+
     }
 
     public function getPostForSingleMore($cityId, $ids = false, $price = false, $rayonId = false)
