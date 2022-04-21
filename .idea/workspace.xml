@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки с картинками">
-      <change afterPath="$PROJECT_DIR$/app/Console/Commands/AddMeta.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/meta.csv" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="мета теги">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,14 +231,7 @@
       <workItem from="1650346099433" duration="18118000" />
       <workItem from="1650449745816" duration="990000" />
       <workItem from="1650453639877" duration="4451000" />
-      <workItem from="1650518006778" duration="2238000" />
-    </task>
-    <task id="LOCAL-00030" summary="равка">
-      <created>1648450119424</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1648450119424</updated>
+      <workItem from="1650518006778" duration="2921000" />
     </task>
     <task id="LOCAL-00031" summary="правка с доменом в роутах">
       <created>1648455166540</created>
@@ -578,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650371993901</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="мета теги">
+      <created>1650521182399</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1650521182399</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +605,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="вывод селфи" />
     <MESSAGE value="тайтл и описание для детальной страницы" />
     <MESSAGE value="вывод тега яндекс верификации" />
     <MESSAGE value="логотип и фавиконы" />
@@ -632,7 +629,8 @@
     <MESSAGE value="галерея" />
     <MESSAGE value="галерея правки" />
     <MESSAGE value="правки с картинками" />
-    <option name="LAST_COMMIT_MESSAGE" value="правки с картинками" />
+    <MESSAGE value="мета теги" />
+    <option name="LAST_COMMIT_MESSAGE" value="мета теги" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
