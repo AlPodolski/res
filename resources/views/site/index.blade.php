@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $meta['title'])
-@section('des', $meta['des'])
+@section('title', $meta['title'] . ' на сайте '. $_SERVER['SERVER_NAME'])
+@section('des', $meta['des'] . ' на сайте '. $_SERVER['SERVER_NAME'])
 
 @if(isset($path) and $path)
     @section('can', $path)

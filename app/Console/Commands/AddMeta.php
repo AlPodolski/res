@@ -53,6 +53,20 @@ class AddMeta extends Command
 
         $data = array();
 
+        $data[] = [
+            'url' => 'metro',
+            'title' => 'Проститутки у метро :metro :city3',
+            'des' => 'Анкеты индивидуалок у метро :metro. Номера и отзывы шлюх рядом с метро :metro :city3',
+            'h1' => 'Проститутки :metro',
+        ];
+
+        $data[] = [
+            'url' => 'rayon',
+            'title' => 'Проститутки :rayon, найти индивидуалку в районе :rayon :city3',
+            'des' => 'Проститутки в районе :rayon с номерами телефонов проверенными фото и отзывами клиентов, на нашем сайте есть простой поиск индивидуалок в районе :rayon :city3',
+            'h1' => 'Проститутки :rayon',
+        ];
+
         foreach ($records as $value) {
 
             $data[] = $value;
