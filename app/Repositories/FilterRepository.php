@@ -112,7 +112,7 @@ class FilterRepository
 
             }
 
-            return $posts->select($columns)->paginate($limit);
+            return $posts->select($columns)->orderByRaw('RAND()')->paginate($limit);
 
         } else {
 

@@ -85,7 +85,7 @@
     <div class="container">
         <div class="social-items">
             <div class="social-item">
-                <a href=""><img src="/img/telegram.svg" alt=""></a>
+                <a href="https://t.me/indi_tut"><img src="/img/telegram.svg" alt=""></a>
             </div>
         </div>
     </div>
