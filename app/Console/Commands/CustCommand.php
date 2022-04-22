@@ -2,10 +2,15 @@
 
 namespace App\Console\Commands;
 
+use App\Models\City;
 use App\Models\IntimHair;
 use App\Models\Post;
 use App\Models\PostIntimHair;
+use App\Models\PostRayon;
+use App\Models\Rayon;
 use Illuminate\Console\Command;
+use League\Csv\Reader;
+use League\Csv\Statement;
 
 class CustCommand extends Command
 {
@@ -40,24 +45,59 @@ class CustCommand extends Command
      */
     public function handle()
     {
-        $posts = Post::with('intimHair')->get();
 
-        $intimHairList = IntimHair::all()->toArray();
+        $posts = Post::with('metro', 'rayon')->where(['city_id' => 1])->get();
 
-        foreach ($posts as $post){
+        $stream = \fopen(storage_path('metro-rayon.csv'), 'r');
 
-            if(!$post->intimHair) {
+        $csv = Reader::createFromStream($stream);
+        $csv->setDelimiter(';');
+        $csv->setHeaderOffset(0);
+        //build a statement
+        $stmt = (new Statement());
 
-                $postIntimHair = new PostIntimHair();
+        $records = $stmt->process($csv);
 
-                $postIntimHair->posts_id = $post->id;
-                $postIntimHair->intim_hair_id = $intimHairList[array_rand($intimHairList)]['id'];
-                $postIntimHair->city_id = $post->city_id;
+        $phonesCity = array();
 
-                $postIntimHair->save();
+        foreach ($records as $value) {
+
+            $phonesCity[$value['rayon']][] = $value['metro'];
+
+        }
+
+        foreach ($posts as $post) {
+
+            if ($post->metro and !$post->rayon and $metroItem = $post->metro->first()) {
+
+                foreach ($phonesCity as $key => $item){
+
+                    if (in_array($metroItem->metro->value, $item)){
+
+                        $rayon = Rayon::where(['value' => $key])->get()->first();
+
+                        if ($rayon) {
+
+                            $postRayon = new PostRayon();
+
+                            $postRayon->posts_id = $post->id;
+                            $postRayon->city_id = 1;
+                            $postRayon->rayons_id = $rayon->id;
+
+                            $postRayon->save();
+
+                            break;
+
+                        }
+
+                    }
+
+                }
 
             }
 
         }
+
+
     }
 }
