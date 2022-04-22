@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="интимная стрижка">
-      <change afterPath="$PROJECT_DIR$/routes/metro-rayon.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/metro-rayon.csv" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="заливка районов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/CustCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/CustCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/MenuWidget.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,14 +234,8 @@
       <workItem from="1650449745816" duration="990000" />
       <workItem from="1650453639877" duration="4451000" />
       <workItem from="1650518006778" duration="17043000" />
-      <workItem from="1650606490099" duration="7505000" />
-    </task>
-    <task id="LOCAL-00038" summary="вывод видео">
-      <created>1648632375709</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1648632375709</updated>
+      <workItem from="1650606490099" duration="9334000" />
+      <workItem from="1650626744152" duration="1915000" />
     </task>
     <task id="LOCAL-00039" summary="вывод видео правка">
       <created>1648632887997</created>
@@ -580,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650607760130</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="заливка районов">
+      <created>1650621133019</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1650621133019</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +609,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="импорт телефонов" />
     <MESSAGE value="добавление вебмастера" />
     <MESSAGE value="проверка @if(isset($post-&gt;avatar-&gt;file)" />
     <MESSAGE value="правки с урл сервисом" />
@@ -634,7 +633,8 @@
     <MESSAGE value="кеш детальной страницы" />
     <MESSAGE value="правки" />
     <MESSAGE value="интимная стрижка" />
-    <option name="LAST_COMMIT_MESSAGE" value="интимная стрижка" />
+    <MESSAGE value="заливка районов" />
+    <option name="LAST_COMMIT_MESSAGE" value="заливка районов" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

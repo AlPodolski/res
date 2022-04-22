@@ -3,6 +3,7 @@
 namespace App\Widgets;
 
 use App\Models\Age;
+use App\Models\City;
 use App\Models\Filter;
 use App\Models\HairColor;
 use App\Models\IntimHair;
@@ -44,6 +45,11 @@ class MenuWidget implements ContractWidget
 
         $cityId = $this->city_id;
 
+        $cityList = Cache::remember('city_list', $expire, function () use ($cityId) {
+
+            return City::get();
+
+        });
         $metroList = Cache::remember('metro_city_id_' . $this->city_id, $expire, function () use ($cityId) {
 
             return Filter::with('metro')
@@ -134,6 +140,7 @@ class MenuWidget implements ContractWidget
             'priceList',
             'serviceList',
             'hairColorList',
+            'cityList',
             'intimHairList'));
 
     }

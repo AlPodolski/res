@@ -149,6 +149,20 @@
                     </div>
                 </li>
                 @endif
+                @if($intimHairList)
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapseCity">
+                            Изменить город
+                        </a>
+                        <div id="collapseCity" class="collapse" data-parent="#accordion">
+                            @foreach($cityList as $item)
+                                <a class="collapse-item d-block menu__link" href="https://{{$item->url}}.{{env('DOMAIN')}}">{{ $item->city }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+                @endif
 
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971302">
                     <div class="menu__controls">
