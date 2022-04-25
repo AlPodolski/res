@@ -101,7 +101,8 @@
 </div>
 </body>
 <!-- Scripts -->
-<script src="{{ asset('js/app.js?v=2') }}" defer></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" defer></script>
 <script src="{{ asset('js/script.js?v=2') }}" defer></script>
 @if(View::hasSection('lightbox'))
     <script src="@yield('lightbox')" defer></script>
