@@ -39,6 +39,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css?v=4') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -101,6 +102,7 @@
 </body>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js?v=2') }}" defer></script>
+<script src="{{ asset('js/script.js?v=2') }}" defer></script>
 @if(View::hasSection('lightbox'))
     <script src="@yield('lightbox')" defer></script>
 @endif
