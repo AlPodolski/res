@@ -34,7 +34,7 @@
     @endif
 
     @if(View::hasSection('yandex'))
-        <meta name="yandex-verification" href="@yield('yandex')">
+        <meta name="yandex-verification" content="@yield('yandex')">
     @endif
 
     <!-- Styles -->
