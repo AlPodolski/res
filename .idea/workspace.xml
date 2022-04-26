@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="метрика">
+      <change beforePath="$PROJECT_DIR$/app/Repositories/YandexRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/YandexRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,14 +240,7 @@
       <workItem from="1650626744152" duration="7048000" />
       <workItem from="1650863205504" duration="375000" />
       <workItem from="1650883431194" duration="8165000" />
-      <workItem from="1650949799926" duration="8655000" />
-    </task>
-    <task id="LOCAL-00048" summary="тайтл и описание для детальной страницы">
-      <created>1648801810314</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1648801810314</updated>
+      <workItem from="1650949799926" duration="9534000" />
     </task>
     <task id="LOCAL-00049" summary="вывод тега яндекс верификации">
       <created>1648802964895</created>
@@ -585,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650970422264</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="метрика">
+      <created>1650973000210</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1650973000210</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +614,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="вывод услуг и вывод свойств ссылками" />
     <MESSAGE value="добавление комментариев" />
     <MESSAGE value="вывод комментариев" />
     <MESSAGE value="ajax загрузка карточек" />
@@ -639,7 +638,8 @@
     <MESSAGE value="правки с пейдж спидом" />
     <MESSAGE value="правки с версткой" />
     <MESSAGE value="правки" />
-    <option name="LAST_COMMIT_MESSAGE" value="правки" />
+    <MESSAGE value="метрика" />
+    <option name="LAST_COMMIT_MESSAGE" value="метрика" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
