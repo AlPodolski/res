@@ -12,6 +12,12 @@
     font-style: normal;
     font-display:swap
 }
+h1{
+    margin: 10px 0;
+}
+a{
+    text-decoration: none;
+}
 img{
     max-width: 100%;
 }
@@ -230,6 +236,11 @@ body{
 .price{
     font-weight: 600;
     font-size: 16px;
+    margin-bottom: 8px;
+}
+.name {
+    margin-bottom: 5px;
+    display: block;
 }
 .phone{
     background: #ff6163;
@@ -239,6 +250,7 @@ body{
     padding: 5px;
     margin-top: 5px;
     display: block;
+    line-height: 25px;
 }
 .phone:hover{
     cursor: pointer;
@@ -339,6 +351,11 @@ body{
     width: 366px;
     height: 60px;
     margin-top: 0;
+    line-height: 39px;
+}
+.service-list {
+    margin-top: 15px;
+    margin-bottom: 0;
 }
 .add-to-favorite {
     width: 60px;

@@ -112,7 +112,7 @@
 
 
     @if($post->service->first())
-        <div class="property-item metro-list">
+        <div class="property-item metro-list service-list">
             <div class="decr-title">
                 Услуги
             </div>

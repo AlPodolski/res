@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="сборка фронт енда">
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки с пейдж спидом">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/post-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/post-item.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,14 +242,7 @@
       <workItem from="1650626744152" duration="7048000" />
       <workItem from="1650863205504" duration="375000" />
       <workItem from="1650883431194" duration="8165000" />
-      <workItem from="1650949799926" duration="3708000" />
-    </task>
-    <task id="LOCAL-00043" summary="правки">
-      <created>1648734186620</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1648734186620</updated>
+      <workItem from="1650949799926" duration="5761000" />
     </task>
     <task id="LOCAL-00044" summary="правки">
       <created>1648734412992</created>
@@ -589,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650890917316</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="правки с пейдж спидом">
+      <created>1650963627948</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1650963627949</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +616,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="правки с урл сервисом" />
     <MESSAGE value="кеширование запросов" />
     <MESSAGE value="вывод услуг и вывод свойств ссылками" />
     <MESSAGE value="добавление комментариев" />
@@ -643,7 +640,8 @@
     <MESSAGE value="вывод городов" />
     <MESSAGE value="правки" />
     <MESSAGE value="сборка фронт енда" />
-    <option name="LAST_COMMIT_MESSAGE" value="сборка фронт енда" />
+    <MESSAGE value="правки с пейдж спидом" />
+    <option name="LAST_COMMIT_MESSAGE" value="правки с пейдж спидом" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
