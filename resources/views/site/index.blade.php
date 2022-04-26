@@ -24,13 +24,14 @@
                     <div class="popular-item post-photo-item">
                         <a href="/post/{{ $topListItem->url }}">
                             <picture>
-                                <source srcset="/165-224/thumbs{{$topListItem->avatar->file}}"
+                                <source srcset="/139-185/thumbs{{$topListItem->avatar->file}}"
                                         media="(max-width: 361px)">
                                 <source srcset="/370-526/thumbs{{$topListItem->avatar->file}}"
                                         media="(max-width: 400px)">
-                                <source srcset="/211-300/thumbs{{$topListItem->avatar->file}}">
-                                <img title="Проститутка {{ $topListItem->name }}" loading="lazy" class="popular-img "
-                                     srcset="/211-300/thumbs{{$topListItem->avatar->file}}"
+                                <source srcset="/163-238/thumbs{{$topListItem->avatar->file}}">
+                                <img width="163px" height="238px"
+                                     title="Проститутка {{ $topListItem->name }}" loading="lazy" class="popular-img "
+                                     srcset="/163-238/thumbs{{$topListItem->avatar->file}}"
                                      alt="{{ $topListItem->name }}">
                             </picture>
                         </a>
@@ -84,7 +85,7 @@
     @if($posts->total() > $posts->count())
 
         <div data-url="{{ str_replace('http', 'https', $posts->nextPageUrl()) }}" onclick="getMorePosts(this)"
-             class="get-more">Показать еще <img src="/img/more.svg" alt=""></div>
+             class="get-more">Показать еще <img width="24px" height="24px" src="/img/more.svg" alt=""></div>
 
         {{ $posts->links() }}
 

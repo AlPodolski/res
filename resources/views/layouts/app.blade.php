@@ -46,7 +46,7 @@
     <nav class="navbar top-nav navbar-expand-md navbar-light bg-white">
         <div class="container nav-container">
             <div class="menu" onclick="showPanel(this)" data-target="side-panel">
-                <img src="/img/menu_burger.svg" alt="">
+                <img width="33px" height="33px" src="/img/menu_burger.svg" alt="">
                 <div class="top-menu-text">Меню</div>
             </div>
             <div class="logo">
@@ -67,7 +67,7 @@
                     </form>
                     <div class="action-form-btn header__search-btn js-show-search">
                         <div class="show-form">
-                            <img class="" src="/img/search.svg" onclick="showSearchForm(this)" alt="">
+                            <img class="" width="33px" height="23px" src="/img/search.svg" onclick="showSearchForm(this)" alt="">
                         </div>
                         <div class="close-form">
                             <img class="" src="/img/close.svg" onclick="showSearchForm(this)" alt="">
@@ -86,7 +86,7 @@
     <div class="container">
         <div class="social-items">
             <div class="social-item">
-                <a href="https://t.me/indi_tut"><img src="/img/telegram.svg" alt=""></a>
+                <a href="https://t.me/indi_tut"><img width="22px" height="19px" src="/img/telegram.svg" alt=""></a>
             </div>
         </div>
     </div>
