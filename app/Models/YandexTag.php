@@ -20,5 +20,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class YandexTag extends Model
 {
-    //
+    public $timestamps = false;
 }
