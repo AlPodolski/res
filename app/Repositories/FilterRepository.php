@@ -184,9 +184,7 @@ class FilterRepository
         }
 
         if (empty($ids)) {
-            $ids[] = [
-                '0' => 0
-            ];
+            $ids = array(0);
         }
 
         return $ids;
