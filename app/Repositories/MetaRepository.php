@@ -48,7 +48,7 @@ class MetaRepository
 
                 return $this->replaceCity($meta, $cityId);
 
-            } elseif ($meta = Meta::where(['url' => $filterParams->short_name])->select('title', 'des', 'h1')->get()->first()) {
+            } elseif ($meta = Meta::where(['url' => $filterParams[0]->short_name])->select('title', 'des', 'h1')->get()->first()) {
 
                 $meta = $meta->toArray();
 
@@ -76,7 +76,7 @@ class MetaRepository
 
     }
 
-    public function replaceParams($meta, $filterParams)
+    public function replaceParams($meta, $filterParamsList)
     {
 
         foreach ($meta as &$metaItem) {
@@ -89,30 +89,34 @@ class MetaRepository
 
                     $findValue = str_replace(':', '', $param);
 
-                    if (strstr($findValue, $filterParams->short_name)) {
+                    foreach ($filterParamsList as $filterParams){
 
-                        $expire = Carbon::now()->addMinutes(1000);
+                        if (strstr($findValue, $filterParams->short_name)) {
 
-                        $replaceData = Cache::remember($filterParams->parent_class.'_'.$filterParams->related_id, $expire, function() use ($filterParams) {
+                            $expire = Carbon::now()->addMinutes(1000);
 
-                            return $filterParams->parent_class::where(['id' => $filterParams->related_id])
-                                ->get()->first()->toArray();
+                            $replaceData = Cache::remember($filterParams->parent_class.'_'.$filterParams->related_id, $expire, function() use ($filterParams) {
 
-                        });
+                                return $filterParams->parent_class::where(['id' => $filterParams->related_id])
+                                    ->get()->first()->toArray();
+
+                            });
 
 
-                        $replace = 'value' . str_replace($filterParams->short_name, '', $findValue);
+                            $replace = 'value' . str_replace($filterParams->short_name, '', $findValue);
 
-                        $metaItem = $this->replaceOne($param, $replaceData[$replace], $metaItem);
+                            $metaItem = $this->replaceOne($param, $replaceData[$replace], $metaItem);
 
-                        $pattern = "#\[[^:.]+\]#i";
+                            $pattern = "#\[[^:.]+\]#i";
 
-                        if (preg_match($pattern, $metaItem, $m)) {
+                            if (preg_match($pattern, $metaItem, $m)) {
 
-                            $m[0] = str_replace('[', '', $m[0]);
-                            $m[0] = str_replace(']', '', $m[0]);
+                                $m[0] = str_replace('[', '', $m[0]);
+                                $m[0] = str_replace(']', '', $m[0]);
 
-                            $metaItem = preg_replace($pattern, $m[0] . ' [' . $param . '] ', $metaItem);
+                                $metaItem = preg_replace($pattern, $m[0] . ' [' . $param . '] ', $metaItem);
+
+                            }
 
                         }
 

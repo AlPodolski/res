@@ -54,7 +54,8 @@ class Filter extends Model
 
     public function price(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(Price::class, 'id', 'related_id');
+        return $this->hasOne(Price::class, 'id', 'related_id')
+            ->where(['is_hide' => Price::SHOW]);
     }
 
     public function time(): \Illuminate\Database\Eloquent\Relations\HasOne

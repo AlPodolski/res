@@ -6,6 +6,7 @@ use App\Repositories\CityRepository;
 use App\Repositories\FilterRepository;
 use App\Repositories\MetaRepository;
 use App\Repositories\TopPostListRepository;
+use App\Services\FilterDataHelper;
 use Illuminate\Http\Request;
 
 class FilterController extends Controller
@@ -27,7 +28,8 @@ class FilterController extends Controller
     public function index($city, $search, Request $request)
     {
 
-        if (!$filterParams = $this->filterRepository->getFilterParams($search)) abort(404);
+        if (!$filterParams = FilterDataHelper::checkData($this->filterRepository->getFilterParams($search)))
+            abort(404);
         if (!$cityInfo = $this->cityRepository->getCityInfoByUrl($city)) abort(404);
 
         $path = '/'.$request->path();

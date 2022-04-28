@@ -17,126 +17,179 @@ class FilterRepository
     public function getFilterParams($search)
     {
 
+        $searchData = explode('/', $search);
 
         $expire = Carbon::now()->addMinutes(1000);
 
-        $data = Cache::remember('filter_url_cache_'.$search, $expire, function() use ($search) {
+        foreach ($searchData as $searchItem) {
 
-            return  Filter::where(['filter_url' => $search])->first();
+            $data[] = Cache::remember('filter_url_cache_' . $searchItem, $expire, function () use ($searchItem) {
 
-        });
+                return Filter::where(['filter_url' => $searchItem])->first();
+
+            });
+
+        }
 
         return $data;
     }
 
-    public function getForFilter($params, $limit, $cityInfo)
+    public function getForFilter($searchParams, $limit, $cityInfo)
     {
 
         $columns = $this->columns;
 
+        $resultIds = array();
+
         $posts = array();
 
-        if ($params->type == 'custom') {
+        foreach ($searchParams as $params) {
 
-            $posts = Post::with('avatar')->where(['city_id' => $cityInfo['id']]);
+            if ($params->type == 'custom') {
 
-            if ($params->parent_class == Price::class) {
+                $posts = Post::where(['city_id' => $cityInfo['id']]);
 
-                switch ($params->filter_url) {
+                if ($params->parent_class == Price::class) {
 
-                    case "do-1500-rub":
-                        $posts = $posts->where('price', '<=', 1500);
-                        break;
+                    switch ($params->filter_url) {
 
-                    case "ot-1500-do-2000-rub":
-                        $posts = $posts->where('price', '>', 1500);
-                        $posts = $posts->where('price', '<=', 2000);
-                        break;
+                        case "do-1500-rub":
+                            $posts = $posts->where('price', '<=', 1500);
+                            break;
 
-                    case "ot-2000-do-3000-rub":
-                        $posts = $posts->where('price', '>', 2000);
-                        $posts = $posts->where('price', '<=', 3000);
-                        break;
+                        case "ot-1500-do-2000-rub":
+                            $posts = $posts->where('price', '>', 1500);
+                            $posts = $posts->where('price', '<=', 2000);
+                            break;
 
-                    case "ot-3000-do-6000-rub":
-                        $posts = $posts->where('price', '>', 3000);
-                        $posts = $posts->where('price', '<=', 6000);
-                        break;
+                        case "ot-2000-do-3000-rub":
+                            $posts = $posts->where('price', '>', 2000);
+                            $posts = $posts->where('price', '<=', 3000);
+                            break;
 
-                    case "ot-6000-rub":
-                        $posts = $posts->where('price', '>', 6000);
-                        break;
+                        case "ot-3000-do-6000-rub":
+                            $posts = $posts->where('price', '>', 3000);
+                            $posts = $posts->where('price', '<=', 6000);
+                            break;
 
-                }
+                        case "ot-6000-rub":
+                            $posts = $posts->where('price', '>', 6000);
+                            break;
 
-            }
+                        case "do-3000":
+                            $posts = $posts->where('price', '<=', 3000);
+                            break;
 
-            if ($params->parent_class == Age::class) {
-
-                switch ($params->filter_url) {
-                    case "ot-18-do-20-let":
-                        $posts = $posts->where('age', '>', 17);
-                        $posts = $posts->where('age', '<', 21);
-                        break;
-
-                    case "ot-21-do-25-let":
-                        $posts = $posts->where('age', '>', 20);
-                        $posts = $posts->where('age', '<', 26);
-                        break;
-
-                    case "ot-26-do-30-let":
-                        $posts = $posts->where('age', '>', 25);
-                        $posts = $posts->where('age', '<', 31);
-                        break;
-
-                    case "ot-31-do-35-let":
-                        $posts = $posts->where('age', '>', 30);
-                        $posts = $posts->where('age', '<', 46);
-                        break;
-
-                    case "ot-36-do-40-let":
-                        $posts = $posts->where('age', '>', 35);
-                        $posts = $posts->where('age', '<', 41);
-                        break;
-
-                    case "ot-40-do-50-let":
-                        $posts = $posts->where('age', '>', 39);
-                        $posts = $posts->where('age', '<', 51);
-                        break;
-
-                    case "ot-50-do-75-let":
-                        $posts = $posts->where('age', '>', 50);
-                        break;
+                    }
 
                 }
 
+                if ($params->parent_class == Age::class) {
+
+                    switch ($params->filter_url) {
+                        case "ot-18-do-20-let":
+                            $posts = $posts->where('age', '>', 17);
+                            $posts = $posts->where('age', '<', 21);
+                            break;
+
+                        case "ot-21-do-25-let":
+                            $posts = $posts->where('age', '>', 20);
+                            $posts = $posts->where('age', '<', 26);
+                            break;
+
+                        case "ot-26-do-30-let":
+                            $posts = $posts->where('age', '>', 25);
+                            $posts = $posts->where('age', '<', 31);
+                            break;
+
+                        case "ot-31-do-35-let":
+                            $posts = $posts->where('age', '>', 30);
+                            $posts = $posts->where('age', '<', 46);
+                            break;
+
+                        case "ot-36-do-40-let":
+                            $posts = $posts->where('age', '>', 35);
+                            $posts = $posts->where('age', '<', 41);
+                            break;
+
+                        case "ot-40-do-50-let":
+                            $posts = $posts->where('age', '>', 39);
+                            $posts = $posts->where('age', '<', 51);
+                            break;
+
+                        case "ot-50-do-75-let":
+                            $posts = $posts->where('age', '>', 50);
+                            break;
+
+                    }
+
+                }
+
+                $ids = $posts->select('id')->get();
+
+                $tempResult = array();
+
+                if ($ids) foreach ($ids as $id) {
+                    $tempResult[] = $id['id'];
+                }
+
+                $resultIds = $this->intersect_data( $tempResult, $resultIds);
+
+
+            } else {
+
+                $ids = $params->related_class::where([$params->related_param => $params->related_id, 'city_id' => $cityInfo['id']])
+                    ->select($params->search_param)
+                    ->get()
+                    ->values()
+                    ->toArray();
+
+                $tempResult = array();
+
+                if ($ids) foreach ($ids as $id) {
+                    $tempResult[] = $id[$params->search_param];
+                }
+
+                $resultIds = $this->intersect_data( $tempResult, $resultIds);
+
             }
-
-            return $posts->select($columns)->orderByRaw('RAND()')->paginate($limit);
-
-        } else {
-
-            $ids = $params->related_class::where([$params->related_param => $params->related_id, 'city_id' => $cityInfo['id']])
-                ->select($params->search_param)
-                ->get()
-                ->values()
-                ->toArray();
-
-            $resultIds = array();
-
-            if ($ids) foreach ($ids as $id) {
-                $resultIds[] = $id[$params->search_param];
-            }
-
-            $posts = Post::with('avatar')
-                ->orderByRaw('RAND()')
-                ->whereIn('id', $resultIds)
-                ->select($columns)
-                ->paginate($limit);
 
         }
 
+        $posts = Post::with('avatar')
+            ->orderByRaw('RAND()')
+            ->whereIn('id', $resultIds)
+            ->select($columns)
+            ->paginate($limit);
+
         return $posts;
+
+    }
+
+    private function intersect_data($id, $ids)
+    {
+
+        if ($id) {
+
+            if (!empty($ids)) {
+
+                $ids = array_intersect($ids, $id);
+
+            } else {
+
+                $ids = $id;
+
+            }
+
+        }
+
+        if (empty($ids)) {
+            $ids[] = [
+                '0' => 0
+            ];
+        }
+
+        return $ids;
 
     }
 
@@ -145,9 +198,9 @@ class FilterRepository
 
         $expire = Carbon::now()->addMinutes(60);
 
-        $data = Cache::remember('more_posts_'.$city_id, $expire, function() use ($city_id, $limit) {
+        $data = Cache::remember('more_posts_' . $city_id, $expire, function () use ($city_id, $limit) {
 
-            return  Post::with('avatar')
+            return Post::with('avatar')
                 ->orderByRaw(\DB::raw('RAND()'))
                 ->select($this->columns)
                 ->limit($limit)
