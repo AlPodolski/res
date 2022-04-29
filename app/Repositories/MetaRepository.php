@@ -48,7 +48,7 @@ class MetaRepository
 
                 return $this->replaceCity($meta, $cityId);
 
-            } elseif ($meta = Meta::where(['url' => $filterParams[0]->short_name])->select('title', 'des', 'h1')->get()->first()) {
+            } elseif (count($filterParams) == 1 and $meta = Meta::where(['url' => $filterParams[0]->short_name])->select('title', 'des', 'h1')->get()->first()) {
 
                 $meta = $meta->toArray();
 

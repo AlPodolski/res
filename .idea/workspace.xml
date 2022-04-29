@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="метки для страниц">
-      <change afterPath="$PROJECT_DIR$/app/Widgets/LabelMenuWidget.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Widgets/views/labels.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/widgets.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/widgets.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,14 +244,7 @@
       <workItem from="1650949799926" duration="13322000" />
       <workItem from="1651038041778" duration="7462000" />
       <workItem from="1651135662783" duration="14682000" />
-      <workItem from="1651210491188" duration="626000" />
-    </task>
-    <task id="LOCAL-00052" summary="тест заливки на города">
-      <created>1649770044666</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1649770044666</updated>
+      <workItem from="1651210491188" duration="2058000" />
     </task>
     <task id="LOCAL-00053" summary="импорт телефонов">
       <created>1649831917986</created>
@@ -594,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651140869972</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="метки для страниц">
+      <created>1651211374863</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1651211374864</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,7 +618,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ajax загрузка карточек" />
     <MESSAGE value="подгрузка анкет с учетом цены и района" />
     <MESSAGE value="сортировка в случайном порядке" />
     <MESSAGE value="поиск по имени или телефону" />
@@ -648,7 +642,8 @@
     <MESSAGE value="метрика" />
     <MESSAGE value="кеш тега яндекс" />
     <MESSAGE value="доработать мета теги с учетом фильтрации" />
-    <option name="LAST_COMMIT_MESSAGE" value="доработать мета теги с учетом фильтрации" />
+    <MESSAGE value="метки для страниц" />
+    <option name="LAST_COMMIT_MESSAGE" value="метки для страниц" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
