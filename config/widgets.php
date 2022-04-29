@@ -8,5 +8,6 @@
 return [
 
 	'menu' => 'App\Widgets\MenuWidget',
+	'labelMenu' => 'App\Widgets\LabelMenuWidget',
 
 ];

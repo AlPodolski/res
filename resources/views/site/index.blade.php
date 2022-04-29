@@ -54,8 +54,8 @@
                 {{ $meta['h1'] }}
             </li>
         </ul>
+        @widget('labelMenu', ['filterParams' => $filterParams])
     @endif
-
     <h1>{{ $meta['h1'] }}</h1>
 
     <div class="posts">

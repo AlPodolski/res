@@ -357,6 +357,24 @@ body{
     margin-top: 15px;
     margin-bottom: 0;
 }
+.filter-label{
+    line-height: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #d2d2d2;
+    border-radius: 50px;
+    font-size: 14px;
+    white-space: nowrap;
+    color: #333;
+    -webkit-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 6px;
+    background: #fff;
+    padding-bottom: 1px;
+}
 .add-to-favorite {
     width: 60px;
     height: 60px;

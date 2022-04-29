@@ -83,7 +83,9 @@
                         </a>
                         <div id="collapsePrice" class="collapse" data-parent="#accordion">
                             @foreach($priceList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->price->value }}</a>
+                                @if(isset($item->price->value))
+                                    <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->price->value }}</a>
+                                @endif
                             @endforeach
                         </div>
                     </div>
