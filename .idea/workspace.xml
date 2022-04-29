@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="метки для страниц">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/MetaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,14 +244,7 @@
       <workItem from="1650949799926" duration="13322000" />
       <workItem from="1651038041778" duration="7462000" />
       <workItem from="1651135662783" duration="14682000" />
-      <workItem from="1651210491188" duration="2058000" />
-    </task>
-    <task id="LOCAL-00053" summary="импорт телефонов">
-      <created>1649831917986</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1649831917986</updated>
+      <workItem from="1651210491188" duration="2478000" />
     </task>
     <task id="LOCAL-00054" summary="добавление вебмастера">
       <created>1649841352884</created>
@@ -589,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651211374864</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="метки для страниц">
+      <created>1651212568193</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1651212568193</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
