@@ -19,6 +19,8 @@ class LabelMenuWidget implements ContractWidget
 
         $url = $_SERVER['REQUEST_URI'];
 
+        if (strstr($url, '?page')) $url = strstr($url, '?page', true);
+
         foreach ($this->filterParams as $item){
 
             switch ($item->short_name) {
