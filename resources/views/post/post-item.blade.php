@@ -18,10 +18,12 @@
         <div class="post-price">
             {{ $post->price }} ₽
         </div>
-        <div class="phone-favorite-wrap d-flex">
-            <a href="tel:+{{ $post->phone }}" data-tel="{{ $post->phone }}" onclick="show_phone(this)"
-               class="phone single-phone">Показать телефон</a>
-        </div>
+        @if($post->phone)
+            <div class="phone-favorite-wrap d-flex">
+                <a href="tel:+{{ $post->phone }}" data-tel="{{ $post->phone }}" onclick="show_phone(this)"
+                   class="phone single-phone">Показать телефон</a>
+            </div>
+        @endif
 
         <form action="/call/request" method="post" class="request-call-form">
             @csrf
