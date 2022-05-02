@@ -2,6 +2,7 @@
     /* @var $post \App\Models\Post */
 @endphp
 @section('lightbox', '/js/lightbox.min.js')
+@section('maskedinput', '/js/jquery.maskedinput.js')
 <div class="post-content" data-price="{{ $post->price }}" data-id="{{ $post->id }}"
      data-rayon-id="{{ $post->rayon->rayon->id ?? '' }}">
     <div class="left">
@@ -21,6 +22,16 @@
             <a href="tel:+{{ $post->phone }}" data-tel="{{ $post->phone }}" onclick="show_phone(this)"
                class="phone single-phone">Показать телефон</a>
         </div>
+
+        <form action="/call/request" method="post" class="request-call-form">
+            @csrf
+            <div class="property-name">Заказать звонок</div>
+            <div class="phone-wrap d-flex">
+                <input type="text" name="phone" class="request-call-input">
+                <input type="hidden" name="posts_id" value="{{$post->id}}">
+                <button class="red-btn">Заказать</button>
+            </div>
+        </form>
 
         <div class="post-property-list">
             @if($post->metro->first())

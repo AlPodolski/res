@@ -38,7 +38,7 @@
     @endif
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?v=4') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?v=5') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css?v=1') }}" rel="stylesheet">
 </head>
 <body>
@@ -121,5 +121,8 @@
 <script src="{{ asset('js/script.js?v=2') }}" defer></script>
 @if(View::hasSection('lightbox'))
     <script src="@yield('lightbox')" defer></script>
+@endif
+@if(View::hasSection('maskedinput'))
+    <script src="@yield('maskedinput')" defer></script>
 @endif
 </html>

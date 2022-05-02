@@ -68,6 +68,7 @@ function getMorePost(){
             if(data !== ''){
 
                 $('.post-wrap').append(data);
+                phone_mask();
 
             }else{
 
@@ -110,5 +111,19 @@ function getMorePosts(object){
 
         }
     })
+
+}
+
+$(document).ready(function() {
+
+    phone_mask();
+
+});
+
+function phone_mask(){
+
+    if ($('.request-call-form').length > 0) {
+        $(".request-call-input").mask("+7(999)99-99-999");
+    }
 
 }

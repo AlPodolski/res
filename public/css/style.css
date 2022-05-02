@@ -343,6 +343,30 @@ body{
     display: flex;
     margin-bottom: 15px;
 }
+.request-call-form {
+    margin-bottom: 15px;
+}
+.request-call-input {
+    border-radius: 8px;
+    max-width: 330px;
+    border: 1px solid #dadae8;
+    padding: 10px;
+}
+.phone-wrap{
+    margin-top: 5px;
+}
+.red-btn{
+    background: #ff6163;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    text-align: center;
+}
+.phone-wrap .red-btn{
+    margin-left: 15px;
+}
 .single-phone {
     margin-bottom: 25px;
     padding: 10px;

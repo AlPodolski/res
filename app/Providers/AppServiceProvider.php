@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\CallRequest;
 use App\Models\Post;
+use App\Observers\CallRequestObserver;
 use App\Observers\PostsObserver;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
     {
         \Schema::defaultStringLength(191);
         Post::observe(PostsObserver::class);
+        CallRequest::observe(CallRequestObserver::class);
     }
 }

@@ -21,5 +21,10 @@
     </a>
     <a href="/post/{{$post->url}}" class="name">{{$post->name}}</a>
     <div class="price">{{ $post->price }} ₽</div>
-    <a data-tel="{{$post->phone}}" href="tel:+{{$post->phone}}" onclick="show_phone(this)" class="phone">Показать телефон</a>
+    @if($post->phone)
+        <a data-tel="{{$post->phone}}" href="tel:+{{$post->phone}}" onclick="show_phone(this)" class="phone">Показать
+            телефон</a>
+    @else
+        <a href="/post/{{$post->url}}" class="phone">Подробнее</a>
+    @endif
 </div>
