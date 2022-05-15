@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="заказать звонок">
-      <change beforePath="$PROJECT_DIR$/resources/views/post/post-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/post-item.blade.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="скрыт телефон">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +166,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="D:/node/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -244,14 +244,8 @@
       <workItem from="1651038041778" duration="7462000" />
       <workItem from="1651135662783" duration="14682000" />
       <workItem from="1651210491188" duration="5193000" />
-      <workItem from="1651468485241" duration="8657000" />
-    </task>
-    <task id="LOCAL-00057" summary="правки с урл сервисом">
-      <created>1649845764423</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1649845764423</updated>
+      <workItem from="1651468485241" duration="9273000" />
+      <workItem from="1652594342238" duration="2806000" />
     </task>
     <task id="LOCAL-00058" summary="правки с урл сервисом">
       <created>1649845795413</created>
@@ -589,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651477955778</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="скрыт телефон">
+      <created>1651478074420</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1651478074420</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,6 +609,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="8d5cd55d-aca6-430d-aa41-bf36b253d728">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -615,10 +641,14 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="8d5cd55d-aca6-430d-aa41-bf36b253d728" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="сортировка в случайном порядке" />
     <MESSAGE value="поиск по имени или телефону" />
     <MESSAGE value="тайтл для картинок" />
     <MESSAGE value="горизантальный скрол" />
@@ -643,7 +673,8 @@
     <MESSAGE value="доработать мета теги с учетом фильтрации" />
     <MESSAGE value="метки для страниц" />
     <MESSAGE value="заказать звонок" />
-    <option name="LAST_COMMIT_MESSAGE" value="заказать звонок" />
+    <MESSAGE value="скрыт телефон" />
+    <option name="LAST_COMMIT_MESSAGE" value="скрыт телефон" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

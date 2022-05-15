@@ -30,7 +30,7 @@
     <meta name="description" content="@yield('des')">
 
     @if(View::hasSection('can'))
-        <meta name="canonical" href="@yield('can')">
+        <link rel="canonical" href="@yield('can')">
     @endif
 
     @if(View::hasSection('yandex'))
