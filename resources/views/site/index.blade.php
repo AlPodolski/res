@@ -11,6 +11,12 @@
     @section('yandex', $yandexTag->tag)
 @endif
 
+@if(isset($microData) and $microData)
+    <script type="application/ld+json">
+        {{ json_encode($microData) }}
+    </script>
+@endif
+
 @section('content')
 
     @if($topList)
