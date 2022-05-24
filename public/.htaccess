@@ -5,6 +5,14 @@
 
     RewriteEngine On
 
+    RewriteCond %{THE_REQUEST} //
+    # Проверяем, повторяется ли слеш (//) более двух раз.
+    RewriteRule .* /$0 [R=301,L]
+    # Исключаем все лишние слеши.
+
+      RewriteCond %{REQUEST_URI} ^(.*)/index\.php$
+      RewriteRule ^(.*)index\.php$ https://%{HTTP_HOST}/$1 [R=301,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
