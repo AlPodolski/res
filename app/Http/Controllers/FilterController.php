@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\GenerateBreadcrumbMicro;
 use App\Actions\GenerateMicroDataForCatalog;
 use App\Repositories\CityRepository;
 use App\Repositories\FilterRepository;
@@ -17,7 +18,8 @@ class FilterController extends Controller
     private CityRepository $cityRepository;
     private MetaRepository $metaRepository;
     private TopPostListRepository $topPostListRepository;
-    private  $microData;
+    private GenerateMicroDataForCatalog $microData;
+    private GenerateBreadcrumbMicro $breadMicro;
 
     public function __construct()
     {
@@ -26,6 +28,7 @@ class FilterController extends Controller
         $this->metaRepository = new MetaRepository();
         $this->topPostListRepository = new TopPostListRepository();
         $this->microData = new GenerateMicroDataForCatalog();
+        $this->breadMicro = new GenerateBreadcrumbMicro();
     }
 
     public function index($city, $search, Request $request)
@@ -43,7 +46,11 @@ class FilterController extends Controller
 
         $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
 
-        $microData = $this->microData->generate($meta['title'], $posts, $search, $cityInfo['id']);
+        $breadMicro = $this->breadMicro->generate($request);
+
+        $microData = false;
+
+        if ($posts->count()) $microData = $this->microData->generate($meta['title'], $posts, $search, $cityInfo['id']);
 
         $morePosts = false;
 
@@ -51,7 +58,8 @@ class FilterController extends Controller
 
         return view('site.index',
             compact(
-                'posts', 'cityInfo', 'meta', 'filterParams', 'topList', 'path', 'morePosts', 'microData'
+                'posts', 'cityInfo', 'meta', 'filterParams', 'topList',
+                'path', 'morePosts', 'microData', 'breadMicro'
             ));
     }
 }

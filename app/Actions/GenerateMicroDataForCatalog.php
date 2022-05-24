@@ -2,7 +2,6 @@
 
 namespace App\Actions;
 
-use App\Models\Post;
 use Cache;
 use Carbon\Carbon;
 

@@ -7,6 +7,12 @@
 @section('title', $metaData['title'])
 @section('des', $metaData['des'])
 
+@if(isset($breadMicro) and $breadMicro)
+    <script type="application/ld+json">
+        {{ json_encode($breadMicro) }}
+    </script>
+@endif
+
 @section('content')
 
     <ul class="breadcrumb">

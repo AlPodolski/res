@@ -17,6 +17,12 @@
     </script>
 @endif
 
+@if(isset($breadMicro) and $breadMicro)
+        <script type="application/ld+json">
+        {{ json_encode($breadMicro) }}
+    </script>
+@endif
+
 @section('content')
 
     @if($topList)
