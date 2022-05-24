@@ -58,13 +58,18 @@
                 </a>
             </div>
             <div class="right-nav">
-                <div class="search header__search">
-                    <form action="/search" method="get" class="header__search-form">
+                <div class="search header__search" itemscope itemtype="https://schema.org/WebSite">
+                    <form action="/search" method="get" class="header__search-form"
+                          itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                        <meta itemprop="target" content="https://example.com/search?q={query}"/>
                         <input type="text" autocomplete="off"
-                               class="form-control form-control_size-l header__search-field" name="q" value=""
+                               itemprop="query"
+                               class="form-control form-control_size-l header__search-field"
+                               name="q" value=""
                                placeholder="Введите имя или телефон">
                         <input type="hidden" name="lang" value="ru">
                     </form>
+
                     <div class="action-form-btn header__search-btn js-show-search">
                         <div class="show-form">
                             <img class="" width="33px" height="23px" src="/img/search.svg" onclick="showSearchForm(this)" alt="">
