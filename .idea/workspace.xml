@@ -1,615 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="скрыт телефон">
+    <list default="true" id="8c1b3e4d-e353-4d98-bee6-dc425e59c1a1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  <component name="ComposerSettings">
     <execution />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_carousel.scss" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_navbar.scss" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/bootstrap.scss" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/js/dist/dropdown.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_tooltip.scss" root0="SKIP_INSPECTION" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
-    <include_path>
-      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
-      <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/vendor/opis/closure" />
-      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
-      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
-      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
-      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
-      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
-      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
-      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
-      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
-      <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server" />
-      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
-      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/vendor/php-parallel-lint/php-console-color" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/vendor/php-parallel-lint/php-console-highlighter" />
-      <path value="$PROJECT_DIR$/vendor/react/promise" />
-      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
-      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
-      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
-      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
-      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
-      <path value="$PROJECT_DIR$/vendor/klisl/laravel-widgets" />
-      <path value="$PROJECT_DIR$/vendor/intervention/image" />
-      <path value="$PROJECT_DIR$/vendor/intervention/imagecache" />
-      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
-      <path value="$PROJECT_DIR$/vendor/league/csv" />
-    </include_path>
-  </component>
-  <component name="ProjectId" id="26PWEzxV0KhIllkTHc2RiqW10eC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="29Z5VKAx8nBm0H0B1G65ihsRg2x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs_interpreter_path" value="D:/node/node" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\pr.loc\public\js" />
-      <recent name="C:\OpenServer\domains\pr.loc\storage" />
-      <recent name="C:\OpenServer\domains\pr.loc\app\Console\Commands" />
-      <recent name="C:\OpenServer\domains\pr.loc\public\storage\uploads\aaa" />
-      <recent name="C:\OpenServer\domains\pr.loc\public\uploads\aaa" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\pr.loc\storage\app\public\521-741\uploads" />
-      <recent name="C:\OpenServer\domains\pr.loc\storage" />
-      <recent name="C:\OpenServer\domains\pr.loc\public\storage" />
-      <recent name="C:\OpenServer\domains\pr.loc\app" />
-      <recent name="C:\OpenServer\domains\pr.loc\public\fonts" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
-      <method v="2" />
-    </configuration>
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/OpenServer/domains/rex",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration>C:\Users\Работа\AppData\Roaming\Subversion</configuration>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="" />
-      <created>1647325598618</created>
+      <changelist id="8c1b3e4d-e353-4d98-bee6-dc425e59c1a1" name="Changes" comment="" />
+      <created>1653307789684</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1647325598618</updated>
-      <workItem from="1647325601186" duration="6972000" />
-      <workItem from="1647342806684" duration="11256000" />
-      <workItem from="1647410461850" duration="24452000" />
-      <workItem from="1647497414829" duration="614000" />
-      <workItem from="1647518479695" duration="9354000" />
-      <workItem from="1647585298610" duration="13417000" />
-      <workItem from="1647790037402" duration="5000" />
-      <workItem from="1647846389592" duration="20541000" />
-      <workItem from="1647933309855" duration="20790000" />
-      <workItem from="1648015231827" duration="21813000" />
-      <workItem from="1648102795966" duration="19242000" />
-      <workItem from="1648191381441" duration="19782000" />
-      <workItem from="1648445824421" duration="12874000" />
-      <workItem from="1648623735652" duration="19327000" />
-      <workItem from="1648708028567" duration="24392000" />
-      <workItem from="1648791018024" duration="12314000" />
-      <workItem from="1649050021421" duration="6366000" />
-      <workItem from="1649757938498" duration="7000" />
-      <workItem from="1649758976018" duration="5891000" />
-      <workItem from="1649829142878" duration="21911000" />
-      <workItem from="1649914064003" duration="13389000" />
-      <workItem from="1649935665647" duration="6081000" />
-      <workItem from="1650001783553" duration="21443000" />
-      <workItem from="1650262493454" duration="14745000" />
-      <workItem from="1650288620219" duration="14000" />
-      <workItem from="1650346099433" duration="18118000" />
-      <workItem from="1650449745816" duration="990000" />
-      <workItem from="1650453639877" duration="4451000" />
-      <workItem from="1650518006778" duration="17043000" />
-      <workItem from="1650606490099" duration="9334000" />
-      <workItem from="1650626744152" duration="7048000" />
-      <workItem from="1650863205504" duration="375000" />
-      <workItem from="1650883431194" duration="8165000" />
-      <workItem from="1650949799926" duration="13322000" />
-      <workItem from="1651038041778" duration="7462000" />
-      <workItem from="1651135662783" duration="14682000" />
-      <workItem from="1651210491188" duration="5193000" />
-      <workItem from="1651468485241" duration="9273000" />
-      <workItem from="1652594342238" duration="2806000" />
+      <updated>1653307789684</updated>
+      <workItem from="1653307790972" duration="4324000" />
     </task>
-    <task id="LOCAL-00058" summary="правки с урл сервисом">
-      <created>1649845795413</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1649845795413</updated>
-    </task>
-    <task id="LOCAL-00059" summary="кеширование запросов">
-      <created>1649858302492</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1649858302492</updated>
-    </task>
-    <task id="LOCAL-00060" summary="вывод услуг и вывод свойств ссылками">
-      <created>1650003704118</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1650003704118</updated>
-    </task>
-    <task id="LOCAL-00061" summary="добавление комментариев">
-      <created>1650019741471</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1650019741471</updated>
-    </task>
-    <task id="LOCAL-00062" summary="вывод комментариев">
-      <created>1650022515157</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1650022515158</updated>
-    </task>
-    <task id="LOCAL-00063" summary="правки">
-      <created>1650023347630</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1650023347630</updated>
-    </task>
-    <task id="LOCAL-00064" summary="ajax загрузка карточек">
-      <created>1650280476921</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1650280476922</updated>
-    </task>
-    <task id="LOCAL-00065" summary="ajax загрузка карточек">
-      <created>1650280508505</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1650280508506</updated>
-    </task>
-    <task id="LOCAL-00066" summary="подгрузка анкет с учетом цены и района">
-      <created>1650348457628</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1650348457629</updated>
-    </task>
-    <task id="LOCAL-00067" summary="сортировка в случайном порядке">
-      <created>1650349563276</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1650349563276</updated>
-    </task>
-    <task id="LOCAL-00068" summary="поиск по имени или телефону">
-      <created>1650362022248</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1650362022248</updated>
-    </task>
-    <task id="LOCAL-00069" summary="тайтл для картинок">
-      <created>1650362344790</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1650362344790</updated>
-    </task>
-    <task id="LOCAL-00070" summary="горизантальный скрол">
-      <created>1650362767531</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1650362767531</updated>
-    </task>
-    <task id="LOCAL-00071" summary="правка с поиском">
-      <created>1650363040687</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1650363040687</updated>
-    </task>
-    <task id="LOCAL-00072" summary="правка">
-      <created>1650363264152</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1650363264152</updated>
-    </task>
-    <task id="LOCAL-00073" summary="галерея">
-      <created>1650368453477</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1650368453477</updated>
-    </task>
-    <task id="LOCAL-00074" summary="галерея правки">
-      <created>1650368905113</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1650368905113</updated>
-    </task>
-    <task id="LOCAL-00075" summary="правки с картинками">
-      <created>1650370182994</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1650370182994</updated>
-    </task>
-    <task id="LOCAL-00076" summary="правки с картинками">
-      <created>1650370319681</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1650370319681</updated>
-    </task>
-    <task id="LOCAL-00077" summary="правки с картинками">
-      <created>1650370881308</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1650370881308</updated>
-    </task>
-    <task id="LOCAL-00078" summary="правки с картинками">
-      <created>1650371993901</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1650371993901</updated>
-    </task>
-    <task id="LOCAL-00079" summary="мета теги">
-      <created>1650521182399</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1650521182399</updated>
-    </task>
-    <task id="LOCAL-00080" summary="мета теги">
-      <created>1650522077790</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1650522077790</updated>
-    </task>
-    <task id="LOCAL-00081" summary="мета теги для районов и метро">
-      <created>1650536049129</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1650536049130</updated>
-    </task>
-    <task id="LOCAL-00082" summary="кеш мета тегов">
-      <created>1650536490582</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1650536490582</updated>
-    </task>
-    <task id="LOCAL-00083" summary="кеш детальной страницы">
-      <created>1650536994347</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1650536994347</updated>
-    </task>
-    <task id="LOCAL-00084" summary="правки">
-      <created>1650540996249</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1650540996249</updated>
-    </task>
-    <task id="LOCAL-00085" summary="правки">
-      <created>1650541406378</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1650541406378</updated>
-    </task>
-    <task id="LOCAL-00086" summary="интимная стрижка">
-      <created>1650607760129</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1650607760130</updated>
-    </task>
-    <task id="LOCAL-00087" summary="заливка районов">
-      <created>1650621133019</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1650621133019</updated>
-    </task>
-    <task id="LOCAL-00088" summary="вывод городов">
-      <created>1650628894003</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1650628894003</updated>
-    </task>
-    <task id="LOCAL-00089" summary="правки">
-      <created>1650629492108</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1650629492108</updated>
-    </task>
-    <task id="LOCAL-00090" summary="сборка фронт енда">
-      <created>1650886581320</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1650886581320</updated>
-    </task>
-    <task id="LOCAL-00091" summary="сборка фронт енда">
-      <created>1650890917316</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1650890917316</updated>
-    </task>
-    <task id="LOCAL-00092" summary="правки с пейдж спидом">
-      <created>1650963627948</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1650963627949</updated>
-    </task>
-    <task id="LOCAL-00093" summary="правки с версткой">
-      <created>1650965454655</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1650965454655</updated>
-    </task>
-    <task id="LOCAL-00094" summary="правки">
-      <created>1650970181024</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1650970181024</updated>
-    </task>
-    <task id="LOCAL-00095" summary="правки">
-      <created>1650970324896</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1650970324896</updated>
-    </task>
-    <task id="LOCAL-00096" summary="правки">
-      <created>1650970422264</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1650970422264</updated>
-    </task>
-    <task id="LOCAL-00097" summary="метрика">
-      <created>1650973000210</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1650973000210</updated>
-    </task>
-    <task id="LOCAL-00098" summary="кеш тега яндекс">
-      <created>1650974161363</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1650974161363</updated>
-    </task>
-    <task id="LOCAL-00099" summary="доработать мета теги с учетом фильтрации">
-      <created>1651140552273</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1651140552273</updated>
-    </task>
-    <task id="LOCAL-00100" summary="доработать мета теги с учетом фильтрации">
-      <created>1651140869972</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1651140869972</updated>
-    </task>
-    <task id="LOCAL-00101" summary="метки для страниц">
-      <created>1651211374863</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1651211374864</updated>
-    </task>
-    <task id="LOCAL-00102" summary="метки для страниц">
-      <created>1651212568193</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1651212568193</updated>
-    </task>
-    <task id="LOCAL-00103" summary="метки для страниц">
-      <created>1651212992457</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1651212992457</updated>
-    </task>
-    <task id="LOCAL-00104" summary="метки для страниц">
-      <created>1651213103802</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1651213103802</updated>
-    </task>
-    <task id="LOCAL-00105" summary="заказать звонок">
-      <created>1651477955778</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1651477955778</updated>
-    </task>
-    <task id="LOCAL-00106" summary="скрыт телефон">
-      <created>1651478074420</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1651478074420</updated>
-    </task>
-    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ID_ORDER">
-      <list>
-        <option value="Default.Root" />
-        <option value="Default.Author" />
-        <option value="Default.Date" />
-        <option value="Default.Subject" />
-      </list>
-    </option>
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="8d5cd55d-aca6-430d-aa41-bf36b253d728">
+        <entry key="1cf72fa3-d6d6-4495-ae17-b5e80dce96d1">
           <value>
             <State>
               <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
@@ -622,10 +73,10 @@
                       </list>
                     </value>
                   </entry>
-                  <entry key="roots">
+                  <entry key="structure">
                     <value>
                       <list>
-                        <option value="$PROJECT_DIR$" />
+                        <option value="dir:C:/OpenServer/domains/rex/app" />
                       </list>
                     </value>
                   </entry>
@@ -643,41 +94,8 @@
     </option>
     <option name="OPEN_GENERIC_TABS">
       <map>
-        <entry key="8d5cd55d-aca6-430d-aa41-bf36b253d728" value="TOOL_WINDOW" />
+        <entry key="1cf72fa3-d6d6-4495-ae17-b5e80dce96d1" value="TOOL_WINDOW" />
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="поиск по имени или телефону" />
-    <MESSAGE value="тайтл для картинок" />
-    <MESSAGE value="горизантальный скрол" />
-    <MESSAGE value="правка с поиском" />
-    <MESSAGE value="правка" />
-    <MESSAGE value="галерея" />
-    <MESSAGE value="галерея правки" />
-    <MESSAGE value="правки с картинками" />
-    <MESSAGE value="мета теги" />
-    <MESSAGE value="мета теги для районов и метро" />
-    <MESSAGE value="кеш мета тегов" />
-    <MESSAGE value="кеш детальной страницы" />
-    <MESSAGE value="интимная стрижка" />
-    <MESSAGE value="заливка районов" />
-    <MESSAGE value="вывод городов" />
-    <MESSAGE value="сборка фронт енда" />
-    <MESSAGE value="правки с пейдж спидом" />
-    <MESSAGE value="правки с версткой" />
-    <MESSAGE value="правки" />
-    <MESSAGE value="метрика" />
-    <MESSAGE value="кеш тега яндекс" />
-    <MESSAGE value="доработать мета теги с учетом фильтрации" />
-    <MESSAGE value="метки для страниц" />
-    <MESSAGE value="заказать звонок" />
-    <MESSAGE value="скрыт телефон" />
-    <option name="LAST_COMMIT_MESSAGE" value="скрыт телефон" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
