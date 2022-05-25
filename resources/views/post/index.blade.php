@@ -14,6 +14,11 @@
             {{ json_encode($breadMicro) }}
         </script>
     @endif
+    @if(isset($imageMicro) and $imageMicro)
+        <script type="application/ld+json">
+            {{ json_encode($imageMicro) }}
+        </script>
+    @endif
 
     <ul class="breadcrumb">
         <li class="breadcrumb-item home">

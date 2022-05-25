@@ -15,7 +15,7 @@ class CityRepository
 
         else{
 
-            $value = City::select('id', 'city3')->where(['url' => $url])->get()->first()->toArray();
+            $value = City::select('id', 'city3', 'city')->where(['url' => $url])->get()->first()->toArray();
 
             \Cache::set('city_'.$url, $value);
 
