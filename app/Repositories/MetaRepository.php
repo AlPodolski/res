@@ -140,9 +140,9 @@ class MetaRepository
 
         if($page = $request->get('page')) $pageText = ' Страница '.$page;
 
-        foreach ($meta as &$item){
+        foreach ($meta as $key => &$item){
 
-            $item = $item . ' на сайте '. $_SERVER['SERVER_NAME'] . $pageText;
+            if ($key != 'h1')$item = $item . ' на сайте '. $_SERVER['SERVER_NAME'] . $pageText;
 
         }
 
