@@ -37,6 +37,17 @@
         <meta name="yandex-verification" content="@yield('yandex')">
     @endif
 
+    <meta property="og:title" content="@yield('title')" />
+    <meta property="og:description" content="@yield('des')" />
+    <meta property="og:url" content="https://{{ $_SERVER['HTTP_HOST'] }}{{ $_SERVER['REQUEST_URI'] }}" />
+    @if(View::hasSection('img'))
+        <meta property="og:image" content="@yield('img')"/>
+    @else
+        <meta property="og:image" content="/img/logo.svg" />
+    @endif
+    <meta property="og:site_name" content="{{ $_SERVER['HTTP_HOST'] }}" />
+    <meta property="og:locale" content="ru_RU" />
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css?v=5') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css?v=1') }}" rel="stylesheet">

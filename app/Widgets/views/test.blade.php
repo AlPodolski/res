@@ -1,7 +1,8 @@
 <div class="side-panel">
     <div class="side-panel-content">
         <div class="panel-menu">
-            <ul class="menu__list" id="accordion" data-navigation="" data-menu-handle="main-menu" data-navigation-inited="true">
+            <ul class="menu__list" id="accordion" itemscope itemtype="https://schema.org/SiteNavigationElement" data-navigation="" data-menu-handle="main-menu" data-navigation-inited="true">
+                <meta itemprop="name" content="Навигационное Меню">
                 @if($metroList)
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
@@ -10,7 +11,9 @@
                         </a>
                         <div id="collapseMetro" class="collapse" data-parent="#accordion">
                             @foreach($metroList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->metro->value }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                    <span itemprop="name">{{ $item->metro->value }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -25,7 +28,10 @@
                         </a>
                         <div id="collapseRayon" class="collapse" data-parent="#accordion">
                             @foreach($rayonList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->rayon->value }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                    {{ $item->rayon->value }}
+                                    <span itemprop="name">{{ $item->rayon->value }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -40,7 +46,9 @@
                         </a>
                         <div id="collapseService" class="collapse" data-parent="#accordion">
                             @foreach($serviceList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->service->value }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                    <span itemprop="name">{{ $item->service->value }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -55,7 +63,9 @@
                         </a>
                         <div id="collapseTime" class="collapse" data-parent="#accordion">
                             @foreach($timeList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->time->value }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                    <span itemprop="name">{{ $item->time->value }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -69,7 +79,9 @@
                         </a>
                         <div id="collapseAge" class="collapse" data-parent="#accordion">
                             @foreach($ageList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->age->value }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                    <span itemprop="name">{{ $item->age->value }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -84,7 +96,9 @@
                         <div id="collapsePrice" class="collapse" data-parent="#accordion">
                             @foreach($priceList as $item)
                                 @if(isset($item->price->value))
-                                    <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->price->value }}</a>
+                                    <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                        <span itemprop="name">{{ $item->price->value }}</span>
+                                    </a>
                                 @endif
                             @endforeach
                         </div>
@@ -100,7 +114,9 @@
                         </a>
                         <div id="collapsePlace" class="collapse" data-parent="#accordion">
                             @foreach($placeList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->place->value }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                    <span itemprop="name">{{ $item->place->value }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -115,7 +131,9 @@
                         </a>
                         <div id="collapseNational" class="collapse" data-parent="#accordion">
                             @foreach($nationalList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->national->value }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                    <span itemprop="name">{{ $item->national->value }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -130,7 +148,9 @@
                         </a>
                         <div id="collapseHair" class="collapse" data-parent="#accordion">
                             @foreach($hairColorList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->hairColor->value }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                    <span itemprop="name">{{ $item->hairColor->value }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -145,7 +165,9 @@
                         </a>
                         <div id="collapseHairIntim" class="collapse" data-parent="#accordion">
                             @foreach($intimHairList as $item)
-                                <a class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">{{ $item->intimHair->value }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="/{{$item->filter_url}}">
+                                    <span itemprop="name">{{ $item->intimHair->value }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -159,7 +181,9 @@
                         </a>
                         <div id="collapseCity" class="collapse" data-parent="#accordion">
                             @foreach($cityList as $item)
-                                <a class="collapse-item d-block menu__link" href="https://{{$item->url}}.{{env('DOMAIN')}}">{{ $item->city }}</a>
+                                <a itemprop="url" class="collapse-item d-block menu__link" href="https://{{$item->url}}.{{env('DOMAIN')}}">
+                                    <span itemprop="name">{{ $item->city }}</span>
+                                </a>
                             @endforeach
                         </div>
                     </div>

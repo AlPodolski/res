@@ -1,19 +1,19 @@
 @extends('layouts.app')
-
 @php
     /* @var $post \App\Models\Post */
 @endphp
-
 @section('title', $metaData['title'])
 @section('des', $metaData['des'])
-
-@if(isset($breadMicro) and $breadMicro)
-    <script type="application/ld+json">
-        {{ json_encode($breadMicro) }}
-    </script>
+@if(isset($post->avatar->file))
+    @section('img',  '/521-741/thumbs'.$post->avatar->file)
 @endif
-
 @section('content')
+
+    @if(isset($breadMicro) and $breadMicro)
+        <script type="application/ld+json">
+            {{ json_encode($breadMicro) }}
+        </script>
+    @endif
 
     <ul class="breadcrumb">
         <li class="breadcrumb-item home">
