@@ -33,7 +33,7 @@ class SiteController extends Controller
 
         $posts = $this->postsRepository->getPostsForMainPage(15, $cityInfo['id']);
 
-        $meta = $this->metaRepository->getForMain('/', $cityInfo['id']);
+        $meta = $this->metaRepository->getForMain('/', $cityInfo['id'], $request);
 
         $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
 

@@ -16,7 +16,7 @@ class MetaRepository
         $this->cityRepository = new CityRepository();
     }
 
-    public function getForMain($url, $cityId)
+    public function getForMain($url, $cityId, $request)
     {
 
         if ($value = \Cache::get('meta_'.$url.'_'.$cityId)) return $value;
@@ -27,6 +27,8 @@ class MetaRepository
 
             $value = $this->replaceCity($meta, $cityId);
 
+            $value = $this->addPageAndSite($value, $request);
+
             \Cache::set('meta_'.$url.'_'.$cityId, $value);
 
         }
@@ -35,7 +37,7 @@ class MetaRepository
 
     }
 
-    public function getForFilter($url, $cityId, $filterParams)
+    public function getForFilter($url, $cityId, $filterParams, $request)
     {
 
         if ($value = \Cache::get('meta_'.$url.'_'.$cityId)) return $value;
@@ -46,7 +48,7 @@ class MetaRepository
 
                 $meta = $meta->toArray();
 
-                return $this->replaceCity($meta, $cityId);
+                $value = $this->replaceCity($meta, $cityId);
 
             } elseif (count($filterParams) == 1 and $meta = Meta::where(['url' => $filterParams[0]->short_name])->select('title', 'des', 'h1')->get()->first()) {
 
@@ -72,7 +74,7 @@ class MetaRepository
 
         }
 
-        return $value;
+        return $this->addPageAndSite($value, $request);
 
     }
 
@@ -125,6 +127,22 @@ class MetaRepository
                 }
 
             }
+
+        }
+
+        return $meta;
+
+    }
+
+    private function addPageAndSite($meta, $request){
+
+        $pageText = '';
+
+        if($page = $request->get('page')) $pageText = ' Страница '.$page;
+
+        foreach ($meta as &$item){
+
+            $item = $item . ' на сайте '. $_SERVER['SERVER_NAME'] . $pageText;
 
         }
 

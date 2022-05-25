@@ -42,7 +42,7 @@ class FilterController extends Controller
 
         $posts = $this->filterRepository->getForFilter($filterParams, 15, $cityInfo);
 
-        $meta = $this->metaRepository->getForFilter($search, $cityInfo['id'], $filterParams);
+        $meta = $this->metaRepository->getForFilter($search, $cityInfo['id'], $filterParams, $request);
 
         $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
 
