@@ -93,6 +93,7 @@
             </div>
         </div>
     </nav>
+    <div id="arrowTop" hidden></div>
     <div class="header-overlay"></div>
     <main class="py-4 container">
         @yield('content')
