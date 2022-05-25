@@ -20,7 +20,7 @@
         @endif
     </a>
     @if($post->video)
-        <div class="">
+        <div class="video-stick">
             <img src="/img/video.svg" alt="Есть видео">
         </div>
     @endif
