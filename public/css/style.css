@@ -523,6 +523,18 @@ video{
 .lb-nav a.lb-prev{
     background: url(../img/prev.png) left 48% no-repeat!important;
 }
+.position-relative{
+    position: relative;
+}
+.video-stick {
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    height: 30px;
+    background: #ff6163;
+    border-radius: 50%;
+}
 @media (max-width: 1199px){
     .post-photo-item {
         flex: 0 0 20%;

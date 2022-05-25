@@ -12,7 +12,7 @@ class PostsRepository
 
         $columns = ['url', 'name', 'phone', 'price', 'id'];
 
-        return Post::with('avatar')
+        return Post::with('avatar', 'video')
             ->orderByRaw('RAND()')
             ->select($columns)
             ->where(['city_id' => $cityId])

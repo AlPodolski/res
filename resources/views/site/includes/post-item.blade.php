@@ -2,7 +2,7 @@
     /* @var $post \App\Models\Post */
 @endphp
 
-<div class="post-item ">
+<div class="post-item position-relative">
     <a href="/post/{{$post->url}}" class="d-block">
         @if(isset($post->avatar->file))
             <picture>
@@ -19,6 +19,11 @@
             </picture>
         @endif
     </a>
+    @if($post->video)
+        <div class="">
+            <img src="/img/video.svg" alt="Есть видео">
+        </div>
+    @endif
     <a href="/post/{{$post->url}}" class="name">{{$post->name}}</a>
     <div class="price">{{ $post->price }} ₽</div>
     @if($post->phone)
