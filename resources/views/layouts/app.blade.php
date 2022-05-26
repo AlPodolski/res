@@ -51,6 +51,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css?v=5') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css?v=1') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery-ui.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -96,6 +97,37 @@
             </div>
         </div>
     </nav>
+    <div class="filter-wrap">
+        <div class="container">
+            <div class="filter">
+                <form action="/filter">
+                    @csrf
+                    <div class="filter-item">
+                        <div class="slider-item-text">Возраст</div>
+                        <div class="slider-item d-flex">
+                            <div id="slider-range-age"></div>
+                            <div class="d-flex filter-input-wrap">
+                                <input type="text" id="age-from" class="text-left" name="age-from" readonly value="18">
+                                <input type="text" id="age-to" name="age-to" class="text-right" readonly value="65">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-item">
+                        <div class="slider-item-text">Вес</div>
+                        <div class="slider-item d-flex">
+
+                            <div id="slider-range-ves"></div>
+                            <div class="d-flex filter-input-wrap">
+                                <input type="text" id="ves-from" class="text-left" name="ves-from" readonly value="">
+                                <input type="text" id="ves-to" class="text-right" name="ves-to" readonly value="">
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <div id="arrowTop" hidden></div>
     <div class="header-overlay"></div>
     <main class="py-4 container">
@@ -138,6 +170,7 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/88595241" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+<script src="{{ asset('js/jquery-ui.js') }}" defer></script>
 <script src="{{ asset('js/script.js?v=2') }}" defer></script>
 @if(View::hasSection('lightbox'))
     <script src="@yield('lightbox')" defer></script>

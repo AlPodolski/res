@@ -131,6 +131,21 @@ $(document).ready(function() {
 
 });
 
+$(document).ready(function() {
+
+    $("#slider-range-age").slider({
+        range: true,
+        min: 18,
+        max: 65,
+        values: [$("#age-from").val(), $("#age-to").val()],
+        slide: function (event, ui) {
+            $("#age-from").val(ui.values[0]);
+            $("#age-to").val(ui.values[1]);
+        }
+    });
+
+});
+
 function phone_mask(){
 
     if ($('.request-call-form').length > 0) {

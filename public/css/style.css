@@ -558,6 +558,60 @@ video{
     align-items: center;
     margin-right: 10px;
 }
+.filter-item .slider-item{
+    flex-direction: column;
+}
+.filter-item input {
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.08em;
+    color: #000;
+    max-width: 40px;
+    max-height: 16px;
+    border: none;
+    text-align: center;
+    background: hsla(0, 0%, 80%, 0);
+    font-weight: 600;
+}
+.text-right {
+    text-align: right !important;
+}
+.filter-item .ui-slider {
+    width: 140px;
+    border: none;
+    height: 2px;
+    background: #ececec;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+.ui-slider-range.ui-corner-all.ui-widget-header {
+    background: #F74952;
+    border: none;
+    height: 2px;
+    top: -1px;
+}
+.slider-item-text {
+    margin-bottom: 10px;
+}
+.ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    background-position: 0 0;
+}
+.ui-slider-handle.ui-corner-all.ui-state-default {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    border: 5px solid #f74952;
+    background: #fff;
+    top: -8px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
 @media (max-width: 1199px){
     .post-photo-item {
         flex: 0 0 20%;
