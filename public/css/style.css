@@ -550,7 +550,14 @@ video{
     transform: rotate(270deg);
     background-position: center;
 }
-
+.filter-btn img{
+    max-width: 26px;
+}
+.filter-btn{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
 @media (max-width: 1199px){
     .post-photo-item {
         flex: 0 0 20%;

@@ -17,6 +17,10 @@ function closePanel(object) {
     $(".header-overlay").removeClass("is-show");
 }
 
+function showFilter(){
+
+}
+
 function showSearchForm(object){
 
     let window_w = $(window).width();

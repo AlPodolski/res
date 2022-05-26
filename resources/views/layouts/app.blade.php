@@ -69,6 +69,9 @@
                 </a>
             </div>
             <div class="right-nav">
+                <div class="filter-btn" onclick="showFilter()">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAB3ElEQVRoge3aL4iUQRzG8c+dniJy6UDw4BCDxWCxmATBAzGZbDabwWAxKFiNNptgsIjpkslwGuRsiogYDAZBEPyL4p81vPO6y553++6+M7vzynxh2bC/eeZ53t2dd37DSyFv1tHryGt90PjcUJBe2ysxZf763zmqIFM2XfD5LQqXEhtpQyNvT1RpH2MxqZ3JWFR56+HpdoX78CIUPsTe5NaaswcPVN5eYXnUgBW8DgPuY3dKdw1ZwJrK0xscbDrwEN6GgfewI4W7hszjTvDyDofHFTiC90HgltmsZHO4GTx8wNFJhY7hUxC6EcXaeFwPc3/F8bZiJ/EtCF5pKzYGV8Oc33E6lugZ/AjCl2KJbsOFMNdPnI0tfg6/8BvnY4tPe56kV8qUv/kkv10z+i9GXU3McHWMtr7L4H7V+o4rox3ExHsgGe7phnel+xuMyXaXPdgnbDSo35Bx37OkfzAwirou20503CDR2Kpn7xwlSG6UILlRguRGCZIbJUhulCC5UYLkRqogq4l0p8Yj/abpruqA4V9Eb6xis4CL+Kgy+gXXbD4hyT5IzTJu6xt+iVMDn3cmSM0JPNM3voYDOhgEduEyPqvM1++dC1KzoloABp8n6TSreG7ooZjC/8Yf4Su0xMabvSQAAAAASUVORK5CYII="/>
+                </div>
                 <div class="search header__search" itemscope itemtype="https://schema.org/WebSite">
                     <form action="/search" method="get" class="header__search-form"
                           itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
