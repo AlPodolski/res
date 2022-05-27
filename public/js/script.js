@@ -18,7 +18,7 @@ function closePanel(object) {
 }
 
 function showFilter(){
-
+    $( ".filter" ).toggleClass( "d-none" )
 }
 
 function showSearchForm(object){
@@ -141,6 +141,59 @@ $(document).ready(function() {
         slide: function (event, ui) {
             $("#age-from").val(ui.values[0]);
             $("#age-to").val(ui.values[1]);
+        }
+    });
+
+
+    $("#rost-range-age").slider({
+        range: true,
+        min: 150,
+        max: 200,
+        values: [$("#rost-from").val(), $("#rost-to").val()],
+        slide: function (event, ui) {
+            $("#rost-from").val(ui.values[0]);
+            $("#rost-to").val(ui.values[1]);
+        }
+    });
+
+    $("#slider-range-ves").slider({
+        range: true,
+        min: 35,
+        max: 130,
+        values: [$("#ves-from").val(), $("#ves-to").val()],
+        slide: function (event, ui) {
+            $("#ves-from").val(ui.values[0]);
+            $("#ves-to").val(ui.values[1]);
+        }
+    });
+    $("#slider-range-grud").slider({
+        range: true,
+        min: 0,
+        max: 9,
+        values: [$("#grud-from").val(), $("#grud-to").val()],
+        slide: function (event, ui) {
+            $("#grud-from").val(ui.values[0]);
+            $("#grud-to").val(ui.values[1]);
+        }
+    });
+    $("#slider-range-price-1-hour").slider({
+        range: true,
+        min: 500,
+        max: 25000,
+        values: [$("#price-1-from").val(), $("#price-1-to").val()],
+        slide: function (event, ui) {
+            $("#price-1-from").val(ui.values[0]);
+            $("#price-1-to").val(ui.values[1]);
+        }
+    });
+    $("#slider-range-price-2-hour").slider({
+        range: true,
+        min: 500,
+        max: 25000,
+        values: [$("#price-2-from").val(), $("#price-2-to").val()],
+        slide: function (event, ui) {
+            $("#price-2-from").val(ui.values[0]);
+            $("#price-2-to").val(ui.values[1]);
         }
     });
 

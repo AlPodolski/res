@@ -25,6 +25,8 @@
 
 @section('content')
 
+    @include('includes.filter')
+
     @if($topList)
 
         <div class="popular-list d-flex">

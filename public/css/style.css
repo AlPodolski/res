@@ -561,6 +561,36 @@ video{
 .filter-item .slider-item{
     flex-direction: column;
 }
+.filter-input-wrap{
+    justify-content: space-between;
+}
+.filter-form{
+    justify-content: space-between;
+    align-items: center;
+}
+.filter{
+    padding-bottom: 20px;
+}
+.metro-select {
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    height: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 18px;
+    color: #999999;
+    padding-left: 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: url("../img/img_1.png");
+    background-repeat: no-repeat;
+    width: 170px;
+    background-position: right .7em top 50%,0 0 !important;
+    background-size: .65em auto,100% !important;
+    font-size: 13px !important;
+}
 .filter-item input {
     font-style: normal;
     font-size: 12px;

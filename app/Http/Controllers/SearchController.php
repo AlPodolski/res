@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\CityRepository;
+use App\Repositories\DataRepository;
 use App\Repositories\FilterRepository;
 use App\Repositories\SearchRepository;
 use App\Repositories\TopPostListRepository;
@@ -45,5 +46,31 @@ class SearchController extends Controller
         ];
 
         return view('site.index', compact('posts', 'meta', 'topList', 'cityInfo', 'morePosts'));
+    }
+
+    public function filter($city, Request $request, DataRepository $dataRepository)
+    {
+        $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
+
+        $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
+
+        $data = $request->all();
+
+        $posts = $this->searchRepository->getForFilter($data, $cityInfo['id']);
+
+        $morePosts = false;
+
+        $metro = $dataRepository->metro($cityInfo['id']);
+
+        if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id'], 10);
+
+        $meta = [
+            'title' => 'Поиск: ',
+            'des' => 'Поиск: ',
+            'h1' => 'Поиск: ',
+        ];
+
+        return view('site.index', compact('posts', 'meta', 'topList', 'cityInfo', 'morePosts', 'metro'));
+
     }
 }
