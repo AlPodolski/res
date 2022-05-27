@@ -30,6 +30,7 @@ Route::domain('{city}.'.env('DOMAIN'))->group(function () {
     Route::get('/robots.txt',  'RobotController@index');
     Route::get('/search',  'SearchController@index');
     Route::get('/filter',  'SearchController@filter');
+    Route::get('/sitemap.xml',  'SiteController@map');
     Route::get('/{search}',  'FilterController@index')->where('search', '.*');
 });
 

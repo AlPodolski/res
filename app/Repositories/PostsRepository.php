@@ -88,4 +88,13 @@ class PostsRepository
         return $post;
     }
 
+    public function all($cityId)
+    {
+        $posts = Post::select('id', 'url')
+            ->where(['city_id' => $cityId])
+            ->get();
+
+        return $posts;
+    }
+
 }

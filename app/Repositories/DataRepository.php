@@ -22,4 +22,11 @@ class DataRepository
         return $metroList;
 
     }
+
+    public function all($cityId)
+    {
+        $result['metro'] = $this->metro($cityId);
+
+
+    }
 }
