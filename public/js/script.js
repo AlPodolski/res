@@ -18,7 +18,7 @@ function closePanel(object) {
 }
 
 function showFilter(){
-    $( ".filter" ).toggleClass( "d-none" )
+    $( ".filter-wrap" ).toggleClass( "d-none" )
 }
 
 function showSearchForm(object){

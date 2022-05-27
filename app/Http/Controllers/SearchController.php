@@ -26,7 +26,7 @@ class SearchController extends Controller
         $this->filterRepository = new FilterRepository();
     }
 
-    public function index($city, Request $request)
+    public function index($city, Request $request, DataRepository $dataRepository)
     {
 
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
@@ -37,6 +37,8 @@ class SearchController extends Controller
 
         $morePosts = false;
 
+        $metro = $dataRepository->metro($cityInfo['id']);
+
         if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id'], 10);
 
         $meta = [
@@ -45,7 +47,7 @@ class SearchController extends Controller
             'h1' => 'Поиск: '.$request->q,
         ];
 
-        return view('site.index', compact('posts', 'meta', 'topList', 'cityInfo', 'morePosts'));
+        return view('site.index', compact('posts', 'meta', 'topList', 'cityInfo', 'morePosts', 'metro'));
     }
 
     public function filter($city, Request $request, DataRepository $dataRepository)
@@ -65,9 +67,9 @@ class SearchController extends Controller
         if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id'], 10);
 
         $meta = [
-            'title' => 'Поиск: ',
-            'des' => 'Поиск: ',
-            'h1' => 'Поиск: ',
+            'title' => 'Поиск ',
+            'des' => 'Поиск ',
+            'h1' => 'Поиск ',
         ];
 
         return view('site.index', compact('posts', 'meta', 'topList', 'cityInfo', 'morePosts', 'metro'));

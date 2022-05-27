@@ -643,6 +643,36 @@ video{
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 @media (max-width: 1199px){
+    .filter-wrap .close-panel{
+        display: block;
+    }
+    .filter-wrap{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 500px;
+        z-index: 10;
+        background-color: #fff;
+        transform: translate3d(-100%, 0, 0);
+        visibility: hidden;
+        transition: .3s;
+        max-width: 79%;
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+    .filter-form{
+        flex-direction: column;
+        padding-top: 40px;
+        scrollbar-width: thin;
+        overflow-y: auto;
+    }
+    .filter-item .ui-slider{
+        width: 230px;
+    }
+    .filter-item{
+        margin-bottom: 25px;
+    }
     .post-photo-item {
         flex: 0 0 20%;
     }

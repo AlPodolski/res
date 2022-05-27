@@ -1,5 +1,8 @@
-<div class="filter-wrap">
-    <div class="filter d-none">
+<div class="filter-wrap d-none">
+    <div class="filter position-relative">
+        <div class="close-panel" onclick="showFilter(this)">
+            <img src="/img/close.svg" alt="">
+        </div>
         <form action="/filter" class="d-flex filter-form">
             @csrf
 

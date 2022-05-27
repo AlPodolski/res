@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\CityRepository;
+use App\Repositories\DataRepository;
 use App\Repositories\MetaRepository;
 use App\Repositories\PostsRepository;
 use App\Repositories\TopPostListRepository;
@@ -25,7 +26,7 @@ class SiteController extends Controller
         $this->topPostListRepository = new TopPostListRepository();
     }
 
-    public function index($city, Request $request, YandexRepository $yandexRepository)
+    public function index($city, Request $request, YandexRepository $yandexRepository, DataRepository $dataRepository)
     {
         $path = $request->getRequestUri();
 
@@ -39,7 +40,9 @@ class SiteController extends Controller
 
         $yandexTag = $yandexRepository->getTag($cityInfo['id']);
 
-        return view('site.index', compact('posts', 'cityInfo', 'meta', 'topList', 'path', 'yandexTag'));
+        $metro = $dataRepository->metro($cityInfo['id']);
+
+        return view('site.index', compact('posts', 'metro', 'cityInfo', 'meta', 'topList', 'path', 'yandexTag'));
     }
 
     public function more($city)

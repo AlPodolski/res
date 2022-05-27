@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Actions\GenerateBreadcrumbMicro;
 use App\Actions\GenerateMicroDataForCatalog;
 use App\Repositories\CityRepository;
+use App\Repositories\DataRepository;
 use App\Repositories\FilterRepository;
 use App\Repositories\MetaRepository;
 use App\Repositories\TopPostListRepository;
@@ -31,7 +32,7 @@ class FilterController extends Controller
         $this->breadMicro = new GenerateBreadcrumbMicro();
     }
 
-    public function index($city, $search, Request $request)
+    public function index($city, $search, Request $request, DataRepository $dataRepository)
     {
 
         if (!$filterParams = FilterDataHelper::checkData($this->filterRepository->getFilterParams($search)))
@@ -55,6 +56,8 @@ class FilterController extends Controller
         $morePosts = false;
 
         if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id'], 10);
+
+        $metro = $dataRepository->metro($cityInfo['id']);
 
         return view('site.index',
             compact(

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Actions\GenerateBreadcrumbMicro;
 use App\Actions\GenerateImageMicro;
 use App\Repositories\CityRepository;
+use App\Repositories\DataRepository;
 use App\Repositories\FilterRepository;
 use App\Repositories\PostsRepository;
 use App\Services\SingleMetaService;
@@ -28,7 +29,7 @@ class PostController extends Controller
         $this->breadMicro = new GenerateBreadcrumbMicro();
     }
 
-    public function index($city, $url, Request $request, GenerateImageMicro $microImage)
+    public function index($city, $url, Request $request, GenerateImageMicro $microImage, DataRepository $dataRepository)
     {
 
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
@@ -40,6 +41,8 @@ class PostController extends Controller
         $breadMicro = $this->breadMicro->generate($request);
 
         $imageMicro = $microImage->generate($post, $cityInfo['city']);
+
+        $metro = $dataRepository->metro($cityInfo['id']);
 
         return view('post.index', compact('post', 'cityInfo', 'metaData', 'breadMicro', 'imageMicro'));
     }
