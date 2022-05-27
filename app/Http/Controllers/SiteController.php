@@ -58,13 +58,15 @@ class SiteController extends Controller
 
     }
 
-    public function map($city, Request $request)
+    public function map($city, DataRepository $dataRepository)
     {
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
         $posts = $this->postsRepository->getPostsForMainPage(15, $cityInfo['id']);
 
-        return response()->view('site.map', compact('posts'))
+        $data = $dataRepository->all($cityInfo['id']);
+
+        return response()->view('site.map', compact('posts', 'data'))
             ->header('content-type', 'text/xml;charset=UTF-8')
             ;
     }

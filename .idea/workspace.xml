@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="фильтр для мобильных устройств">
-      <change afterPath="$PROJECT_DIR$/resources/views/site/map.blade.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="фильтр начало">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/DataRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/DataRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/map.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +29,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/js/dist/dropdown.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_carousel.scss" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_navbar.scss" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/bootstrap.scss" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/js/dist/dropdown.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_tooltip.scss" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/bootstrap.scss" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -165,6 +163,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/OpenServer/domains/true",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\pr.loc\public\css" />
@@ -242,7 +246,13 @@
       <workItem from="1653204380825" duration="1265000" />
       <workItem from="1653370576593" duration="17000" />
       <workItem from="1653372384097" duration="5614000" />
-      <workItem from="1653628594528" duration="6600000" />
+    </task>
+    <task id="LOCAL-00059" summary="кеширование запросов">
+      <created>1649858302492</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1649858302492</updated>
     </task>
     <task id="LOCAL-00060" summary="вывод услуг и вывод свойств ссылками">
       <created>1650003704118</created>
@@ -580,14 +590,7 @@
       <option name="project" value="LOCAL" />
       <updated>1652598446687</updated>
     </task>
-    <task id="LOCAL-00108" summary="фильтр для мобильных устройств">
-      <created>1653632267762</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1653632267763</updated>
-    </task>
-    <option name="localTasksCounter" value="109" />
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,6 +649,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="поиск по имени или телефону" />
     <MESSAGE value="тайтл для картинок" />
     <MESSAGE value="горизантальный скрол" />
     <MESSAGE value="правка с поиском" />
@@ -670,8 +674,7 @@
     <MESSAGE value="заказать звонок" />
     <MESSAGE value="скрыт телефон" />
     <MESSAGE value="правка" />
-    <MESSAGE value="фильтр для мобильных устройств" />
-    <option name="LAST_COMMIT_MESSAGE" value="фильтр для мобильных устройств" />
+    <option name="LAST_COMMIT_MESSAGE" value="правка" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
