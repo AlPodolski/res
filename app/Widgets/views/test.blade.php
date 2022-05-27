@@ -7,7 +7,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapseMetro">
-                            Метро
+                            Метро <img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapseMetro" class="collapse" data-parent="#accordion">
                             @foreach($metroList as $item)
@@ -24,7 +24,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapseRayon">
-                            Район
+                            Район<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapseRayon" class="collapse" data-parent="#accordion">
                             @foreach($rayonList as $item)
@@ -42,7 +42,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapseService">
-                            Услуги
+                            Услуги<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapseService" class="collapse" data-parent="#accordion">
                             @foreach($serviceList as $item)
@@ -59,7 +59,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapseTime">
-                            Время встречи
+                            Время встречи<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapseTime" class="collapse" data-parent="#accordion">
                             @foreach($timeList as $item)
@@ -75,7 +75,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapseAge">
-                            Возраст
+                            Возраст<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapseAge" class="collapse" data-parent="#accordion">
                             @foreach($ageList as $item)
@@ -91,7 +91,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapsePrice">
-                            Цена
+                            Цена<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapsePrice" class="collapse" data-parent="#accordion">
                             @foreach($priceList as $item)
@@ -110,7 +110,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapsePlace">
-                            Место встречи
+                            Место встречи<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapsePlace" class="collapse" data-parent="#accordion">
                             @foreach($placeList as $item)
@@ -127,7 +127,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapseNational">
-                            Национальность
+                            Национальность<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapseNational" class="collapse" data-parent="#accordion">
                             @foreach($nationalList as $item)
@@ -144,7 +144,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapseHair">
-                            Цвет волос
+                            Цвет волос<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapseHair" class="collapse" data-parent="#accordion">
                             @foreach($hairColorList as $item)
@@ -161,7 +161,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapseHairIntim">
-                            Интимная стрижка
+                            Интимная стрижка<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapseHairIntim" class="collapse" data-parent="#accordion">
                             @foreach($intimHairList as $item)
@@ -177,7 +177,7 @@
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#collapseCity">
-                            Изменить город
+                            Изменить город<img src="/img/img_1.png" alt="">
                         </a>
                         <div id="collapseCity" class="collapse" data-parent="#accordion">
                             @foreach($cityList as $item)
