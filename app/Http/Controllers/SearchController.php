@@ -24,6 +24,8 @@ class SearchController extends Controller
         $this->cityRepository = new CityRepository();
         $this->topPostListRepository = new TopPostListRepository();
         $this->filterRepository = new FilterRepository();
+
+        parent::__construct();
     }
 
     public function index($city, Request $request, DataRepository $dataRepository)

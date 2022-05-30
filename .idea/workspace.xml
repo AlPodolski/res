@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="стрелка в бургере">
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="sitemap start">
+      <change afterPath="$PROJECT_DIR$/resources/views/includes/limit_and_order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
     </list>
@@ -29,11 +35,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/js/dist/dropdown.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_carousel.scss" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_navbar.scss" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_tooltip.scss" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/bootstrap.scss" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/js/dist/dropdown.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_tooltip.scss" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -163,12 +169,9 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "C:/OpenServer/domains/true",
-    "nodejs_package_manager_path": "npm"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\pr.loc\public\css" />
@@ -246,6 +249,13 @@
       <workItem from="1653204380825" duration="1265000" />
       <workItem from="1653370576593" duration="17000" />
       <workItem from="1653372384097" duration="5614000" />
+    </task>
+    <task id="LOCAL-00060" summary="вывод услуг и вывод свойств ссылками">
+      <created>1650003704118</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1650003704118</updated>
     </task>
     <task id="LOCAL-00061" summary="добавление комментариев">
       <created>1650019741471</created>
@@ -583,14 +593,7 @@
       <option name="project" value="LOCAL" />
       <updated>1653643748245</updated>
     </task>
-    <task id="LOCAL-00109" summary="стрелка в бургере">
-      <created>1653644215501</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1653644215501</updated>
-    </task>
-    <option name="localTasksCounter" value="110" />
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,6 +652,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="тайтл для картинок" />
     <MESSAGE value="горизантальный скрол" />
     <MESSAGE value="правка с поиском" />
     <MESSAGE value="галерея" />
@@ -673,8 +677,7 @@
     <MESSAGE value="скрыт телефон" />
     <MESSAGE value="правка" />
     <MESSAGE value="карта сайта" />
-    <MESSAGE value="стрелка в бургере" />
-    <option name="LAST_COMMIT_MESSAGE" value="стрелка в бургере" />
+    <option name="LAST_COMMIT_MESSAGE" value="карта сайта" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

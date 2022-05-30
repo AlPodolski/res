@@ -23,7 +23,15 @@ function showFilter(){
 
 function setLimit(){
 
+    var redirectUrl = location.pathname;
 
+    if ($('#limit-select').val()) {
+
+        document.cookie =  'post_limit=' + $('#limit-select').val();
+
+    }
+
+    window.location.href = redirectUrl;
 
 }
 

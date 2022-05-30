@@ -30,6 +30,8 @@ class FilterController extends Controller
         $this->topPostListRepository = new TopPostListRepository();
         $this->microData = new GenerateMicroDataForCatalog();
         $this->breadMicro = new GenerateBreadcrumbMicro();
+
+        parent::__construct();
     }
 
     public function index($city, $search, Request $request, DataRepository $dataRepository)
@@ -41,7 +43,7 @@ class FilterController extends Controller
 
         $path = '/'.$request->path();
 
-        $posts = $this->filterRepository->getForFilter($filterParams, 15, $cityInfo);
+        $posts = $this->filterRepository->getForFilter($filterParams, $this->limit, $cityInfo);
 
         $meta = $this->metaRepository->getForFilter($search, $cityInfo['id'], $filterParams, $request);
 
@@ -59,10 +61,12 @@ class FilterController extends Controller
 
         $metro = $dataRepository->metro($cityInfo['id']);
 
+        $limit = $this->limit;
+
         return view('site.index',
             compact(
                 'posts', 'cityInfo', 'meta', 'filterParams', 'topList',
-                'path', 'morePosts', 'microData', 'breadMicro'
+                'path', 'morePosts', 'microData', 'breadMicro', 'limit'
             ));
     }
 }

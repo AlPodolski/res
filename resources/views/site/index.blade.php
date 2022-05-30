@@ -73,16 +73,7 @@
 
     <h1>{{ $meta['h1'] }}</h1>
 
-    <div class="sort-block">
-        <div class="limit">
-            <select class="metro-select" name="limit" id="" onchange="setLimit()">
-                <option value="default">Анкет на странице</option>
-                <option value="default">15</option>
-                <option value="default">30</option>
-                <option value="default">45</option>
-            </select>
-        </div>
-    </div>
+    @include('includes.limit_and_order')
 
     <div class="posts">
 

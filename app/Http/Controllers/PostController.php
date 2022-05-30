@@ -27,6 +27,8 @@ class PostController extends Controller
         $this->metaService = new SingleMetaService();
         $this->postRepository = new PostsRepository();
         $this->breadMicro = new GenerateBreadcrumbMicro();
+
+        parent::__construct();
     }
 
     public function index($city, $url, Request $request, GenerateImageMicro $microImage, DataRepository $dataRepository)

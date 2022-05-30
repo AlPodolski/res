@@ -24,6 +24,8 @@ class SiteController extends Controller
         $this->cityRepository = new CityRepository();
         $this->metaRepository = new MetaRepository();
         $this->topPostListRepository = new TopPostListRepository();
+
+        parent::__construct();
     }
 
     public function index($city, Request $request, YandexRepository $yandexRepository, DataRepository $dataRepository)
@@ -32,7 +34,7 @@ class SiteController extends Controller
 
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
-        $posts = $this->postsRepository->getPostsForMainPage(15, $cityInfo['id']);
+        $posts = $this->postsRepository->getPostsForMainPage($this->limit, $cityInfo['id']);
 
         $meta = $this->metaRepository->getForMain('/', $cityInfo['id'], $request);
 
@@ -42,14 +44,16 @@ class SiteController extends Controller
 
         $metro = $dataRepository->metro($cityInfo['id']);
 
-        return view('site.index', compact('posts', 'metro', 'cityInfo', 'meta', 'topList', 'path', 'yandexTag'));
+        $limit = $this->limit;
+
+        return view('site.index', compact('posts', 'metro', 'cityInfo', 'meta', 'topList', 'path', 'yandexTag', 'limit'));
     }
 
     public function more($city)
     {
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
-        $posts = $this->postsRepository->getPostsForMainPage(15, $cityInfo['id']);
+        $posts = $this->postsRepository->getPostsForMainPage($this->limit, $cityInfo['id']);
 
         $data['posts'] = view('site.more', compact('posts'))->render();
         $data['next_page'] = str_replace('http', 'https', $posts->nextPageUrl());
@@ -62,7 +66,7 @@ class SiteController extends Controller
     {
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
-        $posts = $this->postsRepository->getPostsForMainPage(15, $cityInfo['id']);
+        $posts = $this->postsRepository->all( $cityInfo['id']);
 
         $data = $dataRepository->all($cityInfo['id']);
 

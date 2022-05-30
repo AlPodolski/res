@@ -10,4 +10,11 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    protected $limit;
+
+    public function __construct()
+    {
+        $this->limit = \Cookie::get('post_limit') ?? 15;
+    }
 }
