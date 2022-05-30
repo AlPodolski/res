@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="карта сайта">
-      <change beforePath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/views/test.blade.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="стрелка в бургере">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,13 +246,6 @@
       <workItem from="1653204380825" duration="1265000" />
       <workItem from="1653370576593" duration="17000" />
       <workItem from="1653372384097" duration="5614000" />
-    </task>
-    <task id="LOCAL-00060" summary="вывод услуг и вывод свойств ссылками">
-      <created>1650003704118</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1650003704118</updated>
     </task>
     <task id="LOCAL-00061" summary="добавление комментариев">
       <created>1650019741471</created>
@@ -588,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653643748245</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="стрелка в бургере">
+      <created>1653644215501</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1653644215501</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +649,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="тайтл для картинок" />
     <MESSAGE value="горизантальный скрол" />
     <MESSAGE value="правка с поиском" />
     <MESSAGE value="галерея" />
@@ -672,7 +673,8 @@
     <MESSAGE value="скрыт телефон" />
     <MESSAGE value="правка" />
     <MESSAGE value="карта сайта" />
-    <option name="LAST_COMMIT_MESSAGE" value="карта сайта" />
+    <MESSAGE value="стрелка в бургере" />
+    <option name="LAST_COMMIT_MESSAGE" value="стрелка в бургере" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -21,6 +21,12 @@ function showFilter(){
     $( ".filter-wrap" ).toggleClass( "d-none" )
 }
 
+function setLimit(){
+
+
+
+}
+
 function showSearchForm(object){
 
     let window_w = $(window).width();

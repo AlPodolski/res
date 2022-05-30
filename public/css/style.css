@@ -66,13 +66,18 @@ body{
 .header__search.is-show .close-form{
     display: flex;
 }
-
+.sort-block{
+    margin-bottom: 20px;
+}
 .header__search.is-show .show-form{
     display: none;
 }
 .menu__item img{
     max-width: 7px;
     margin-left: 5px;
+}
+.sort-block{
+    margin-bottom: 25px;
 }
 .favorite img{
     max-width: 23px;
