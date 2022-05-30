@@ -46,7 +46,10 @@ class PostController extends Controller
 
         $metro = $dataRepository->metro($cityInfo['id']);
 
-        return view('post.index', compact('post', 'metro', 'cityInfo', 'metaData', 'breadMicro', 'imageMicro'));
+        $morePosts = $this->postRepository->getMoreByRayonAndPrice($post, $cityInfo['id'],'default');
+
+        return view('post.index', compact('post', 'metro', 'cityInfo', 'metaData',
+            'breadMicro', 'imageMicro', 'morePosts'));
     }
 
     public function more($city, Request $request)

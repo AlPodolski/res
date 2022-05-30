@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @php
     /* @var $post \App\Models\Post */
+    /* @var $morePosts \App\Models\Post[] */
 @endphp
 @section('title', $metaData['title'])
 @section('des', $metaData['des'])
@@ -35,9 +36,20 @@
         @include('post.post-item')
     </div>
 
-    <div class="get-more-post-btn" onclick="getMorePost()">
-        Загрузить еще
-    </div>
+    @if($morePosts)
+
+        <div class="photo-wrap more-posts">
+            <div class="decr-title">
+                Похожие анкеты
+            </div>
+            <div class="popular-list post-photo">
+                @foreach($morePosts as $post)
+                    @include('site.includes.post-item')
+                @endforeach
+            </div>
+        </div>
+
+    @endif
 
     @widget('menu', ['city_id' =>  $cityInfo['id']  ])
 

@@ -48,7 +48,30 @@ class PostsRepository
 
     }
 
-    public function getPostForSingleMore($cityId, $ids = false, $price = false, $rayonId = false)
+    public function getMoreByRayonAndPrice(Post $post, $cityId , $sort,$limit = 8 )
+    {
+
+        $sort = (new GetSort())->get($sort);
+
+        $columns = ['url', 'name', 'phone', 'price', 'id'];
+
+        $posts = Post::with('avatar', 'video')
+            ->where('id', '<>', $post->id)
+            ->orderByRaw($sort)
+            ->select($columns)
+            ->where(['city_id' => $cityId]);
+
+        $posts = $posts->where('price', '>', $post->price - 500);
+        $posts = $posts->where('price', '<=', $post->price + 500);
+
+
+        $posts = $posts->limit($limit)->get();
+
+        return $posts;
+
+    }
+
+    public function getPostForSingleMore($cityId ,$limit = 8, $ids = false, $price = false, $rayonId = false)
     {
         $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
 
@@ -86,7 +109,7 @@ class PostsRepository
 
         }
 
-        $post = $post->first();
+        $post = $post->limit($limit)->get();
 
         return $post;
     }

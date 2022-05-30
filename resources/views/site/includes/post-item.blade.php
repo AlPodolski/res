@@ -11,7 +11,7 @@
                 <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)">
                 <source srcset="/211-300/thumbs{{$post->avatar->file}}">
                 <img width="211" height="300"
-                     @if($posts->first() != $post)
+                     @if(!isset($posts) or $posts->first() != $post)
                      loading="lazy"
                      @endif
                      title="Проститутка {{ $post->name }}"
