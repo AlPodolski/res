@@ -46,7 +46,7 @@ class PostController extends Controller
 
         $metro = $dataRepository->metro($cityInfo['id']);
 
-        return view('post.index', compact('post', 'cityInfo', 'metaData', 'breadMicro', 'imageMicro'));
+        return view('post.index', compact('post', 'metro', 'cityInfo', 'metaData', 'breadMicro', 'imageMicro'));
     }
 
     public function more($city, Request $request)

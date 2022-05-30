@@ -664,6 +664,10 @@ video{
 #limit-select {
     width: 130px;
 }
+.get-more.get-more-post-btn {
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
 @media (max-width: 1199px){
     .filter-wrap .close-panel{
         display: block;
