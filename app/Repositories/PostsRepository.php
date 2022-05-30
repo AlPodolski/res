@@ -2,18 +2,21 @@
 
 namespace App\Repositories;
 
+use App\Actions\GetSort;
 use App\Models\Post;
 use App\Models\PostRayon;
 
 class PostsRepository
 {
-    public function getPostsForMainPage($limit, $cityId)
+    public function getPostsForMainPage($limit, $cityId, $sort): \Illuminate\Contracts\Pagination\LengthAwarePaginator
     {
+
+        $sort = (new GetSort())->get($sort);
 
         $columns = ['url', 'name', 'phone', 'price', 'id'];
 
         return Post::with('avatar', 'video')
-            ->orderByRaw('RAND()')
+            ->orderByRaw($sort)
             ->select($columns)
             ->where(['city_id' => $cityId])
             ->paginate($limit);

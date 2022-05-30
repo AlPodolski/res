@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Actions\GetSort;
 use App\Models\Age;
 use App\Models\Filter;
 use App\Models\Post;
@@ -34,8 +35,10 @@ class FilterRepository
         return $data;
     }
 
-    public function getForFilter($searchParams, $limit, $cityInfo)
+    public function getForFilter($searchParams, $limit, $cityInfo, $sort)
     {
+
+        $sort = (new GetSort())->get($sort);
 
         $columns = $this->columns;
 
@@ -157,7 +160,7 @@ class FilterRepository
         }
 
         $posts = Post::with('avatar' ,'video')
-            ->orderByRaw('RAND()')
+            ->orderByRaw($sort)
             ->whereIn('id', $resultIds)
             ->select($columns)
             ->paginate($limit);

@@ -19,7 +19,7 @@ class PostController extends Controller
     private $cityRepository;
     private $metaService;
     private $postRepository;
-    private GenerateBreadcrumbMicro $breadMicro;
+    private $breadMicro;
 
     public function __construct()
     {

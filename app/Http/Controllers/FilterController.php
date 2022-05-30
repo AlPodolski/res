@@ -15,12 +15,12 @@ use Illuminate\Http\Request;
 class FilterController extends Controller
 {
 
-    private FilterRepository $filterRepository;
-    private CityRepository $cityRepository;
-    private MetaRepository $metaRepository;
-    private TopPostListRepository $topPostListRepository;
-    private GenerateMicroDataForCatalog $microData;
-    private GenerateBreadcrumbMicro $breadMicro;
+    private $filterRepository;
+    private $cityRepository;
+    private $metaRepository;
+    private $topPostListRepository;
+    private $microData;
+    private $breadMicro;
 
     public function __construct()
     {
@@ -43,7 +43,7 @@ class FilterController extends Controller
 
         $path = '/'.$request->path();
 
-        $posts = $this->filterRepository->getForFilter($filterParams, $this->limit, $cityInfo);
+        $posts = $this->filterRepository->getForFilter($filterParams, $this->limit, $cityInfo, $this->sort);
 
         $meta = $this->metaRepository->getForFilter($search, $cityInfo['id'], $filterParams, $request);
 
@@ -62,11 +62,12 @@ class FilterController extends Controller
         $metro = $dataRepository->metro($cityInfo['id']);
 
         $limit = $this->limit;
+        $sort = $this->sort;
 
         return view('site.index',
             compact(
                 'posts', 'cityInfo', 'meta', 'filterParams', 'topList',
-                'path', 'morePosts', 'microData', 'breadMicro', 'limit'
+                'path', 'morePosts', 'microData', 'breadMicro', 'limit', 'sort','metro'
             ));
     }
 }

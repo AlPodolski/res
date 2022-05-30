@@ -12,9 +12,11 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     protected $limit;
+    protected $sort;
 
     public function __construct()
     {
         $this->limit = \Cookie::get('post_limit') ?? 15;
+        $this->sort = \Cookie::get('sort') ?? 'default';
     }
 }

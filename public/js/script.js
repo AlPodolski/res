@@ -35,6 +35,18 @@ function setLimit(){
 
 }
 
+function setSort(){
+
+    if ($('#sort-select').val()) {
+
+        document.cookie =  'sort=' + $('#sort-select').val();
+
+    }
+
+    window.location.href = location.pathname;
+
+}
+
 function showSearchForm(object){
 
     let window_w = $(window).width();

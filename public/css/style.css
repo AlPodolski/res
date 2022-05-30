@@ -651,6 +651,12 @@ video{
     top: -8px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
+.limit{
+    margin-left: auto;
+}
+#sort-select {
+    width: 180px;
+}
 @media (max-width: 1199px){
     .filter-wrap .close-panel{
         display: block;

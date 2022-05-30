@@ -34,7 +34,7 @@ class SiteController extends Controller
 
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
-        $posts = $this->postsRepository->getPostsForMainPage($this->limit, $cityInfo['id']);
+        $posts = $this->postsRepository->getPostsForMainPage($this->limit, $cityInfo['id'], $this->sort);
 
         $meta = $this->metaRepository->getForMain('/', $cityInfo['id'], $request);
 
@@ -45,15 +45,16 @@ class SiteController extends Controller
         $metro = $dataRepository->metro($cityInfo['id']);
 
         $limit = $this->limit;
+        $sort = $this->sort;
 
-        return view('site.index', compact('posts', 'metro', 'cityInfo', 'meta', 'topList', 'path', 'yandexTag', 'limit'));
+        return view('site.index', compact('posts', 'metro', 'cityInfo', 'meta', 'topList', 'path', 'yandexTag', 'limit', 'sort'));
     }
 
     public function more($city)
     {
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
-        $posts = $this->postsRepository->getPostsForMainPage($this->limit, $cityInfo['id']);
+        $posts = $this->postsRepository->getPostsForMainPage($this->limit, $cityInfo['id'], $this->sort);
 
         $data['posts'] = view('site.more', compact('posts'))->render();
         $data['next_page'] = str_replace('http', 'https', $posts->nextPageUrl());
