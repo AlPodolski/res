@@ -63,6 +63,10 @@ body{
 .header__search .close-form{
     display: none;
 }
+.sort-block .metro-select{
+    box-shadow: none;
+    padding-left: 0;
+}
 .header__search.is-show .close-form{
     display: flex;
 }
@@ -655,7 +659,10 @@ video{
     margin-left: auto;
 }
 #sort-select {
-    width: 180px;
+    width: 170px;
+}
+#limit-select {
+    width: 130px;
 }
 @media (max-width: 1199px){
     .filter-wrap .close-panel{
