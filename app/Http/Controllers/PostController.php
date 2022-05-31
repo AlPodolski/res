@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\AddViewToCookie;
 use App\Actions\GenerateBreadcrumbMicro;
 use App\Actions\GenerateImageMicro;
 use App\Repositories\CityRepository;
@@ -38,6 +39,8 @@ class PostController extends Controller
 
         if (!$post = $this->postRepository->getPostForSingle($url, $cityInfo['id'])) abort(404);
 
+        (new AddViewToCookie())->add($post->id);
+
         $metaData = $this->metaService->makeMetaTags($post, $cityInfo);
 
         $breadMicro = $this->breadMicro->generate($request);
@@ -48,8 +51,10 @@ class PostController extends Controller
 
         $morePosts = $this->postRepository->getMoreByRayonAndPrice($post, $cityInfo['id'],'default');
 
+        $viewPosts = $this->postRepository->getView();
+
         return view('post.index', compact('post', 'metro', 'cityInfo', 'metaData',
-            'breadMicro', 'imageMicro', 'morePosts'));
+            'breadMicro', 'imageMicro', 'morePosts', 'viewPosts'));
     }
 
     public function more($city, Request $request)

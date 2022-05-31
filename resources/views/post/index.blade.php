@@ -2,6 +2,7 @@
 @php
     /* @var $post \App\Models\Post */
     /* @var $morePosts \App\Models\Post[] */
+    /* @var $viewPosts \App\Models\Post[] */
 @endphp
 @section('title', $metaData['title'])
 @section('des', $metaData['des'])
@@ -44,6 +45,21 @@
             </div>
             <div class="popular-list post-photo">
                 @foreach($morePosts as $post)
+                    @include('site.includes.post-item')
+                @endforeach
+            </div>
+        </div>
+
+    @endif
+
+    @if($viewPosts)
+
+        <div class="photo-wrap more-posts">
+            <div class="decr-title">
+                Просмотренные анкеты
+            </div>
+            <div class="popular-list post-photo">
+                @foreach($viewPosts as $post)
                     @include('site.includes.post-item')
                 @endforeach
             </div>

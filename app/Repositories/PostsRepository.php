@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Actions\GetSort;
 use App\Models\Post;
 use App\Models\PostRayon;
+use Cookie;
 
 class PostsRepository
 {
@@ -45,6 +46,26 @@ class PostsRepository
         }
 
         return $post;
+
+    }
+
+    public function getView()
+    {
+        if ($ids = Cookie::get('post_view')){
+
+            $data = unserialize($ids);
+
+            $columns = ['url', 'name', 'phone', 'price', 'id'];
+
+            $posts = Post::with('avatar', 'video')
+                ->whereIn('id', $data)
+                ->select($columns)->get();
+
+            return $posts;
+
+        }
+
+        return false;
 
     }
 
