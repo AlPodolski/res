@@ -50,7 +50,7 @@
     <meta property="og:type" content="website">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?v=5') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?v=6') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css?v=1') }}" rel="stylesheet">
     <link href="{{ asset('css/jquery-ui.css') }}" rel="stylesheet">
 </head>
