@@ -674,7 +674,7 @@ video{
 .more-posts{
     margin-bottom: 15px;
 }
-.post-item a.d-block{
+.post-item .image-wrap{
     min-height: 293px;
 }
 @media (max-width: 1199px){

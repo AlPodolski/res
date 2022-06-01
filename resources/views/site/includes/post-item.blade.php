@@ -3,7 +3,7 @@
 @endphp
 
 <div class="post-item position-relative">
-    <a href="/post/{{$post->url}}" class="d-block">
+    <a href="/post/{{$post->url}}" class="d-block image-wrap">
         @if(isset($post->avatar->file))
             <picture>
                 <source srcset="/314-441/thumbs{{$post->avatar->file}}"
