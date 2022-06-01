@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="правки">
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/post-item.blade.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод похожих анкет по цене">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +27,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/js/dist/dropdown.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_carousel.scss" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_navbar.scss" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/bootstrap.scss" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/js/dist/dropdown.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_tooltip.scss" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/bootstrap.scss" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -161,12 +161,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/OpenServer/domains/rex",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\pr.loc\public\css" />
@@ -244,9 +246,14 @@
       <workItem from="1653204380825" duration="1265000" />
       <workItem from="1653370576593" duration="17000" />
       <workItem from="1653372384097" duration="5614000" />
-      <workItem from="1654060186680" duration="803000" />
-      <workItem from="1654062014721" duration="2267000" />
-      <workItem from="1654066272171" duration="1038000" />
+      <workItem from="1654081038411" duration="453000" />
+    </task>
+    <task id="LOCAL-00063" summary="правки">
+      <created>1650023347630</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1650023347630</updated>
     </task>
     <task id="LOCAL-00064" summary="ajax загрузка карточек">
       <created>1650280476921</created>
@@ -563,35 +570,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653643748245</updated>
     </task>
-    <task id="LOCAL-00109" summary="сортировка">
-      <created>1653892755472</created>
+    <task id="LOCAL-00109" summary="стрелка в бургере">
+      <created>1653644215501</created>
       <option name="number" value="00109" />
       <option name="presentableId" value="LOCAL-00109" />
       <option name="project" value="LOCAL" />
-      <updated>1653892755472</updated>
+      <updated>1653644215501</updated>
     </task>
-    <task id="LOCAL-00110" summary="вывод просмотренных анкет">
-      <created>1653982227093</created>
+    <task id="LOCAL-00110" summary="адаптив к сортировкам">
+      <created>1653904471099</created>
       <option name="number" value="00110" />
       <option name="presentableId" value="LOCAL-00110" />
       <option name="project" value="LOCAL" />
-      <updated>1653982227093</updated>
+      <updated>1653904471099</updated>
     </task>
     <task id="LOCAL-00111" summary="правки">
-      <created>1654066315933</created>
+      <created>1653905410969</created>
       <option name="number" value="00111" />
       <option name="presentableId" value="LOCAL-00111" />
       <option name="project" value="LOCAL" />
-      <updated>1654066315934</updated>
+      <updated>1653905410969</updated>
     </task>
-    <task id="LOCAL-00112" summary="правки">
-      <created>1654067237881</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1654067237881</updated>
-    </task>
-    <option name="localTasksCounter" value="113" />
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,8 +672,8 @@
     <MESSAGE value="скрыт телефон" />
     <MESSAGE value="правка" />
     <MESSAGE value="карта сайта" />
-    <MESSAGE value="сортировка" />
-    <MESSAGE value="вывод просмотренных анкет" />
+    <MESSAGE value="стрелка в бургере" />
+    <MESSAGE value="адаптив к сортировкам" />
     <MESSAGE value="правки" />
     <option name="LAST_COMMIT_MESSAGE" value="правки" />
   </component>

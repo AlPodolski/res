@@ -49,7 +49,11 @@ class SearchController extends Controller
             'h1' => 'Поиск: '.$request->q,
         ];
 
-        return view('site.index', compact('posts', 'meta', 'topList', 'cityInfo', 'morePosts', 'metro'));
+        $limit = $this->limit;
+        $sort = $this->sort;
+
+        return view('site.index', compact('posts', 'meta', 'topList',
+            'cityInfo', 'morePosts', 'metro', 'sort', 'limit'));
     }
 
     public function filter($city, Request $request, DataRepository $dataRepository)
@@ -74,7 +78,11 @@ class SearchController extends Controller
             'h1' => 'Поиск ',
         ];
 
-        return view('site.index', compact('posts', 'meta', 'topList', 'cityInfo', 'morePosts', 'metro'));
+        $limit = $this->limit;
+        $sort = $this->sort;
+
+        return view('site.index', compact('posts', 'sort','limit','meta', 'topList',
+            'cityInfo', 'morePosts', 'metro'));
 
     }
 }
