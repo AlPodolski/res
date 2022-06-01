@@ -674,6 +674,9 @@ video{
 .more-posts{
     margin-bottom: 15px;
 }
+.post-item a.d-block{
+    min-height: 293px;
+}
 @media (max-width: 1199px){
     .filter-wrap .close-panel{
         display: block;

@@ -13,12 +13,12 @@
 
     @if(isset($breadMicro) and $breadMicro)
         <script type="application/ld+json">
-            {{ json_encode($breadMicro) }}
+            {!! json_encode($breadMicro) !!}
         </script>
     @endif
     @if(isset($imageMicro) and $imageMicro)
         <script type="application/ld+json">
-            {{ json_encode($imageMicro) }}
+            {!! json_encode($imageMicro)  !!}
         </script>
     @endif
 

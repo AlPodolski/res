@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="сортировка">
-      <change afterPath="$PROJECT_DIR$/app/Actions/AddViewToCookie.php" afterDir="false" />
+    <list default="true" id="9f042ed4-dce3-45f6-a3eb-d2286aea5fc3" name="Changes" comment="вывод просмотренных анкет">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +164,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -244,13 +246,8 @@
       <workItem from="1653204380825" duration="1265000" />
       <workItem from="1653370576593" duration="17000" />
       <workItem from="1653372384097" duration="5614000" />
-    </task>
-    <task id="LOCAL-00061" summary="добавление комментариев">
-      <created>1650019741471</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1650019741471</updated>
+      <workItem from="1654060186680" duration="803000" />
+      <workItem from="1654062014721" duration="2267000" />
     </task>
     <task id="LOCAL-00062" summary="вывод комментариев">
       <created>1650022515157</created>
@@ -588,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653892755472</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="вывод просмотренных анкет">
+      <created>1653982227093</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1653982227093</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +651,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="горизантальный скрол" />
     <MESSAGE value="правка с поиском" />
     <MESSAGE value="галерея" />
     <MESSAGE value="галерея правки" />
@@ -672,7 +675,8 @@
     <MESSAGE value="правка" />
     <MESSAGE value="карта сайта" />
     <MESSAGE value="сортировка" />
-    <option name="LAST_COMMIT_MESSAGE" value="сортировка" />
+    <MESSAGE value="вывод просмотренных анкет" />
+    <option name="LAST_COMMIT_MESSAGE" value="вывод просмотренных анкет" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -47,6 +47,7 @@
     @endif
     <meta property="og:site_name" content="{{ $_SERVER['HTTP_HOST'] }}" />
     <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="website">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css?v=5') }}" rel="stylesheet">
@@ -76,7 +77,7 @@
                 <div class="search header__search" itemscope itemtype="https://schema.org/WebSite">
                     <form action="/search" method="get" class="header__search-form"
                           itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
-                        <meta itemprop="target" content="https://example.com/search?q={query}"/>
+                        <meta itemprop="target" content="https://{{ $_SERVER['HTTP_HOST'] }}/search?q={query}"/>
                         <input type="text" autocomplete="off"
                                itemprop="query"
                                class="form-control form-control_size-l header__search-field"
