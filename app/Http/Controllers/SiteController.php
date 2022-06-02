@@ -30,6 +30,7 @@ class SiteController extends Controller
 
     public function index($city, Request $request, YandexRepository $yandexRepository, DataRepository $dataRepository)
     {
+
         $path = $request->getRequestUri();
 
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);

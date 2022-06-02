@@ -686,6 +686,24 @@ video{
 .cabinet-btn img{
     max-width: 26px;
 }
+.form .form-group{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.form .get-more-post-btn{
+    font-size: 16px;
+    margin-top: 5px;
+    padding: 8px 30px;
+}
+#toLogin{
+    font-size: 18px;
+    text-decoration: underline;
+}
+.form {
+    max-width: 320px;
+    margin: auto;
+}
 @media (max-width: 1199px){
     .filter-wrap .close-panel{
         display: block;
