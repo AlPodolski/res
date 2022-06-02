@@ -22,6 +22,8 @@ Route::get('/{size}/thumbs/{path}', 'ImageController@index')
 Route::post('/comment/add', 'CommentController@add')->name('comment.add');
 Route::post('/call/request', 'CallRequestController@index');
 
+Route::get('/logout', [\App\Http\Controllers\Auth\LogoutController::class, 'index']);
+
 Route::domain('{city}.'.env('DOMAIN'))->group(function () {
     Route::get('/',  'SiteController@index');
     Route::post('/',  'SiteController@more');

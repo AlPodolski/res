@@ -102,7 +102,14 @@
                     </div>
                 </div>
                 <div class="cabinet-btn">
-                    <a href="/login">
+
+                    <a @auth
+                           href="/cabinet"
+                       @endauth
+                       @guest
+                           href="/login"
+                        @endguest
+                    >
                         <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAADyklEQVRoge3ZTWhcVRQH8F/aIKJBKGjRJrFqG6M7EbsptQjipp8rEVEKbrUuXFh140Z0IwgKihUXggtJmrYqpO6k1KVfuJNCq+LXogaS1hT75bg49/VN0jczb968maTgHx5v5s27//s/955z7rl3htSDcezFTtyVvsOv+Amz+Ay/1dRfbRjFQVxCo8N1BdPYuCJKC7AHZ4W4C5jCk5jEzemaTM+m0juN1Gb3CuhdgufFiDZwGPeUaLMJR+Szsb9v6jpgTxJwBS9WaH+gqf3AZ2JU7jZVxGc4kDgWcEcNukrjQ7nb9IqjietgDVylMI7LIhjL+HwnbMZFkcFGa+DriP1ixKZq5DyUOJ+tSrCmi3d3pPunVTsrQMa1o+1bNeGkGK2JGjknE+ePNXK2xLnU2UiNnCOJ81xVgm5cqFG1kxL9/9srQRn8me4bqnZWgIzr96oE3RhwKt0fqtpZATKu01UJujFgNt33Vu2sABnXbNu3asKYWHQuiMKsV0wY8EIGH4hgPtIjz5DY4DTwfq+iusEGeTH3Ug88rySOedxeg66usFteDndrxBBebmq/s15p5bFfvqE5KgqzTpgQpUO2oXmub+pKYpeo5xsiGA/hKdwnVtgR3I+n028X5W6zYiO/HLfibeU29ZdE7V/rBmaoJp5RsdXchbstPVY5LfL853pYcf/HakUvLrQeW/CgCNaN6boJtyTuBZzHL/gZ3+JrfIfFHvqujC14Ez+IErhT4LYL6O/xGh7ot+hNeFXsmppF/I0vk0H7sE0E7zoMi0JxnZiVbXgG7+EbeUrNrlN4HXe20DCOGVEFnBWlzGQn4VtFvZItWA38gbfwCG4oOQBFuBGP4t3EmfFfFgvj1mXi51w7i3OiwLwG23Gi6cVFfITHsLYH0a2wBg/jY/zT1GcWn9nJxaxI12M4lp5NNxMN4x25b88JH72tD6JbYb2or5qPWbLisXm0x+Une4hR+EQ+jW+od/NeFcNiNloZMJ89eEE+ddsHKLAV1orEkB3lNITbjAnxX6RnM4SLZNP0xIAENmeVhfR5cwvhJ3FGcRBPEKfMDRwfoPiirHKmQPg+YdQmEcwLcoOvHrAdTw0eH5AB7bLKcuGl8FdqWGZTUgfaZZVFEbilka2WRL1yXSKbukHhsNZZpZILFU1pP3Gv7oN4QhheWAtl/xwek++k+o0xUQYsiMVoWvzr020aHSMsKRqRflxflTSwyJC2tVDziPTTgBMlDcjQqZRYKGq02tAu7c4XtlhlaJe1ZlZQV2m0ylpXa6HrAc0xuqQW+g/ECIvS39xxIAAAAABJRU5ErkJggg=="/>
                     </a>
