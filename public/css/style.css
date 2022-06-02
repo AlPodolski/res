@@ -792,6 +792,9 @@ video{
     .side-panel ul{
         padding-left: 10px;
     }
+    .menu .top-menu-text{
+        display: none;
+    }
 }
 @media (max-width: 400px){
 
