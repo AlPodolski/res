@@ -677,6 +677,15 @@ video{
 .post-item .image-wrap{
     min-height: 293px;
 }
+.cabinet-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+.cabinet-btn img{
+    max-width: 26px;
+}
 @media (max-width: 1199px){
     .filter-wrap .close-panel{
         display: block;

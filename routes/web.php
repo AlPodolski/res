@@ -34,3 +34,7 @@ Route::domain('{city}.'.env('DOMAIN'))->group(function () {
     Route::get('/{search}',  'FilterController@index')->where('search', '.*');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
