@@ -6,6 +6,11 @@
     @section('can', $path)
 @endif
 
+@php
+ /* @var $serviceList \App\Models\Service[] */
+ /* @var $metroList \App\Models\Metro[] */
+@endphp
+
 @section('content')
 
     <h1>Добавить анкету</h1>
@@ -35,6 +40,50 @@
             @enderror
         </div>
         <div class="form-group d-flex">
+            <label for="rost" class="col-form-label text-md-right">Рост</label>
+            <input id="rost" type="text"
+                   class="form-control request-call-input @error('rost') is-invalid @enderror"
+                   name="phone" required placeholder="Рост">
+            @error('rost')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+        <div class="form-group d-flex">
+            <label for="ves" class="col-form-label text-md-right">Вес</label>
+            <input id="ves" type="text"
+                   class="form-control request-call-input @error('ves') is-invalid @enderror"
+                   name="phone" required placeholder="Вес">
+            @error('ves')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+        <div class="form-group d-flex">
+            <label for="age" class="col-form-label text-md-right">Возраст</label>
+            <input id="age" type="text"
+                   class="form-control request-call-input @error('age') is-invalid @enderror"
+                   name="age" required placeholder="Возраст">
+            @error('ves')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+        <div class="form-group d-flex">
+            <label for="breast_size" class="col-form-label text-md-right">Размер груди</label>
+            <input id="breast_size" type="text"
+                   class="form-control request-call-input @error('breast_size') is-invalid @enderror"
+                   name="breast_size" required placeholder="Размер груди">
+            @error('ves')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+        <div class="form-group d-flex">
             <label for="phone" class="col-form-label text-md-right">Номер телефона</label>
             <input id="phone" type="text"
                    class="form-control request-call-input @error('phone') is-invalid @enderror"
@@ -45,6 +94,39 @@
             </span>
             @enderror
         </div>
+
+        <div class="check-box-group">
+            <label class="col-form-label text-md-right">Выбрать услуги</label>
+            @foreach($serviceList as $item)
+                <div class="check-box-group-item">
+                    <input type="checkbox" class="custom-checkbox" id="service-{{ $item->id }}" name="service[]" value="{{ $item->id }}">
+                    <label for="service-{{ $item->id }}">{{ $item->value }}</label>
+                </div>
+            @endforeach
+        </div>
+
+        @if($metroList->first())
+
+            <div class="check-box-group">
+                <label class="col-form-label text-md-right">Выбрать метро</label>
+                @foreach($metroList as $item)
+                    <div class="check-box-group-item">
+                        <input type="checkbox" class="custom-checkbox" id="metro-{{ $item->id }}" name="metro[]" value="{{ $item->id }}">
+                        <label for="metro-{{ $item->id }}">{{ $item->value }}</label>
+                    </div>
+                @endforeach
+            </div>
+
+        @endif
+
+        <div class="text-wrap form-group">
+            <label for="about" class="col-form-label text-md-right">Описание</label>
+            <textarea name="about" id="about" cols="30" rows="10">
+
+            </textarea>
+        </div>
+
+
     </form>
 
 @endsection

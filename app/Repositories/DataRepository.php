@@ -33,6 +33,15 @@ class DataRepository
 
     }
 
+    public function service()
+    {
+        return Service::get();
+    }
+    public function metroList($cityId)
+    {
+        return Metro::where(['city_id' => $cityId])->get();
+    }
+
     public function all($cityId)
     {
 

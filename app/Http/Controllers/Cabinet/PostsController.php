@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Cabinet;
 
 use App\Models\Post;
+use App\Repositories\CityRepository;
+use App\Repositories\DataRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,9 +16,14 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($city, DataRepository $dataRepository, CityRepository $cityRepository)
     {
-        return view('cabinet.post.add');
+
+        $cityInfo = $cityRepository->getCityInfoByUrl($city);
+
+        $serviceList = $dataRepository->service();
+        $metroList = $dataRepository->metroList($cityInfo['id']);
+        return view('cabinet.post.add', compact('serviceList', 'metroList'));
     }
 
     /**
