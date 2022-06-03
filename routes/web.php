@@ -25,6 +25,20 @@ Route::post('/call/request', 'CallRequestController@index');
 Route::get('/logout', [\App\Http\Controllers\Auth\LogoutController::class, 'index']);
 
 Route::domain('{city}.'.env('DOMAIN'))->group(function () {
+
+    Route::middleware('auth' )->group(function(){
+
+        Route::get('/cabinet', [\App\Http\Controllers\Cabinet\IndexController::class, 'index']);
+
+        Route::prefix('/cabinet/post')->group(function(){
+
+            Route::get('/add', [\App\Http\Controllers\Cabinet\PostsController::class, 'create']);
+            Route::post('/create', [\App\Http\Controllers\Cabinet\PostsController::class, 'store']);
+
+        });
+
+    });
+
     Route::get('/',  'SiteController@index');
     Route::post('/',  'SiteController@more');
     Route::post('/post/more',  'PostController@more')->name('post.more');

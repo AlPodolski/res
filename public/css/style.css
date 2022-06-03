@@ -704,6 +704,41 @@ video{
     max-width: 320px;
     margin: auto;
 }
+.plus-wrap {
+    width: 91px;
+    height: 91px;
+    border: 1px dashed #F74952;
+    border-radius: 50%;
+}
+.items-center {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.plus {
+    background: linear-gradient(0.25turn, #F74952, #C60D17);
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+}
+.white-cabinet-block {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 35px;
+    padding: 30px;
+}
+#add-post-form .form-group{
+    flex-direction: column;
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+#add-post-form {
+    margin: 0 -10px;
+}
 @media (max-width: 1199px){
     .filter-wrap .close-panel{
         display: block;
