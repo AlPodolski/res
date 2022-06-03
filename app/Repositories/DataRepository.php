@@ -42,6 +42,35 @@ class DataRepository
         return Metro::where(['city_id' => $cityId])->get();
     }
 
+    public function rayon($cityId)
+    {
+        return Rayon::where(['city_id' => $cityId])->get();
+    }
+
+    public function time()
+    {
+        return Time::get();
+    }
+
+    public function place()
+    {
+        return Place::get();
+    }
+
+    public function national()
+    {
+        return National::get();
+    }
+
+    public function hairColor()
+    {
+        return HairColor::get();
+    }
+    public function intimHair()
+    {
+        return IntimHair::get();
+    }
+
     public function all($cityId)
     {
 

@@ -7,8 +7,10 @@
 @endif
 
 @php
- /* @var $serviceList \App\Models\Service[] */
- /* @var $metroList \App\Models\Metro[] */
+    /* @var $serviceList \App\Models\Service[] */
+    /* @var $metroList \App\Models\Metro[] */
+    /* @var $rayonList \App\Models\Rayon[] */
+    /* @var $timeList \App\Models\Time[] */
 @endphp
 
 @section('content')
@@ -95,15 +97,71 @@
             @enderror
         </div>
 
+        <div class="form-group d-flex">
+            <label for="national_id" class="col-form-label text-md-right">Национальность</label>
+
+            <select class="metro-select form-control" name="national_id" id="national_id">
+
+                @foreach($nationalList as $item)
+
+                    <option value="{{ $item->id }}">{{ $item->value }}</option>
+
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group d-flex">
+            <label for="intim_hair_color_id" class="col-form-label text-md-right">Интимная стрижка</label>
+
+            <select class="metro-select" name="intim_hair_color_id" id="intim_hair_color_id">
+
+                @foreach($intimHairList as $item)
+
+                    <option value="{{ $item->id }}">{{ $item->value }}</option>
+
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group d-flex">
+            <label for="hair_color_id" class="col-form-label text-md-right">Цвет волос</label>
+
+            <select class="metro-select" name="hair_color_id" id="hair_color_id">
+
+                @foreach($hairColorList as $item)
+
+                    <option value="{{ $item->id }}">{{ $item->value }}</option>
+
+                @endforeach
+
+            </select>
+        </div>
+
         <div class="check-box-group">
             <label class="col-form-label text-md-right">Выбрать услуги</label>
             @foreach($serviceList as $item)
                 <div class="check-box-group-item">
-                    <input type="checkbox" class="custom-checkbox" id="service-{{ $item->id }}" name="service[]" value="{{ $item->id }}">
+                    <input type="checkbox" class="custom-checkbox" id="service-{{ $item->id }}" name="service[]"
+                           value="{{ $item->id }}">
                     <label for="service-{{ $item->id }}">{{ $item->value }}</label>
                 </div>
             @endforeach
         </div>
+
+        @if($rayonList->first())
+
+            <div class="check-box-group">
+                <label class="col-form-label text-md-right">Выбрать район</label>
+                @foreach($rayonList as $item)
+                    <div class="check-box-group-item">
+                        <input type="checkbox" class="custom-checkbox" id="rayon-{{ $item->id }}" name="rayon[]"
+                               value="{{ $item->id }}">
+                        <label for="rayon-{{ $item->id }}">{{ $item->value }}</label>
+                    </div>
+                @endforeach
+            </div>
+
+        @endif
 
         @if($metroList->first())
 
@@ -111,7 +169,8 @@
                 <label class="col-form-label text-md-right">Выбрать метро</label>
                 @foreach($metroList as $item)
                     <div class="check-box-group-item">
-                        <input type="checkbox" class="custom-checkbox" id="metro-{{ $item->id }}" name="metro[]" value="{{ $item->id }}">
+                        <input type="checkbox" class="custom-checkbox" id="metro-{{ $item->id }}" name="metro[]"
+                               value="{{ $item->id }}">
                         <label for="metro-{{ $item->id }}">{{ $item->value }}</label>
                     </div>
                 @endforeach
@@ -119,13 +178,23 @@
 
         @endif
 
+        <div class="check-box-group">
+            <label class="col-form-label text-md-right">Выбрать время встречи</label>
+            @foreach($timeList as $item)
+                <div class="check-box-group-item">
+                    <input type="checkbox" class="custom-checkbox" id="time-{{ $item->id }}" name="time[]"
+                           value="{{ $item->id }}">
+                    <label for="time-{{ $item->id }}">{{ $item->value }}</label>
+                </div>
+            @endforeach
+        </div>
+
         <div class="text-wrap form-group">
             <label for="about" class="col-form-label text-md-right">Описание</label>
             <textarea name="about" id="about" cols="30" rows="10">
 
             </textarea>
         </div>
-
 
     </form>
 

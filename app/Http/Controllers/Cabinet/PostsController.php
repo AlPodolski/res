@@ -14,7 +14,7 @@ class PostsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create($city, DataRepository $dataRepository, CityRepository $cityRepository)
     {
@@ -23,7 +23,15 @@ class PostsController extends Controller
 
         $serviceList = $dataRepository->service();
         $metroList = $dataRepository->metroList($cityInfo['id']);
-        return view('cabinet.post.add', compact('serviceList', 'metroList'));
+        $rayonList = $dataRepository->rayon($cityInfo['id']);
+        $timeList = $dataRepository->time();
+        $placeList = $dataRepository->place();
+        $nationalList = $dataRepository->national();
+        $hairColorList = $dataRepository->hairColor();
+        $intimHairList = $dataRepository->intimHair();
+
+        return view('cabinet.post.add', compact('serviceList', 'metroList', 'rayonList',
+            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList'));
     }
 
     /**
