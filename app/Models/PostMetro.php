@@ -24,6 +24,8 @@ use Illuminate\Database\Eloquent\Model;
 class PostMetro extends Model
 {
 
+    protected $fillable = ['metros_id', 'posts_id', 'city_id'];
+
     public $timestamps = false;
 
     public function metro(): \Illuminate\Database\Eloquent\Relations\HasOne

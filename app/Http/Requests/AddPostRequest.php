@@ -24,14 +24,14 @@ class AddPostRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string',
-            'phone' => 'string',
-            'rost' => 'integer',
-            'ves' => 'integer',
-            'breast_size' => 'integer',
-            'age' => 'integer',
-            'price' => 'integer',
-            'about' => 'string',
+            'name' => 'string:required',
+            'phone' => 'string:required',
+            'rost' => 'integer:required',
+            'ves' => 'integer:required',
+            'breast_size' => 'integer:required',
+            'age' => 'integer:required',
+            'price' => 'integer:required',
+            'about' => 'string:required',
             'service' => 'array',
             'metro' => 'array',
             'rayon' => 'array',
@@ -40,9 +40,10 @@ class AddPostRequest extends FormRequest
             'intim_hair_color_id' => 'integer',
             'hair_color_id' => 'integer',
             'avatar' => 'mimes:jpg,bmp,png',
-            'gallery' => 'mimes:jpg,bmp,png',
+            'gallery.*' => 'mimes:jpg,bmp,png',
             'user_id' => 'exists:users,id',
             'city_id' => 'exists:cities,id',
+            'tarif_id' => 'exists:tarifs,id',
         ];
     }
 

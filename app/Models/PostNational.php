@@ -28,6 +28,8 @@ class PostNational extends Model
 
     public $timestamps = false;
 
+    protected $fillable = ['post_nationals_id', 'nationals_id', 'city_id'];
+
     public function national(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(National::class, 'id', 'nationals_id')->with('filterUrl');

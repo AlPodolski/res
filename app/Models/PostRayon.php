@@ -26,6 +26,8 @@ class PostRayon extends Model
 
     public $timestamps = false;
 
+    protected $fillable = ['posts_id', 'rayons_id', 'city_id'];
+
     public function rayon(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Rayon::class, 'id', 'rayons_id')->with('filterUrl');

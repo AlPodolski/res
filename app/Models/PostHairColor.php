@@ -24,6 +24,8 @@ use Illuminate\Database\Eloquent\Model;
 class PostHairColor extends Model
 {
 
+    protected $fillable = ['posts_id', 'hair_colors_id', 'city_id'];
+
     public $timestamps = false;
 
     public function hair(): \Illuminate\Database\Eloquent\Relations\HasOne

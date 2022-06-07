@@ -25,6 +25,8 @@ class PostService extends Model
 {
     public $timestamps = false;
 
+    protected $fillable = ['posts_id', 'service_id', 'city_id'];
+
     public function service()
     {
         return $this->hasOne(Service::class, 'id', 'service_id')->with('filterUrl');

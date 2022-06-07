@@ -10,6 +10,7 @@ use App\Models\Place;
 use App\Models\Price;
 use App\Models\Rayon;
 use App\Models\Service;
+use App\Models\Tarif;
 use App\Models\Time;
 use Cache;
 use App\Models\Metro;
@@ -69,6 +70,11 @@ class DataRepository
     public function intimHair()
     {
         return IntimHair::get();
+    }
+
+    public function tarif()
+    {
+        return Tarif::get();
     }
 
     public function all($cityId)

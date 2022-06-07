@@ -104,6 +104,8 @@
             @enderror
         </div>
 
+        <div class="col-12"></div>
+
         <div class="form-group d-flex">
             <label for="national_id" class="col-form-label text-md-right">Национальность</label>
 
@@ -130,6 +132,7 @@
             </select>
         </div>
 
+
         <div class="form-group d-flex">
             <label for="hair_color_id" class="col-form-label text-md-right">Цвет волос</label>
 
@@ -143,6 +146,24 @@
 
             </select>
         </div>
+
+        <div class="col-12"></div>
+
+        <div class="form-group d-flex">
+            <label for="tarif_id" class="col-form-label text-md-right">Выбрать тариф</label>
+
+            <select class="metro-select" name="tarif_id" id="tarif_id">
+
+                @foreach($tarifList as $item)
+
+                    <option value="{{ $item->id }}">{{ $item->value }} {{ $item->price }}р. в час</option>
+
+                @endforeach
+            </select>
+        </div>
+
+
+        <div class="col-12"></div>
 
         <div class="avatar">
             <label class="col-form-label text-md-right">Загрузить главное фото</label>
@@ -181,7 +202,7 @@
                 </div>
             </div>
 
-            <input name="gallery" required class="d-none" type="file" id="addpost-photo" multiple accept=".png, .jpg, .jpeg">
+            <input name="gallery[]" required class="d-none" type="file" id="addpost-photo" multiple accept=".png, .jpg, .jpeg">
 
         </div>
 
@@ -239,9 +260,7 @@
 
         <div class="text-wrap form-group">
             <label for="about" class="col-form-label text-md-right bold-label">Описание</label>
-            <textarea name="about" id="about" cols="30" rows="10">
-
-            </textarea>
+            <textarea name="about" id="about" cols="30" rows="10"></textarea>
         </div>
 
         <button type="submit" class="get-more-post-btn">

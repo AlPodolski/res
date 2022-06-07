@@ -24,6 +24,8 @@ use Illuminate\Database\Eloquent\Model;
 class PostIntimHair extends Model
 {
 
+    protected $fillable = ['posts_id', 'intim_hair_id', 'city_id'];
+
     public $timestamps = false;
 
     public function value(): \Illuminate\Database\Eloquent\Relations\HasOne

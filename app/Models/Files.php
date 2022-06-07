@@ -27,6 +27,8 @@ class Files extends Model
 
     public $timestamps = false;
 
+    protected $fillable = ['related_id', 'related_class', 'file', 'type'];
+
     const SELPHI_TYPE = 3;
     const VIDEO_TYPE = 2;
     const MAIN_PHOTO_TYPE = 1;
