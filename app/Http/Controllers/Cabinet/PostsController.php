@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cabinet;
 
+use App\Http\Requests\AddPostRequest;
 use App\Models\Post;
 use App\Repositories\CityRepository;
 use App\Repositories\DataRepository;
@@ -31,7 +32,7 @@ class PostsController extends Controller
         $intimHairList = $dataRepository->intimHair();
 
         return view('cabinet.post.add', compact('serviceList', 'metroList', 'rayonList',
-            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList'));
+            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo'));
     }
 
     /**
@@ -40,9 +41,15 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddPostRequest $request)
     {
-        //
+        $data =  $request->validated();
+
+        $post = Post::create($data);
+
+        dd($post);
+
+
     }
 
     /**

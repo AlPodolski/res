@@ -68,6 +68,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Post extends Model
 {
+    protected $fillable = ['name', 'user_id' , 'phone', 'about', 'price',
+        'tarif_id', 'rost', 'ves', 'breast_size', 'city_id'];
 
     public function selphi()
     {

@@ -12,13 +12,20 @@
     /* @var $rayonList \App\Models\Rayon[] */
     /* @var $timeList \App\Models\Time[] */
 @endphp
-
+@section('maskedinput', '/js/jquery.maskedinput.js')
 @section('content')
 
     <h1>Добавить анкету</h1>
 
+    @if($errors)
+        @foreach($errors->all() as $error)
+            {{$error}}
+        @endforeach
+    @endif
+
     <form action="/cabinet/post/create" enctype="multipart/form-data" method="post" class="d-flex" id="add-post-form">
         @csrf
+        <input type="hidden" name="city_id" value="{{ $cityInfo['id'] }}">
         <div class="form-group d-flex">
             <label for="name" class="col-form-label text-md-right">Имя</label>
             <input id="name" type="text"
@@ -34,7 +41,7 @@
             <label for="price" class="col-form-label text-md-right">Цена за час</label>
             <input id="price" type="text"
                    class="form-control request-call-input @error('price') is-invalid @enderror"
-                   name="phone" required placeholder="Цена за час">
+                   name="price" required placeholder="Цена за час">
             @error('price')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -45,7 +52,7 @@
             <label for="rost" class="col-form-label text-md-right">Рост</label>
             <input id="rost" type="text"
                    class="form-control request-call-input @error('rost') is-invalid @enderror"
-                   name="phone" required placeholder="Рост">
+                   name="rost" required placeholder="Рост">
             @error('rost')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -56,7 +63,7 @@
             <label for="ves" class="col-form-label text-md-right">Вес</label>
             <input id="ves" type="text"
                    class="form-control request-call-input @error('ves') is-invalid @enderror"
-                   name="phone" required placeholder="Вес">
+                   name="ves" required placeholder="Вес">
             @error('ves')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -237,9 +244,9 @@
             </textarea>
         </div>
 
-        <div class="get-more-post-btn">
+        <button type="submit" class="get-more-post-btn">
             Сохранить
-        </div>
+        </button>
 
     </form>
 

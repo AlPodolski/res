@@ -231,6 +231,10 @@ function phone_mask(){
         $(".request-call-input").mask("+7(999)99-99-999");
     }
 
+    if ($('#phone').length > 0) {
+        $("#phone").mask("+7(999)99-99-999");
+    }
+
 }
 
 !function (e) {
