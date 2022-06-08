@@ -144,4 +144,16 @@ class PostsRepository
         return $posts;
     }
 
+    public function getByUserId($userId)
+    {
+
+        $columns = ['url', 'name', 'phone', 'price', 'id'];
+
+        return Post::with('avatar', 'video')
+            ->orderBy('id', 'desc')
+            ->select($columns)
+            ->where(['user_id' => $userId])
+            ->get();
+    }
+
 }
