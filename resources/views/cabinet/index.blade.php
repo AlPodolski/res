@@ -2,6 +2,10 @@
 
 @section('title', 'Кабинет')
 
+@php
+ /* @var $postsList \App\Models\Post[] */
+@endphp
+
 @if(isset($path) and $path)
     @section('can', $path)
 @endif
@@ -24,12 +28,16 @@
                     </span>
                 </a>
             </div>
-            <a href="/cabinet/post/add">
+            <a href="/cabinet/post/create">
                 Добавить анкету
             </a>
         </div>
 
-
+        @if(isset($postsList) and $postsList)
+            @foreach($postsList as $post)
+                @include('cabinet.includes.post-item')
+            @endforeach
+        @endif
 
     </div>
 

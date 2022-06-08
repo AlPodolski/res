@@ -30,10 +30,9 @@ Route::domain('{city}.'.env('DOMAIN'))->group(function () {
 
         Route::get('/cabinet', [\App\Http\Controllers\Cabinet\IndexController::class, 'index']);
 
-        Route::prefix('/cabinet/post')->group(function(){
+        Route::prefix('/cabinet')->group(function(){
 
-            Route::get('/add', [\App\Http\Controllers\Cabinet\PostsController::class, 'create']);
-            Route::post('/create', [\App\Http\Controllers\Cabinet\PostsController::class, 'store']);
+            Route::resource('post', '\App\Http\Controllers\Cabinet\PostsController');
 
         });
 

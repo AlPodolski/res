@@ -23,7 +23,7 @@
         @endforeach
     @endif
 
-    <form action="/cabinet/post/create" enctype="multipart/form-data" method="post" class="d-flex" id="add-post-form">
+    <form action="/cabinet/post" enctype="multipart/form-data" method="post" class="d-flex" id="add-post-form">
         @csrf
         <input type="hidden" name="city_id" value="{{ $cityInfo['id'] }}">
         <div class="form-group d-flex">
