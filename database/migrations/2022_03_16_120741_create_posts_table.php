@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->text('about')->nullable();
             $table->mediumInteger('price')->unsigned();
             $table->tinyInteger('tarif_id')->unsigned();
-            $table->boolean('publication_status')->unsigned();
+            $table->boolean('publication_status')->default(0)->unsigned();
             $table->smallInteger('rost')->unsigned()->nullable();
             $table->smallInteger('ves')->unsigned()->nullable();
             $table->smallInteger('age')->unsigned()->nullable();

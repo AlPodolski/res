@@ -184,10 +184,16 @@ class PostsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
+    public function destroy($city, $id)
     {
-        //
+        $post = Post::findOrFail(['id' => $id])->first();
+
+        if ($post->user_id != auth()->id()) abort(403);
+
+        $post->delete();
+
+        return redirect('/cabinet');
     }
 }

@@ -237,6 +237,15 @@ function phone_mask(){
 
 }
 
+function sendDeleteForm(object){
+
+    if( !confirm('Удалить анкету?') )
+        event.preventDefault();
+
+        return true;
+
+}
+
 !function (e) {
     e.extend({
         uploadPreview: function (l) {
