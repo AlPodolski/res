@@ -19,12 +19,12 @@
             </picture>
         @endif
     </a>
-    <a href="/post/{{$post->url}}" class="name">Редактировать</a>
+    <a href="cabinet/post/{{$post->id}}/edit" class="name">Редактировать</a>
+    <div class="price">{{ $post->name }}</div>
     <form onsubmit="return sendDeleteForm(this)" action="cabinet/post/{{ $post->id }}" method="post">
         @csrf
         @method('DELETE')
         <button type="submit" class="name">Удалить</button>
     </form>
-    <div class="price">{{ $post->name }}</div>
     <a data-tel="{{$post->phone}}" href="tel:+{{$post->phone}}" class="phone">{{ $post->phone }}</a>
 </div>

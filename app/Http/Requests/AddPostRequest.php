@@ -29,7 +29,7 @@ class AddPostRequest extends FormRequest
             'rost' => 'integer:required',
             'ves' => 'integer:required',
             'breast_size' => 'integer:required',
-            'age' => 'integer:required',
+            'age' => 'integer:required:min:18',
             'price' => 'integer:required',
             'about' => 'string:required',
             'service' => 'array',

@@ -14,33 +14,45 @@ use App\Models\PostService;
 use App\Models\PostTime;
 use App\Repositories\CityRepository;
 use App\Repositories\DataRepository;
+use App\Repositories\PostsRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
 {
 
+    private $cityRepository;
+    private $postRepository;
+    private $dataRepository;
+
+    public function __construct()
+    {
+        $this->cityRepository = new CityRepository();
+        $this->postRepository = new PostsRepository();
+        $this->dataRepository = new DataRepository();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function create($city, DataRepository $dataRepository, CityRepository $cityRepository)
+    public function create($city)
     {
 
-        $cityInfo = $cityRepository->getCityInfoByUrl($city);
+        $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 
-        $serviceList = $dataRepository->service();
-        $metroList = $dataRepository->metroList($cityInfo['id']);
-        $rayonList = $dataRepository->rayon($cityInfo['id']);
+        $serviceList = $this->dataRepository->service();
+        $metroList = $this->dataRepository->metroList($cityInfo['id']);
+        $rayonList = $this->dataRepository->rayon($cityInfo['id']);
 
-        $timeList = $dataRepository->time();
-        $placeList = $dataRepository->place();
-        $nationalList = $dataRepository->national();
-        $hairColorList = $dataRepository->hairColor();
-        $intimHairList = $dataRepository->intimHair();
+        $timeList = $this->dataRepository->time();
+        $placeList = $this->dataRepository->place();
+        $nationalList = $this->dataRepository->national();
+        $hairColorList = $this->dataRepository->hairColor();
+        $intimHairList = $this->dataRepository->intimHair();
 
-        $tarifList = $dataRepository->tarif();
+        $tarifList = $this->dataRepository->tarif();
 
         return view('cabinet.post.add', compact('serviceList', 'metroList', 'rayonList',
             'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList'));
@@ -161,11 +173,28 @@ class PostsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function edit($id)
+    public function edit($city, $id)
     {
-        //
+        $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
+
+        $serviceList = $this->dataRepository->service();
+        $metroList = $this->dataRepository->metroList($cityInfo['id']);
+        $rayonList = $this->dataRepository->rayon($cityInfo['id']);
+
+        $timeList = $this->dataRepository->time();
+        $placeList = $this->dataRepository->place();
+        $nationalList = $this->dataRepository->national();
+        $hairColorList = $this->dataRepository->hairColor();
+        $intimHairList = $this->dataRepository->intimHair();
+
+        $tarifList = $this->dataRepository->tarif();
+
+        $post = $this->postRepository->getById($id);
+
+        return view('cabinet.post.edit', compact('post', 'serviceList', 'metroList', 'rayonList',
+            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList'));
     }
 
     /**

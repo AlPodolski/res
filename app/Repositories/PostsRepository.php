@@ -156,4 +156,18 @@ class PostsRepository
             ->get();
     }
 
+    public function getById($id)
+    {
+        $relation = ['national', 'hair', 'metro', 'rayon',
+            'intimHair', 'time', 'place', 'avatar',
+            'gallery', 'video', 'selphi', 'service', 'comments'];
+
+        $post = Post::with($relation)
+            ->where(['id' => $id])
+            ->first();
+
+        return $post;
+
+    }
+
 }
