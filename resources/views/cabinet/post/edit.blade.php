@@ -223,11 +223,11 @@
                         </label>
                     </div>
                 </div>
-                <div class="popular-list post-photo ">
+                <div class="popular-list post-photo">
                     @foreach($post->gallery as $item)
                         <div class="post-photo-item">
                             <label for="addpost-photo" class="img-label small-no-img-label">
-                                <img src="/211-300/thumbs{{$post->avatar->file}}" alt="">
+                                <img src="/211-300/thumbs{{$item->file}}" alt="">
                             </label>
                         </div>
                     @endforeach
