@@ -133,6 +133,7 @@ class MenuWidget implements ContractWidget
         return view('Widgets::test', compact(
             'metroList',
             'rayonList',
+            'cityId',
             'timeList',
             'placeList',
             'nationalList',

@@ -24,6 +24,8 @@ Route::post('/call/request', 'CallRequestController@index');
 
 Route::get('/logout', [\App\Http\Controllers\Auth\LogoutController::class, 'index']);
 
+Route::post('/claim/add', [\App\Http\Controllers\ClaimController::class, 'index']);
+
 Route::domain('{city}.'.env('DOMAIN'))->group(function () {
 
     Route::middleware('auth' )->group(function(){

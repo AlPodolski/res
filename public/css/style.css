@@ -852,6 +852,15 @@ video{
     margin-right: 10px;
     background-size: 50px;
 }
+.claim-form .form-group{
+    margin-bottom: 15px;
+}
+.claim-form {
+    padding-top: 15px;
+}
+.claim-form .get-more-post-btn{
+    margin-top: 0px;
+}
 @media (max-width: 1199px){
     .filter-wrap .close-panel{
         display: block;

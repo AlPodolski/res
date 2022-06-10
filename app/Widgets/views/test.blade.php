@@ -212,17 +212,19 @@
                                 <div class="form-group d-flex">
                                     <input id="name" type="text"
                                            class="form-control request-call-input"
-                                           name="name" required placeholder="Имя">
+                                           name="name" required placeholder="Ваше имя">
                                 </div>
+                                <input type="hidden" name="city_id" value="{{ $cityId }}">
                                 <div class="form-group d-flex">
                                     <input id="email" type="text"
                                            class="form-control request-call-input"
-                                           name="name" required placeholder="Имя">
+                                           name="email" required placeholder="Ваша почта">
                                 </div>
                                 <div class="text-wrap form-group">
-                                    <label for="about" class="col-form-label text-md-right bold-label">Комментарий</label>
-                                    <textarea name="text" required id="about" cols="30" rows="10"></textarea>
+                                    <textarea name="text" required
+                                              id="about" cols="30" rows="10" placeholder="Комментарий"></textarea>
                                 </div>
+                                <button class="get-more-post-btn" type="submit">Отправить</button>
                             </form>
                         </div>
                     </div>
