@@ -729,6 +729,9 @@ video{
     padding: 30px;
     min-height: 379px;
 }
+.w-100{
+    width: 100%;
+}
 #add-post-form .form-group{
     flex-direction: column;
     flex: 0 0 20%;

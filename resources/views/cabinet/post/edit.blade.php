@@ -16,7 +16,7 @@
 @section('maskedinput', '/js/jquery.maskedinput.js')
 @section('content')
 
-    <h1>Добавить анкету</h1>
+    <h1>Редактировать анкету</h1>
 
     @if($errors)
         @foreach($errors->all() as $error)
@@ -118,7 +118,7 @@
                     <option
 
                         @if($post->national->id == $item->id)
-                            selected
+                        selected
                         @endif
 
                         value="{{ $item->id }}">{{ $item->value }}</option>
@@ -137,7 +137,7 @@
                     <option
 
                         @if($post->intimHair->id == $item->id)
-                            selected
+                        selected
                         @endif
 
                         value="{{ $item->id }}">{{ $item->value }}</option>
@@ -157,7 +157,7 @@
                     <option
 
                         @if($post->hair->id == $item->id)
-                            selected
+                        selected
                         @endif
 
                         value="{{ $item->id }}">{{ $item->value }}</option>
@@ -191,9 +191,9 @@
                    style="background-image: url('/211-300/thumbs{{$post->avatar->file}}')"
                    class=" img-label no-img-bg main-img">
 
-                <input name="avatar" type="file" id="addpost-image" required accept=".png, .jpg, .jpeg">
+                <input name="avatar" type="file" id="addpost-image" accept=".png, .jpg, .jpeg">
 
-                <span class="plus-photo-wrap d-flex items-center" >
+                <span class="plus-photo-wrap d-flex items-center">
 
                     <span class="plus d-flex items-center">
                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
@@ -210,9 +210,9 @@
 
         <div class="col-12"></div>
 
-        <div class="gallery">
+        <div class="gallery w-100">
 
-            <label class="col-form-label text-md-right bold-label">Загрузить фото в галерею</label>
+            <label for="addpost-photo" class="col-form-label text-md-right bold-label">Загрузить фото в галерею</label>
 
             <div class="photo-wrap">
                 <div class="popular-list post-photo " id="preview">
@@ -223,9 +223,18 @@
                         </label>
                     </div>
                 </div>
+                <div class="popular-list post-photo ">
+                    @foreach($post->gallery as $item)
+                        <div class="post-photo-item">
+                            <label for="addpost-photo" class="img-label small-no-img-label">
+                                <img src="/211-300/thumbs{{$post->avatar->file}}" alt="">
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
             </div>
 
-            <input name="gallery[]" required class="d-none" type="file" id="addpost-photo" multiple
+            <input name="gallery[]" class="d-none" type="file" id="addpost-photo" multiple
                    accept=".png, .jpg, .jpeg">
 
         </div>
@@ -236,8 +245,8 @@
                 <div class="check-box-group-item">
                     <input type="checkbox" class="custom-checkbox" id="service-{{ $item->id }}" name="service[]"
                            @foreach($post->service as $dataItem)
-                               @if($dataItem->service_id == $item->id)
-                                   checked
+                           @if($dataItem->service_id == $item->id)
+                           checked
                            @endif
                            @endforeach
                            value="{{ $item->id }}">
@@ -254,11 +263,9 @@
                     <div class="check-box-group-item">
                         <input type="checkbox" class="custom-checkbox" id="rayon-{{ $item->id }}" name="rayon[]"
                                value="{{ $item->id }}"
-
                                @if($post->rayon->rayons_id == $item->id)
-                                   checked
+                               checked
                             @endif
-
                         >
                         <label for="rayon-{{ $item->id }}">{{ $item->value }}</label>
                     </div>
@@ -275,8 +282,8 @@
                     <div class="check-box-group-item">
                         <input type="checkbox" class="custom-checkbox" id="metro-{{ $item->id }}" name="metro[]"
                                @foreach($post->metro as $dataItem)
-                                   @if($dataItem->metros_id == $item->id)
-                                       checked
+                               @if($dataItem->metros_id == $item->id)
+                               checked
                                @endif
                                @endforeach
                                value="{{ $item->id }}">
@@ -293,8 +300,8 @@
                 <div class="check-box-group-item">
                     <input type="checkbox" class="custom-checkbox" id="time-{{ $item->id }}" name="time[]"
                            @foreach($post->time as $dataItem)
-                               @if($dataItem->param_id == $item->id)
-                                   checked
+                           @if($dataItem->param_id == $item->id)
+                           checked
                            @endif
                            @endforeach
                            value="{{ $item->id }}">

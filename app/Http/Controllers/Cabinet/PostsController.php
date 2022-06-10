@@ -61,7 +61,7 @@ class PostsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(AddPostRequest $request)
@@ -88,7 +88,7 @@ class PostsController extends Controller
             'city_id' => $data['city_id'],
         ]);
 
-        if (isset($data['service']) and $data['service']) foreach ($data['service'] as $item){
+        if (isset($data['service']) and $data['service']) foreach ($data['service'] as $item) {
 
             PostService::create([
                 'posts_id' => $post->id,
@@ -98,7 +98,7 @@ class PostsController extends Controller
 
         }
 
-        if (isset($data['metro']) and $data['metro']) foreach ($data['metro'] as $item){
+        if (isset($data['metro']) and $data['metro']) foreach ($data['metro'] as $item) {
 
             PostMetro::create([
                 'posts_id' => $post->id,
@@ -108,7 +108,7 @@ class PostsController extends Controller
 
         }
 
-        if (isset($data['rayon']) and $data['rayon']) foreach ($data['rayon'] as $item){
+        if (isset($data['rayon']) and $data['rayon']) foreach ($data['rayon'] as $item) {
 
             PostRayon::create([
                 'posts_id' => $post->id,
@@ -118,7 +118,7 @@ class PostsController extends Controller
 
         }
 
-        if (isset($data['time']) and $data['time']) foreach ($data['time'] as $item){
+        if (isset($data['time']) and $data['time']) foreach ($data['time'] as $item) {
 
             PostTime::create([
                 'posts_id' => $post->id,
@@ -130,12 +130,12 @@ class PostsController extends Controller
 
         $photo = array();
 
-        if ($request->file('gallery')) foreach ($request->file('gallery') as $item){
+        if ($request->file('gallery')) foreach ($request->file('gallery') as $item) {
 
             $photo[] = [
                 'related_id' => $post->id,
                 'related_class' => Post::class,
-                'file' => '/'.$item->store('/uploads/aa1', 'public'),
+                'file' => '/' . $item->store('/uploads/aa1', 'public'),
                 'type' => Files::GALLERY_PHOTO_TYPE
             ];
 
@@ -146,11 +146,11 @@ class PostsController extends Controller
         $photo[] = [
             'related_id' => $post->id,
             'related_class' => Post::class,
-            'file' => '/'.$avatar,
+            'file' => '/' . $avatar,
             'type' => Files::MAIN_PHOTO_TYPE
         ];
 
-        foreach ($photo as $item){
+        if ($photo) foreach ($photo as $item) {
             Files::create($item);
         }
 
@@ -161,7 +161,7 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -172,7 +172,7 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit($city, $id)
@@ -200,19 +200,158 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(AddPostRequest $request, $city, $id)
     {
-        //
+
+        $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
+
+        $post = Post::findOrFail($id);
+
+        if ($post->user_id != auth()->id()) abort(403);
+
+        $data = $request->validated();
+
+        $data['city_id'] = $cityInfo['id'];
+
+        if ($post->update($data)) {
+
+            \DB::table('post_nationals')->where('post_nationals_id', $post->id)->delete();
+
+            PostNational::create([
+                'post_nationals_id' => $post->id,
+                'nationals_id' => $data['national_id'],
+                'city_id' => $data['city_id'],
+            ]);
+
+            \DB::table('post_hair_colors')->where('hair_colors_id', $post->id)->delete();
+
+            PostHairColor::create([
+                'posts_id' => $post->id,
+                'hair_colors_id' => $data['hair_color_id'],
+                'city_id' => $data['city_id'],
+            ]);
+
+            \DB::table('post_intim_hairs')->where('intim_hair_id', $post->id)->delete();
+
+            PostIntimHair::create([
+                'posts_id' => $post->id,
+                'intim_hair_id' => $data['hair_color_id'],
+                'city_id' => $data['city_id'],
+            ]);
+
+            if (isset($data['service']) and $data['service']) foreach ($data['service'] as $item) {
+
+                \DB::table('post_services')->where('service_id', $post->id)->delete();
+
+                PostService::create([
+                    'posts_id' => $post->id,
+                    'service_id' => $item,
+                    'city_id' => $data['city_id'],
+                ]);
+
+            }
+
+            if (isset($data['metro']) and $data['metro']) foreach ($data['metro'] as $item) {
+
+                \DB::table('post_metros')->where('metros_id', $post->id)->delete();
+
+                PostMetro::create([
+                    'posts_id' => $post->id,
+                    'metros_id' => $item,
+                    'city_id' => $data['city_id'],
+                ]);
+
+            }
+
+            if (isset($data['rayon']) and $data['rayon']) foreach ($data['rayon'] as $item) {
+
+                \DB::table('post_rayons')->where('rayons_id', $post->id)->delete();
+
+                PostRayon::create([
+                    'posts_id' => $post->id,
+                    'rayons_id' => $item,
+                    'city_id' => $data['city_id'],
+                ]);
+
+            }
+
+            if (isset($data['time']) and $data['time']) foreach ($data['time'] as $item) {
+
+                \DB::table('post_times')->where('param_id', $post->id)->delete();
+
+                PostTime::create([
+                    'posts_id' => $post->id,
+                    'param_id' => $item,
+                    'city_id' => $data['city_id'],
+                ]);
+
+            }
+
+            $photo = array();
+
+            if ($request->file('gallery')) foreach ($request->file('gallery') as $item) {
+
+                $photo[] = [
+                    'related_id' => $post->id,
+                    'related_class' => Post::class,
+                    'file' => '/' . $item->store('/uploads/aa1', 'public'),
+                    'type' => Files::GALLERY_PHOTO_TYPE
+                ];
+
+            }
+
+            if ($avatar = $request->file('avatar')) {
+
+                $postAvatar = Files::where([
+                    'related_id' => $post->id,
+                    'type' => Files::MAIN_PHOTO_TYPE,
+                    'related_class' => Post::class
+                ])->get()->first();
+
+                $path = (storage_path('app/public' . $postAvatar->file));
+
+                if (file_exists($path)){
+
+                    unlink($path);
+
+                }
+
+                $postAvatar->delete();
+
+                $avatar = $avatar->store('/uploads/aa1', 'public');
+
+                $photo[] = [
+                    'related_id' => $post->id,
+                    'related_class' => Post::class,
+                    'file' => '/' . $avatar,
+                    'type' => Files::MAIN_PHOTO_TYPE
+                ];
+
+            }
+
+
+            if ($photo) foreach ($photo as $item) {
+                Files::create($item);
+            }
+
+            return redirect('/cabinet')
+                ->with(['success' => 'Запись сохранена']);
+
+        }
+
+        return back()
+            ->withErrors(['msg' => 'Ошибка'])
+            ->withInput();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function destroy($city, $id)
