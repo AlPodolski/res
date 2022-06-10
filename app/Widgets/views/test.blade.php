@@ -201,6 +201,32 @@
                         </div>
                     </li>
                 @endif
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#claimForm">
+                            Обратная связь<img src="/img/img_1.png" alt="">
+                        </a>
+                        <div id="claimForm" class="collapse" data-parent="#accordion">
+                            <form class="claim-form" action="/claim/add" method="post">
+                                @csrf
+                                <div class="form-group d-flex">
+                                    <input id="name" type="text"
+                                           class="form-control request-call-input"
+                                           name="name" required placeholder="Имя">
+                                </div>
+                                <div class="form-group d-flex">
+                                    <input id="email" type="text"
+                                           class="form-control request-call-input"
+                                           name="name" required placeholder="Имя">
+                                </div>
+                                <div class="text-wrap form-group">
+                                    <label for="about" class="col-form-label text-md-right bold-label">Комментарий</label>
+                                    <textarea name="text" required id="about" cols="30" rows="10"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
                 @auth()
                     <li class="menu__item" data-navigation-item="" data-menu-item-id="11971302">
                         <div class="menu__controls">
