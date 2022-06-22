@@ -21,7 +21,7 @@ class TopPostListRepository
                 ->select($columns)
                 ->where(['city_id' => $cityId])
                 ->limit($limit)
-                ->orderBy('id', 'RAND')
+                ->orderByRaw('RAND()')
                 ->get();
 
         });
