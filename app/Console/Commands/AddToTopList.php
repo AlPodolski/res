@@ -44,23 +44,16 @@ class AddToTopList extends Command
 
         foreach ($cityList as $cityItem) {
 
-            $posts = Post::where(['city_id' => $cityItem->id])->orderByRaw('RAND()')->limit(15)->get();
+            $post = Post::where(['city_id' => $cityItem->id])->orderByRaw('RAND()')->first();
 
-            if ($posts) {
+            if ($post) {
 
-                foreach ($posts as $post) {
+                $topList = new TopList();
 
-                    echo $post->name;
+                $topList->city_id = $cityItem->id;
+                $topList->post_id = $post->id;
 
-                    $topList = new TopList();
-
-                    $topList->city_id = $cityItem->id;
-                    $topList->post_id = $post->id;
-
-                    $topList->save();
-
-
-                }
+                $topList->save();
 
             }
 
