@@ -16,7 +16,7 @@ class TopPostListRepository
 
         $data = Cache::remember('top_list_cache_city_'.$cityId.'_limit_'.$limit, $expire, function() use ($cityId, $limit) {
 
-            $topListIds = TopList::with('post:id,url')->select('post_id,id')
+            $topListIds = TopList::with('post:id,url')->select('post_id', 'id')
                 ->where(['city_id' => $cityId])->limit(15)->orderByDesc('id')->get();
 
             return $topListIds;
