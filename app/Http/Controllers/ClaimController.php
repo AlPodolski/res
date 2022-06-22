@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AddClaimRequest;
 use App\Models\Claim;
-use Illuminate\Http\Request;
 
 class ClaimController extends Controller
 {

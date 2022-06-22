@@ -18,7 +18,7 @@
 @endif
 
 @if(isset($breadMicro) and $breadMicro)
-        <script type="application/ld+json">
+    <script type="application/ld+json">
         {{ json_encode($breadMicro) }}
     </script>
 @endif
@@ -33,20 +33,25 @@
 
             @foreach($topList as $topListItem)
 
-                @if(isset($topListItem->avatar->file))
+                @php
+                    /* @var $topListItem \App\Models\TopList */
+                @endphp
+
+                @if(isset($topListItem->post->avatar->file))
 
                     <div class="popular-item post-photo-item">
-                        <a href="/post/{{ $topListItem->url }}">
+                        <a href="/post/{{ $topListItem->post->url }}">
                             <picture>
-                                <source srcset="/139-185/thumbs{{$topListItem->avatar->file}}"
+                                <source srcset="/139-185/thumbs{{$topListItem->post->avatar->file}}"
                                         media="(max-width: 361px)">
-                                <source srcset="/370-526/thumbs{{$topListItem->avatar->file}}"
+                                <source srcset="/370-526/thumbs{{$topListItem->post->avatar->file}}"
                                         media="(max-width: 400px)">
-                                <source srcset="/163-238/thumbs{{$topListItem->avatar->file}}">
+                                <source srcset="/163-238/thumbs{{$topListItem->post->avatar->file}}">
                                 <img width="163px" height="238px"
-                                     title="Проститутка {{ $topListItem->name }}" loading="lazy" class="popular-img "
-                                     srcset="/163-238/thumbs{{$topListItem->avatar->file}}"
-                                     alt="{{ $topListItem->name }}">
+                                     title="Проститутка {{ $topListItem->post->name }}" loading="lazy"
+                                     class="popular-img "
+                                     srcset="/163-238/thumbs{{$topListItem->post->avatar->file}}"
+                                     alt="{{ $topListItem->post->name }}">
                             </picture>
                         </a>
                     </div>
@@ -102,7 +107,8 @@
     @if($posts->total() > $posts->count())
 
         <div data-url="{{ str_replace('http', 'https', $posts->nextPageUrl()) }}" onclick="getMorePosts(this)"
-             class="get-more get-more-post-btn">Показать еще</div>
+             class="get-more get-more-post-btn">Показать еще
+        </div>
 
         {{ $posts->links() }}
 

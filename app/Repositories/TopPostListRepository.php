@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Post;
+use App\Models\TopList;
 use Carbon\Carbon;
 use Cache;
 
@@ -15,14 +16,10 @@ class TopPostListRepository
 
         $data = Cache::remember('top_list_cache_city_'.$cityId.'_limit_'.$limit, $expire, function() use ($cityId, $limit) {
 
-            $columns = ['url', 'id'];
+            $topListIds = TopList::with('post:id,url')->select('post_id')
+                ->where(['city_id' => $cityId])->limit(15)->get();
 
-            return Post::with('avatar')
-                ->select($columns)
-                ->where(['city_id' => $cityId])
-                ->limit($limit)
-                ->orderByRaw('RAND()')
-                ->get();
+            return $topListIds;
 
         });
 

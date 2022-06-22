@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property int $post_id
- * @property int $valid_to
  * @method static \Illuminate\Database\Eloquent\Builder|TopList newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TopList newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TopList query()
@@ -22,5 +21,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TopList extends Model
 {
-    //
+    public $timestamps = false;
+
+    public function post()
+    {
+        return $this->hasOne(Post::class, 'id', 'post_id')->with('avatar:related_id,file');
+    }
 }
