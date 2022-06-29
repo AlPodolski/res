@@ -21,6 +21,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <meta name="HandheldFriendly" content="True">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -31,6 +32,7 @@
 
     @if(View::hasSection('can'))
         <link rel="canonical" href="@yield('can')">
+        <meta name="robots" content="noindex, follow">
     @endif
 
     @if(View::hasSection('yandex'))
