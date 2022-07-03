@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Canonical;
 use App\Repositories\CityRepository;
 use App\Repositories\DataRepository;
 use App\Repositories\MetaRepository;
@@ -31,7 +32,7 @@ class SiteController extends Controller
     public function index($city, Request $request, YandexRepository $yandexRepository, DataRepository $dataRepository)
     {
 
-        $path = $request->getRequestUri();
+        $path = (new Canonical())->get($request->getRequestUri());
 
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Canonical;
 use App\Actions\GenerateBreadcrumbMicro;
 use App\Actions\GenerateMicroDataForCatalog;
 use App\Repositories\CityRepository;
@@ -41,7 +42,7 @@ class FilterController extends Controller
             abort(404);
         if (!$cityInfo = $this->cityRepository->getCityInfoByUrl($city)) abort(404);
 
-        $path = '/'.$request->path();
+        $path = (new Canonical())->get($request->getRequestUri());
 
         $posts = $this->filterRepository->getForFilter($filterParams, $this->limit, $cityInfo, $this->sort);
 
