@@ -8,6 +8,6 @@ class Canonical
     {
         if (strpos($path, '?')) return strstr($path, '?', true);
 
-        return $path;
+        return false;
     }
 }
