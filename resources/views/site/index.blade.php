@@ -13,13 +13,13 @@
 
 @if(isset($microData) and $microData)
     <script type="application/ld+json">
-        {{ json_encode($microData) }}
+        {!! json_encode($microData) !!}
     </script>
 @endif
 
 @if(isset($breadMicro) and $breadMicro)
     <script type="application/ld+json">
-        {{ json_encode($breadMicro) }}
+        {!! json_encode($breadMicro) !!}
     </script>
 @endif
 
