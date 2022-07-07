@@ -12,7 +12,7 @@ class GenerateImageMicro
             '@context' => 'https://schema.org',
             '@type' => 'ImageObject',
             'author' => $post->name,
-            'contentUrl' => 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
+            'contentUrl' => 'https://'.$_SERVER['HTTP_HOST'].$post->avatar->file,
             'contentLocation' => $city.' Россия',
             'datePublished' => $post->created_at,
             'name' => 'Проститутки '. $post->name,

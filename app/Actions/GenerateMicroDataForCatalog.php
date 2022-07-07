@@ -24,11 +24,11 @@ class GenerateMicroDataForCatalog
                 '@type' => 'Product',
                 'name' => $title,
                 'offers' => [
-                    '@type' => 'AggregateOffer'
+                    '@type' => 'AggregateOffer',
+                    'highPrice' => $maxPrice,
+                    'lowPrice' => $minPrice,
+                    'priceCurrency' => 'RUB',
                 ],
-                'highPrice' => $maxPrice,
-                'lowPrice' => $minPrice,
-                'priceCurrency' => 'RUB',
                 'aggregateRating' => [
                     '@type' => 'AggregateRating',
                     'ratingValue' => $rating,

@@ -43,7 +43,7 @@ class PostController extends Controller
 
         $metaData = $this->metaService->makeMetaTags($post, $cityInfo);
 
-        $breadMicro = $this->breadMicro->generate($request);
+        $breadMicro = $this->breadMicro->generate($request, $post->name);
 
         $imageMicro = $microImage->generate($post, $cityInfo['city']);
 

@@ -4,7 +4,7 @@ namespace App\Actions;
 
 class GenerateBreadcrumbMicro
 {
-    public function generate( $request): array
+    public function generate( $request, $name): array
     {
         $host = $request->getHttpHost();
         $url = $request->path();

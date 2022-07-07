@@ -50,7 +50,7 @@ class FilterController extends Controller
 
         $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
 
-        $breadMicro = $this->breadMicro->generate($request);
+        $breadMicro = $this->breadMicro->generate($request, $meta['h1']);
 
         $microData = false;
 
