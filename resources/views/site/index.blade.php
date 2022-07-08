@@ -11,19 +11,19 @@
     @section('yandex', $yandexTag->tag)
 @endif
 
-@if(isset($microData) and $microData)
-    <script type="application/ld+json">
-        {!! json_encode($microData) !!}
-    </script>
-@endif
-
-@if(isset($breadMicro) and $breadMicro)
-    <script type="application/ld+json">
-        {!! json_encode($breadMicro) !!}
-    </script>
-@endif
-
 @section('content')
+
+    @if(isset($microData) and $microData)
+        <script type="application/ld+json">
+            {!! json_encode($microData) !!}
+        </script>
+    @endif
+
+    @if(isset($breadMicro) and $breadMicro)
+        <script type="application/ld+json">
+            {!! json_encode($breadMicro) !!}
+        </script>
+    @endif
 
     @include('includes.filter')
 
