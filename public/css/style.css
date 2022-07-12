@@ -548,6 +548,118 @@ video{
     background: #ff6163;
     border-radius: 50%;
 }
+.top-nav .balance{
+    align-items: center;
+    margin-right: 10px;
+}
+.top-nav .balance span{
+    margin-left: 3px;
+}
+.balance-card {
+    width: 295px;
+    height: 186px;
+    filter: drop-shadow(0px 12px 24px rgba(247, 73, 82, 0.42));
+    background: linear-gradient(129.82deg, #F7B149 -11.91%, rgba(247, 177, 73, 0) 66.86%), linear-gradient(0deg, #F74952, #F74952);
+    border-radius: 15px;
+    padding: 25px;
+}
+.white-bold-text {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 141.4%;
+    color: #FFFFFF;
+}
+.margin-top-20 {
+    margin-top: 20px !important;
+}
+.big-white-text {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 41px;
+    color: #FFFFFF;
+}
+.pay-form-wrap {
+    background: #FFFFFF;
+    border: 1px solid #EDEDED;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.06);
+    border-radius: 21px;
+    padding: 25px;
+    margin-left: auto;
+    width: 67%;
+}
+.pay-form-wrap .form-group label {
+    color: #000;
+    margin-bottom: 20px;
+}
+.image-label-radio {
+    background-repeat: no-repeat;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 54px;
+    height: 28px;
+    background-position: center;
+    display: inline-block;
+    margin-bottom: 0px !important;
+}
+.qiwi_label {
+    background: url('../img/qiwi-img.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+#obmenkapayform-currency input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.visa_master_label {
+    background: url('../img/visa-master.png');
+    background-repeat: no-repeat;
+    width: 62px;
+    background-position-x: 6px;
+    background-position-y: 5px;
+}
+input:checked + .image-label-radio {
+    border: 1px solid #F74952;
+}
+#pay-form{
+    display: flex;
+    flex-direction: column;
+}
+#pay-form .form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.pay-form-wrap .form-group input {
+    text-align: left;
+    background: #FFFFFF;
+    border: 1px solid #F74952;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #F74952;
+    padding: 5px;
+}
+.orange-btn {
+    background: linear-gradient(90deg, #F74952 2.8%, #F0C612 100%);
+    border-radius: 34px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 141.4%;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 11px 24px 11px 25px;
+    margin-right: 11px;
+    border: none;
+    max-width: 130px;
+}
+#obmenkapayform-currency{
+    display: flex;
+}
 #arrowTop {
     height: 50px;
     width: 50px;
@@ -901,6 +1013,16 @@ video{
     }
 }
 @media (max-width: 992px){
+    .balance-card{
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .balance-wrap{
+        flex-wrap: wrap;
+    }
+    .pay-form-wrap{
+        width: 100%;
+    }
     #add-post-form .form-group{
         flex: 0 0 33%;
         max-width: 33%;

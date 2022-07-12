@@ -32,6 +32,8 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @property int $city_id
  * @method static \Illuminate\Database\Eloquent\Builder|User whereCityId($value)
+ * @property int $cash
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereCash($value)
  */
 class User extends Authenticatable
 {

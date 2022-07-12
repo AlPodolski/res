@@ -35,6 +35,8 @@ Route::domain('{city}.'.env('DOMAIN'))->group(function () {
         Route::prefix('/cabinet')->group(function(){
 
             Route::resource('post', '\App\Http\Controllers\Cabinet\PostsController');
+            Route::get('pay', ['\App\Http\Controllers\Cabinet\PayController', 'index']);
+            Route::post('pay/processing', ['\App\Http\Controllers\Cabinet\PayController', 'processing']);
 
         });
 

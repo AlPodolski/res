@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property int $city_id
  * @method static \Illuminate\Database\Eloquent\Builder|TopList whereCityId($value)
+ * @property-read \App\Models\Post|null $post
  */
 class TopList extends Model
 {
