@@ -69,9 +69,9 @@ class Obmenka
             "amount" => $sum,
             'currency' => $currency,
             "description" => $des,
-            "success_url" => "https://".$city.".sex-tut.com/pay/obmenka/".$orderId,
+            "success_url" => "https://".$city.".sex-tut.com/pay/".$orderId,
             "fail_url" => "https://".$city.".sex-tut.com/pay",
-            "status_url" => "https://".$city.".sex-tut.com/pay/obmenka/".$orderId ,
+            "status_url" => "https://".$city.".sex-tut.com/pay/".$orderId ,
         ];
 
         return $this->sendData($data, $this->create_pay_url);

@@ -43,6 +43,9 @@ Route::domain('{city}.'.env('DOMAIN'))->group(function () {
     });
 
     Route::get('/',  'SiteController@index');
+
+    Route::get('/pay/{id}',  'PayController@index');
+
     Route::post('/',  'SiteController@more');
     Route::post('/post/more',  'PostController@more')->name('post.more');
     Route::get('/post/{url}',  'PostController@index')->name('post.index');
