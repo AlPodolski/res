@@ -20,6 +20,7 @@ class PostsRepository
             ->orderByRaw($sort)
             ->select($columns)
             ->where(['city_id' => $cityId])
+            ->where(['publication_status' => Post::POST_ON_PUBLICATION])
             ->paginate($limit);
     }
 
@@ -80,6 +81,7 @@ class PostsRepository
             ->where('id', '<>', $post->id)
             ->orderByRaw($sort)
             ->select($columns)
+            ->where(['publication_status' => Post::POST_ON_PUBLICATION])
             ->where(['city_id' => $cityId]);
 
         $posts = $posts->where('price', '>', $post->price - 500);
@@ -103,6 +105,7 @@ class PostsRepository
         $post = Post::with($relation)
             ->select($columns)
             ->orderByRaw('RAND()')
+            ->where(['publication_status' => Post::POST_ON_PUBLICATION])
             ->where(['city_id' => $cityId])
             ->whereNotIn('id', $ids);
 
@@ -147,7 +150,7 @@ class PostsRepository
     public function getByUserId($userId)
     {
 
-        $columns = ['url', 'name', 'phone', 'price', 'id'];
+        $columns = ['url', 'name', 'phone', 'price', 'id', 'publication_status'];
 
         return Post::with('avatar', 'video')
             ->orderBy('id', 'desc')

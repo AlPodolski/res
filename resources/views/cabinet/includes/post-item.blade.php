@@ -1,5 +1,6 @@
 @php
     /* @var $post \App\Models\Post */
+use App\Models\Post;
 @endphp
 
 <div class="post-item position-relative">
@@ -20,6 +21,13 @@
         @endif
     </a>
     <a href="cabinet/post/{{$post->id}}/edit" class="name">Редактировать</a>
+    <div
+        @if($post->publication_status == Post::POST_ON_PUBLICATION
+            or $post->publication_status == Post::POST_DONT_PUBLICATION)
+            onclick="publication(this)"
+            data-id="{{ $post->id }}"
+        @endif
+        class="name">{{ $post->getPublication() }}</div>
     <div class="price">{{ $post->name }}</div>
     <form onsubmit="return sendDeleteForm(this)" action="cabinet/post/{{ $post->id }}" method="post">
         @csrf

@@ -35,6 +35,27 @@ function setLimit(){
 
 }
 
+function publication(object){
+
+    var id = $(object).attr('data-id');
+
+    $.ajax({
+        type: 'POST',
+        url: '/cabinet/post/publication',
+        data: 'id=' +id,
+        async:false,
+        dataType: "html",
+        cache: false,
+        success: function (data){
+
+            $(object).html(data);
+
+        },
+
+    })
+
+}
+
 function setSort(){
 
     if ($('#sort-select').val()) {

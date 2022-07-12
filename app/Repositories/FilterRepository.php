@@ -162,6 +162,7 @@ class FilterRepository
         $posts = Post::with('avatar' ,'video')
             ->orderByRaw($sort)
             ->whereIn('id', $resultIds)
+            ->where(['publication_status' => Post::POST_ON_PUBLICATION])
             ->select($columns)
             ->paginate($limit);
 

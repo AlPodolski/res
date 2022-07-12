@@ -65,11 +65,51 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $service_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Comment[] $comments
  * @property-read int|null $comments_count
+ * @property int $pay_time
+ * @property int $fake
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereFake($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post wherePayTime($value)
+ * @property-read \App\Models\User|null $user
+ * @property-read \App\Models\Tarif|null $tarif
  */
 class Post extends Model
 {
+
+    const POST_ON_MODERATION = 2;
+    const POST_ON_PUBLICATION = 1;
+    const POST_DONT_PUBLICATION = 0;
+
+    const POST_FAKE = 0;
+    const POST_REAL = 1;
+
     protected $fillable = ['name', 'user_id' , 'phone', 'about', 'price',
         'tarif_id', 'rost', 'ves', 'breast_size', 'city_id', 'age'];
+
+    public function getPublication()
+    {
+        switch ($this->publication_status) {
+
+            case self::POST_ON_PUBLICATION:
+                return "Снать с публикации";
+
+            case self::POST_DONT_PUBLICATION:
+                return "Поставить на публикацию";
+
+            case self::POST_ON_MODERATION:
+                return "Анкета на модерации";
+
+        }
+    }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
+    public function tarif()
+    {
+        return $this->hasOne(Tarif::class, 'id', 'tarif_id');
+    }
 
     public function selphi()
     {

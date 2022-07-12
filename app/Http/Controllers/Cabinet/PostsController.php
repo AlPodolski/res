@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cabinet;
 
+use App\Actions\Publication;
 use App\Http\Requests\AddPostRequest;
 use App\Models\Files;
 use App\Models\Post;
@@ -363,5 +364,20 @@ class PostsController extends Controller
         $post->delete();
 
         return redirect('/cabinet');
+    }
+
+    public function publication($city, Request $request)
+    {
+
+        $id = $request->post('id');
+
+        $post = Post::find($id);
+
+        if ($post->user_id != auth()->user()->id) abort(403);
+
+        $result = (new Publication())->publication($post);
+
+        return $result;
+
     }
 }

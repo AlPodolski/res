@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Post;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AddPostRequest extends FormRequest
@@ -31,6 +32,7 @@ class AddPostRequest extends FormRequest
             'breast_size' => 'integer:required',
             'age' => 'integer:required:min:18',
             'price' => 'integer:required',
+            'fake' => 'integer:required',
             'about' => 'string:required',
             'service' => 'array',
             'metro' => 'array',
@@ -50,6 +52,7 @@ class AddPostRequest extends FormRequest
     public function prepareForValidation()
     {
         $this->merge(['user_id' => auth()->id()]);
+        $this->merge(['fake' => Post::POST_REAL]);
     }
 
 }
