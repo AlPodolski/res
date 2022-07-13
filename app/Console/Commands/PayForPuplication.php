@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Events\PayEvent;
+use App\Models\History;
 use App\Models\Post;
 use Illuminate\Console\Command;
 
@@ -54,6 +56,10 @@ class PayForPuplication extends Command
                 $post->pay_time = time() + 3600;
 
                 $post->save();
+
+                $payType = History::PAY_FOR_POST_PUBLICATION_TYPE;
+
+                event(new PayEvent($post->tarif->price, $post->user->id,$payType,$post->user->cash));
 
             }else{
 
