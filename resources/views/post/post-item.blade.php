@@ -223,7 +223,7 @@
                 <div id="map"
                      class="yandex-map map-not-exist"
                      data-x="{{ $firstMetro->metro->x }}"
-                     data-y="{{ $firstMetro->metro->y }}" style="height: 200px">
+                     data-y="{{ $firstMetro->metro->y }}" style="height: 300px">
                 </div>
             </div>
         </div>
