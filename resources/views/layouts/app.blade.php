@@ -186,4 +186,7 @@
 @if(View::hasSection('maskedinput'))
     <script src="@yield('maskedinput')" defer></script>
 @endif
+@if(View::hasSection('map'))
+    <script src="@yield('map')" defer></script>
+@endif
 </html>

@@ -214,7 +214,7 @@
     <div class="col-12"></div>
 
     @if( $firstMetro = $post->metro->first() and $firstMetro->metro->x)
-        <script src="/js/map_yandex.js"></script>
+        @section('map', '/js/map_yandex.js')
         <div class="post-decr">
             <div class="decr-title">
                 Я на карте
