@@ -24,7 +24,10 @@
             <source srcset="/163-238/thumbs{{$topListItem->post->avatar->file}}" type="image/jpeg">
 
             <img width="163px" height="238px"
-                 title="Проститутка {{ $topListItem->post->name }}" loading="lazy"
+                 title="Проститутка {{ $topListItem->post->name }}"
+                 @if(!isset($topList) or $topList->first() != $topListItem)
+                     loading="lazy"
+                 @endif
                  class="popular-img "
                  srcset="/163-238/thumbs{{$topListItem->post->avatar->file}}"
                  alt="{{ $topListItem->post->name }}">

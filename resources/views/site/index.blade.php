@@ -29,7 +29,9 @@
 
     @if($topList)
         <div class="popular-list d-flex">
-            @each('includes.popular-item', $topList, 'topListItem')
+            @foreach($topList as $topListItem)
+                @include('includes.popular-item')
+            @endforeach
         </div>
     @endif
 
@@ -50,7 +52,9 @@
     @include('includes.limit_and_order')
 
     <div class="posts">
-        @each('site.includes.post-item', $posts, 'post')
+        @foreach($posts as $post)
+            @include('site.includes.post-item')
+        @endforeach
     </div>
 
     @if(isset($morePosts) and $morePosts)
