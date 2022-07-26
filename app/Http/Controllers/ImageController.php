@@ -12,6 +12,18 @@ class ImageController extends Controller
 
         $path = (storage_path('app/public/'.$path));
 
+        $format = 'jpg';
+
+        if (strpos($path, '.webp')) {
+
+            $format = 'webp';
+
+            header('Content-type: ' . 'image/webp');
+            $path = str_replace('.webp', '.jpg', $path);
+
+        }
+        else header('Content-type: ' . 'image/jpeg');
+
         if (!is_file($path)) abort(404);
         if (!is_array($size)) abort(404);
 
@@ -21,10 +33,8 @@ class ImageController extends Controller
             });
         }, 3600 * 365, true);
 
-        header('Content-type: ' . 'image/jpeg');
+        echo ($img->response($format)->content());
 
-        echo ($img->response('jpg')->content());
         exit();
-        return $img->response('jpg')->header('cache-control','max-age=31536000, public');
     }
 }
