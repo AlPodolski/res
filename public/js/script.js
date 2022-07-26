@@ -1,3 +1,10 @@
+$(document).ready(function () {
+    $.getScript("/js/jquery-ui.min.js", function (data, textStatus, jqxhr) {
+        $("head").prepend('<link href="/css/jquery-ui.min.css" rel="stylesheet">');
+        filter();
+    });
+});
+
 arrowTop.onclick = function() {
     window.scrollTo(pageXOffset, 0);
     // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
@@ -178,8 +185,7 @@ $(document).ready(function() {
 
 });
 
-$(document).ready(function() {
-
+function filter(){
     $("#slider-range-age").slider({
         range: true,
         min: 18,
@@ -190,7 +196,6 @@ $(document).ready(function() {
             $("#age-to").val(ui.values[1]);
         }
     });
-
 
     $("#rost-range-age").slider({
         range: true,
@@ -213,6 +218,7 @@ $(document).ready(function() {
             $("#ves-to").val(ui.values[1]);
         }
     });
+
     $("#slider-range-grud").slider({
         range: true,
         min: 0,
@@ -223,6 +229,7 @@ $(document).ready(function() {
             $("#grud-to").val(ui.values[1]);
         }
     });
+
     $("#slider-range-price-1-hour").slider({
         range: true,
         min: 500,
@@ -233,6 +240,7 @@ $(document).ready(function() {
             $("#price-1-to").val(ui.values[1]);
         }
     });
+
     $("#slider-range-price-2-hour").slider({
         range: true,
         min: 500,
@@ -244,7 +252,7 @@ $(document).ready(function() {
         }
     });
 
-});
+}
 
 function phone_mask(){
 
