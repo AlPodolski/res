@@ -50,11 +50,7 @@
     @include('includes.limit_and_order')
 
     <div class="posts">
-
-        @foreach($posts as $post)
-            @include('site.includes.post-item')
-        @endforeach
-
+        @each('site.includes.post-item', $posts, 'post')
     </div>
 
     @if(isset($morePosts) and $morePosts)
