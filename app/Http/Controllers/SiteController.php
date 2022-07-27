@@ -58,7 +58,7 @@ class SiteController extends Controller
 
         $posts = $this->postsRepository->getPostsForMainPage($this->limit, $cityInfo['id'], $this->sort);
 
-        $data['posts'] = view('site.more', compact('posts'))->render();
+        $data['posts'] = view('site.more', compact('posts', 'cityInfo'))->render();
         $data['next_page'] = str_replace('http', 'https', $posts->nextPageUrl());
 
         return json_encode($data);
