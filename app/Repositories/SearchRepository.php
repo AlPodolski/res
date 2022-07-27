@@ -14,7 +14,7 @@ class SearchRepository
     public function getForSearch($search, $cityId, $limit = 15)
     {
 
-        return Post::with('avatar', 'video')
+        return Post::with('avatar', 'video', 'metro')
             ->orderByRaw('RAND()')
             ->select($this->columns)
             ->where('name' , 'like', '%'.$search.'%')

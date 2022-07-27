@@ -25,7 +25,7 @@ use App\Actions\GenerateImageMicro;
 
                 <img width="211" height="300"
                      @if(!isset($posts) or $posts->first() != $post)
-                     loading="lazy"
+                         loading="lazy"
                      @endif
                      title="Проститутка {{ $post->name }}"
                      srcset="/211-300/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
@@ -39,14 +39,17 @@ use App\Actions\GenerateImageMicro;
     @endif
     <a href="/post/{{$post->url}}" class="name">{{$post->name}}</a>
     <div class="price">{{ $post->price }} ₽</div>
+    @if($metro = $post->metro->first())
+        <a href="/{{ $metro->metro->filterUrl->filter_url }}" class="metro-link">м. {{ $metro->metro->value }} </a>
+    @endif
     <div class="info-wrap d-flex">
         <div class="left-info">
             <div class="name d-flex">Вес:<span class="font-weight-bold">{{ $post->ves ?? '-'}}</span></div>
             <div class="name d-flex">Рост:<span class="font-weight-bold">{{ $post->rost ?? '-'}}</span></div>
         </div>
         <div class="right-info">
-            <div class="name d-flex">Грудь:<span class="font-weight-bold">{{ $post->breast_size ?? '-'}}</span> </div>
-            <div class="name d-flex">Возраст:<span class="font-weight-bold">{{ $post->age ?? '-'}}</span> </div>
+            <div class="name d-flex">Грудь:<span class="font-weight-bold">{{ $post->breast_size ?? '-'}}</span></div>
+            <div class="name d-flex">Возраст:<span class="font-weight-bold">{{ $post->age ?? '-'}}</span></div>
         </div>
     </div>
     @if($post->phone)

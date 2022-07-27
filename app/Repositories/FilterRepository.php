@@ -159,7 +159,7 @@ class FilterRepository
 
         }
 
-        $posts = Post::with('avatar' ,'video')
+        $posts = Post::with('avatar' ,'video', 'metro')
             ->orderByRaw($sort)
             ->whereIn('id', $resultIds)
             ->where(['publication_status' => Post::POST_ON_PUBLICATION])

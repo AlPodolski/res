@@ -16,7 +16,7 @@ class PostsRepository
 
         $columns = ['url', 'name', 'phone', 'price', 'id', 'age', 'breast_size', 'rost', 'ves'];
 
-        return Post::with('avatar', 'video')
+        return Post::with('avatar', 'video', 'metro')
             ->orderByRaw($sort)
             ->select($columns)
             ->where(['city_id' => $cityId])

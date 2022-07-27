@@ -249,7 +249,7 @@ body{
 .price{
     font-weight: 600;
     font-size: 16px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 .name {
     margin-bottom: 5px;
@@ -990,6 +990,12 @@ input:checked + .image-label-radio {
 }
 .show-filter{
     display: none;
+}
+.metro-link {
+    font-weight: bold;
+    color: #212529;
+    display: block;
+    margin-bottom: 10px;
 }
 @media (max-width: 1199px){
     .filter-wrap{
