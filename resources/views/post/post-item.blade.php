@@ -24,7 +24,7 @@
                    class="phone single-phone">Показать телефон</a>
             </div>
         @endif
-
+        <div class="ya-share2" data-curtain data-shape="round" data-services="messenger,vkontakte,odnoklassniki,telegram,twitter,viber,whatsapp,skype,linkedin,reddit"></div>
         <form action="/call/request" method="post" class="request-call-form">
             @csrf
             <div class="property-name">Заказать звонок</div>

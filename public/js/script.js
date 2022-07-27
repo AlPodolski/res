@@ -3,6 +3,11 @@ $(document).ready(function () {
         $("head").prepend('<link href="/css/jquery-ui.min.css" rel="stylesheet">');
         filter();
     });
+    if ($('.ya-share2').length > 0){
+        $.getScript("https://yastatic.net/share2/share.js", function (data, textStatus, jqxhr) {
+
+        });
+    }
 });
 
 arrowTop.onclick = function() {
