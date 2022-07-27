@@ -158,6 +158,9 @@ function getMorePosts(object){
         url: url, //Путь к обработчику
         response: 'text',
         dataType: "html",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
         cache: false,
         success: function (data) {
 

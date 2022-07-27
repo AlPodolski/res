@@ -55,7 +55,7 @@ Route::domain('{city}.'.env('DOMAIN'))->group(function () {
     Route::get('/filter',  'SearchController@filter');
     Route::get('/sitemap.xml',  'SiteController@map');
     Route::get('/{search}',  'FilterController@index')->where('search', '.*');
-    Route::post('/{search}',  'FilterController@index')->where('search', '.*');
+    Route::post('/{search}',  'FilterController@more')->where('search', '.*');
 });
 
 

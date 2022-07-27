@@ -71,4 +71,18 @@ class FilterController extends Controller
                 'path', 'morePosts', 'microData', 'breadMicro', 'limit', 'sort','metro'
             ));
     }
+
+    public function more($city, $search)
+    {
+        if (!$filterParams = FilterDataHelper::checkData($this->filterRepository->getFilterParams($search)))
+            abort(404);
+        if (!$cityInfo = $this->cityRepository->getCityInfoByUrl($city)) abort(404);
+
+        $posts = $this->filterRepository->getForFilter($filterParams, $this->limit, $cityInfo, $this->sort);
+
+        $data['posts'] = view('site.more', compact('posts', 'cityInfo'))->render();
+        $data['next_page'] = str_replace('http', 'https', $posts->nextPageUrl());
+
+        return json_encode($data);
+    }
 }
