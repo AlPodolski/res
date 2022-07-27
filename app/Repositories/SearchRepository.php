@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class SearchRepository
 {
 
-    private $columns = ['url', 'name', 'phone', 'price', 'id'];
+    private $columns = ['url', 'name', 'phone', 'price', 'id' , 'age', 'breast_size', 'rost', 'ves'];
 
     public function getForSearch($search, $cityId, $limit = 15)
     {

@@ -14,7 +14,7 @@ class PostsRepository
 
         $sort = (new GetSort())->get($sort);
 
-        $columns = ['url', 'name', 'phone', 'price', 'id'];
+        $columns = ['url', 'name', 'phone', 'price', 'id', 'age', 'breast_size', 'rost', 'ves'];
 
         return Post::with('avatar', 'video')
             ->orderByRaw($sort)

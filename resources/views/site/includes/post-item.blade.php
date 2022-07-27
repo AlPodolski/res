@@ -39,6 +39,16 @@ use App\Actions\GenerateImageMicro;
     @endif
     <a href="/post/{{$post->url}}" class="name">{{$post->name}}</a>
     <div class="price">{{ $post->price }} ₽</div>
+    <div class="info-wrap d-flex">
+        <div class="left-info">
+            <div class="name d-flex">Вес:<span class="font-weight-bold">{{ $post->ves ?? '-'}}</span></div>
+            <div class="name d-flex">Рост:<span class="font-weight-bold">{{ $post->rost ?? '-'}}</span></div>
+        </div>
+        <div class="right-info">
+            <div class="name d-flex">Грудь:<span class="font-weight-bold">{{ $post->breast_size ?? '-'}}</span> </div>
+            <div class="name d-flex">Возраст:<span class="font-weight-bold">{{ $post->age ?? '-'}}</span> </div>
+        </div>
+    </div>
     @if($post->phone)
         <a data-tel="{{$post->phone}}" href="tel:+{{$post->phone}}" onclick="show_phone(this)" class="phone">Показать
             телефон</a>

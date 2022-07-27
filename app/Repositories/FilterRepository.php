@@ -13,7 +13,7 @@ use Cache;
 class FilterRepository
 {
 
-    private $columns = ['url', 'name', 'phone', 'price', 'id'];
+    private $columns = ['url', 'name', 'phone', 'price', 'id', 'age', 'breast_size', 'rost', 'ves'];
 
     public function getFilterParams($search)
     {

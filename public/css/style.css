@@ -973,6 +973,21 @@ input:checked + .image-label-radio {
 .claim-form .get-more-post-btn{
     margin-top: 0px;
 }
+.left-info{
+    flex: 0 0 50%;
+}
+.right-info{
+    margin-left: auto;
+}
+.font-weight-bold{
+    font-weight: bold;
+}
+.left-info .font-weight-bold{
+    margin-left: 5px;
+}
+.info-wrap .font-weight-bold{
+    color: #ff6163;
+}
 @media (max-width: 1199px){
     .filter-wrap .close-panel{
         display: block;
