@@ -53,7 +53,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css?v=9') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css?v=1') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css?v=2') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
