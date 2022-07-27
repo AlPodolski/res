@@ -18,7 +18,7 @@
     @endif
     @if(isset($imageMicro) and $imageMicro)
         <script type="application/ld+json">
-            {!! json_encode($imageMicro)  !!}
+            {!! $imageMicro  !!}
         </script>
     @endif
 

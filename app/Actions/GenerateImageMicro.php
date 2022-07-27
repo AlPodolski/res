@@ -8,7 +8,7 @@ class GenerateImageMicro
 {
     public function generate(Post $post, $city)
     {
-        return [
+        $data =  [
             '@context' => 'https://schema.org',
             '@type' => 'ImageObject',
             'author' => $post->name,
@@ -17,5 +17,8 @@ class GenerateImageMicro
             'datePublished' => $post->created_at,
             'name' => 'Проститутки '. $post->name,
         ];
+
+        return json_encode($data);
+
     }
 }

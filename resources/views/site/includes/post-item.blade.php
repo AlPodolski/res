@@ -1,8 +1,12 @@
 @php
     /* @var $post \App\Models\Post */
+use App\Actions\GenerateImageMicro;
 @endphp
 
 <div class="post-item position-relative">
+    <script type="application/ld+json">
+        {!!(new GenerateImageMicro)->generate($post, $cityInfo['city'])!!}
+    </script>
     <a href="/post/{{$post->url}}" class="d-block image-wrap">
         @if(isset($post->avatar->file))
             <picture>
