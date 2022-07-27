@@ -25,7 +25,7 @@ function closePanel(object) {
 }
 
 function showFilter(){
-    $( ".filter-wrap" ).toggleClass( "d-none" )
+    $( ".filter-wrap" ).toggleClass( "show-filter" )
 }
 
 function setLimit(){

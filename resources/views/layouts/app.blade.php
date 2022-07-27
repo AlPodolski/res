@@ -52,7 +52,7 @@
     <meta property="og:type" content="website">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?v=7') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?v=8') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css?v=1') }}" rel="stylesheet">
 </head>
 <body>
@@ -177,7 +177,7 @@
     <div><img src="https://mc.yandex.ru/watch/88595241" style="position:absolute; left:-9999px;" alt=""/></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
-<script src="{{ asset('js/script.js?v=4') }}" defer></script>
+<script src="{{ asset('js/script.js?v=5') }}" defer></script>
 @if(View::hasSection('lightbox'))
     <script src="@yield('lightbox')" defer></script>
 @endif

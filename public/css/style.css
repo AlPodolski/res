@@ -179,8 +179,6 @@ body{
     position: absolute;
     width: 40px;
     height: 40px;
-    top: 1.5rem;
-    left: 100%;
     margin-left: 1rem;
     background: #fff;
     border-color: #fff;
@@ -188,6 +186,8 @@ body{
     padding: 0;
     border-radius: 50%;
     display: none;
+    right: -5px;
+    top: 5px;
 }
 
 .is-show .close-panel {
@@ -988,7 +988,16 @@ input:checked + .image-label-radio {
 .info-wrap .font-weight-bold{
     color: #ff6163;
 }
+.show-filter{
+    display: none;
+}
 @media (max-width: 1199px){
+    .filter-wrap{
+        display: none;
+    }
+    .show-filter{
+        display: block;
+    }
     .filter-wrap .close-panel{
         display: block;
     }
@@ -1006,6 +1015,7 @@ input:checked + .image-label-radio {
         max-width: 79%;
         transform: translate3d(0, 0, 0);
         visibility: visible;
+        overflow-y: scroll;
     }
     .filter-form{
         flex-direction: column;
