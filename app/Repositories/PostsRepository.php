@@ -31,7 +31,7 @@ class PostsRepository
 
         else{
 
-            $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
+            $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about', 'sorting'];
 
             $relation = ['national', 'hair', 'metro', 'rayon',
                 'intimHair', 'time', 'place', 'avatar',

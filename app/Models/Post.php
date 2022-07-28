@@ -73,6 +73,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\Tarif|null $tarif
  * @property int $check_photo_status
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereCheckPhotoStatus($value)
+ * @property int $sorting
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereSorting($value)
  */
 class Post extends Model
 {

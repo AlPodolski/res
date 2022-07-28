@@ -4,7 +4,7 @@ namespace App\Actions;
 
 class GetSort
 {
-    private $default = 'RAND()';
+    private $default = 'sorting DESC';
     private $priceDesc = 'price DESC';
     private $priceAsc = 'price ASC';
 

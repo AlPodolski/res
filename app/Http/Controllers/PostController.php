@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\AddView;
 use App\Actions\AddViewToCookie;
 use App\Actions\GenerateBreadcrumbMicro;
 use App\Actions\GenerateImageMicro;
@@ -39,7 +40,7 @@ class PostController extends Controller
 
         if (!$post = $this->postRepository->getPostForSingle($url, $cityInfo['id'])) abort(404);
 
-        (new AddViewToCookie())->add($post->id);
+        (new AddView($post))->addView();
 
         $metaData = $this->metaService->makeMetaTags($post, $cityInfo);
 
