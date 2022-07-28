@@ -1015,6 +1015,9 @@ input:checked + .image-label-radio {
     display: block;
     margin-bottom: 10px;
 }
+.top-menu-wrap a{
+    margin-left: 15px;
+}
 @media (max-width: 1199px){
     .top-menu{
         display: none;

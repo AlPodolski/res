@@ -61,6 +61,7 @@
         <div class="container">
             <div class="top-menu-wrap">
                 <a href="/proverennye-prostitutki">Проверенные</a>
+                <a href="/novye-prostitutki">Новые анкеты</a>
             </div>
         </div>
     </nav>

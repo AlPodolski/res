@@ -46,6 +46,8 @@ class FilterRepository
 
         $posts = array();
 
+        $new = false;
+
         foreach ($searchParams as $params) {
 
             if ($params->type == 'custom') {
@@ -55,6 +57,11 @@ class FilterRepository
                 if ($params->short_name == 'check'){
 
                     $posts = $posts->where(['check_photo_status' => Post::PHOTO_CHECK_STATUS]);
+
+                }
+                if ($params->short_name == 'new'){
+
+                    $new = true;
 
                 }
 
@@ -166,9 +173,12 @@ class FilterRepository
         }
 
         $posts = Post::with('avatar' ,'video', 'metro')
-            ->orderByRaw($sort)
-            ->whereIn('id', $resultIds)
-            ->where(['publication_status' => Post::POST_ON_PUBLICATION])
+            ->whereIn('id', $resultIds);
+
+        if ($new) $posts = $posts->orderByRaw('id DESC');
+        else $posts = $posts->orderByRaw($sort);
+
+        $posts = $posts->where(['publication_status' => Post::POST_ON_PUBLICATION])
             ->select($columns)
             ->paginate($limit);
 
