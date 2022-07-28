@@ -229,6 +229,11 @@
                         </div>
                     </div>
                 </li>
+                <li class="menu__item">
+                    <div class="menu__controls">
+                        <a class="menu__link" href="/proverennye-prostitutki">Проверенные</a>
+                    </div>
+                </li>
                 @auth()
                     <li class="menu__item" data-navigation-item="" data-menu-item-id="11971302">
                         <div class="menu__controls">

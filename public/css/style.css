@@ -1016,6 +1016,9 @@ input:checked + .image-label-radio {
     margin-bottom: 10px;
 }
 @media (max-width: 1199px){
+    .top-menu{
+        display: none;
+    }
     .filter-wrap{
         display: none;
     }
