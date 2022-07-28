@@ -58,7 +58,7 @@ class PostsRepository
 
             $columns = ['url', 'name', 'phone', 'price', 'id'];
 
-            $posts = Post::with('avatar', 'video')
+            $posts = Post::with('avatar', 'video', 'metro')
                 ->whereIn('id', $data)
                 ->select($columns)->get();
 
@@ -77,7 +77,7 @@ class PostsRepository
 
         $columns = ['url', 'name', 'phone', 'price', 'id'];
 
-        $posts = Post::with('avatar', 'video')
+        $posts = Post::with('avatar', 'video', 'metro')
             ->where('id', '<>', $post->id)
             ->orderByRaw($sort)
             ->select($columns)
