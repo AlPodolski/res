@@ -57,6 +57,13 @@
 </head>
 <body>
 <div id="app">
+    <nav class="top-menu">
+        <div class="container">
+            <div class="top-menu-wrap">
+                <a href="/proverennye-prostitutki">Проверенные</a>
+            </div>
+        </div>
+    </nav>
     <nav class="navbar top-nav navbar-expand-md navbar-light bg-white">
         <div class="container nav-container">
             <div class="menu" onclick="showPanel(this)" data-target="side-panel">

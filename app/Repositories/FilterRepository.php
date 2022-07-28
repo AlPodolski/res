@@ -52,6 +52,12 @@ class FilterRepository
 
                 $posts = Post::where(['city_id' => $cityInfo['id']]);
 
+                if ($params->short_name == 'check'){
+
+                    $posts = $posts->where(['check_photo_status' => Post::PHOTO_CHECK_STATUS]);
+
+                }
+
                 if ($params->parent_class == Price::class) {
 
                     switch ($params->filter_url) {

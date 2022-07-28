@@ -71,6 +71,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Post wherePayTime($value)
  * @property-read \App\Models\User|null $user
  * @property-read \App\Models\Tarif|null $tarif
+ * @property int $check_photo_status
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereCheckPhotoStatus($value)
  */
 class Post extends Model
 {
@@ -81,6 +83,9 @@ class Post extends Model
 
     const POST_FAKE = 0;
     const POST_REAL = 1;
+
+    const PHOTO_CHECK_STATUS = 1;
+    const PHOTO_NOT_CHECK_STATUS = 0;
 
     protected $fillable = ['name', 'user_id' , 'phone', 'about', 'price',
         'tarif_id', 'rost', 'ves', 'breast_size', 'city_id', 'age'];

@@ -46,58 +46,19 @@ class CustCommand extends Command
     public function handle()
     {
 
-        $posts = Post::with('metro', 'rayon')->where(['city_id' => 1])->get();
+        $posts = Post::get();
 
-        $stream = \fopen(storage_path('metro-rayon.csv'), 'r');
+        foreach ($posts as $post){
 
-        $csv = Reader::createFromStream($stream);
-        $csv->setDelimiter(';');
-        $csv->setHeaderOffset(0);
-        //build a statement
-        $stmt = (new Statement());
+            if (rand(0,3) == 3){
 
-        $records = $stmt->process($csv);
+                $post->check_photo_status = Post::PHOTO_CHECK_STATUS;
 
-        $phonesCity = array();
-
-        foreach ($records as $value) {
-
-            $phonesCity[$value['rayon']][] = $value['metro'];
-
-        }
-
-        foreach ($posts as $post) {
-
-            if ($post->metro and !$post->rayon and $metroItem = $post->metro->first()) {
-
-                foreach ($phonesCity as $key => $item){
-
-                    if (in_array($metroItem->metro->value, $item)){
-
-                        $rayon = Rayon::where(['value' => $key])->get()->first();
-
-                        if ($rayon) {
-
-                            $postRayon = new PostRayon();
-
-                            $postRayon->posts_id = $post->id;
-                            $postRayon->city_id = 1;
-                            $postRayon->rayons_id = $rayon->id;
-
-                            $postRayon->save();
-
-                            break;
-
-                        }
-
-                    }
-
-                }
+                $post->save();
 
             }
 
         }
-
 
     }
 }

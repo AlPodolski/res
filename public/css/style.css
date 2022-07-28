@@ -25,6 +25,21 @@ body{
     font-family: "Root";
     font-weight: 400;
     font-size: 16px;
+    margin: 0;
+}
+.top-menu{
+    background: #eaeaea;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.top-menu-wrap{
+    display: flex;
+    justify-content: end;
+}
+.top-menu-wrap a{
+    color: #212529;
+    text-decoration: underline;
 }
 .top-menu-text{
     font-weight: 600;
