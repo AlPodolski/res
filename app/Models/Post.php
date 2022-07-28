@@ -75,6 +75,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereCheckPhotoStatus($value)
  * @property int $sorting
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereSorting($value)
+ * @property int $phone_view_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Post wherePhoneViewCount($value)
  */
 class Post extends Model
 {

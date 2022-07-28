@@ -53,7 +53,9 @@ use App\Actions\GenerateImageMicro;
         </div>
     </div>
     @if($post->phone)
-        <a data-tel="{{$post->phone}}" href="tel:+{{$post->phone}}" onclick="show_phone(this)" class="phone">Показать
+        <a data-tel="{{$post->phone}}" href="tel:+{{$post->phone}}"
+           data-id="{{ $post->id }}"
+           onclick="show_phone(this)" class="phone">Показать
             телефон</a>
     @else
         <a href="/post/{{$post->url}}" class="phone">Подробнее</a>

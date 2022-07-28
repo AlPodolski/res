@@ -26,6 +26,8 @@ Route::get('/logout', [\App\Http\Controllers\Auth\LogoutController::class, 'inde
 
 Route::post('/claim/add', [\App\Http\Controllers\ClaimController::class, 'index']);
 
+Route::post('/view/phone', [\App\Http\Controllers\ViewController::class, 'phone']);
+
 Route::domain('{city}.'.env('DOMAIN'))->group(function () {
 
     Route::middleware('auth' )->group(function(){

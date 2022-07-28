@@ -21,6 +21,7 @@
         @if($post->phone)
             <div class="phone-favorite-wrap d-flex">
                 <a href="tel:+{{ $post->phone }}" data-tel="{{ $post->phone }}" onclick="show_phone(this)"
+                   data-id="{{ $post->id }}"
                    class="phone single-phone">Показать телефон</a>
             </div>
         @endif

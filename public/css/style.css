@@ -203,6 +203,7 @@ body{
     display: none;
     right: -5px;
     top: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .is-show .close-panel {
