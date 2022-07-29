@@ -140,7 +140,7 @@ class PostsRepository
 
     public function all($cityId)
     {
-        $posts = Post::select('id', 'url')
+        $posts = Post::select('id', 'url', 'updated_at')
             ->where(['city_id' => $cityId])
             ->get();
 
