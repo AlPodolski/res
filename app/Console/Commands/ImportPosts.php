@@ -142,7 +142,7 @@ class ImportPosts extends Command
 
                         $file->related_id = $post->id;
                         $file->related_class = Post::class;
-                        $file->file = '/uploads/aa1/' . $ava;
+                        $file->file = '/uploads/aa2/' . $ava;
                         $file->type = Files::MAIN_PHOTO_TYPE;
 
                         $file->save();
@@ -155,7 +155,7 @@ class ImportPosts extends Command
 
                         $file->related_id = $post->id;
                         $file->related_class = Post::class;
-                        $file->file = '/uploads/aa1/' . $item;
+                        $file->file = '/uploads/aa2/' . $item;
                         $file->type = Files::GALLERY_PHOTO_TYPE;
 
                         $file->save();
@@ -174,7 +174,7 @@ class ImportPosts extends Command
 
                         $file->related_id = $post->id;
                         $file->related_class = Post::class;
-                        $file->file = '/uploads/aa1/' . $item;
+                        $file->file = '/uploads/aa2/' . $item;
                         $file->type = Files::SELPHI_TYPE;
 
                         $file->save();
@@ -189,7 +189,7 @@ class ImportPosts extends Command
 
                     $file->related_id = $post->id;
                     $file->related_class = Post::class;
-                    $file->file = '/uploads/aa1/' . $record['video'];
+                    $file->file = '/uploads/aa2/' . $record['video'];
                     $file->type = Files::VIDEO_TYPE;
 
                     $file->save();
