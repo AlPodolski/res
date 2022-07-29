@@ -7,7 +7,7 @@
 
     <url>
         <loc>https://{{ $_SERVER['HTTP_HOST'] }}</loc>
-        <lastmod>2022-05-27</lastmod>
+        <lastmod>2022-07-29</lastmod>
         <priority>1</priority>
     </url>
 
@@ -17,7 +17,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/post/{{ $post->url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>{{ \Carbon\Carbon::parse($post->updated_at )->toDateString()}}</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -31,7 +31,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $metro->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -45,7 +45,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $dataItem->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -59,7 +59,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $dataItem->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -73,7 +73,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $dataItem->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -87,7 +87,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $dataItem->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -101,7 +101,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $dataItem->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -115,7 +115,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $dataItem->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -129,7 +129,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $dataItem->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -143,7 +143,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $dataItem->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
@@ -157,7 +157,7 @@
 
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $dataItem->filter_url }}</loc>
-                <lastmod>2022-05-27</lastmod>
+                <lastmod>2022-07-29</lastmod>
                 <priority>0.9</priority>
             </url>
 
