@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Actions\GetSort;
 use App\Models\Age;
+use App\Models\Files;
 use App\Models\Filter;
 use App\Models\Post;
 use App\Models\Price;
@@ -50,7 +51,23 @@ class FilterRepository
 
         foreach ($searchParams as $params) {
 
-            if ($params->type == 'custom') {
+            if ($params->short_name == 'video'){
+
+                if ($ids = Files::where(['type' => Files::VIDEO_TYPE])->select('id', 'related_id')->get()){
+
+                    $tempResult = array();
+
+                    if ($ids = $ids->toArray()) foreach ($ids as $id) {
+                        $tempResult[] = $id['related_id'];
+                    }
+
+                    $resultIds = $this->intersect_data( $tempResult, $resultIds);
+
+                }
+
+            }
+
+            elseif ($params->type == 'custom') {
 
                 $posts = Post::where(['city_id' => $cityInfo['id']]);
 
@@ -59,6 +76,7 @@ class FilterRepository
                     $posts = $posts->where(['check_photo_status' => Post::PHOTO_CHECK_STATUS]);
 
                 }
+
                 if ($params->short_name == 'new'){
 
                     $new = true;
@@ -157,12 +175,11 @@ class FilterRepository
                 $ids = $params->related_class::where([$params->related_param => $params->related_id, 'city_id' => $cityInfo['id']])
                     ->select($params->search_param)
                     ->get()
-                    ->values()
-                    ->toArray();
+                    ->values();
 
                 $tempResult = array();
 
-                if ($ids) foreach ($ids as $id) {
+                if ($ids and $ids = $ids->toArray()) foreach ($ids as $id) {
                     $tempResult[] = $id[$params->search_param];
                 }
 

@@ -32,7 +32,6 @@
                                 @foreach($rayonList as $item)
                                     <a itemprop="url" class="collapse-item d-block menu__link"
                                        href="/{{$item->filter_url}}">
-                                        {{ $item->rayon->value }}
                                         <span itemprop="name">{{ $item->rayon->value }}</span>
                                     </a>
                                 @endforeach
@@ -232,6 +231,11 @@
                 <li class="menu__item">
                     <div class="menu__controls">
                         <a class="menu__link" href="/proverennye-prostitutki">Проверенные</a>
+                    </div>
+                </li>
+                <li class="menu__item">
+                    <div class="menu__controls">
+                        <a class="menu__link" href="/prostitutki-s-video">Проститутки с видео</a>
                     </div>
                 </li>
                 <li class="menu__item">

@@ -62,6 +62,7 @@
             <div class="top-menu-wrap">
                 <a href="/proverennye-prostitutki">Проверенные</a>
                 <a href="/novye-prostitutki">Новые анкеты</a>
+                <a href="/prostitutki-s-video">С видео</a>
             </div>
         </div>
     </nav>
