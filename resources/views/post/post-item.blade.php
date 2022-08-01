@@ -205,7 +205,7 @@
             </div>
             <div class="decr-text">
                 <video controls="controls" class="video">
-                    <source src="{{ $post->video->file }}">
+                    <source src="/storage{{ $post->video->file }}">
                 </video>
             </div>
         </div>
