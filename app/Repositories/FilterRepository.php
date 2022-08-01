@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Actions\GetSort;
 use App\Models\Age;
+use App\Models\Comment;
 use App\Models\Files;
 use App\Models\Filter;
 use App\Models\Post;
@@ -54,6 +55,24 @@ class FilterRepository
             if ($params->short_name == 'video'){
 
                 if ($ids = Files::where(['type' => Files::VIDEO_TYPE])->select('id', 'related_id')->get()){
+
+                    $tempResult = array();
+
+                    if ($ids = $ids->toArray()) foreach ($ids as $id) {
+                        $tempResult[] = $id['related_id'];
+                    }
+
+                    $resultIds = $this->intersect_data( $tempResult, $resultIds);
+
+                }
+
+            }
+
+            if ($params->short_name == 'review'){
+
+                if ($ids = Comment::where(['status' => Comment::PUBLICATION_STATUS])
+                    ->where(['related_class' => Post::class])
+                    ->select('related_id', 'id')->get()){
 
                     $tempResult = array();
 

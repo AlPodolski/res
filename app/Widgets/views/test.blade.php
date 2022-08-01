@@ -243,6 +243,11 @@
                         <a href="/novye-prostitutki">Новые анкеты</a>
                     </div>
                 </li>
+                <li class="menu__item">
+                    <div class="menu__controls">
+                        <a href="/prostitutki-s-otzyvami">С отзывами</a>
+                    </div>
+                </li>
                 @auth()
                     <li class="menu__item" data-navigation-item="" data-menu-item-id="11971302">
                         <div class="menu__controls">
