@@ -190,6 +190,7 @@ class FilterRepository
         }
 
         $posts = Post::with('avatar' ,'video', 'metro')
+            ->where(['city_id' => $cityInfo['id']])
             ->whereIn('id', $resultIds);
 
         if ($new) $posts = $posts->orderByRaw('id DESC');
