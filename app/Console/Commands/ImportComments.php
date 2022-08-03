@@ -69,8 +69,6 @@ class ImportComments extends Command
 
                         $postComment->save();
 
-                        dd($postComment);
-
                     }
 
                 }
