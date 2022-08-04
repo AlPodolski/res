@@ -21,6 +21,7 @@ class PostsRepository
             ->select($columns)
             ->where(['city_id' => $cityId])
             ->where(['publication_status' => Post::POST_ON_PUBLICATION])
+            ->where(['pol' => Post::POL_WOMAN])
             ->paginate($limit);
     }
 

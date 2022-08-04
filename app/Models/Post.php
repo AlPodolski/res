@@ -77,6 +77,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereSorting($value)
  * @property int $phone_view_count
  * @method static \Illuminate\Database\Eloquent\Builder|Post wherePhoneViewCount($value)
+ * @property int $pol
+ * @method static \Illuminate\Database\Eloquent\Builder|Post wherePol($value)
  */
 class Post extends Model
 {
@@ -90,6 +92,10 @@ class Post extends Model
 
     const PHOTO_CHECK_STATUS = 1;
     const PHOTO_NOT_CHECK_STATUS = 0;
+
+    const POL_WOMAN = 0;
+    const POL_MAN = 1;
+    const POL_TRANS = 2;
 
     protected $fillable = ['name', 'user_id' , 'phone', 'about', 'price',
         'tarif_id', 'rost', 'ves', 'breast_size', 'city_id', 'age'];

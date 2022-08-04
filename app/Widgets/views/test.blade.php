@@ -240,12 +240,17 @@
                 </li>
                 <li class="menu__item">
                     <div class="menu__controls">
-                        <a href="/novye-prostitutki">Новые анкеты</a>
+                        <a class="menu__link" href="/novye-prostitutki">Новые анкеты</a>
                     </div>
                 </li>
                 <li class="menu__item">
                     <div class="menu__controls">
-                        <a href="/prostitutki-s-otzyvami">С отзывами</a>
+                        <a class="menu__link" href="/prostitutki-s-otzyvami">С отзывами</a>
+                    </div>
+                </li>
+                <li class="menu__item">
+                    <div class="menu__controls">
+                        <a class="menu__link" href="/prostitutki-transy">Трансы</a>
                     </div>
                 </li>
                 @auth()

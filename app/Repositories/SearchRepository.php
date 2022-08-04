@@ -39,6 +39,7 @@ class SearchRepository
             ->where('breast_size' , '<=', $data['grud-to'])
             ->where('price' , '>=', $data['price-1-from'])
             ->where('price' , '<=', $data['price-1-to'])
+            ->where(['pol' => Post::POL_WOMAN])
             ->where(['city_id' => $cityId]);
 
         if ($data['metro']){

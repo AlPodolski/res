@@ -49,6 +49,7 @@ class FilterRepository
         $posts = array();
 
         $new = false;
+        $trans = false;
 
         foreach ($searchParams as $params) {
 
@@ -68,7 +69,13 @@ class FilterRepository
 
             }
 
-            if ($params->short_name == 'review'){
+            elseif ($params->short_name == 'trans'){
+
+                $trans = true;
+
+            }
+
+            elseif ($params->short_name == 'review'){
 
                 if ($ids = Comment::where(['status' => Comment::PUBLICATION_STATUS])
                     ->where(['related_class' => Post::class])
@@ -209,11 +216,15 @@ class FilterRepository
         }
 
         $posts = Post::with('avatar' ,'video', 'metro')
-            ->where(['city_id' => $cityInfo['id']])
-            ->whereIn('id', $resultIds);
+            ->where(['city_id' => $cityInfo['id']]);
+
+        if ($resultIds) $posts = $posts->whereIn('id', $resultIds);
 
         if ($new) $posts = $posts->orderByRaw('id DESC');
         else $posts = $posts->orderByRaw($sort);
+
+        if ($trans) $posts = $posts->where(['pol' => Post::POL_TRANS]);
+        else $posts = $posts->where(['pol' => Post::POL_WOMAN]);
 
         $posts = $posts->where(['publication_status' => Post::POST_ON_PUBLICATION])
             ->select($columns)
