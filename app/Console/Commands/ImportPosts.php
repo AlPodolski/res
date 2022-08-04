@@ -59,7 +59,7 @@ class ImportPosts extends Command
     public function handle()
     {
 
-        $stream = \fopen(storage_path('import_rex_29_07_2022.csv'), 'r');
+        $stream = \fopen(storage_path('import_trans_04_04_2022.csv'), 'r');
 
         $csv = Reader::createFromStream($stream);
         $csv->setDelimiter(';');
@@ -94,7 +94,7 @@ class ImportPosts extends Command
             $post = new Post();
 
             $post->name = $record['name'];
-            $post->age = $record['age'];
+            $post->age = rand(20, 27);
             $post->phone = $record['phone'];
             $post->rost = $record['rost'];
             $post->ves = $record['weight'];
@@ -106,6 +106,7 @@ class ImportPosts extends Command
             $post->check_photo_status = rand(0,1);
             $post->price = $record['price'];
             $post->publication_status = 1;
+            $post->pol = Post::POL_TRANS;
 
             if ($post->save()) {
 
@@ -142,7 +143,7 @@ class ImportPosts extends Command
 
                         $file->related_id = $post->id;
                         $file->related_class = Post::class;
-                        $file->file = '/uploads/aa2/' . $ava;
+                        $file->file = '/uploads/aa3/' . $ava;
                         $file->type = Files::MAIN_PHOTO_TYPE;
 
                         $file->save();
@@ -155,7 +156,7 @@ class ImportPosts extends Command
 
                         $file->related_id = $post->id;
                         $file->related_class = Post::class;
-                        $file->file = '/uploads/aa2/' . $item;
+                        $file->file = '/uploads/aa3/' . $item;
                         $file->type = Files::GALLERY_PHOTO_TYPE;
 
                         $file->save();
@@ -164,7 +165,7 @@ class ImportPosts extends Command
 
                 }
 
-                if ($record['selphi']) {
+                if (isset($record['selphi']) and $record['selphi']) {
 
                     $dataList = explode(',', $record['selphi']);
 
@@ -174,7 +175,7 @@ class ImportPosts extends Command
 
                         $file->related_id = $post->id;
                         $file->related_class = Post::class;
-                        $file->file = '/uploads/aa2/' . $item;
+                        $file->file = '/uploads/aa3/' . $item;
                         $file->type = Files::SELPHI_TYPE;
 
                         $file->save();
@@ -183,13 +184,13 @@ class ImportPosts extends Command
 
                 }
 
-                if ($record['video']) {
+                if (isset($record['video']) and $record['video']) {
 
                     $file = new Files();
 
                     $file->related_id = $post->id;
                     $file->related_class = Post::class;
-                    $file->file = '/uploads/aa2/' . $record['video'];
+                    $file->file = '/uploads/aa3/' . $record['video'];
                     $file->type = Files::VIDEO_TYPE;
 
                     $file->save();
@@ -227,7 +228,7 @@ class ImportPosts extends Command
 
                 }
 
-                if ($record['rayon']) {
+                if (isset($record['rayon']) and $record['rayon']) {
 
                     if ($temp = Rayon::where(['value' => $item])->get()->first()) {
 
@@ -242,7 +243,7 @@ class ImportPosts extends Command
 
                 }
 
-                if ($record['ethnik']) {
+                if (isset($record['ethnik']) and $record['ethnik']) {
 
                     if ($temp = National::where(['value' => $record['ethnik']])->get()->first()) {
 
@@ -308,6 +309,8 @@ class ImportPosts extends Command
             if ($i > 1) break;
 
             $i++;
+
+            exit();
 
         }
 
