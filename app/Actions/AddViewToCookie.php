@@ -29,6 +29,6 @@ class AddViewToCookie
 
         $data = serialize($data);
 
-        Cookie::queue('post_view', $data, 3600);
+        Cookie::queue('post_view', $data, 3600 * 24 * 31);
     }
 }
