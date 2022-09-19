@@ -34,7 +34,7 @@ use App\Actions\GenerateImageMicro;
     </a>
     @if($post->video)
         <div class="video-stick">
-            <img src="/img/video.svg" alt="Есть видео">
+            <img src="/img/video.svg" alt="Есть видео" title="Есть видео">
         </div>
     @endif
     <a href="/post/{{$post->url}}" class="name">{{$post->name}}</a>

@@ -19,19 +19,19 @@ class MetaRepository
     public function getForMain($url, $cityId, $request)
     {
 
-        if ($value = \Cache::get('meta_'.$url.'_'.$cityId)) return $value;
+        $value = \Cache::get('meta_'.$url.'_'.$cityId);
 
-        else{
+        if (!$value){
 
             $meta = Meta::where(['url' => $url])->select('title', 'des', 'h1')->get()->first()->toArray();
 
             $value = $this->replaceCity($meta, $cityId);
 
-            $value = $this->addPageAndSite($value, $request);
-
             \Cache::set('meta_'.$url.'_'.$cityId, $value);
 
         }
+
+        $value = $this->addPageAndSite($value, $request);
 
         return $value;
 
@@ -40,9 +40,9 @@ class MetaRepository
     public function getForFilter($url, $cityId, $filterParams, $request)
     {
 
-        if ($value = \Cache::get('meta_'.$url.'_'.$cityId)) return $value;
+        $value = \Cache::get('meta_'.$url.'_'.$cityId);
 
-        else{
+        if (!$value){
 
             if ($meta = Meta::where(['url' => $url])->select('title', 'des', 'h1')->get()->first()) {
 

@@ -24,7 +24,7 @@ class GenerateBreadcrumbMicro
                 '@position' => 2,
                 'item' => [
                     '@id' => 'https://'.$host.'/'.$url,
-                    '@name' => 'Главная'
+                    '@name' => $name
                 ]),
             ]
         ];
