@@ -30,6 +30,8 @@ Route::post('/view/phone', [\App\Http\Controllers\ViewController::class, 'phone'
 
 Route::domain('{city}.'.env('DOMAIN'))->group(function () {
 
+    Route::get('/prostitutki-na-karte',  'MapController@index');
+
     Route::middleware('auth' )->group(function(){
 
         Route::get('/cabinet', [\App\Http\Controllers\Cabinet\IndexController::class, 'index']);

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Actions\GetSort;
 use App\Models\Post;
+use App\Models\PostMetro;
 use App\Models\PostRayon;
 use Cookie;
 
@@ -171,6 +172,48 @@ class PostsRepository
             ->first();
 
         return $post;
+
+    }
+
+    public function getForMap($cityId)
+    {
+        $postsMetroIds = PostMetro::where(['city_id' => $cityId])
+            ->with('posts', 'metro')
+            ->get();
+
+        $result = array();
+
+        if ($postsMetroIds){
+
+            foreach ($postsMetroIds as $item){
+
+                if ($item->posts->first() and $item->metro->x) {
+
+                    foreach ($item->posts as $postItem){
+
+                        if (isset($postItem->avatar->file)){
+
+                            $data['id'] = $postItem->id;
+                            $data['x'] = $item->metro->x;
+                            $data['y'] = $item->metro->y;
+                            $data['price'] = $postItem->price;
+                            $data['name'] = $postItem->name;
+                            $data['phone'] = $postItem->phone;
+                            $data['avatar'] = '/314-441/thumbs'.$postItem->avatar->file;
+
+                            $result[] = $data;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        return $result;
 
     }
 

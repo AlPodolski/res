@@ -32,4 +32,10 @@ class PostMetro extends Model
     {
         return $this->hasOne(Metro::class, 'id', 'metros_id')->with('filterUrl');
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'id', 'posts_id')
+            ->with('avatar')->limit(2000);
+    }
 }

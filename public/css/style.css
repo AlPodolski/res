@@ -903,7 +903,6 @@ input:checked + .image-label-radio {
     z-index: -1;
     opacity: 0;
 }
-
 .custom-checkbox+label {
     display: inline-flex;
     align-items: center;
@@ -1026,7 +1025,6 @@ input:checked + .image-label-radio {
     color: #212529;
     display: block;
     margin-bottom: 10px;
-
 }
 .top-menu-wrap a{
     margin-left: 15px;

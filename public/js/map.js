@@ -1,0 +1,54 @@
+function create_img(src, id) {
+    return '<a target="_blank" onclick="getModalPost('+id+')" data-id="' + id + '">' +
+        '<img src="' + src + '" class="yandex-map-img">' +
+        '</a>'
+}
+
+function create_ballon_content(item) {
+    return create_img(item.avatar, item.id) + "<br>"
+        + "<div class='map-phone'> " + item.phone + " </div>"
+        + "<a target='_blank' onclick='getModalPost("+item.id+")' class='map-link' data-id='" + item.id + "'> Подробнее </a>"
+        + "<div class='small-red-text'>" + item.price + " р.</div>";
+}
+
+ymaps.ready(init_map_with_posts);
+
+function init_map_with_posts() {
+    var myMap = new ymaps.Map("map", {
+        center: [55.76, 37.64],
+        zoom: 10,
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
+
+    var data = JSON.parse($('.map-data').html());
+
+    var result = [];
+
+    var presetName = "twirl#violetIcon";
+
+    data.forEach(function (item) {
+
+        var myGeoObject = new ymaps.GeoObject({
+                geometry: {type: "Point", coordinates: [item.x, item.y]},
+                properties: {
+                    clusterCaption: item.name,
+                    hintContent: item.name,
+                    balloonContent: create_ballon_content(item),
+                }
+            },
+            {preset: presetName});
+
+        result.push(myGeoObject);
+
+    })
+
+    var myClusterer0 = new ymaps.Clusterer({preset: "twirl#redClusterIcons", gridSize: 100});
+
+    myClusterer0.add(result);
+
+    myMap.geoObjects.add(myClusterer0);
+
+    $('.map-page #map img').remove();
+
+}
