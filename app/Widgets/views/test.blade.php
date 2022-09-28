@@ -253,11 +253,13 @@
                         <a class="menu__link" href="/prostitutki-transy">Трансы</a>
                     </div>
                 </li>
-                <li class="menu__item">
-                    <div class="menu__controls">
-                        <a class="menu__link" href="/prostitutki-na-karte">Проститутки на карте</a>
-                    </div>
-                </li>
+                @if($cityId == 1)
+                    <li class="menu__item">
+                        <div class="menu__controls">
+                            <a class="menu__link" href="/prostitutki-na-karte">Проститутки на карте</a>
+                        </div>
+                    </li>
+                @endif
                 @auth()
                     <li class="menu__item" data-navigation-item="" data-menu-item-id="11971302">
                         <div class="menu__controls">
