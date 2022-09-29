@@ -59,6 +59,6 @@
     </div>
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-    <script src="{{ asset('js/map.js?v=2') }}"></script>
+    <script src="{{ asset('js/map.js?v=3') }}"></script>
 
 @endsection

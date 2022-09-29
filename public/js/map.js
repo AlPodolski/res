@@ -1,13 +1,13 @@
 function create_img(src, id) {
-    return '<a target="_blank" onclick="getModalPost('+id+')" data-id="' + id + '">' +
+    return '<a target="_blank" href="/post/'+id+'" data-id="' + id + '">' +
         '<img src="' + src + '" class="yandex-map-img">' +
         '</a>'
 }
 
 function create_ballon_content(item) {
     return create_img(item.avatar, item.id) + "<br>"
-        + "<div class='map-phone'> " + item.phone + " </div>"
-        + "<a target='_blank' onclick='getModalPost("+item.id+")' class='map-link' data-id='" + item.id + "'> Подробнее </a>"
+        + "<a href='tel:+" + item.phone + "' class='map-phone'> " + item.phone + " </a><br>"
+        + "<a target='_blank' href='/post/"+item.id+"' class='map-link' data-id='" + item.id + "'> Подробнее </a>"
         + "<div class='small-red-text'>" + item.price + " р.</div>";
 }
 
