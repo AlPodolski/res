@@ -194,6 +194,7 @@ class PostsRepository
                         if (isset($postItem->avatar->file)){
 
                             $data['id'] = $postItem->id;
+                            $data['url'] = $postItem->url;
                             $data['x'] = $item->metro->x;
                             $data['y'] = $item->metro->y;
                             $data['price'] = $postItem->price;

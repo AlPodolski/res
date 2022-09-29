@@ -5,9 +5,9 @@ function create_img(src, id) {
 }
 
 function create_ballon_content(item) {
-    return create_img(item.avatar, item.id) + "<br>"
+    return create_img(item.avatar, item.url) + "<br>"
         + "<a href='tel:+" + item.phone + "' class='map-phone'> " + item.phone + " </a><br>"
-        + "<a target='_blank' href='/post/"+item.id+"' class='map-link' data-id='" + item.id + "'> Подробнее </a>"
+        + "<a target='_blank' href='/post/"+item.url+"' class='map-link' data-id='" + item.id + "'> Подробнее </a>"
         + "<div class='small-red-text'>" + item.price + " р.</div>";
 }
 
