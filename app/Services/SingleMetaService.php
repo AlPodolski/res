@@ -34,7 +34,7 @@ class SingleMetaService
         else{
 
             $des = 'Проститутка '.$post->name . ' '.$cityInfo['city3'] .' номер телефона '.$post->phone;
-            $des .= ' лучшие простиутки '.$cityInfo['city3'].' ID анкеты'.' '.$post->id;
+            $des .= ' лучшие проститутки '.$cityInfo['city3'].' ID анкеты'.' '.$post->id;
 
         }
 
