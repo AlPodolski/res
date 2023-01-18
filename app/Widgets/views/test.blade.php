@@ -3,7 +3,6 @@
         <div class="panel-menu">
             <ul class="menu__list" id="accordion" itemscope itemtype="https://schema.org/SiteNavigationElement"
                 data-navigation="" data-menu-handle="main-menu" data-navigation-inited="true">
-                <meta itemprop="name" content="Навигационное Меню">
                 @if($metroList)
                     <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                         <div class="menu__controls">
