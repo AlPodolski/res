@@ -19,11 +19,6 @@ class PostsObserver
     public function creating(Post $post)
     {
 
-        $filterUrlService = new FilterUrlService();
-
-        $post->phone = preg_replace('/[^0-9]/', '', $post->phone);
-        $post->url = $filterUrlService->makeUrlForPostsTable($post->name, $post->city_id);
-
     }
 
     /**
@@ -34,7 +29,8 @@ class PostsObserver
      */
     public function created(Post $post)
     {
-        //
+        $post->url = \Str::slug($post->name).'-'.$post->id;
+        $post->save();
     }
 
     /**

@@ -44,7 +44,9 @@ class FilterUrlService
 
             a:
 
-            $i++;
+            if ($i > 3) $i = $i + 2;
+
+            else $i++;
 
             $name = $value . '-' .$i;
 
