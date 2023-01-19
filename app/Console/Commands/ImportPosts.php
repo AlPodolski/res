@@ -102,7 +102,7 @@ class ImportPosts extends Command
 
                 $post->name = $record['name'];
                 $post->age = $record['age'];
-                $post->phone = $record['phone'];
+                $post->phone = '';
                 $post->rost = $record['rost'];
                 $post->ves = $record['weght'];
                 $post->breast_size = $record['grud'];
