@@ -90,8 +90,8 @@ class ImportPosts extends Command
 
         foreach ($posts as $record) {
 
-            $city = City::where('url', $record['city'])->first();
-
+            $city = City::where('url', $record['url'])->first();
+            if (!$city) continue;
             $cityId = $city->id;
 
             $post = new Post();
@@ -100,9 +100,9 @@ class ImportPosts extends Command
             $post->age = $record['age'];
             $post->phone = $record['phone'];
             $post->rost = $record['rost'];
-            $post->ves = $record['weight'];
+            $post->ves = $record['weght'];
             $post->breast_size = $record['grud'];
-            $post->about = htmlspecialchars(strip_tags($record['about']));
+            $post->about = htmlspecialchars(strip_tags($record['deskr']));
             $post->city_id = $cityId;
             $post->tarif_id = 1;
             $post->sorting = 10022;

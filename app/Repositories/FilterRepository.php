@@ -44,28 +44,73 @@ class FilterRepository
 
         $columns = $this->columns;
 
-        $resultIds = array();
-
-        $posts = array();
-
         $new = false;
         $trans = false;
+
+        $posts = Post::with('avatar' ,'video', 'metro')
+            ->where(['city_id' => $cityInfo['id']]);
 
         foreach ($searchParams as $params) {
 
             if ($params->short_name == 'video'){
 
-                if ($ids = Files::where(['type' => Files::VIDEO_TYPE])->select('id', 'related_id')->get()){
+                $posts = $posts->whereRaw(' id IN (select `related_id` from `files` where `type` =  ? ) ',
+                    [Files::VIDEO_TYPE]);
 
-                    $tempResult = array();
+            }
 
-                    if ($ids = $ids->toArray()) foreach ($ids as $id) {
-                        $tempResult[] = $id['related_id'];
-                    }
+            if ($params->short_name == 'metro'){
 
-                    $resultIds = $this->intersect_data( $tempResult, $resultIds);
+                $posts = $posts->whereRaw(' id IN (select `posts_id` from `post_metros` where ' . $params->related_param . ' =  ?  and `city_id` = ?) ',
+                    [$params->related_id, $cityInfo['id']]);
 
-                }
+            }
+
+            if ($params->short_name == 'rayon'){
+
+                $posts = $posts->whereRaw(' id IN (select `posts_id` from `post_rayons` where ' . $params->related_param . ' =  ?  and `city_id` = ?) ',
+                    [$params->related_id, $cityInfo['id']]);
+
+            }
+
+            if ($params->short_name == 'service'){
+
+                $posts = $posts->whereRaw(' id IN (select `posts_id` from `post_services` where ' . $params->related_param . ' =  ?  and `city_id` = ?) ',
+                    [$params->related_id, $cityInfo['id']]);
+
+            }
+
+            if ($params->short_name == 'time'){
+
+                $posts = $posts->whereRaw(' id IN (select `posts_id` from `post_times` where ' . $params->related_param . ' =  ?  and `city_id` = ?) ',
+                    [$params->related_id, $cityInfo['id']]);
+
+            }
+
+            if ($params->short_name == 'place'){
+
+                $posts = $posts->whereRaw(' id IN (select `post_id` from `post_places` where ' . $params->related_param . ' =  ?  and `city_id` = ?) ',
+                    [$params->related_id, $cityInfo['id']]);
+
+            }
+
+            if ($params->short_name == 'national'){
+
+                $posts = $posts->whereRaw(' id IN (select `post_nationals_id` from `post_nationals` where ' . $params->related_param . ' =  ?  and `city_id` = ?) ',
+                    [$params->related_id, $cityInfo['id']]);
+
+            }
+
+            if ($params->short_name == 'hair'){
+
+                $posts = $posts->whereRaw(' id IN (select `posts_id` from `post_hair_colors` where ' . $params->related_param . ' =  ?  and `city_id` = ?) ',
+                    [$params->related_id, $cityInfo['id']]);
+
+            }
+            if ($params->short_name == 'intimhair'){
+
+                $posts = $posts->whereRaw(' id IN (select `posts_id` from `post_intim_hairs` where ' . $params->related_param . ' =  ?  and `city_id` = ?) ',
+                    [$params->related_id, $cityInfo['id']]);
 
             }
 
@@ -77,25 +122,12 @@ class FilterRepository
 
             elseif ($params->short_name == 'review'){
 
-                if ($ids = Comment::where(['status' => Comment::PUBLICATION_STATUS])
-                    ->where(['related_class' => Post::class])
-                    ->select('related_id', 'id')->get()){
-
-                    $tempResult = array();
-
-                    if ($ids = $ids->toArray()) foreach ($ids as $id) {
-                        $tempResult[] = $id['related_id'];
-                    }
-
-                    $resultIds = $this->intersect_data( $tempResult, $resultIds);
-
-                }
+                $posts = $posts->whereRaw(' id IN (select `related_id` from `comments` where `status` =  ? ) ',
+                    [Comment::PUBLICATION_STATUS]);
 
             }
 
             elseif ($params->type == 'custom') {
-
-                $posts = Post::where(['city_id' => $cityInfo['id']]);
 
                 if ($params->short_name == 'check'){
 
@@ -185,40 +217,10 @@ class FilterRepository
 
                 }
 
-                $ids = $posts->select('id')->get();
-
-                $tempResult = array();
-
-                if ($ids) foreach ($ids as $id) {
-                    $tempResult[] = $id['id'];
-                }
-
-                $resultIds = $this->intersect_data( $tempResult, $resultIds);
-
-
-            } else {
-
-                $ids = $params->related_class::where([$params->related_param => $params->related_id, 'city_id' => $cityInfo['id']])
-                    ->select($params->search_param)
-                    ->get()
-                    ->values();
-
-                $tempResult = array();
-
-                if ($ids and $ids = $ids->toArray()) foreach ($ids as $id) {
-                    $tempResult[] = $id[$params->search_param];
-                }
-
-                $resultIds = $this->intersect_data( $tempResult, $resultIds);
 
             }
 
         }
-
-        $posts = Post::with('avatar' ,'video', 'metro')
-            ->where(['city_id' => $cityInfo['id']]);
-
-        if ($resultIds) $posts = $posts->whereIn('id', $resultIds);
 
         if ($new) $posts = $posts->orderByRaw('id DESC');
         else $posts = $posts->orderByRaw($sort);

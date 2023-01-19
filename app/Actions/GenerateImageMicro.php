@@ -8,6 +8,9 @@ class GenerateImageMicro
 {
     public function generate(Post $post, $city)
     {
+
+        if (isset($post->avatar->file))
+
         $data =  [
             '@context' => 'https://schema.org',
             '@type' => 'ImageObject',
@@ -17,6 +20,8 @@ class GenerateImageMicro
             'datePublished' => $post->created_at,
             'name' => 'Проститутки '. $post->name,
         ];
+
+        else $data = '';
 
         return json_encode($data);
 
