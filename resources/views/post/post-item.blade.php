@@ -164,6 +164,7 @@
                                 <source srcset="/181-257/thumbs{{$item->file}}">
                                 <img data-lightbox="roadtrip" title="Проститутка {{ $post->name }}"
                                      srcset="/181-257/thumbs{{$item->file}}"
+                                     loading="lazy"
                                      alt="{{ $post->name }}">
                             </picture>
                         </a>
@@ -187,7 +188,9 @@
                         <a href="/600-600/thumbs{{$item->file}}" data-lightbox="image-{{ $post->id }}">
                             <picture>
                                 <source srcset="/181-257/thumbs{{$item->file}}">
-                                <img title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}"
+                                <img
+                                    loading="lazy"
+                                    title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}"
                                      alt="{{ $post->name }}">
                             </picture>
                         </a>
