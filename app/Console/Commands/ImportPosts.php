@@ -132,7 +132,7 @@ class ImportPosts extends Command
 
                 }
 
-                if ($record['mini']) {
+                if (false) {
 
                     $ava = $record['mini'];
 
@@ -150,6 +150,21 @@ class ImportPosts extends Command
                 if ($record['gallery']) {
 
                     $dataList = explode(',', $record['gallery']);
+
+                    $ava = array_shift($dataList);
+
+                    if ($ava){
+
+                        $file = new Files();
+
+                        $file->related_id = $post->id;
+                        $file->related_class = Post::class;
+                        $file->file = '/uploads/aa7/files/' . $ava;
+                        $file->type = Files::MAIN_PHOTO_TYPE;
+
+                        $file->save();
+
+                    }
 
                     foreach ($dataList as $item) {
 
@@ -169,21 +184,6 @@ class ImportPosts extends Command
                 if (isset($record['selphi']) and $record['selphi']) {
 
                     $dataList = explode(',', $record['selphi']);
-
-                    $ava = array_shift($dataList);
-
-                    if ($ava){
-
-                        $file = new Files();
-
-                        $file->related_id = $post->id;
-                        $file->related_class = Post::class;
-                        $file->file = '/uploads/aa7/files/' . $ava;
-                        $file->type = Files::MAIN_PHOTO_TYPE;
-
-                        $file->save();
-
-                    }
 
                     foreach ($dataList as $item) {
 
