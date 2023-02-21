@@ -17,7 +17,7 @@
     <div class="posts">
         <div class="post-item position-relative items-center d-flex white-cabinet-block">
             <div class="plus-wrap d-flex items-center">
-                <a href="/cabinet/post/add">
+                <a href="/cabinet/post/create">
                     <span class="plus d-flex items-center">
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                              xmlns="http://www.w3.org/2000/svg">

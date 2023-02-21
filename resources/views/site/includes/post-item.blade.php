@@ -20,8 +20,8 @@ use App\Actions\GenerateImageMicro;
                         media="(max-width: 400px)" type="image/webp">
                 <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)" type="image/jpeg">
 
-                <source srcset="/211-300/thumbs{{str_replace('.jpg', '.webp', $post->avatar->file)}}" type="image/jpeg">
-                <source srcset="/211-300/thumbs{{$post->avatar->file}}" type="image/webp">
+                <source srcset="/211-300/thumbs{{str_replace('.jpg', '.webp', $post->avatar->file)}}" type="image/webp">
+                <source srcset="/211-300/thumbs{{$post->avatar->file}}" type="image/jpeg">
 
                 <img width="211" height="300"
                      @if(!isset($posts) or $posts->first() != $post)

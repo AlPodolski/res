@@ -31,6 +31,8 @@ class PostsController extends Controller
         $this->cityRepository = new CityRepository();
         $this->postRepository = new PostsRepository();
         $this->dataRepository = new DataRepository();
+
+        parent::__construct();
     }
 
     /**
