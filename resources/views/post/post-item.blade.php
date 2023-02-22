@@ -30,7 +30,8 @@
                    class="phone single-phone">Показать телефон</a>
             </div>
         @endif
-        <div class="ya-share2" data-curtain data-shape="round" data-services="messenger,vkontakte,odnoklassniki,telegram,twitter,viber,whatsapp,skype,linkedin,reddit"></div>
+        <div class="ya-share2" data-curtain data-shape="round"
+             data-services="messenger,vkontakte,odnoklassniki,telegram,twitter,viber,whatsapp,skype,linkedin,reddit"></div>
         <form action="/call/request" method="post" class="request-call-form">
             @csrf
             <div class="property-name">Заказать звонок</div>
@@ -166,7 +167,11 @@
                     <div class="post-photo-item">
                         <a href="/600-600/thumbs{{$item->file}}" data-lightbox="image-{{ $post->id }}">
                             <picture>
-                                <source srcset="/181-257/thumbs{{$item->file}}">
+
+                                <source srcset="/181-257/thumbs{{str_replace('.jpg', '.webp', $item->file)}}"
+                                        type="image/webp">
+                                <source srcset="/181-257/thumbs{{$item->file}}" type="image/jpeg">
+
                                 <img data-lightbox="roadtrip" title="Проститутка {{ $post->name }}"
                                      srcset="/181-257/thumbs{{$item->file}}"
                                      loading="lazy"
@@ -196,7 +201,7 @@
                                 <img
                                     loading="lazy"
                                     title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}"
-                                     alt="{{ $post->name }}">
+                                    alt="{{ $post->name }}">
                             </picture>
                         </a>
                     </div>
