@@ -1,10 +1,33 @@
-$(document).ready(function () {
+$(document).scroll(function () {
 
     if ($('.ya-share2').length > 0){
         $.getScript("https://yastatic.net/share2/share.js", function (data, textStatus, jqxhr) {
 
         });
     }
+
+    if (document.getElementById('lightbox-script') !== null){
+
+        $.getScript("/js/lightbox.min.js", function (data, textStatus, jqxhr) {
+            $("head").prepend('<link href="/css/lightbox.min.css" rel="stylesheet">');
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true
+            })
+        });
+
+        if (document.getElementById('map') !== null){
+
+            $.getScript("/js/map_yandex.js", function (data, textStatus, jqxhr) {
+
+            });
+
+        }
+
+        $('#lightbox-script').remove();
+
+    }
+
 });
 
 $(document).ready(function () {
@@ -16,20 +39,11 @@ $(document).ready(function () {
 
     if (document.getElementById('lightbox-script') !== null){
 
-        $.getScript("/js/lightbox.min.js", function (data, textStatus, jqxhr) {
-            lightbox.option({
-                'resizeDuration': 200,
-                'wrapAround': true
-            })
-        });
-
         $.getScript("/js/jquery.maskedinput.js", function (data, textStatus, jqxhr) {
             phone_mask();
         });
 
     }
-
-
 
 });
 

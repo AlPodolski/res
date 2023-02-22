@@ -217,7 +217,6 @@
     <div class="col-12"></div>
 
     @if( $firstMetro = $post->metro->first() and $firstMetro->metro->x)
-        @section('map', '/js/map_yandex.js')
         <div class="post-decr">
             <div class="decr-title">
                 Я на карте
@@ -278,5 +277,3 @@
         <button class="send-btn">Отправить</button>
     </form>
 </div>
-
-<link href="{{ asset('css/lightbox.min.css') }}" rel="stylesheet">
