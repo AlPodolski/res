@@ -18,7 +18,7 @@ class PostsObserver
      */
     public function creating(Post $post)
     {
-
+        $post->phone = preg_replace('/[^0-9]/', '', $post->phone);
     }
 
     /**
