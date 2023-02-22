@@ -70,13 +70,15 @@
 
                 <div class="slider-item-text">Грудь</div>
 
-                <div id="slider-range-grud"></div>
+                <div class="slider-item d-flex">
+                    <div id="slider-range-grud"></div>
 
-                <div class="d-flex filter-input-wrap">
-                    <input type="text" id="grud-from" class="text-left" name="grud-from" readonly value="0">
-
-                    <input type="text" id="grud-to" class="text-right" name="grud-to" readonly value="9">
+                    <div class="d-flex filter-input-wrap">
+                        <input type="text" id="grud-from" class="text-left" name="grud-from" readonly value="0">
+                        <input type="text" id="grud-to" class="text-right" name="grud-to" readonly value="9">
+                    </div>
                 </div>
+
             </div>
 
             <div class="filter-item">

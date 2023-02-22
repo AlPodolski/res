@@ -187,7 +187,8 @@
     <div><img src="https://mc.yandex.ru/watch/88595241" style="position:absolute; left:-9999px;" alt=""/></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
-<script src="{{ asset('js/script.js?v=7') }}" defer></script>
+<script src="{{ asset('js/wNumb.min.js') }}" defer></script>
+<script src="{{ asset('js/script.js?v=8') }}" defer></script>
 @if(View::hasSection('lightbox'))
     <script src="@yield('lightbox')" defer></script>
 @endif
