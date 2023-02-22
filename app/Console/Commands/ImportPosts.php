@@ -59,7 +59,7 @@ class ImportPosts extends Command
     public function handle()
     {
 
-        $stream = \fopen(storage_path('import_rex_10_02_2023.csv'), 'r');
+        $stream = \fopen(storage_path('import_rex_22_02_2023.csv'), 'r');
 
         $csv = Reader::createFromStream($stream);
         $csv->setDelimiter(';');
@@ -98,9 +98,9 @@ class ImportPosts extends Command
             $post->age = $record['age'];
             $post->phone = $record['phone'];
             $post->rost = $record['rost'];
-            $post->ves = $record['weght'];
+            $post->ves = $record['weight'];
             $post->breast_size = $record['grud'];
-            $post->about = htmlspecialchars(strip_tags($record['deskr']));
+            $post->about = htmlspecialchars(strip_tags($record['anket-about']));
             $post->city_id = $cityId;
             $post->tarif_id = 1;
             $post->sorting = 10022;
@@ -132,39 +132,22 @@ class ImportPosts extends Command
 
                 }
 
-                if (false) {
 
-                    $ava = $record['mini'];
+                $ava = $record['mini'];
 
-                    $file = new Files();
+                $file = new Files();
 
-                    $file->related_id = $post->id;
-                    $file->related_class = Post::class;
-                    $file->file = '/uploads/aa7/files/' . $ava;
-                    $file->type = Files::MAIN_PHOTO_TYPE;
+                $file->related_id = $post->id;
+                $file->related_class = Post::class;
+                $file->file = '/uploads/aa8/' . $ava;
+                $file->type = Files::MAIN_PHOTO_TYPE;
 
-                    $file->save();
+                $file->save();
 
-                }
 
                 if ($record['gallery']) {
 
                     $dataList = explode(',', $record['gallery']);
-
-                    $ava = array_shift($dataList);
-
-                    if ($ava){
-
-                        $file = new Files();
-
-                        $file->related_id = $post->id;
-                        $file->related_class = Post::class;
-                        $file->file = '/uploads/aa7/files/' . $ava;
-                        $file->type = Files::MAIN_PHOTO_TYPE;
-
-                        $file->save();
-
-                    }
 
                     foreach ($dataList as $item) {
 
@@ -172,7 +155,7 @@ class ImportPosts extends Command
 
                         $file->related_id = $post->id;
                         $file->related_class = Post::class;
-                        $file->file = '/uploads/aa7/' . $item;
+                        $file->file = '/uploads/aa8/' . $item;
                         $file->type = Files::GALLERY_PHOTO_TYPE;
 
                         $file->save();
@@ -191,7 +174,7 @@ class ImportPosts extends Command
 
                         $file->related_id = $post->id;
                         $file->related_class = Post::class;
-                        $file->file = '/uploads/aa7/' . $item;
+                        $file->file = '/uploads/aa8/' . $item;
                         $file->type = Files::SELPHI_TYPE;
 
                         $file->save();
@@ -206,11 +189,10 @@ class ImportPosts extends Command
 
                     $file->related_id = $post->id;
                     $file->related_class = Post::class;
-                    $file->file = '/uploads/aa7/' . $record['video'];
+                    $file->file = '/uploads/aa8/' . $record['video'];
                     $file->type = Files::VIDEO_TYPE;
 
                     $file->save();
-
 
                 }
 
@@ -246,7 +228,7 @@ class ImportPosts extends Command
 
                 if (isset($record['rayon']) and $record['rayon'] and false) {
 
-                    if ($temp = Rayon::where(['value' => $record['rayon'] ])->get()->first()) {
+                    if ($temp = Rayon::where(['value' => $record['rayon']])->get()->first()) {
 
                         $postRelation = new PostRayon();
                         $postRelation->city_id = $cityId;
