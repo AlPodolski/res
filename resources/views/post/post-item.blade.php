@@ -6,8 +6,14 @@
      data-rayon-id="{{ $post->rayon->rayon->id ?? '' }}">
     <div class="left">
         <picture>
-            <source srcset="/370-526/thumbs{{$post->avatar->file}}" media="(max-width: 400px)">
-            <source srcset="/521-741/thumbs{{$post->avatar->file}}">
+            <source srcset="/370-526/thumbs{{str_replace('.jpg', '.webp', $post->avatar->file)}}"
+                    media="(max-width: 400px)" type="image/webp">
+            <source srcset="/370-526/thumbs{{$post->avatar->file}}"
+                    media="(max-width: 400px)" type="image/jpeg">
+
+            <source srcset="/521-741/thumbs{{str_replace('.jpg', '.webp', $post->avatar->file)}}" type="image/webp">
+            <source srcset="/521-741/thumbs{{$post->avatar->file}}" type="image/jpeg">
+
             <img title="Проститутка {{ $post->name }}" srcset="/521-741/thumbs{{$post->avatar->file}}"
                  alt="{{ $post->name }}">
         </picture>
