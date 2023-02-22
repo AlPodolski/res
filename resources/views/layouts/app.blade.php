@@ -188,13 +188,7 @@
 </noscript>
 <!-- /Yandex.Metrika counter -->
 <script src="{{ asset('js/wNumb.min.js') }}" defer></script>
-<script src="{{ asset('js/script.js?v=8') }}" defer></script>
-@if(View::hasSection('lightbox'))
-    <script src="@yield('lightbox')" defer></script>
-@endif
-@if(View::hasSection('maskedinput'))
-    <script src="@yield('maskedinput')" defer></script>
-@endif
+<script src="{{ asset('js/script.js?v=9') }}" defer></script>
 @if(View::hasSection('map'))
     <script src="@yield('map')" defer></script>
 @endif

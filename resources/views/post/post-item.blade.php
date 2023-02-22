@@ -1,8 +1,7 @@
 @php
     /* @var $post \App\Models\Post */
 @endphp
-@section('lightbox', '/js/lightbox.min.js')
-@section('maskedinput', '/js/jquery.maskedinput.js')
+<div id="lightbox-script" data-script="/js/lightbox.min.js"></div>
 <div class="post-content" data-price="{{ $post->price }}" data-id="{{ $post->id }}"
      data-rayon-id="{{ $post->rayon->rayon->id ?? '' }}">
     <div class="left">

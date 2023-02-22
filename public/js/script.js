@@ -8,10 +8,29 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+
     $.getScript("/js/nouislider.js", function (data, textStatus, jqxhr) {
         $("head").prepend('<link href="/css/nouislider.min.css" rel="stylesheet">');
         filter();
     });
+
+    if (document.getElementById('lightbox-script') !== null){
+
+        $.getScript("/js/lightbox.min.js", function (data, textStatus, jqxhr) {
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true
+            })
+        });
+
+        $.getScript("/js/jquery.maskedinput.js", function (data, textStatus, jqxhr) {
+            phone_mask();
+        });
+
+    }
+
+
+
 });
 
 arrowTop.onclick = function() {
@@ -209,12 +228,6 @@ function getMorePosts(object){
     })
 
 }
-
-$(document).ready(function() {
-
-    phone_mask();
-
-});
 
 function filter() {
 
