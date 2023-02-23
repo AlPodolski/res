@@ -6,7 +6,7 @@
         <form action="/filter" class="d-flex filter-form">
             @csrf
 
-            @if(isset($metro) and $metro)
+            @if(isset($metro) and $metro->first())
 
             <div class="filter-item">
                 <div class="metro-select-wrap position-relative">

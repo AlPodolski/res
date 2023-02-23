@@ -22,6 +22,8 @@
         </script>
     @endif
 
+    @include('includes.filter')
+
     <ul class="breadcrumb">
         <li class="breadcrumb-item home">
             <a class="breadcrumb-link" title="Главная" href="/">Главная</a>
