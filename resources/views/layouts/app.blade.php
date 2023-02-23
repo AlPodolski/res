@@ -52,8 +52,8 @@
     <meta property="og:type" content="website">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?v=10') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css?v=7') }}" rel="stylesheet">
+    <link href="/css/app.css?v=10" rel="stylesheet">
+    <link href="/css/style.css?v=7" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -187,8 +187,8 @@
     <div><img src="https://mc.yandex.ru/watch/88595241" style="position:absolute; left:-9999px;" alt=""/></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
-<script src="{{ asset('js/wNumb.min.js') }}" defer></script>
-<script src="{{ asset('js/script.js?v=10') }}" defer></script>
+<script src="/js/wNumb.min.js" defer></script>
+<script src="/js/script.js?v=11" defer></script>
 @if(View::hasSection('map'))
     <script src="@yield('map')" defer></script>
 @endif

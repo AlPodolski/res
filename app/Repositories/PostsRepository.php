@@ -15,7 +15,7 @@ class PostsRepository
 
         $sort = (new GetSort())->get($sort);
 
-        $columns = ['url', 'name', 'phone', 'price', 'id', 'age', 'breast_size', 'rost', 'ves'];
+        $columns = ['url', 'name', 'phone', 'price', 'id', 'age', 'breast_size', 'rost', 'ves', 'sorting', 'city_id'];
 
         return Post::with('avatar', 'video', 'metro')
             ->orderByRaw($sort)
@@ -33,7 +33,7 @@ class PostsRepository
 
         else{
 
-            $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about', 'sorting'];
+            $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about', 'sorting', 'city_id'];
 
             $relation = ['national', 'hair', 'metro', 'rayon',
                 'intimHair', 'time', 'place', 'avatar',
@@ -60,7 +60,7 @@ class PostsRepository
 
             $columns = ['url', 'name', 'phone', 'price', 'id'];
 
-            $posts = Post::with('avatar', 'video', 'metro')
+            $posts = Post::with('avatar', 'video', 'metro', 'sorting', 'city_id')
                 ->whereIn('id', $data)
                 ->select($columns)->get();
 
@@ -77,7 +77,7 @@ class PostsRepository
 
         $sort = (new GetSort())->get($sort);
 
-        $columns = ['url', 'name', 'phone', 'price', 'id'];
+        $columns = ['url', 'name', 'phone', 'price', 'id', 'sorting', 'city_id'];
 
         $posts = Post::with('avatar', 'video', 'metro')
             ->where('id', '<>', $post->id)
@@ -98,7 +98,7 @@ class PostsRepository
 
     public function getPostForSingleMore($cityId ,$limit = 8, $ids = false, $price = false, $rayonId = false)
     {
-        $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about'];
+        $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about', 'sorting', 'city_id'];
 
         $relation = ['national', 'hair', 'metro', 'rayon',
             'intimHair', 'time', 'place', 'avatar',
@@ -152,7 +152,7 @@ class PostsRepository
     public function getByUserId($userId)
     {
 
-        $columns = ['url', 'name', 'phone', 'price', 'id', 'publication_status'];
+        $columns = ['url', 'name', 'phone', 'price', 'id', 'publication_status', 'sorting', 'city_id'];
 
         return Post::with('avatar', 'video')
             ->orderBy('id', 'desc')

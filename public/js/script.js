@@ -151,11 +151,12 @@ function show_phone(object){
 
     $(object).text($(object).attr('data-tel'));
     var id = $(object).attr('data-id');
+    var city = $(object).attr('data-city');
 
     $.ajax({
         type: 'POST',
         url: '/view/phone',
-        data: 'id=' +id,
+        data: 'id=' +id + '&city=' + city,
         async:false,
         dataType: "html",
         cache: false,
@@ -163,7 +164,8 @@ function show_phone(object){
             'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
         },
         success: function (data){
-
+            $(object).text(data);
+            window.location.href = 'tel:+' + data;
         },
 
     })
