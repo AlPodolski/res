@@ -58,9 +58,9 @@ class PostsRepository
 
             $data = unserialize($ids);
 
-            $columns = ['url', 'name', 'phone', 'price', 'id'];
+            $columns = ['url', 'name', 'phone', 'price', 'id' ,'sorting', 'city_id'];
 
-            $posts = Post::with('avatar', 'video', 'metro', 'sorting', 'city_id')
+            $posts = Post::with('avatar', 'video', 'metro')
                 ->whereIn('id', $data)
                 ->select($columns)->get();
 
