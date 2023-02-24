@@ -41,7 +41,7 @@ class ImportPhone extends Command
      */
     public function handle()
     {
-        $stream = \fopen(storage_path('import_phone_14_02_2023.csv'), 'r');
+        $stream = \fopen(storage_path('import_phone_17_02_2023.csv'), 'r');
 
         $csv = Reader::createFromStream($stream);
         $csv->setDelimiter(';');
