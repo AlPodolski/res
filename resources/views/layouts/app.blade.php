@@ -54,6 +54,17 @@
     <!-- Styles -->
     <link href="/css/app.css?v=10" rel="stylesheet">
     <link href="/css/style.css?v=8" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1KH2Z4KHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-G1KH2Z4KHE');
+    </script>
+
 </head>
 <body>
 <div id="app">
@@ -192,4 +203,5 @@
 @if(View::hasSection('map'))
     <script src="@yield('map')" defer></script>
 @endif
+
 </html>
