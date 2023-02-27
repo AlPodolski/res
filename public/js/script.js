@@ -16,14 +16,6 @@ $(document).scroll(function () {
             })
         });
 
-        if (document.getElementById('map') !== null){
-
-            $.getScript("/js/map_yandex.js", function (data, textStatus, jqxhr) {
-
-            });
-
-        }
-
         $('#lightbox-script').remove();
 
     }

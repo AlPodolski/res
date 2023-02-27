@@ -1,14 +1,10 @@
-$.getScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU", function (data, textStatus, jqxhr) {
-    ymaps.ready(function () {
-        var x = $('#map').attr('data-x');
-        var y = $('#map').attr('data-y');
-        init('map', x, y)
-    })
-});
+ymaps.ready(function () {
+    var x = $('#map').attr('data-x');
+    var y = $('#map').attr('data-y');
+    init('map', x, y)
+})
 
 function init(map_name, x, y) {
-
-    console.log(map_name);
 
     var myMap = new ymaps.Map(map_name, {
         center: [x, y],

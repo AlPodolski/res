@@ -378,3 +378,5 @@ use App\Actions\Like;
         <button class="send-btn">Отправить</button>
     </form>
 </div>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
+<script src="/js/map_yandex.js" defer></script>
