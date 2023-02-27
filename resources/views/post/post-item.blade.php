@@ -317,16 +317,25 @@ use App\Actions\Like;
 
     <div class="col-12"></div>
 
-    @if( $firstMetro = $post->metro->first() and $firstMetro->metro->x)
+    @if( $firstMetro = $post->metro->first() and $firstMetro->metro->x or $cityInfo['x'])
         <div class="post-decr">
             <div class="decr-title">
                 Я на карте
             </div>
+            @php
+                if ($firstMetro){
+                    $x = $firstMetro->metro->x;
+                    $y = $firstMetro->metro->y;
+                }else{
+                    $x = $cityInfo['x'];
+                    $y = $cityInfo['y'];
+                }
+            @endphp
             <div class="decr-text">
                 <div id="map"
                      class="yandex-map map-not-exist"
-                     data-x="{{ $firstMetro->metro->x }}"
-                     data-y="{{ $firstMetro->metro->y }}" style="height: 300px">
+                     data-x="{{ $x }}"
+                     data-y="{{ $y }}" style="height: 300px">
                 </div>
             </div>
         </div>

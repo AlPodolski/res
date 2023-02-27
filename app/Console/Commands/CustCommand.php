@@ -45,16 +45,32 @@ class CustCommand extends Command
      */
     public function handle()
     {
+        $stream = \fopen(storage_path('city_kor.csv'), 'r');
 
-        $posts = Post::get();
+        $csv = Reader::createFromStream($stream);
+        $csv->setDelimiter(';');
+        $csv->setHeaderOffset(0);
+        //build a statement
+        $stmt = (new Statement());
 
-        foreach ($posts as $post){
+        $records = $stmt->process($csv);
 
-            if (rand(0,3) == 3){
+        $data = array();
 
-                $post->check_photo_status = Post::PHOTO_CHECK_STATUS;
+        foreach ($records as $value) {
 
-                $post->save();
+            $data[] = $value;
+
+        }
+
+        foreach ($data as $item){
+
+            if ($city = City::where('city', $item['city'])->first()){
+
+                $city->x = $item['x'];
+                $city->y = $item['y'];
+
+                $city->save();
 
             }
 
