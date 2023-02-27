@@ -1063,6 +1063,21 @@ input:checked + .image-label-radio {
 .noUi-handle::after, .noUi-handle::before {
     display: none;
 }
+.dislike {
+    transform: rotate(180deg);
+}
+.like{
+    margin-right: 10px;
+}
+.like-count{
+    margin-right: 10px;
+}
+.like.selected svg{
+    fill: green;
+}
+.dislike.selected svg{
+    fill: red;
+}
 @media (max-width: 1199px){
     .top-menu{
         display: none;

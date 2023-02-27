@@ -171,6 +171,47 @@ function show_phone(object){
     })
 }
 
+function like(object){
+
+    var type = $(object).attr('data-type');
+    var id = $(object).attr('data-id');
+
+    if (!$(object).hasClass('selected')){
+
+        $.ajax({
+            type: 'POST',
+            url: '/like',
+            data: 'id=' +id + '&type=' + type,
+            async:false,
+            dataType: "html",
+            cache: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+            },
+            success: function (data){
+
+                $(object).siblings('.like-count').html(data)
+
+            },
+
+        })
+
+    }
+
+    if (type == 'like'){
+
+        $(object).siblings('.dislike').removeClass('selected')
+        $(object).addClass('selected')
+
+    }else{
+
+        $(object).siblings('.like').removeClass('selected')
+        $(object).addClass('selected')
+
+    }
+
+}
+
 function getMorePost(){
 
     var id = '';

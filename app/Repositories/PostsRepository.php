@@ -15,7 +15,8 @@ class PostsRepository
 
         $sort = (new GetSort())->get($sort);
 
-        $columns = ['url', 'name', 'phone', 'price', 'id', 'age', 'breast_size', 'rost', 'ves', 'sorting', 'city_id'];
+        $columns = ['url', 'name', 'phone', 'price', 'id',
+            'age', 'breast_size', 'rost', 'ves', 'sorting', 'city_id', 'likes'];
 
         return Post::with('avatar', 'video', 'metro')
             ->orderByRaw($sort)
@@ -33,7 +34,8 @@ class PostsRepository
 
         else{
 
-            $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about', 'sorting', 'city_id'];
+            $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size',
+                'ves', 'about', 'sorting', 'city_id', 'likes'];
 
             $relation = ['national', 'hair', 'metro', 'rayon',
                 'intimHair', 'time', 'place', 'avatar',
@@ -58,7 +60,7 @@ class PostsRepository
 
             $data = unserialize($ids);
 
-            $columns = ['url', 'name', 'phone', 'price', 'id' ,'sorting', 'city_id'];
+            $columns = ['url', 'name', 'phone', 'price', 'id' ,'sorting', 'city_id', 'likes'];
 
             $posts = Post::with('avatar', 'video', 'metro')
                 ->whereIn('id', $data)
@@ -77,7 +79,7 @@ class PostsRepository
 
         $sort = (new GetSort())->get($sort);
 
-        $columns = ['url', 'name', 'phone', 'price', 'id', 'sorting', 'city_id'];
+        $columns = ['url', 'name', 'phone', 'price', 'id', 'sorting', 'city_id', 'likes'];
 
         $posts = Post::with('avatar', 'video', 'metro')
             ->where('id', '<>', $post->id)
@@ -98,7 +100,8 @@ class PostsRepository
 
     public function getPostForSingleMore($cityId ,$limit = 8, $ids = false, $price = false, $rayonId = false)
     {
-        $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size', 'ves', 'about', 'sorting', 'city_id'];
+        $columns = ['url', 'id', 'name', 'phone', 'price', 'age',
+            'breast_size', 'ves', 'about', 'sorting', 'city_id', 'likes'];
 
         $relation = ['national', 'hair', 'metro', 'rayon',
             'intimHair', 'time', 'place', 'avatar',
@@ -152,7 +155,8 @@ class PostsRepository
     public function getByUserId($userId)
     {
 
-        $columns = ['url', 'name', 'phone', 'price', 'id', 'publication_status', 'sorting', 'city_id'];
+        $columns = ['url', 'name', 'phone', 'price', 'id',
+            'publication_status', 'sorting', 'city_id', 'likes'];
 
         return Post::with('avatar', 'video')
             ->orderBy('id', 'desc')

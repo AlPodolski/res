@@ -53,7 +53,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css?v=10" rel="stylesheet">
-    <link href="/css/style.css?v=7" rel="stylesheet">
+    <link href="/css/style.css?v=8" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -188,7 +188,7 @@
 </noscript>
 <!-- /Yandex.Metrika counter -->
 <script src="/js/wNumb.min.js" defer></script>
-<script src="/js/script.js?v=11" defer></script>
+<script src="/js/script.js?v=12" defer></script>
 @if(View::hasSection('map'))
     <script src="@yield('map')" defer></script>
 @endif

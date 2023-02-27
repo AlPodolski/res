@@ -16,6 +16,8 @@ use Intervention\Image\ImageManager;
 
 Auth::routes();
 
+Route::post('/like', [\App\Http\Controllers\LikeController::class, 'index']);
+
 Route::get('/{size}/thumbs/{path}', 'ImageController@index')
     ->where('size', '.*')->where('path', '.*');
 
@@ -61,8 +63,5 @@ Route::domain('{city}.'.env('DOMAIN'))->group(function () {
     Route::get('/{search}',  'FilterController@index')->where('search', '.*');
     Route::post('/{search}',  'FilterController@more')->where('search', '.*');
 });
-
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
