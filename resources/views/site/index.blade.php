@@ -57,6 +57,19 @@
         @endforeach
     </div>
 
+    @if(isset($metroInfo) and $metroInfo)
+
+        <p>Местоположение на карте</p>
+
+        <div class="map" id="map" style="height: 300px"
+             data-x="{{ $metroInfo->x }}" data-y="{{ $metroInfo->y }}">
+        </div>
+
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
+        <script src="/js/map_yandex.js" defer></script>
+
+    @endif
+
     @if(isset($morePosts) and $morePosts)
 
         <p>Популярные анкеты</p>

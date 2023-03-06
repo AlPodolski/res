@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Actions\Canonical;
 use App\Actions\GenerateBreadcrumbMicro;
 use App\Actions\GenerateMicroDataForCatalog;
+use App\Models\Metro;
 use App\Repositories\CityRepository;
 use App\Repositories\DataRepository;
 use App\Repositories\FilterRepository;
@@ -65,10 +66,15 @@ class FilterController extends Controller
         $limit = $this->limit;
         $sort = $this->sort;
 
+        $metroInfo = false;
+
+        if ($filterParams[0]->short_name == 'metro')
+            $metroInfo = Metro::where('id', $filterParams[0]->related_id)->first();
+
         return view('site.index',
             compact(
                 'posts', 'cityInfo', 'meta', 'filterParams', 'topList',
-                'path', 'morePosts', 'microData', 'breadMicro', 'limit', 'sort','metro'
+                'path', 'morePosts', 'microData', 'breadMicro', 'limit', 'sort','metro', 'metroInfo'
             ));
     }
 

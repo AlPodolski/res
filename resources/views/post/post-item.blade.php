@@ -388,4 +388,4 @@ use App\Actions\Like;
     </form>
 </div>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
-<script src="/js/map_yandex.js" defer></script>
+<script src="/js/map_yandex.js?v=1" defer></script>

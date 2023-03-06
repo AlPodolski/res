@@ -20,17 +20,7 @@ function init(map_name, x, y) {
         // hintContent: 'Собственный значок метки с контентом',
     }, {
         // Опции.
-
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#image',
-
-        // Своё изображение иконки метки.
-        iconImageHref: '/img/map.svg',
-        // Размеры метки.
-        iconImageSize: [131, 62],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [-72, -62],
+        preset: "twirl#redClusterIcons", gridSize: 100
     });
 
     myMap.geoObjects.add(placemark4);
