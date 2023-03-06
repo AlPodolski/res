@@ -14,17 +14,17 @@ class GenerateBreadcrumbMicro
             '@type' => 'BreadcrumbList',
             'itemListElement' => [array(
                 '@type' => 'ListItem',
-                '@position' => 1,
+                'position' => 1,
                 'item' => [
                     '@id' => 'https://'.$host,
-                    '@name' => 'Главная'
+                    'name' => 'Главная'
                 ]),
                 array(
                 '@type' => 'ListItem',
-                '@position' => 2,
+                'position' => 2,
                 'item' => [
                     '@id' => 'https://'.$host.'/'.$url,
-                    '@name' => $name
+                    'name' => $name
                 ]),
             ]
         ];
