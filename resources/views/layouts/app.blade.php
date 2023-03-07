@@ -114,7 +114,7 @@
                     <link itemprop="url" href="https://{{ $_SERVER['HTTP_HOST'] }}"/>
                     <form action="/search" method="get" class="header__search-form"
                           itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
-                        <meta itemprop="target" content="https://{{ $_SERVER['HTTP_HOST'] }}/search?q={query}"/>
+                        <meta itemprop="target" content="https://{{ $_SERVER['HTTP_HOST'] }}/search?q={q}"/>
                         <input type="text" autocomplete="off"
                                itemprop="query-input"
                                class="form-control form-control_size-l header__search-field"
