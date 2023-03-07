@@ -116,7 +116,7 @@
                           itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                         <meta itemprop="target" content="https://{{ $_SERVER['HTTP_HOST'] }}/search?q={query}"/>
                         <input type="text" autocomplete="off"
-                               itemprop="query"
+                               itemprop="query-input"
                                class="form-control form-control_size-l header__search-field"
                                name="q" value=""
                                placeholder="Введите имя или телефон">
