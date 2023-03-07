@@ -111,6 +111,7 @@
                 </div>
 
                 <div class="search header__search" itemscope itemtype="https://schema.org/WebSite">
+                    <link itemprop="url" href="https://{{ $_SERVER['HTTP_HOST'] }}"/>
                     <form action="/search" method="get" class="header__search-form"
                           itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                         <meta itemprop="target" content="https://{{ $_SERVER['HTTP_HOST'] }}/search?q={query}"/>
