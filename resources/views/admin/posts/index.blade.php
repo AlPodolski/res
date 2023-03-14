@@ -29,7 +29,7 @@
                         @endif
                     </td>
                     <td>{{ $post->city_id }}</td>
-                    <td>{{ $post->publication }}</td>
+                    <td>{{ $post->publication_status }}</td>
                 </tr>
             @endforeach
 
