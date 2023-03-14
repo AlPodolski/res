@@ -3,5 +3,5 @@
 @section('title', 'Администратор')
 
 @section('content')
-    123
+    <a href="/admin/posts">Анкеты</a>
 @endsection
