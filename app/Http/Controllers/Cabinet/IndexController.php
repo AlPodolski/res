@@ -2,16 +2,31 @@
 
 namespace App\Http\Controllers\Cabinet;
 
+use App\Repositories\CityRepository;
+use App\Repositories\DataRepository;
 use App\Repositories\PostsRepository;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
-    public function index(PostsRepository $postsRepository)
+
+    public $cityRepository;
+
+    public function __construct()
+    {
+        $this->cityRepository = new CityRepository();
+
+        parent::__construct();
+    }
+
+    public function index($city ,PostsRepository $postsRepository, DataRepository $dataRepository)
     {
         $postsList = $postsRepository->getByUserId(auth()->id());
 
-        return view('cabinet.index', compact('postsList'));
+        $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
+
+        $metro = $dataRepository->metro($cityInfo['id']);
+
+        return view('cabinet.index', compact('postsList', 'metro', 'cityInfo'));
     }
 }

@@ -40,5 +40,5 @@
         @endif
 
     </div>
-
+    @widget('menu', ['city_id' =>  $cityInfo['id']  ])
 @endsection

@@ -5,13 +5,25 @@ namespace App\Http\Controllers\Cabinet;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PayRequest;
 use App\Models\Order;
+use App\Repositories\CityRepository;
 use App\Services\Obmenka;
 
 class PayController extends Controller
 {
-    public function index()
+
+    public $cityRepository;
+
+    public function __construct()
     {
-        return view('cabinet.pay.index');
+        $this->cityRepository = new CityRepository();
+
+        parent::__construct();
+    }
+
+    public function index($city)
+    {
+        $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
+        return view('cabinet.pay.index', compact('cityInfo'));
     }
 
     public function processing($city, PayRequest $request, Obmenka $obmenka)

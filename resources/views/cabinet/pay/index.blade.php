@@ -35,13 +35,13 @@
                         <div>
                             <input checked="" id="qiwi_label-id" type="radio" name="currency" value="1"
                                    tabindex="0">
-                            <label for="qiwi_label-id" class="modal-radio qiwi_label image-label-radio"></label>
+                            <label for="qiwi_label-id" class="modal-radio qiwi_label image-label-radio">Киви</label>
                         </div>
                         <div>
                             <input id="visa_master_label-id" type="radio" name="currency" value="2"
                                    tabindex="1">
                             <label for="visa_master_label-id"
-                                   class="modal-radio visa_master_label image-label-radio"></label>
+                                   class="modal-radio visa_master_label image-label-radio">Карта</label>
                         </div>
                     </div>
 
@@ -54,5 +54,7 @@
         </div>
 
     </div>
+
+    @widget('menu', ['city_id' =>  $cityInfo['id']  ])
 
 @endsection
