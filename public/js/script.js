@@ -245,6 +245,28 @@ function getMorePost(){
 
 }
 
+function check(object){
+
+    var id = $(object).attr('data-id');
+    var url = $(object).attr('data-url');
+
+    $.ajax({
+        type: 'POST',
+        url: url, //Путь к обработчику
+        response: 'text',
+        data: 'id=' +id ,
+        dataType: "html",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        cache: false,
+        success: function (data) {
+
+        }
+    })
+
+}
+
 function getMorePosts(object){
 
     var url = $(object).attr('data-url');

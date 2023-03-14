@@ -12,6 +12,10 @@
     font-style: normal;
     font-display:swap
 }
+.check{
+    color: blue;
+    cursor: pointer;
+}
 .posts .post-item{
     display: flex;
     flex-direction: column;

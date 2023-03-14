@@ -42,7 +42,11 @@
                             Публикуется
                         @endif
                         @if($post->publication_status == \App\Models\Post::POST_ON_MODERATION)
-                            Подтвердить
+                            <div class="check"
+                                 data-url="/admin/posts/check"
+                                 onclick="check(this)" data-id="{{ $post->id }}">
+                                Подтвердить
+                            </div>
                         @endif
                     </td>
                 </tr>

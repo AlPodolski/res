@@ -18,6 +18,16 @@ class PostController extends Controller
         return view('admin.posts.index', compact('posts'));
     }
 
+    public function check(Request $request)
+    {
+
+        $post = Post::findOrFail($request->post('id'));
+
+        $post->publication_status = Post::POST_ON_PUBLICATION;
+        $post->save();
+
+    }
+
     public function create()
     {
     }
