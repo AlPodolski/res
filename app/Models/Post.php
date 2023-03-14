@@ -116,6 +116,11 @@ class Post extends Model
         }
     }
 
+    public function city(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(City::class, 'id', 'city_id');
+    }
+
     public function user()
     {
         return $this->hasOne(User::class, 'id', 'user_id');
