@@ -126,6 +126,7 @@
 
                 @foreach($intimHairList as $item)
 
+
                     <option value="{{ $item->id }}">{{ $item->value }}</option>
 
                 @endforeach
