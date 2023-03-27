@@ -87,7 +87,7 @@ class PostsController extends Controller
 
         PostIntimHair::create([
             'posts_id' => $post->id,
-            'intim_hair_id' => $data['hair_color_id'],
+            'intim_hair_id' => $data['intim_hair_color_id'],
             'city_id' => $data['city_id'],
         ]);
 
@@ -230,7 +230,7 @@ class PostsController extends Controller
                 'city_id' => $data['city_id'],
             ]);
 
-            \DB::table('post_hair_colors')->where('hair_colors_id', $post->id)->delete();
+            \DB::table('post_hair_colors')->where('posts_id', $post->id)->delete();
 
             PostHairColor::create([
                 'posts_id' => $post->id,
@@ -238,17 +238,17 @@ class PostsController extends Controller
                 'city_id' => $data['city_id'],
             ]);
 
-            \DB::table('post_intim_hairs')->where('intim_hair_id', $post->id)->delete();
+            \DB::table('post_intim_hairs')->where('posts_id', $post->id)->delete();
 
             PostIntimHair::create([
                 'posts_id' => $post->id,
-                'intim_hair_id' => $data['hair_color_id'],
+                'intim_hair_id' => $data['intim_hair_color_id'],
                 'city_id' => $data['city_id'],
             ]);
 
             if (isset($data['service']) and $data['service']) foreach ($data['service'] as $item) {
 
-                \DB::table('post_services')->where('service_id', $post->id)->delete();
+                \DB::table('post_services')->where('posts_id', $post->id)->delete();
 
                 PostService::create([
                     'posts_id' => $post->id,
@@ -260,7 +260,7 @@ class PostsController extends Controller
 
             if (isset($data['metro']) and $data['metro']) foreach ($data['metro'] as $item) {
 
-                \DB::table('post_metros')->where('metros_id', $post->id)->delete();
+                \DB::table('post_metros')->where('posts_id', $post->id)->delete();
 
                 PostMetro::create([
                     'posts_id' => $post->id,
@@ -272,7 +272,7 @@ class PostsController extends Controller
 
             if (isset($data['rayon']) and $data['rayon']) foreach ($data['rayon'] as $item) {
 
-                \DB::table('post_rayons')->where('rayons_id', $post->id)->delete();
+                \DB::table('post_rayons')->where('posts_id', $post->id)->delete();
 
                 PostRayon::create([
                     'posts_id' => $post->id,
@@ -284,7 +284,7 @@ class PostsController extends Controller
 
             if (isset($data['time']) and $data['time']) foreach ($data['time'] as $item) {
 
-                \DB::table('post_times')->where('param_id', $post->id)->delete();
+                \DB::table('post_times')->where('posts_id', $post->id)->delete();
 
                 PostTime::create([
                     'posts_id' => $post->id,

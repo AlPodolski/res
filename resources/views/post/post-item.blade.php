@@ -209,7 +209,7 @@ use App\Actions\Like;
                        class="property-value">{{ $post->hair->hair->value }}</a>
                 </div>
             @endif
-            @if($post->intimHair)
+            @if($post->intimHair and isset($post->intimHair->value->filterUrl->filter_url ))
                 <div class="property-item">
                     <div class="property-name">Интимная стрижка</div>
                     <a href="/{{ $post->intimHair->value->filterUrl->filter_url }}"
