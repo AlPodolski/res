@@ -141,6 +141,7 @@
 
                 @foreach($hairColorList as $item)
 
+
                     <option value="{{ $item->id }}">{{ $item->value }}</option>
 
                 @endforeach
