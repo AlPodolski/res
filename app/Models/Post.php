@@ -98,7 +98,7 @@ class Post extends Model
     const POL_TRANS = 2;
 
     protected $fillable = ['name', 'user_id' , 'phone', 'about', 'price',
-        'tarif_id', 'rost', 'ves', 'breast_size', 'city_id', 'age'];
+        'tarif_id', 'rost', 'ves', 'breast_size', 'city_id', 'age', 'fake'];
 
     public function getPublication()
     {

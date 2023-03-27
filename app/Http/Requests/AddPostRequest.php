@@ -51,8 +51,7 @@ class AddPostRequest extends FormRequest
 
     public function prepareForValidation()
     {
-        $this->merge(['user_id' => auth()->id()]);
-        $this->merge(['fake' => Post::POST_REAL]);
+        $this->merge(['user_id' => auth()->id(), 'fake' => Post::POST_REAL]);
     }
 
 }
