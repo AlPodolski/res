@@ -33,6 +33,7 @@ class AddPostRequest extends FormRequest
             'age' => 'integer:required:min:18',
             'price' => 'integer:required',
             'fake' => 'integer:required',
+            'publication_status' => 'integer:required',
             'about' => 'string:required',
             'service' => 'array',
             'metro' => 'array',
@@ -51,7 +52,11 @@ class AddPostRequest extends FormRequest
 
     public function prepareForValidation()
     {
-        $this->merge(['user_id' => auth()->id(), 'fake' => Post::POST_REAL]);
+        $this->merge([
+            'user_id' => auth()->id(),
+            'fake' => Post::POST_REAL,
+            'publication_status' => Post::POST_ON_MODERATION
+        ]);
     }
 
 }
