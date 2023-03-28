@@ -100,6 +100,8 @@ use App\Actions\Like;
         <div class="post-price">
             {{ $post->price }} ₽
         </div>
+        <div class="decr-title">Скажите что звоните с сайта
+            {{ $_SERVER['HTTP_HOST'] }}</div>
         @if($post->phone)
             <div class="phone-favorite-wrap d-flex">
                 <a data-city="{{ $post->city_id }}"
@@ -228,11 +230,13 @@ use App\Actions\Like;
             <div class="d-flex">
                 @foreach($post->service as $item)
                     <a class="property-value"
-                       href="/{{ $item->service->filterUrl->filter_url }}">{{ $item->service->value }}@if($post->service->last() != $item),@endif</a>
+                       href="/{{ $item->service->filterUrl->filter_url }}">
+                        {{ $item->service->value }}@if($post->service->last() != $item),@endif</a>
 
                 @endforeach
             </div>
         </div>
+
     @endif
 
     @if($post->about)
