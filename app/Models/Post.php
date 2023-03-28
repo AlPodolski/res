@@ -131,11 +131,18 @@ class Post extends Model
         return $this->hasOne(Tarif::class, 'id', 'tarif_id');
     }
 
+    public function files(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Files::class, 'related_id', 'id')
+            ->where(['related_class' => self::class]);
+    }
+
     public function selphi()
     {
         return $this->hasMany(Files::class, 'related_id', 'id')
             ->where(['related_class' => self::class, 'type' => Files::SELPHI_TYPE]);
     }
+
     public function gallery()
     {
         return $this->hasMany(Files::class, 'related_id', 'id')

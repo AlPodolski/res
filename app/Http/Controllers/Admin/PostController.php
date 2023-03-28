@@ -51,4 +51,41 @@ class PostController extends Controller
     public function destroy($id)
     {
     }
+
+    public function delete(Request $request)
+    {
+        $id = $request->post('id');
+
+        $post = Post::where(['id' => $id])->with('files')->first();
+
+        if ($post){
+
+            foreach ($post->files as $item){
+
+                $path = (storage_path('app/public'.$item->file));
+
+                if (is_file($path)){
+
+                    unlink($path);
+
+                    $item->delete();
+
+                }
+
+            }
+
+            \DB::table('post_times')->where('posts_id', $post->id)->delete();
+            \DB::table('post_rayons')->where('posts_id', $post->id)->delete();
+            \DB::table('post_metros')->where('posts_id', $post->id)->delete();
+            \DB::table('post_services')->where('posts_id', $post->id)->delete();
+            \DB::table('post_intim_hairs')->where('posts_id', $post->id)->delete();
+            \DB::table('post_hair_colors')->where('posts_id', $post->id)->delete();
+            \DB::table('post_nationals')->where('post_nationals_id', $post->id)->delete();
+
+            $post->delete();
+
+        }
+
+    }
+
 }
