@@ -15,21 +15,24 @@
             <th scope="col">Удалить</th>
         </tr>
         </thead>
-        <tbody >
+        <tbody>
         @if($posts)
 
             @foreach($posts as $post)
                 <tr>
                     <th scope="row">{{ $post->id }}</th>
                     <td>
-                        <a target="_blank" href="https://{{ $post->city->url }}.{{ env('DOMAIN') }}/post/{{ $post->url }}">
+                        <a target="_blank"
+                           href="https://{{ $post->city->url }}.{{ env('DOMAIN') }}/post/{{ $post->url }}">
                             {{ $post->name }}
                         </a>
                     </td>
                     <td>
-                        @if(isset($post->avatar->file) and $post->avatar->file)
-                            <img loading="lazy" src="/139-185/thumbs{{$post->avatar->file}}" alt="">
-                        @endif
+                        <a href="/admin/posts/{{ $post->id }}/edit">
+                            @if(isset($post->avatar->file) and $post->avatar->file)
+                                <img loading="lazy" src="/139-185/thumbs{{$post->avatar->file}}" alt="">
+                            @endif
+                        </a>
                     </td>
                     <td>{{ $post->city->city }}</td>
                     <td>

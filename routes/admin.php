@@ -13,5 +13,4 @@ Route::middleware('admin:admin')->group(function (){
 
     Route::post('/posts/check', 'Admin\PostController@check');
 
-
 });

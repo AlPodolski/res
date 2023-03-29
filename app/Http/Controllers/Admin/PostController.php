@@ -3,11 +3,27 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Metro;
 use App\Models\Post;
+use App\Models\Rayon;
+use App\Repositories\DataRepository;
+use App\Repositories\PostsRepository;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+    private $postRepository;
+    private $dataRepository;
+
+    public function __construct()
+    {
+        $this->postRepository = new PostsRepository();
+        $this->dataRepository = new DataRepository();
+
+        parent::__construct();
+    }
+
     public function index()
     {
 
@@ -42,10 +58,42 @@ class PostController extends Controller
 
     public function edit($id)
     {
+        $serviceList = $this->dataRepository->service();
+        $metroList = Metro::all();
+        $rayonList = Rayon::all();
+
+        $timeList = $this->dataRepository->time();
+        $placeList = $this->dataRepository->place();
+        $nationalList = $this->dataRepository->national();
+        $hairColorList = $this->dataRepository->hairColor();
+        $intimHairList = $this->dataRepository->intimHair();
+
+        $tarifList = $this->dataRepository->tarif();
+
+        $post = $this->postRepository->getById($id);
+
+        return view('admin.posts.edit', compact('post', 'serviceList', 'metroList', 'rayonList',
+            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'tarifList'));
+
     }
 
     public function update(Request $request, $id)
     {
+
+        $post = Post::findOrFail($id);
+
+        $data = $request->post();
+
+        if ($post->update($data)) {
+
+            return redirect('/admin/posts')
+                ->with(['success' => 'Запись сохранена']);
+
+        }
+
+        return back()
+            ->withErrors(['msg' => 'Ошибка'])
+            ->withInput();
     }
 
     public function destroy($id)
