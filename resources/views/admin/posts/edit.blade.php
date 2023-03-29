@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Редактировать анкету ' . $post->id)
+@section('title', 'Редактировать анкету ' . $post->name)
 
 @php
     /* @var $post \App\Models\Post */
@@ -114,6 +114,29 @@
                     <option value="{{ $item->id }}">{{ $item->value }} {{ $item->price }}р. в час</option>
 
                 @endforeach
+            </select>
+        </div>
+
+        <div class="col-12"></div>
+
+        <div class="form-group d-flex">
+            <label for="check_photo_status" class="col-form-label text-md-right">Проверка фото</label>
+
+            <select class="metro-select" name="check_photo_status" id="check_photo_status">
+                <option  value="0">Фото не проверенно</option>
+                <option @if($post->check_photo_status == 1) selected @endif value="1">Фото проверенно</option>
+            </select>
+        </div>
+
+        <div class="col-12"></div>
+
+        <div class="form-group d-flex">
+            <label for="publication_status" class="col-form-label text-md-right">Статус</label>
+
+            <select class="metro-select" name="publication_status" id="publication_status">
+                <option value="0">Не публикуется</option>
+                <option @if($post->publication_status == 1) selected @endif value="1">Публикуется</option>
+                <option @if($post->publication_status == 2) selected @endif value="1">На модерации</option>
             </select>
         </div>
 
