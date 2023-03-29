@@ -10,6 +10,7 @@ Route::middleware('admin:admin')->group(function (){
     Route::post('/post/delete', 'Admin\PostController@delete');
 
     Route::resource('posts', 'Admin\PostController');
+    Route::resource('comments', 'Admin\CommentController');
 
     Route::post('/posts/check', 'Admin\PostController@check');
 
