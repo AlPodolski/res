@@ -623,6 +623,10 @@ video{
     color: #000;
     margin-bottom: 20px;
 }
+.delete{
+    color: blue;
+    cursor: pointer;
+}
 .image-label-radio {
     background-repeat: no-repeat;
     border: 1px solid #EEEEEE;

@@ -11,6 +11,7 @@
             <th scope="col">Текс</th>
             <th scope="col">Автор</th>
             <th scope="col">Статус</th>
+            <th scope="col">Удалить</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +27,18 @@
                         {{ $post->name }}
                     </td>
                     <td>
-                        {{ $post->status }}
+                        @if($post->status == \App\Models\Comment::MODERATION_STATUS)
+                            <div data-id="{{ $post->id }}"
+                                 data-url="/admin/comments/check"
+                                 onclick="checkComment(this)" class="delete">Подтвердить</div>
+                        @else
+                            Подтверждено
+                        @endif
+                    </td>
+                    <td>
+                        <div data-id="{{ $post->id }}"
+                             onclick="deleteComment(this)"
+                             class="delete">Удалить</div>
                     </td>
                 </tr>
             @endforeach

@@ -7,11 +7,14 @@ Route::middleware('admin:admin')->group(function (){
 
     Route::get('/', 'Admin\IndexController@index');
 
-    Route::post('/post/delete', 'Admin\PostController@delete');
-
-    Route::resource('posts', 'Admin\PostController');
+    Route::post('/comments/delete', 'Admin\CommentController@delete');
+    Route::post('/comments/check', 'Admin\CommentController@check');
     Route::resource('comments', 'Admin\CommentController');
 
+    Route::resource('posts', 'Admin\PostController');
+    Route::post('/post/delete', 'Admin\PostController@delete');
     Route::post('/posts/check', 'Admin\PostController@check');
+
+
 
 });

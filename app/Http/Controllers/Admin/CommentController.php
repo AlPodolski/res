@@ -10,7 +10,7 @@ class CommentController extends Controller
 {
     public function index()
     {
-        $comments = Comment::orderByDesc('id')->limit(50)->paginate();
+        $comments = Comment::orderByDesc('id')->paginate(50);
 
         return view('admin.comments.index', compact('comments'));
     }
@@ -38,4 +38,26 @@ class CommentController extends Controller
     public function destroy($id)
     {
     }
+
+    public function delete(Request $request)
+    {
+        $id = $request->post('id');
+
+        $comment = Comment::find($id);
+
+        if ($comment) $comment->delete();
+    }
+
+    public function check(Request $request)
+    {
+        $id = $request->post('id');
+
+        $comment = Comment::find($id);
+
+        if ($comment) {
+            $comment->status = Comment::PUBLICATION_STATUS;
+            $comment->save();
+        }
+    }
+
 }
