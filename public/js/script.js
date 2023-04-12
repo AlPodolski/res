@@ -141,26 +141,39 @@ function showSearchForm(object){
 
 function show_phone(object){
 
-    $(object).text($(object).attr('data-tel'));
+    var phone = $(object).attr('data-tel');
+
     var id = $(object).attr('data-id');
     var city = $(object).attr('data-city');
 
-    $.ajax({
-        type: 'POST',
-        url: '/view/phone',
-        data: 'id=' +id + '&city=' + city,
-        async:false,
-        dataType: "html",
-        cache: false,
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
-        },
-        success: function (data){
-            $(object).text(data);
-            window.location.href = 'tel:+' + data;
-        },
+    if (phone){
 
-    })
+        window.location.href = 'tel:+' + phone;
+
+        return false;
+
+    }else{
+
+        $.ajax({
+            type: 'POST',
+            url: '/view/phone',
+            data: 'id=' +id + '&city=' + city,
+            async:false,
+            dataType: "html",
+            cache: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+            },
+            success: function (data){
+                $(object).text(data);
+                $(object).attr('data-tel', data);
+                window.location.href = 'tel:+' + data;
+            },
+
+        })
+
+    }
+
 }
 
 function like(object){

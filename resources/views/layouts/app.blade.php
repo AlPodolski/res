@@ -200,7 +200,7 @@
 </noscript>
 <!-- /Yandex.Metrika counter -->
 <script src="/js/wNumb.min.js" defer></script>
-<script src="/js/script.js?v=13" defer></script>
+<script src="/js/script.js?v=14" defer></script>
 @if(View::hasSection('map'))
     <script src="@yield('map')" defer></script>
 @endif
