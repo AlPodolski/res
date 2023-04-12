@@ -16,7 +16,12 @@ class PhoneRepository
             return $post->phone;
         }
 
-        $realPost = Post::where(['city_id' => $city, 'fake' => Post::POST_REAL])
+        $realPost = Post::where([
+            'city_id' => $city,
+            'fake' => Post::POST_REAL,
+            'publication_status' => Post::POST_ON_PUBLICATION
+        ])
+            ->where('last_phone_view', '<', time() - 1100)
             ->orderByDesc('last_phone_view')
             ->first();
 
@@ -45,9 +50,9 @@ class PhoneRepository
 
             $result = curl_exec($ch);
 
-            if ($result) return $result;
-
             curl_close($ch);
+
+            if ($result) return $result;
 
         }
 
