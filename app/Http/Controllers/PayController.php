@@ -10,7 +10,7 @@ class PayController extends Controller
 {
     public function index($city, $id, Obmenka $obmenka)
     {
-        $order = Order::find($id)->first();
+        $order = Order::findOrFail($id);
 
         if ($order and $order->status == Order::WAIT and $user = User::find($order->user_id)){
 
