@@ -22,7 +22,7 @@ class PayController extends Controller
 
                 $order->save();
 
-                $user->cash = $order->sum;
+                $user->cash = $user->cash + $order->sum;
 
                 $user->save();
 
