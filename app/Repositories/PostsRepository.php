@@ -15,12 +15,8 @@ class PostsRepository
 
         $sort = (new GetSort())->get($sort);
 
-        $columns = ['url', 'name', 'phone', 'price', 'id',
-            'age', 'breast_size', 'rost', 'ves', 'sorting', 'city_id', 'likes'];
-
         return Post::with('avatar', 'video', 'metro')
             ->orderByRaw($sort)
-            ->select($columns)
             ->where(['city_id' => $cityId])
             ->where(['publication_status' => Post::POST_ON_PUBLICATION])
             ->where(['pol' => Post::POL_WOMAN])

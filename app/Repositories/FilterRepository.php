@@ -15,8 +15,6 @@ use Cache;
 class FilterRepository
 {
 
-    private $columns = ['url', 'name', 'phone', 'price', 'id', 'age', 'breast_size', 'rost', 'ves'];
-
     public function getFilterParams($search)
     {
 
@@ -41,8 +39,6 @@ class FilterRepository
     {
 
         $sort = (new GetSort())->get($sort);
-
-        $columns = $this->columns;
 
         $new = false;
         $trans = false;
@@ -229,7 +225,6 @@ class FilterRepository
         else $posts = $posts->where(['pol' => Post::POL_WOMAN]);
 
         $posts = $posts->where(['publication_status' => Post::POST_ON_PUBLICATION])
-            ->select($columns)
             ->paginate($limit);
 
         return $posts;
@@ -270,7 +265,6 @@ class FilterRepository
 
             return Post::with('avatar', 'video')
                 ->orderByRaw(\DB::raw('RAND()'))
-                ->select($this->columns)
                 ->limit($limit)
                 ->where(['city_id' => $city_id])
                 ->get();
