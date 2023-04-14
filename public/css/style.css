@@ -16,6 +16,7 @@
     color: blue;
     cursor: pointer;
 }
+
 .posts .post-item{
     display: flex;
     flex-direction: column;
@@ -1085,6 +1086,10 @@ input:checked + .image-label-radio {
 }
 .dislike.selected svg{
     fill: red;
+}
+.red-bold-text{
+    color: #ff6163!important;
+    font-weight: bold;
 }
 @media (max-width: 1199px){
     .top-menu{

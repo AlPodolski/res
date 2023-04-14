@@ -53,7 +53,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css?v=10" rel="stylesheet">
-    <link href="/css/style.css?v=8" rel="stylesheet">
+    <link href="/css/style.css?v=9" rel="stylesheet">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1KH2Z4KHE"></script>
@@ -75,6 +75,7 @@
                 <a href="/novye-prostitutki">Новые анкеты</a>
                 <a href="/prostitutki-s-video">С видео</a>
                 <a href="/prostitutki-s-otzyvami">С отзывами</a>
+                <a class="red-bold-text" href="/cabinet">Кабинет</a>
             </div>
         </div>
     </nav>
