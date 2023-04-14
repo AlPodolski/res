@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PayEvent;
+use App\Models\History;
 use App\Models\Order;
 use App\Models\User;
 use App\Services\Obmenka;
@@ -25,6 +27,10 @@ class PayController extends Controller
                 $user->cash = $user->cash + $order->sum;
 
                 $user->save();
+
+                $payType = History::REPLENISHMENT_TYPE;
+
+                event(new PayEvent($order->sum, $user->id, $payType, $user->cash ));
 
             }
 
