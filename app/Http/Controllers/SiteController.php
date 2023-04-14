@@ -49,7 +49,8 @@ class SiteController extends Controller
         $limit = $this->limit;
         $sort = $this->sort;
 
-        return view('site.index', compact('posts', 'metro', 'cityInfo', 'meta', 'topList', 'path', 'yandexTag', 'limit', 'sort'));
+        return view('site.index', compact('posts', 'metro', 'cityInfo',
+            'meta', 'topList', 'path', 'yandexTag', 'limit', 'sort'));
     }
 
     public function more($city)

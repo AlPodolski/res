@@ -1,8 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.cabinet')
 
 @section('title', 'Баланс')
 
 @section('content')
+
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item home">
+            <a class="breadcrumb-link" title="Главная" href="/cabinet">Кабинет</a>
+        </li>
+        <li class="breadcrumb-item" data-breadcrumbs="2">
+            Пополнить баланс
+        </li>
+    </ul>
 
     <h1>Баланс</h1>
 
