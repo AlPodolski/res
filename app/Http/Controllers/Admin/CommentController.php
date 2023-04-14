@@ -10,7 +10,9 @@ class CommentController extends Controller
 {
     public function index()
     {
-        $comments = Comment::orderByDesc('id')->paginate(50);
+        $comments = Comment::orderByDesc('id')
+            ->with('post')
+            ->paginate(50);
 
         return view('admin.comments.index', compact('comments'));
     }

@@ -37,4 +37,10 @@ class Comment extends Model
     protected $fillable = [
         'name', 'related_id', 'related_class', 'text'
     ];
+
+    public function post()
+    {
+        return $this->hasOne(Post::class, 'id', 'related_id')
+            ->with('avatar', 'city');
+    }
 }

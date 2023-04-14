@@ -24,7 +24,11 @@
                         {{ $post->text }}
                     </td>
                     <td>
-                        {{ $post->name }}
+                        <a href="/post/{{ $post->id }}">
+                            @if(isset($post->post->avatar->file) and $post->post->avatar->file)
+                                <img loading="lazy" src="/139-185/thumbs{{$post->post->avatar->file}}" alt="">
+                            @endif
+                        </a>
                     </td>
                     <td>
                         @if($post->status == \App\Models\Comment::MODERATION_STATUS)
