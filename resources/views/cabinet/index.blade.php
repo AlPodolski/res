@@ -14,7 +14,7 @@
 
     <h1>Кабинет</h1>
 
-    <div class="posts">
+    <div class="posts cabinet-posts">
         <div class="post-item position-relative items-center d-flex white-cabinet-block">
             <div class="plus-wrap d-flex items-center">
                 <a href="/cabinet/post/create">

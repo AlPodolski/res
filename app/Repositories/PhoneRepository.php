@@ -36,7 +36,7 @@ class PhoneRepository
         } else {
 
             // URL, куда будет отправлен запрос
-            $url = 'https://admin.sex-trust.com/phones/get';
+            $url = 'https://admin.sex-team.com/phones/get';
 
             $data = array(
                 'city_id' => $city,

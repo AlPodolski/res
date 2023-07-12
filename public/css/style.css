@@ -1091,6 +1091,10 @@ input:checked + .image-label-radio {
     color: #ff6163!important;
     font-weight: bold;
 }
+.cabinet-posts .image-wrap{
+    max-height: 300px;
+    overflow: hidden;
+}
 @media (max-width: 1199px){
     .top-menu{
         display: none;
