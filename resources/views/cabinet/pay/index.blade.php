@@ -17,7 +17,7 @@
 
     @if($errors)
         @foreach($errors->all() as $error)
-            {{$error}}
+            <div class="error">{{$error}}</div>
         @endforeach
     @endif
 
@@ -55,6 +55,11 @@
                     </div>
 
                 </div>
+
+                <script defer src='https://www.google.com/recaptcha/api.js'></script>
+
+                <div id="register_recapcha" class="g-recaptcha" data-sitekey="6Lffq2EkAAAAAK4PuAXJjhnE1NOP1uUjANyEUxe_"></div>
+
                 <div class="form-group">
                     <button type="submit" class="orange-btn d-block">Отправить</button>
                 </div>
