@@ -41,6 +41,10 @@
                                 @enderror
                             </div>
 
+                            <script defer src='https://www.google.com/recaptcha/api.js'></script>
+
+                            <div id="register_recapcha" class="g-recaptcha" data-sitekey="6Lffq2EkAAAAAK4PuAXJjhnE1NOP1uUjANyEUxe_"></div>
+
                             <div class="form-group">
                                 <a href="/register" id="toLogin">Регистрация</a>
                             </div>
