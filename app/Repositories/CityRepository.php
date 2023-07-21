@@ -25,6 +25,10 @@ class CityRepository
 
     }
 
+    /**
+     * @param $id
+     * @return array
+     */
     public function getAllCityInfoById($id)
     {
 

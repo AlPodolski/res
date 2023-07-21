@@ -15,6 +15,6 @@ Route::middleware('admin:admin')->group(function (){
     Route::post('/post/delete', 'Admin\PostController@delete');
     Route::post('/posts/check', 'Admin\PostController@check');
 
-
-
 });
+
+

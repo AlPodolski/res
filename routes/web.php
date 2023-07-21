@@ -14,6 +14,10 @@ use Intervention\Image\ImageManager;
 |
 */
 
+Route::domain('admin.'.env('DOMAIN'))->group(function () {
+    Route::post('/api/post', 'Admin\Api\PostController@index');
+});
+
 Route::get('login', 'Auth\LoginController@showLoginForm')
     ->name('login');
 Route::post('login', 'Auth\LoginController@login');

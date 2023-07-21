@@ -55,7 +55,7 @@ function checkComment(object){
         },
         cache: false,
         success: function (data) {
-            $(object).text('Подтверждено')
+            $(object).html('Подтверждено')
         }
     })
 
