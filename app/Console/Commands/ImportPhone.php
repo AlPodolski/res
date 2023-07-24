@@ -41,7 +41,7 @@ class ImportPhone extends Command
      */
     public function handle()
     {
-        $stream = \fopen(storage_path('import_phone_17_02_2023.csv'), 'r');
+        $stream = \fopen(storage_path('phone_24_07_2023.csv'), 'r');
 
         $csv = Reader::createFromStream($stream);
         $csv->setDelimiter(';');
@@ -61,9 +61,9 @@ class ImportPhone extends Command
 
         foreach ($phonesCity as $key => $cityItem){
 
-            if ($city = City::where(['city' => $key])->get()->first()){
+            if ($city = City::where(['id' => $key])->get()->first()){
 
-                if ($posts = Post::where(['phone' => '1', 'city_id' => $city['id']])->get()){
+                if ($posts = Post::where(['phone' => '', 'city_id' => $city['id']])->get()){
 
                     foreach ($posts as $post){
 
