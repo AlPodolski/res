@@ -10,7 +10,7 @@ class ClaimController extends Controller
 {
     public function index()
     {
-        $claim = Claim::paginate(50);
+        $claim = Claim::orderByDesc('id')->paginate(50);
 
         return view('admin.claim.index', compact('claim'));
     }
