@@ -7,6 +7,9 @@ Route::middleware('admin:admin')->group(function (){
 
     Route::get('/', 'Admin\IndexController@index');
 
+    Route::get('/claim', 'Admin\ClaimController@index');
+    Route::get('/claim/delete', 'Admin\ClaimController@delete');
+
     Route::post('/comments/delete', 'Admin\CommentController@delete');
     Route::post('/comments/check', 'Admin\CommentController@check');
     Route::resource('comments', 'Admin\CommentController');

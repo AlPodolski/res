@@ -12,6 +12,8 @@
 @section('maskedinput', '/js/jquery.maskedinput.js')
 @section('content')
 
+    @include('admin.include.nav')
+
     <h1>Редактировать анкету</h1>
 
     @if($errors)

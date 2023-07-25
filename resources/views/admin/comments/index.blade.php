@@ -4,6 +4,8 @@
 
 @section('content')
 
+    @include('admin.include.nav')
+
     <table class="table table-striped">
         <thead>
         <tr>
