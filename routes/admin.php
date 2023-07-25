@@ -14,6 +14,8 @@ Route::middleware('admin:admin')->group(function (){
     Route::post('/comments/check', 'Admin\CommentController@check');
     Route::resource('comments', 'Admin\CommentController');
 
+    Route::resource('users', 'Admin\UserController');
+
     Route::resource('posts', 'Admin\PostController');
     Route::post('/post/delete', 'Admin\PostController@delete');
     Route::post('/posts/check', 'Admin\PostController@check');
