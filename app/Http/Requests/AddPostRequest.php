@@ -37,7 +37,7 @@ class AddPostRequest extends FormRequest
             'about' => 'string:required',
             'service' => 'array',
             'metro' => 'array',
-            'rayon' => 'array',
+            'rayon_id' => 'integer',
             'time' => 'array',
             'national_id' => 'integer',
             'intim_hair_color_id' => 'integer',

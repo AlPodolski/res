@@ -1179,8 +1179,8 @@ footer {
 }
 
 .custom-checkbox:checked+label::before {
-    border-color: #f74952;
-    background-color: #f74952;
+    border-color: #4825e4;
+    background-color: #4825e4;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA4IDgnPjxwYXRoIGZpbGw9JyNmZmYnIGQ9J002LjU2NC43NWwtMy41OSAzLjYxMi0xLjUzOC0xLjU1TDAgNC4yNiAyLjk3NCA3LjI1IDggMi4xOTN6Jy8+PC9zdmc+);
 }
 
@@ -2053,8 +2053,8 @@ footer {
     margin-bottom: 50px
 }
 
-.anket__info-main {
-    width: 74.3%
+.anket__btns-save{
+    margin-top: 15px;
 }
 
 .anket__info-params {
@@ -2756,7 +2756,8 @@ footer {
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
     order: 0;
-    margin-right: 40px;
+    margin-right: 15px;
+    margin-bottom: 15px;
     position: relative
 }
 

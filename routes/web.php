@@ -20,6 +20,11 @@ Route::domain('admin.'.env('DOMAIN'))->group(function () {
 
 Route::get('login', 'Auth\LoginController@showLoginForm')
     ->name('login');
+
+Route::get('logout', 'Auth\LoginController@logout')
+    ->name('logout');
+
+
 Route::post('login', 'Auth\LoginController@login');
 
 Route::get('register', 'Auth\RegistЛerController@showRegistrationForm')->name('register');

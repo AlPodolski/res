@@ -113,11 +113,11 @@ class PostsController extends Controller
 
         }
 
-        if (isset($data['rayon']) and $data['rayon']) foreach ($data['rayon'] as $item) {
+        if (isset($data['rayon_id']) and $data['rayon_id']) {
 
             PostRayon::create([
                 'posts_id' => $post->id,
-                'rayons_id' => $item,
+                'rayons_id' => $data['rayon_id'],
                 'city_id' => $data['city_id'],
             ]);
 
@@ -272,7 +272,7 @@ class PostsController extends Controller
 
             }
 
-            if (isset($data['rayon']) and $data['rayon']) {
+            if (isset($data['rayon_id']) and $data['rayon_id']) {
 
                 \DB::table('post_rayons')->where('posts_id', $post->id)->delete();
 
@@ -319,7 +319,7 @@ class PostsController extends Controller
 
                 $path = (storage_path('app/public' . $postAvatar->file));
 
-                if (file_exists($path)){
+                if (file_exists($path)) {
 
                     unlink($path);
 

@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="header__row row">
                     <div class="header__col--logo col-lg-2 col-md-2 col-6">
-                        <a href="/cabinet" class="header__logo">
+                        <a href="/" class="header__logo">
                             <svg width="97" height="23" viewBox="0 0 97 23" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path

@@ -125,7 +125,7 @@
                             <div class="anket__info-params-col">
                                 <div class="anket__info-params-item">
                                     <svg>
-                                        <use xlink:href='svg/dest/stack/sprite.svg#weight'></use>
+                                        <use xlink:href='/svg/dest/stack/sprite.svg#weight'></use>
                                     </svg>
                                     <div class="anket__info-params-input">
 
@@ -146,7 +146,7 @@
                                 </div>
                                 <div class="anket__info-params-item">
                                     <svg>
-                                        <use xlink:href='svg/dest/stack/sprite.svg#bust'></use>
+                                        <use xlink:href='/svg/dest/stack/sprite.svg#bust'></use>
                                     </svg>
                                     <div class="anket__info-params-input">
 
@@ -199,7 +199,7 @@
 
                                                 <option
 
-                                                    @if($post->hair->id == $item->id)
+                                                    @if($post->hair->hair_colors_id == $item->id)
                                                         selected
                                                     @endif
 
@@ -221,7 +221,7 @@
 
                                                 <option
 
-                                                    @if($post->national->id == $item->id)
+                                                    @if($post->national->nationals_id == $item->id)
                                                         selected
                                                     @endif
 
@@ -239,12 +239,12 @@
                                     </svg>
                                     <div class="anket__info-params-input">
                                         <label for="anketPhair">Интим. стрижка:</label>
-                                        <select type="text" name="intim_hair_id" id="anketPhair">
+                                        <select type="text" name="intim_hair_color_id" id="anketPhair">
                                             @foreach($intimHairList as $item)
 
                                                 <option
 
-                                                    @if($post->intimHair->id == $item->id)
+                                                    @if(isset($post->intimHair->intim_hair_id) and $post->intimHair->intim_hair_id == $item->id)
                                                         selected
                                                     @endif
 
@@ -259,7 +259,7 @@
                         <div class="anket__sidebar-adapt anket__sidebar-adapt--2"></div>
                         <h2 class="anket__subtitle subtitle">О себе:</h2>
                         <div class="anket__info-about">
-                            <textarea name="about" placeholder="Расскажите о себе...">{{ $post->about }}</textarea>
+                            <textarea name="about">{{ $post->about }}</textarea>
                         </div>
                         <h2 class="anket__subtitle subtitle">Местоположение:</h2>
                         <div class="anket__info-location">
@@ -304,7 +304,7 @@
 
                                                     <option
 
-                                                        @if($post->rayon->rayons_id == $item->id)
+                                                        @if(isset($post->rayon->rayons_id) and $post->rayon->rayons_id == $item->id)
                                                             selected
                                                         @endif
 
@@ -317,41 +317,6 @@
                                     </div>
 
                                 @endif
-                            </div>
-                        </div>
-                    </div>
-                    <div class="anket__info-sidebar">
-                        <div class="anket__info-sidebar-exit">
-                            <div class="anket__info-sidebar-title anket__info-sidebar-exit-title">Выезд:</div>
-                            <div class="anket__info-sidebar-exit-checkboxes anket__info-sidebar-checkboxes">
-                                <div class="anket__info-sidebar-checkbox">
-                                    <input type="checkbox" name="aport" id="anketAppart">
-                                    <label for="anketAppart">В квартиру</label>
-                                </div>
-                                <div class="anket__info-sidebar-checkbox">
-                                    <input type="checkbox" name="fromcity" id="anketFromcity">
-                                    <label for="anketFromcity">За город</label>
-                                </div>
-                                <div class="anket__info-sidebar-checkbox">
-                                    <input type="checkbox" name="saun" id="anketaun">
-                                    <label for="anketaun">В сауну</label>
-                                </div>
-                                <div class="anket__info-sidebar-checkbox">
-                                    <input type="checkbox" name="hostel" id="anketHostel">
-                                    <label for="anketHostel">В гостиницу</label>
-                                </div>
-                                <div class="anket__info-sidebar-checkbox">
-                                    <input type="checkbox" name="office" id="anketOffice">
-                                    <label for="anketOffice">В офис</label>
-                                </div>
-                                <div class="anket__info-sidebar-checkbox">
-                                    <input type="checkbox" name="cottege" id="anketCottege">
-                                    <label for="anketCottege">В коттедж</label>
-                                </div>
-                                <div class="anket__info-sidebar-checkbox">
-                                    <input type="checkbox" name="car" id="anketCar">
-                                    <label for="anketCar">В машине</label>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -413,34 +378,41 @@
                 @endforeach
             </div>
 
-            <div class="anket__photos-content-item active">
-                <div class="anket__photos-content-input anket__photos-content-item-item">
-                    <label for="anketPhotos">
-                        <img src="/images/cam.png" alt="">
-                        Загрузить фото
-                    </label>
+            <div class="anket__photos">
+                <ul class="anket__photos-titles">
+                    <li class="anket__photos-titles-item active">
+                        Фотографии
+                    </li>
+                </ul>
+                <div class="anket__photos-content-item active">
+                    <div class="anket__photos-content-input anket__photos-content-item-item">
+                        <label for="anketPhotos">
+                            <img src="/images/cam.png" alt="">
+                            Загрузить фото
+                        </label>
 
-                    <input name="gallery[]" type="file" multiple id="anketPhotos" accept=".png, .jpg, .jpeg">
+                        <input name="gallery[]" type="file" multiple id="anketPhotos" accept=".png, .jpg, .jpeg">
+
+                    </div>
+
+                    @foreach($post->gallery as $item)
+                        <div class="post-photo-item">
+                            <label for="addpost-photo" class="img-label small-no-img-label">
+                                <img src="" alt="">
+                            </label>
+                        </div>
+
+                        <div class="anket__photos-content-input anket__photos-content-item-item">
+                            <img src="/257-313/thumbs{{$item->file}}" alt="">
+                        </div>
+
+                    @endforeach
 
                 </div>
-
-                @foreach($post->gallery as $item)
-                    <div class="post-photo-item">
-                        <label for="addpost-photo" class="img-label small-no-img-label">
-                            <img src="" alt="">
-                        </label>
-                    </div>
-
-                    <div class="anket__photos-content-input anket__photos-content-item-item">
-                        <img src="/257-313/thumbs{{$item->file}}" alt="">
-                    </div>
-
-                @endforeach
-
             </div>
 
             <button type="submit" class="anket__btns-btn anket__btns-save btn-main">
-
+                Сохранить
             </button>
         </form>
 

@@ -8,7 +8,7 @@
             <div class="sidebar__stats-result">
                 {{ auth()->user()->cash }}
             </div>
-            <a class="sidebar__stats-walletadd" href="#">
+            <a class="sidebar__stats-walletadd" href="/cabinet/pay">
             </a>
         </div>
 
@@ -38,6 +38,16 @@
         <nav class="sidebar__menu-nav">
             <ul class="sidebar__menu-list">
                 <li class="sidebar__menu-item">
+                    <a href="/cabinet" class="sidebar__menu-link">
+                        <svg class="sidebar__menu-icon">
+                            <use xlink:href='/svg/dest/stack/sprite.svg#user-card'></use>
+                        </svg>
+                        <span class="sidebar__menu-text">
+                            Главная страница
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebar__menu-item">
                     <a href="/cabinet/post/create" class="sidebar__menu-link">
                         <svg class="sidebar__menu-icon">
                             <use xlink:href='/svg/dest/stack/sprite.svg#user'></use>
@@ -47,6 +57,18 @@
                         </span>
                     </a>
                 </li>
+
+                <li class="sidebar__menu-item">
+                    <a href="/" class="sidebar__menu-link">
+                        <svg class="sidebar__menu-icon">
+                            <use xlink:href='/svg/dest/stack/sprite.svg#out'></use>
+                        </svg>
+                        <span class="sidebar__menu-text">
+                            На сайт
+                        </span>
+                    </a>
+                </li>
+
                 <li class="sidebar__menu-item">
                     <a href="#" class="sidebar__menu-link">
                         <svg class="sidebar__menu-icon">
@@ -58,7 +80,7 @@
                     </a>
                 </li>
                 <li class="sidebar__menu-item">
-                    <a href="#" class="sidebar__menu-link">
+                    <a href="/logout" class="sidebar__menu-link">
                         <svg class="sidebar__menu-icon">
                             <use xlink:href='/svg/dest/stack/sprite.svg#out'></use>
                         </svg>
