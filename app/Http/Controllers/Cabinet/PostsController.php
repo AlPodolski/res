@@ -57,8 +57,10 @@ class PostsController extends Controller
 
         $tarifList = $this->dataRepository->tarif();
 
+        $cityList = $this->cityRepository->getAllCity();
+
         return view('cabinet.post.add', compact('serviceList', 'metroList', 'rayonList',
-            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList'));
+            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList', 'cityList'));
     }
 
     /**
@@ -196,8 +198,10 @@ class PostsController extends Controller
 
         $post = $this->postRepository->getById($id);
 
+        $cityList = $this->cityRepository->getAllCity();
+
         return view('cabinet.post.edit', compact('post', 'serviceList', 'metroList', 'rayonList',
-            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList'));
+            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList', 'cityList'));
     }
 
     /**
@@ -217,8 +221,6 @@ class PostsController extends Controller
         if ($post->user_id != auth()->id()) abort(403);
 
         $data = $request->validated();
-
-        $data['city_id'] = $cityInfo['id'];
 
         if ($post->update($data)) {
 
@@ -270,13 +272,13 @@ class PostsController extends Controller
 
             }
 
-            if (isset($data['rayon']) and $data['rayon']) foreach ($data['rayon'] as $item) {
+            if (isset($data['rayon']) and $data['rayon']) {
 
                 \DB::table('post_rayons')->where('posts_id', $post->id)->delete();
 
                 PostRayon::create([
                     'posts_id' => $post->id,
-                    'rayons_id' => $item,
+                    'rayons_id' => $data['rayon_id'],
                     'city_id' => $data['city_id'],
                 ]);
 

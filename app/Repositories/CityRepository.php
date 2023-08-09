@@ -43,4 +43,9 @@ class CityRepository
         return $data;
     }
 
+    public function getAllCity()
+    {
+        return City::all();
+    }
+
 }

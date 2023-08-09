@@ -16,309 +16,434 @@
 @section('maskedinput', '/js/jquery.maskedinput.js')
 @section('content')
 
-    <h1>Редактировать анкету</h1>
+    @include('cabinet.includes.sidebar')
 
-    @if($errors)
-        @foreach($errors->all() as $error)
-            {{$error}}
-        @endforeach
-    @endif
+    <main class="main col-lg-9">
 
-    <form action="/cabinet/post/{{ $post->id }}" enctype="multipart/form-data" method="post" class="d-flex"
-          id="add-post-form">
-        @csrf
-        @method('PUT')
-        <div class="form-group d-flex">
-            <label for="name" class="col-form-label text-md-right">Имя</label>
-            <input id="name" type="text"
-                   class="form-control request-call-input @error('name') is-invalid @enderror"
-                   name="name" required placeholder="Имя" value="{{ $post->name }}">
-            @error('name')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
-        <div class="form-group d-flex">
-            <label for="price" class="col-form-label text-md-right">Цена за час</label>
-            <input id="price" type="text"
-                   class="form-control request-call-input @error('price') is-invalid @enderror"
-                   name="price" required value="{{ $post->price }}" placeholder="Цена за час">
-            @error('price')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
-        <div class="form-group d-flex">
-            <label for="rost" class="col-form-label text-md-right">Рост</label>
-            <input id="rost" type="text"
-                   class="form-control request-call-input @error('rost') is-invalid @enderror"
-                   name="rost" required value="{{ $post->rost }}" placeholder="Рост">
-            @error('rost')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
-        <div class="form-group d-flex">
-            <label for="ves" class="col-form-label text-md-right">Вес</label>
-            <input id="ves" type="text"
-                   class="form-control request-call-input @error('ves') is-invalid @enderror"
-                   name="ves" value="{{ $post->ves }}" required placeholder="Вес">
-            @error('ves')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
-        <div class="form-group d-flex">
-            <label for="age" class="col-form-label text-md-right">Возраст</label>
-            <input id="age" type="text"
-                   class="form-control request-call-input @error('age') is-invalid @enderror"
-                   name="age" value="{{ $post->age }}" required placeholder="Возраст">
-            @error('age')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
-        <div class="form-group d-flex">
-            <label for="breast_size" class="col-form-label text-md-right">Размер груди</label>
-            <input id="breast_size" type="text"
-                   class="form-control request-call-input @error('breast_size') is-invalid @enderror"
-                   name="breast_size" value="{{ $post->breast_size }}" required placeholder="Размер груди">
-            @error('breast_size')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
-        <div class="form-group d-flex">
-            <label for="phone" class="col-form-label text-md-right">Номер телефона</label>
-            <input id="phone" type="text"
-                   class="form-control request-call-input @error('phone') is-invalid @enderror"
-                   name="phone" required value="{{ $post->phone }}" placeholder="Номер телефона">
-            @error('phone')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
+        <h1>Редактировать анкету</h1>
 
-        <div class="col-12"></div>
-
-        <div class="form-group d-flex">
-            <label for="national_id" class="col-form-label text-md-right">Национальность</label>
-
-            <select class="metro-select form-control" name="national_id" id="national_id">
-
-                @foreach($nationalList as $item)
-
-                    <option
-
-                        @if($post->national->id == $item->id)
-                        selected
-                        @endif
-
-                        value="{{ $item->id }}">{{ $item->value }}</option>
-
-                @endforeach
-            </select>
-        </div>
-
-        <div class="form-group d-flex">
-            <label for="intim_hair_color_id" class="col-form-label text-md-right">Интимная стрижка</label>
-
-            <select class="metro-select" name="intim_hair_color_id" id="intim_hair_color_id">
-
-                @foreach($intimHairList as $item)
-
-                    <option
-
-                        @if($post->intimHair->id == $item->id)
-                        selected
-                        @endif
-
-                        value="{{ $item->id }}">{{ $item->value }}</option>
-
-                @endforeach
-            </select>
-        </div>
-
-
-        <div class="form-group d-flex">
-            <label for="hair_color_id" class="col-form-label text-md-right">Цвет волос</label>
-
-            <select class="metro-select" name="hair_color_id" id="hair_color_id">
-
-                @foreach($hairColorList as $item)
-
-                    <option
-
-                        @if($post->hair->id == $item->id)
-                        selected
-                        @endif
-
-                        value="{{ $item->id }}">{{ $item->value }}</option>
-
-                @endforeach
-
-            </select>
-        </div>
-
-        <div class="col-12"></div>
-
-        <div class="form-group d-flex">
-            <label for="tarif_id" class="col-form-label text-md-right">Выбрать тариф</label>
-
-            <select class="metro-select" name="tarif_id" id="tarif_id">
-
-                @foreach($tarifList as $item)
-
-                    <option value="{{ $item->id }}">{{ $item->value }} {{ $item->price }}р. в час</option>
-
-                @endforeach
-            </select>
-        </div>
-
-
-        <div class="col-12"></div>
-
-        <div class="avatar">
-            <label class="col-form-label text-md-right">Загрузить главное фото</label>
-            <label for="addpost-image" id="cabinet-main-img-label"
-                   style="background-image: url('/211-300/thumbs{{$post->avatar->file}}')"
-                   class=" img-label no-img-bg main-img">
-
-                <input name="avatar" type="file" id="addpost-image" accept=".png, .jpg, .jpeg">
-
-                <span class="plus-photo-wrap d-flex items-center">
-
-                    <span class="plus d-flex items-center">
-                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M16.15 7.65H9.35005V0.849948C9.35005 0.38085 8.9692 0 8.49995 0C8.03085 0 7.65 0.38085 7.65 0.849948V7.65H0.849948C0.38085 7.65 0 8.03085 0 8.49995C0 8.9692 0.38085 9.35005 0.849948 9.35005H7.65V16.15C7.65 16.6192 8.03085 17.0001 8.49995 17.0001C8.9692 17.0001 9.35005 16.6192 9.35005 16.15V9.35005H16.15C16.6192 9.35005 17.0001 8.9692 17.0001 8.49995C17.0001 8.03085 16.6192 7.65 16.15 7.65Z"
-                                fill="white"/>
-                        </svg>
-                    </span>
-                </span>
-
-            </label>
-        </div>
-
-        <div class="col-12"></div>
-
-        <div class="gallery w-100">
-
-            <label for="addpost-photo" class="col-form-label text-md-right bold-label">Загрузить фото в галерею</label>
-
-            <div class="photo-wrap">
-                <div class="popular-list post-photo " id="preview">
-                    <div class="post-photo-item">
-                        <label for="addpost-photo" class="img-label small-no-img-label">
-                            <span class="no-img-bg small-no-img">
-                            </span>
-                        </label>
-                    </div>
-                </div>
-                <div class="popular-list post-photo">
-                    @foreach($post->gallery as $item)
-                        <div class="post-photo-item">
-                            <label for="addpost-photo" class="img-label small-no-img-label">
-                                <img src="/211-300/thumbs{{$item->file}}" alt="">
-                            </label>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <input name="gallery[]" class="d-none" type="file" id="addpost-photo" multiple
-                   accept=".png, .jpg, .jpeg">
-
-        </div>
-
-        <div class="check-box-group">
-            <label class="col-form-label text-md-right">Выбрать услуги</label>
-            @foreach($serviceList as $item)
-                <div class="check-box-group-item">
-                    <input type="checkbox" class="custom-checkbox" id="service-{{ $item->id }}" name="service[]"
-                           @foreach($post->service as $dataItem)
-                           @if($dataItem->service_id == $item->id)
-                           checked
-                           @endif
-                           @endforeach
-                           value="{{ $item->id }}">
-                    <label for="service-{{ $item->id }}">{{ $item->value }}</label>
-                </div>
+        @if($errors)
+            @foreach($errors->all() as $error)
+                {{$error}}
             @endforeach
-        </div>
-
-        @if($rayonList->first())
-
-            <div class="check-box-group">
-                <label class="col-form-label text-md-right">Выбрать район</label>
-                @foreach($rayonList as $item)
-                    <div class="check-box-group-item">
-                        <input type="checkbox" class="custom-checkbox" id="rayon-{{ $item->id }}" name="rayon[]"
-                               value="{{ $item->id }}"
-                               @if($post->rayon->rayons_id == $item->id)
-                               checked
-                            @endif
-                        >
-                        <label for="rayon-{{ $item->id }}">{{ $item->value }}</label>
-                    </div>
-                @endforeach
-            </div>
-
         @endif
 
-        @if($metroList->first())
+        <form action="/cabinet/post/{{ $post->id }}" enctype="multipart/form-data" method="post" class="anket"
+              id="add-post-form">
+            @csrf
+            @method('PUT')
+            <div class="anket__main anket__block">
+                <div class="anket__main-photo">
+                    <button class="anket__main-photo-delete" tabindex>
+                        <svg>
+                            <use xlink:href='/svg/dest/stack/sprite.svg#cross'></use>
+                        </svg>
+                    </button>
+                    <img class="anket__main-photo-img" data-placeholder="/211-300/thumbs{{$post->avatar->file}}"
+                         alt="">
+                    <div class="anket__main-photo-input">
+                        <label for="anketPhoto" tabindex="0">+</label>
+                        <input name="avatar" type="file" id="anketPhoto" accept=".png, .jpg, .jpeg">
+                    </div>
+                </div>
+
+                <div class="anket__main-info">
+
+                    <div class="anket__main-info-item input-wrap">
+                        <label for="anketName" class="@error('name') is-invalid @enderror">Имя</label>
+                        <input type="text" name="name" value="{{ $post->name }}" class="anket__main-info-input input"
+                               id="anketName" required>
+                        @error('name')
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="anket__main-info-item input-wrap">
+
+                        <label for="anketAge" class="@error('age') is-invalid @enderror">Возраст</label>
+                        <input type="text" name="age" value="{{ $post->age }}" class="anket__main-info-input input"
+                               id="anketAge">
+                        @error('age')
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
+
+                    </div>
+                    <div class="anket__main-info-item input-wrap">
+
+                        <label for="anketPrice" class="@error('price') is-invalid @enderror">Цена</label>
+                        <input type="text" name="price" value="{{ $post->price }}" class="anket__main-info-input input"
+                               id="anketPrice">
+                        @error('price')
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
+
+                    </div>
+
+                    <div class="anket__main-info-item input-wrap">
+
+                        <label for="anketPhone" class="@error('phone') is-invalid @enderror">Телефон</label>
+                        <input type="text" name="phone" value="{{ $post->phone }}" class="anket__main-info-input input"
+                               id="anketPhone">
+
+                        @error('phone')
+
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </div>
+
+                        @enderror
+
+                    </div>
+
+                    <div class="anket__main-info-item input-wrap">
+
+                        <label for="tarif_id" class="col-form-label text-md-right">Выбрать тариф</label>
+
+                        <select class="metro-select" name="tarif_id" id="tarif_id">
+
+                            @foreach($tarifList as $item)
+
+                                <option value="{{ $item->id }}">{{ $item->value }} {{ $item->price }}р. в час</option>
+
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div class="anket__info">
+                    <div class="anket__info-main">
+                        <h2 class="anket__subtitle subtitle">
+                            Параметры
+                        </h2>
+                        <div class="anket__info-params">
+                            <div class="anket__info-params-col">
+                                <div class="anket__info-params-item">
+                                    <svg>
+                                        <use xlink:href='svg/dest/stack/sprite.svg#weight'></use>
+                                    </svg>
+                                    <div class="anket__info-params-input">
+
+                                        <label class="@error('ves') is-invalid @enderror"
+                                               for="anketWeight">Вес: </label>
+                                        <input type="text" name="ves" id="anketWeight" value="{{ $post->ves }}">
+
+
+                                        @error('ves')
+
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+
+                                        @enderror
+
+                                    </div>
+                                </div>
+                                <div class="anket__info-params-item">
+                                    <svg>
+                                        <use xlink:href='svg/dest/stack/sprite.svg#bust'></use>
+                                    </svg>
+                                    <div class="anket__info-params-input">
+
+                                        <label class="@error('breast_size') is-invalid @enderror"
+                                               for="anketBust">Грудь: </label>
+                                        <input type="text" name="breast_size" id="anketBust"
+                                               value="{{ $post->breast_size }}">
+
+                                        @error('breast_size')
+
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+
+                                        @enderror
+
+                                    </div>
+                                </div>
+                                <div class="anket__info-params-item">
+                                    <svg>
+                                        <use xlink:href='/svg/dest/stack/sprite.svg#sm'></use>
+                                    </svg>
+                                    <div class="anket__info-params-input">
+
+                                        <label for="anketHeight"
+                                               class="@error('rost') is-invalid @enderror">Рост:</label>
+                                        <input type="text" value="{{ $post->rost }}" name="rost" id="anketHeight">
+
+                                        @error('rost')
+
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+
+                                        @enderror
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="anket__info-params-col--select">
+                                <div class="anket__info-params-item">
+                                    <svg>
+                                        <use xlink:href='/svg/dest/stack/sprite.svg#hair'></use>
+                                    </svg>
+                                    <div class="anket__info-params-input">
+                                        <label for="anketHair">Волосы:</label>
+                                        <select type="text" name="hair_color_id" id="anketHair">
+
+                                            @foreach($hairColorList as $item)
+
+                                                <option
+
+                                                    @if($post->hair->id == $item->id)
+                                                        selected
+                                                    @endif
+
+                                                    value="{{ $item->id }}">{{ $item->value }}</option>
+
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="anket__info-params-item">
+                                    <svg>
+                                        <use xlink:href='/svg/dest/stack/sprite.svg#national'></use>
+                                    </svg>
+                                    <div class="anket__info-params-input">
+                                        <label for="anketNational">Национальсность:</label>
+                                        <select type="text" name="national_id" id="anketNational">
+                                            @foreach($nationalList as $item)
+
+                                                <option
+
+                                                    @if($post->national->id == $item->id)
+                                                        selected
+                                                    @endif
+
+                                                    value="{{ $item->id }}">{{ $item->value }}</option>
+
+                                            @endforeach
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="anket__info-params-item">
+                                    <svg>
+                                        <use xlink:href='/svg/dest/stack/sprite.svg#phair'></use>
+                                    </svg>
+                                    <div class="anket__info-params-input">
+                                        <label for="anketPhair">Интим. стрижка:</label>
+                                        <select type="text" name="intim_hair_id" id="anketPhair">
+                                            @foreach($intimHairList as $item)
+
+                                                <option
+
+                                                    @if($post->intimHair->id == $item->id)
+                                                        selected
+                                                    @endif
+
+                                                    value="{{ $item->id }}">{{ $item->value }}</option>
+
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anket__sidebar-adapt anket__sidebar-adapt--2"></div>
+                        <h2 class="anket__subtitle subtitle">О себе:</h2>
+                        <div class="anket__info-about">
+                            <textarea name="about" placeholder="Расскажите о себе...">{{ $post->about }}</textarea>
+                        </div>
+                        <h2 class="anket__subtitle subtitle">Местоположение:</h2>
+                        <div class="anket__info-location">
+                            <div class="anket__info-location-header">
+
+                                <div class="anket__info-location-select" id="anketCityWrap">
+                                    <label for="anketCity">Город:</label>
+                                    <div class="anket__info-location-select-input">
+                                        <select name="city_id" id="anketCity">
+
+                                            @foreach($cityList as $item)
+
+                                                @php
+                                                    /* @var $item \App\Models\City */
+                                                @endphp
+
+                                                <option
+
+                                                    @if($post->city_id == $item->id)
+                                                        selected
+                                                    @endif
+
+                                                    value="{{ $item->id }}">{{ $item->city }}</option>
+
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                </div>
+                                @if($rayonList->first())
+
+                                    <div class="anket__info-location-select" id="anketRegionWrap">
+                                        <label for="anketRegion">Район:</label>
+                                        <div class="anket__info-location-select-input">
+                                            <select name="rayon_id" id="anketRegion">
+
+                                                @foreach($rayonList as $item)
+
+                                                    @php
+                                                        /* @var $item \App\Models\City */
+                                                    @endphp
+
+                                                    <option
+
+                                                        @if($post->rayon->rayons_id == $item->id)
+                                                            selected
+                                                        @endif
+
+                                                        value="{{ $item->id }}">{{ $item->value }}</option>
+
+                                                @endforeach
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anket__info-sidebar">
+                        <div class="anket__info-sidebar-exit">
+                            <div class="anket__info-sidebar-title anket__info-sidebar-exit-title">Выезд:</div>
+                            <div class="anket__info-sidebar-exit-checkboxes anket__info-sidebar-checkboxes">
+                                <div class="anket__info-sidebar-checkbox">
+                                    <input type="checkbox" name="aport" id="anketAppart">
+                                    <label for="anketAppart">В квартиру</label>
+                                </div>
+                                <div class="anket__info-sidebar-checkbox">
+                                    <input type="checkbox" name="fromcity" id="anketFromcity">
+                                    <label for="anketFromcity">За город</label>
+                                </div>
+                                <div class="anket__info-sidebar-checkbox">
+                                    <input type="checkbox" name="saun" id="anketaun">
+                                    <label for="anketaun">В сауну</label>
+                                </div>
+                                <div class="anket__info-sidebar-checkbox">
+                                    <input type="checkbox" name="hostel" id="anketHostel">
+                                    <label for="anketHostel">В гостиницу</label>
+                                </div>
+                                <div class="anket__info-sidebar-checkbox">
+                                    <input type="checkbox" name="office" id="anketOffice">
+                                    <label for="anketOffice">В офис</label>
+                                </div>
+                                <div class="anket__info-sidebar-checkbox">
+                                    <input type="checkbox" name="cottege" id="anketCottege">
+                                    <label for="anketCottege">В коттедж</label>
+                                </div>
+                                <div class="anket__info-sidebar-checkbox">
+                                    <input type="checkbox" name="car" id="anketCar">
+                                    <label for="anketCar">В машине</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="check-box-group">
+
+                    <label class="col-form-label text-md-right">Выбрать услуги</label>
+                    @foreach($serviceList as $item)
+                        <div class="check-box-group-item">
+                            <input type="checkbox" class="custom-checkbox" id="service-{{ $item->id }}" name="service[]"
+                                   @foreach($post->service as $dataItem)
+                                       @if($dataItem->service_id == $item->id)
+                                           checked
+                                   @endif
+                                   @endforeach
+                                   value="{{ $item->id }}">
+                            <label for="service-{{ $item->id }}">{{ $item->value }}</label>
+                        </div>
+                    @endforeach
+
+                </div>
+
+                @if($metroList->first())
+
+                    <div class="check-box-group">
+                        <label class="col-form-label text-md-right">Выбрать метро</label>
+                        @foreach($metroList as $item)
+                            <div class="check-box-group-item">
+                                <input type="checkbox" class="custom-checkbox" id="metro-{{ $item->id }}" name="metro[]"
+                                       @foreach($post->metro as $dataItem)
+                                           @if($dataItem->metros_id == $item->id)
+                                               checked
+                                       @endif
+                                       @endforeach
+                                       value="{{ $item->id }}">
+                                <label for="metro-{{ $item->id }}">{{ $item->value }}</label>
+                            </div>
+                        @endforeach
+                    </div>
+
+                @endif
+
+            </div>
 
             <div class="check-box-group">
-                <label class="col-form-label text-md-right">Выбрать метро</label>
-                @foreach($metroList as $item)
+                <label class="col-form-label text-md-right">Выбрать время встречи</label>
+                @foreach($timeList as $item)
                     <div class="check-box-group-item">
-                        <input type="checkbox" class="custom-checkbox" id="metro-{{ $item->id }}" name="metro[]"
-                               @foreach($post->metro as $dataItem)
-                               @if($dataItem->metros_id == $item->id)
-                               checked
+                        <input type="checkbox" class="custom-checkbox" id="time-{{ $item->id }}" name="time[]"
+                               @foreach($post->time as $dataItem)
+                                   @if($dataItem->param_id == $item->id)
+                                       checked
                                @endif
                                @endforeach
                                value="{{ $item->id }}">
-                        <label for="metro-{{ $item->id }}">{{ $item->value }}</label>
+                        <label for="time-{{ $item->id }}">{{ $item->value }}</label>
                     </div>
                 @endforeach
             </div>
 
-        @endif
+            <div class="anket__photos-content-item active">
+                <div class="anket__photos-content-input anket__photos-content-item-item">
+                    <label for="anketPhotos">
+                        <img src="/images/cam.png" alt="">
+                        Загрузить фото
+                    </label>
 
-        <div class="check-box-group">
-            <label class="col-form-label text-md-right">Выбрать время встречи</label>
-            @foreach($timeList as $item)
-                <div class="check-box-group-item">
-                    <input type="checkbox" class="custom-checkbox" id="time-{{ $item->id }}" name="time[]"
-                           @foreach($post->time as $dataItem)
-                           @if($dataItem->param_id == $item->id)
-                           checked
-                           @endif
-                           @endforeach
-                           value="{{ $item->id }}">
-                    <label for="time-{{ $item->id }}">{{ $item->value }}</label>
+                    <input name="gallery[]" type="file" multiple id="anketPhotos" accept=".png, .jpg, .jpeg">
+
                 </div>
-            @endforeach
-        </div>
 
-        <div class="text-wrap form-group">
-            <label for="about" class="col-form-label text-md-right bold-label">Описание</label>
-            <textarea name="about" id="about" cols="30" rows="10">{{ $post->about }}</textarea>
-        </div>
+                @foreach($post->gallery as $item)
+                    <div class="post-photo-item">
+                        <label for="addpost-photo" class="img-label small-no-img-label">
+                            <img src="" alt="">
+                        </label>
+                    </div>
 
-        <button type="submit" class="get-more-post-btn">
-            Сохранить
-        </button>
+                    <div class="anket__photos-content-input anket__photos-content-item-item">
+                        <img src="/257-313/thumbs{{$item->file}}" alt="">
+                    </div>
 
-    </form>
+                @endforeach
+
+            </div>
+
+            <button type="submit" class="anket__btns-btn anket__btns-save btn-main">
+                Сохранить
+            </button>
+        </form>
+
+    </main>
 
 @endsection
