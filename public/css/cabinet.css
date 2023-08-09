@@ -2772,6 +2772,10 @@ footer {
     margin-right: 15px
 }
 
+div#register_recapcha {
+    margin-bottom: 15px;
+}
+
 .anket__photos-content-item-item-delete {
     position: absolute;
     right: 15px;

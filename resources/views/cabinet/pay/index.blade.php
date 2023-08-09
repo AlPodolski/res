@@ -4,71 +4,68 @@
 
 @section('content')
 
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item home">
-            <a class="breadcrumb-link" title="Главная" href="/cabinet">Кабинет</a>
-        </li>
-        <li class="breadcrumb-item" data-breadcrumbs="2">
-            Пополнить баланс
-        </li>
-    </ul>
+    @include('cabinet.includes.sidebar')
 
-    <h1>Баланс</h1>
+    <main class="ammount main col-lg-9">
 
-    @if($errors)
-        @foreach($errors->all() as $error)
-            <div class="error">{{$error}}</div>
-        @endforeach
-    @endif
+        <h1>Баланс</h1>
 
-    <div class="balance-wrap d-flex">
-        <div class="balance-card">
-            <div class="white-bold-text">Баланс</div>
-            <div class=" big-white-text margin-top-20">{{ auth()->user()->cash }}р.</div>
-        </div>
+        @if($errors)
+            @foreach($errors->all() as $error)
+                <div class="error">{{$error}}</div>
+            @endforeach
+        @endif
 
-        <div class="pay-form-wrap">
-
-            <form id="pay-form" class="form-horizontal" action="/cabinet/pay/processing" method="post">
-                @csrf
-                <div class="form-group field-obmenkapayform-sum">
-
-                    <label class="control-label" for="obmenkapayform-sum">Сумма (минимум 300)</label>
-                    <input type="text" id="obmenkapayform-sum" class="form-control" name="sum" value="500"
-                           aria-required="true">
+        <div class="ammount__info ammount__block">
+            <div class="ammount__info-balance">
+                <h2 class="ammount__info-balance-title">
+                    Баланс
+                </h2>
+                <div class="ammount__info-balance-value">
+                    0
                 </div>
+                <div class="ammount__info-balance-descr">
+                    Пополните счет любым удобным для вас споссбом
+                </div>
+            </div>
+            <form class="ammount__info-balance-repl" action="/cabinet/pay/processing" method="post">
+                @csrf
+                <label for="balanceReplCur">Введите сумму пополнения:</label>
+                <div class="ammount__info-balance-repl-input-wrap">
+                        <span data-val="500">
+                            <input class="ammount__info-balance-repl-input" type="text" id="balanceReplCur" name="sum" value="500"
+                                   oninput="this.parentElement.setAttribute('data-val',  this.value)"
+                            >
+                        </span>
 
-                <div class="form-group field-obmenkapayform-currency required">
-                    <label class="control-label">Выбрать способ оплаты</label>
-                    <div id="obmenkapayform-currency" role="radiogroup" aria-required="true">
-                        <div>
-                            <input checked="" id="qiwi_label-id" type="radio" name="currency" value="1"
-                                   tabindex="0">
-                            <label for="qiwi_label-id" class="modal-radio qiwi_label image-label-radio">Киви</label>
-                        </div>
-                        <div>
-                            <input id="visa_master_label-id" type="radio" name="currency" value="2"
-                                   tabindex="1">
-                            <label for="visa_master_label-id"
-                                   class="modal-radio visa_master_label image-label-radio">Карта</label>
-                        </div>
+                </div>
+                <div class="ammount__info-balance-repl-label">
+                    Выберите способ оплаты:
+                </div>
+                <div class="ammount__info-balance-repl-radio-items">
+                    <div class="ammount__info-balance-repl-radio-item">
+                        <input type="radio" name="currency" value="1" id="balanceReplQiwi" class="ammount__info-balance-repl-radio-input" checked>
+                        <label for="balanceReplQiwi">
+                            Киви
+                        </label>
                     </div>
-
+                    <div class="ammount__info-balance-repl-radio-item">
+                        <input type="radio" name="currency" value="2" id="balanceReplVisaMastercard" class="ammount__info-balance-repl-radio-input">
+                        <label for="balanceReplVisaMastercard">
+                            Карта
+                        </label>
+                    </div>
                 </div>
 
                 <script defer src='https://www.google.com/recaptcha/api.js'></script>
 
-                <div id="register_recapcha" class="g-recaptcha" data-sitekey="6Lffq2EkAAAAAK4PuAXJjhnE1NOP1uUjANyEUxe_"></div>
+                <div id="register_recapcha" class="g-recaptcha"
+                     data-sitekey="6Lffq2EkAAAAAK4PuAXJjhnE1NOP1uUjANyEUxe_"></div>
 
-                <div class="form-group">
-                    <button type="submit" class="orange-btn d-block">Отправить</button>
-                </div>
-
+                <button class="ammount__info-balance-repl-btn btn-main">Оплатить</button>
             </form>
         </div>
 
-    </div>
-
-    @widget('menu', ['city_id' =>  $cityInfo['id']  ])
+    </main>
 
 @endsection

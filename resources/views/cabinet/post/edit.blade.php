@@ -440,7 +440,7 @@
             </div>
 
             <button type="submit" class="anket__btns-btn anket__btns-save btn-main">
-                Сохранить
+
             </button>
         </form>
 
