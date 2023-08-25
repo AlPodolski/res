@@ -274,7 +274,7 @@ function check(object){
         },
         cache: false,
         success: function (data) {
-
+            $(object).html('Подтверждено')
         }
     })
 
@@ -450,6 +450,27 @@ function sendDeleteForm(object){
         event.preventDefault();
 
         return true;
+
+}
+
+function publication(object){
+
+    var id = $(object).attr('data-id');
+
+    $.ajax({
+        type: 'POST',
+        url: '/cabinet/post/publication',
+        data: 'id=' +id,
+        async:false,
+        dataType: "html",
+        cache: false,
+        success: function (data){
+
+            $(object).html(data);
+
+        },
+
+    })
 
 }
 

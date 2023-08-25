@@ -58,7 +58,9 @@ class PostsObserver
         if ($postFiles) {
 
             foreach ($postFiles as $file) {
+
                 $path = (storage_path('app/public' . $file->file));
+
                 if (file_exists($path)){
 
                     unlink($path);
@@ -66,9 +68,11 @@ class PostsObserver
                 }
 
                 $file->delete();
+
             }
 
         }
+
     }
 
     /**

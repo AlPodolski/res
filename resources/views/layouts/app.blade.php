@@ -154,6 +154,7 @@
     <div id="arrowTop" hidden></div>
     <div class="header-overlay"></div>
     <main class="py-4 container">
+        <div class="alert alert-success">Скажите что звоните с сайта rex-sex.com и получите скидку</div>
         @yield('content')
     </main>
 </div>
