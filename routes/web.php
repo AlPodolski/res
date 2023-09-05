@@ -14,7 +14,7 @@ use Intervention\Image\ImageManager;
 |
 */
 
-Route::domain('admin.'.env('DOMAIN'))->group(function () {
+Route::domain('admin.' . env('DOMAIN'))->group(function () {
     Route::post('/api/post', 'Admin\Api\PostController@index');
 });
 
@@ -46,39 +46,43 @@ Route::post('/claim/add', [\App\Http\Controllers\ClaimController::class, 'index'
 
 Route::post('/view/phone', [\App\Http\Controllers\ViewController::class, 'phone']);
 
-Route::domain('{city}.'.env('DOMAIN'))->group(function () {
+Route::middleware('redirect')->group(function () {
 
-    Route::get('/prostitutki-na-karte',  'MapController@index');
+    Route::domain('{city}.' . env('DOMAIN'))->group(function () {
 
-    Route::middleware('auth' )->group(function(){
+        Route::get('/prostitutki-na-karte', 'MapController@index');
 
-        Route::get('/cabinet', [\App\Http\Controllers\Cabinet\IndexController::class, 'index']);
+        Route::middleware('auth')->group(function () {
 
-        Route::prefix('/cabinet')->group(function(){
+            Route::get('/cabinet', [\App\Http\Controllers\Cabinet\IndexController::class, 'index']);
 
-            Route::resource('post', '\App\Http\Controllers\Cabinet\PostsController');
-            Route::post('post/publication', ['\App\Http\Controllers\Cabinet\PostsController', 'publication']);
-            Route::get('pay', ['\App\Http\Controllers\Cabinet\PayController', 'index']);
-            Route::post('pay/processing', ['\App\Http\Controllers\Cabinet\PayController', 'processing'])
-            ->middleware('captcha');
+            Route::prefix('/cabinet')->group(function () {
+
+                Route::resource('post', '\App\Http\Controllers\Cabinet\PostsController');
+                Route::post('post/publication', ['\App\Http\Controllers\Cabinet\PostsController', 'publication']);
+                Route::get('pay', ['\App\Http\Controllers\Cabinet\PayController', 'index']);
+                Route::post('pay/processing', ['\App\Http\Controllers\Cabinet\PayController', 'processing'])
+                    ->middleware('captcha');
+
+            });
 
         });
 
+        Route::get('/', 'SiteController@index');
+
+        Route::get('/pay/{id}', 'PayController@index');
+
+        Route::post('/', 'SiteController@more');
+        Route::post('/post/more', 'PostController@more')->name('post.more');
+        Route::get('/post/{url}', 'PostController@index')->name('post.index');
+        Route::get('/robots.txt', 'RobotController@index');
+        Route::get('/search', 'SearchController@index');
+        Route::get('/filter', 'SearchController@filter');
+        Route::get('/sitemap.xml', 'SiteController@map');
+        Route::get('/{search}', 'FilterController@index')->where('search', '.*');
+        Route::post('/{search}', 'FilterController@more')->where('search', '.*');
     });
 
-    Route::get('/',  'SiteController@index');
-
-    Route::get('/pay/{id}',  'PayController@index');
-
-    Route::post('/',  'SiteController@more');
-    Route::post('/post/more',  'PostController@more')->name('post.more');
-    Route::get('/post/{url}',  'PostController@index')->name('post.index');
-    Route::get('/robots.txt',  'RobotController@index');
-    Route::get('/search',  'SearchController@index');
-    Route::get('/filter',  'SearchController@filter');
-    Route::get('/sitemap.xml',  'SiteController@map');
-    Route::get('/{search}',  'FilterController@index')->where('search', '.*');
-    Route::post('/{search}',  'FilterController@more')->where('search', '.*');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -9,7 +9,7 @@ class CreateRedirectsTable extends Migration
     public function up(): void
     {
         Schema::create('redirects', function (Blueprint $table) {
-            $table->integer('id');
+            $table->bigIncrements('id');
             $table->string('from');
             $table->string('to');
         });

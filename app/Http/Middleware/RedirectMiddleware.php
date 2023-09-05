@@ -31,7 +31,7 @@ class RedirectMiddleware
 
             if ($redirect){
 
-                $url = 'https://'.$redirect->to.'.'.SITE.$_SERVER['REQUEST_URI'];
+                $url = 'https://'.$redirect->to.'.'.env('DOMAIN').$_SERVER['REQUEST_URI'];
 
                 header('Location: '.$url, true, 301);
 
