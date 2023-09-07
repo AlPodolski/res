@@ -56,7 +56,7 @@
 
     @if($orders->total() > $orders->count())
 
-        {{ $orders->links('vendor.pagination.bootstrap-4') }}
+        {{ $orders->links() }}
 
     @endif
 
