@@ -81,3 +81,10 @@ function checkComment(object){
     })
 
 }
+function check_all() {
+
+    $(".check").each(function (index) {
+        $(this).trigger('click')
+    });
+
+}
