@@ -12,6 +12,11 @@ Route::middleware('admin:admin')->group(function (){
     Route::get('/claim', 'Admin\ClaimController@index');
     Route::get('/claim/delete', 'Admin\ClaimController@delete');
 
+    Route::get('/chat', 'Admin\ChatController@index');
+    Route::post('/chat/get', 'Admin\ChatController@get');
+    Route::post('/chat/send', 'Admin\ChatController@send');
+
+
     Route::post('/comments/delete', 'Admin\CommentController@delete');
     Route::post('/comments/check', 'Admin\CommentController@check');
     Route::resource('comments', 'Admin\CommentController');

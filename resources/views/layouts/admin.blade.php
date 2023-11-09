@@ -54,6 +54,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css?v=10" rel="stylesheet">
+    <link href="/css/cabinet.css?v=9" rel="stylesheet">
     <link href="/css/style.css?v=9" rel="stylesheet">
 
     <!-- Google tag (gtag.js) -->

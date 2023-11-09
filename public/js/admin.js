@@ -88,3 +88,56 @@ function check_all() {
     });
 
 }
+
+function getChat(object){
+
+    var id = $(object).attr('data-id');
+    var url = '/admin/chat/get';
+
+    $('.chat__list-item').removeClass('selected-chat')
+
+    $.ajax({
+        type: 'POST',
+        url: url, //Путь к обработчику
+        response: 'text',
+        data: 'id=' + id,
+        dataType: "html",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        cache: false,
+        success: function (data) {
+            $('.chat__dialog').html(data)
+            $(object).addClass('selected-chat');
+            $('.chat__dialog-list-wrap').scrollTop($('.chat__dialog-list-wrap').height() + 99999999);
+            setTimeout(afterDelay, 250);
+        }
+    })
+
+}
+function sendMessageAdmin(object){
+
+    var message = $('.chatMessage').val()
+    var id = $(object).attr('data-id')
+
+    $.ajax({
+        type: 'POST',
+        url: '/admin/chat/send',
+        async:false,
+        data: 'message=' + message + '&id=' + id,
+        dataType: "html",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        cache: false,
+        success: function (data){
+
+            $('.chatMessage').val('')
+
+            addMessage(data);
+
+        },
+
+    })
+}
+
