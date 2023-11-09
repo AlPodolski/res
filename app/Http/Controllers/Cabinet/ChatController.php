@@ -31,7 +31,10 @@ class ChatController extends Controller
     {
         $text = $request->post('message');
 
-        return (new SendMessageAction())->send($text, auth()->user()->id);
+        $message = (new SendMessageAction())->send($text, auth()->user()->id);
+
+        if ($message) return $message->message;
+
     }
 
     public function file(Request $request)
