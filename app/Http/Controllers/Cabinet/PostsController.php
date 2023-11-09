@@ -75,6 +75,10 @@ class PostsController extends Controller
 
         $post = Post::create($data);
 
+        $post->publication_status = Post::POST_ON_MODERATION;
+
+        $post->save();
+
         PostNational::create([
             'post_nationals_id' => $post->id,
             'nationals_id' => $data['national_id'],
