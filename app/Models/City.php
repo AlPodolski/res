@@ -21,6 +21,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|City whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|City whereUrl($value)
  * @mixin \Eloquent
+ * @property string|null $x
+ * @property string|null $y
+ * @method static \Illuminate\Database\Eloquent\Builder|City whereX($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|City whereY($value)
  */
 class City extends Model
 {

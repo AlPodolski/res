@@ -79,6 +79,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Post wherePhoneViewCount($value)
  * @property int $pol
  * @method static \Illuminate\Database\Eloquent\Builder|Post wherePol($value)
+ * @property int $last_phone_view
+ * @property int $likes
+ * @property-read \App\Models\City|null $city
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Files[] $files
+ * @property-read int|null $files_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereLastPhoneView($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereLikes($value)
  */
 class Post extends Model
 {

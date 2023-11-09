@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property string $name
  * @method static \Illuminate\Database\Eloquent\Builder|Comment whereName($value)
+ * @property-read \App\Models\Post|null $post
  */
 class Comment extends Model
 {

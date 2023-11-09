@@ -59,6 +59,16 @@
                 </li>
 
                 <li class="sidebar__menu-item">
+                    <a href="/cabinet/chat" class="sidebar__menu-link">
+                        <svg class="sidebar__menu-icon">
+                            <use xlink:href='/svg/dest/stack/sprite.svg#feedback'></use>
+                        </svg>
+                        <span class="sidebar__menu-text">
+                            Обратная связь
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebar__menu-item">
                     <a href="/" class="sidebar__menu-link">
                         <svg class="sidebar__menu-icon">
                             <use xlink:href='/svg/dest/stack/sprite.svg#out'></use>
@@ -69,16 +79,6 @@
                     </a>
                 </li>
 
-                <li class="sidebar__menu-item">
-                    <a href="#" class="sidebar__menu-link">
-                        <svg class="sidebar__menu-icon">
-                            <use xlink:href='/svg/dest/stack/sprite.svg#feedback'></use>
-                        </svg>
-                        <span class="sidebar__menu-text">
-                            Обратная связь
-                        </span>
-                    </a>
-                </li>
                 <li class="sidebar__menu-item">
                     <a href="/logout" class="sidebar__menu-link">
                         <svg class="sidebar__menu-icon">

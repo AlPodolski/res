@@ -59,6 +59,11 @@ Route::middleware('redirect')->group(function () {
             Route::prefix('/cabinet')->group(function () {
 
                 Route::resource('post', '\App\Http\Controllers\Cabinet\PostsController');
+
+                Route::get('chat', ['\App\Http\Controllers\Cabinet\ChatController', 'index']);
+                Route::post('chat', ['\App\Http\Controllers\Cabinet\ChatController', 'send']);
+                Route::post('chat/file', ['\App\Http\Controllers\Cabinet\ChatController', 'file']);
+
                 Route::post('post/publication', ['\App\Http\Controllers\Cabinet\PostsController', 'publication']);
                 Route::get('pay', ['\App\Http\Controllers\Cabinet\PayController', 'index']);
                 Route::post('pay/processing', ['\App\Http\Controllers\Cabinet\PayController', 'processing'])

@@ -20,6 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|PostMetro wherePostsId($value)
  * @mixin \Eloquent
  * @property-read \App\Models\Metro|null $metro
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Post[] $posts
+ * @property-read int|null $posts_count
  */
 class PostMetro extends Model
 {

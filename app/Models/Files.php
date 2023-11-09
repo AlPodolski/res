@@ -33,4 +33,5 @@ class Files extends Model
     const VIDEO_TYPE = 2;
     const MAIN_PHOTO_TYPE = 1;
     const GALLERY_PHOTO_TYPE = 0;
+    const CHAT = 4;
 }

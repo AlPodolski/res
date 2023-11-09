@@ -22,6 +22,14 @@ $(document).scroll(function () {
 
 });
 
+$(document).ready(function(){
+    setTimeout(afterDelay, 250);
+})
+
+function afterDelay() {
+    $('.chat__dialog-list-wrap').scrollTop($('.chat__dialog-list-wrap').height() + 99999999);
+}
+
 $(document).ready(function () {
 
     $.getScript("/js/nouislider.js", function (data, textStatus, jqxhr) {
@@ -278,6 +286,95 @@ function check(object){
         }
     })
 
+}
+
+function sendMessage(object){
+
+    var message = $('.chatMessage').val()
+
+    $.ajax({
+        type: 'POST',
+        url: '/cabinet/chat',
+        async:false,
+        data: 'message=' + message,
+        dataType: "html",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        cache: false,
+        success: function (data){
+
+            $('.chatMessage').val('')
+
+            addMessage(data);
+
+        },
+
+    })
+}
+
+function addMessage(text){
+
+    var message = '<div class="chat__dialog-list-item chat__dialog-list-item--qst">\n' +
+        '                    <div class="chat__dialog-list-item-text">\n' +
+        text +
+        '                    </div>\n' +
+        '                </div>';
+
+    $('.chat__dialog-list').append(message);
+
+    $('.chat__dialog-list-wrap').scrollTop($('.chat__dialog-list-wrap').height() + 99999999);
+
+}
+
+function send_photo(){
+
+    var formData = new FormData($("#send-message-photo-form")[0]);
+
+    var tmp = this;
+
+    $.ajax({
+        url: '/cabinet/chat/file',
+        type: 'POST',
+        data: formData,
+        datatype: 'json',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        // async: false,
+        beforeSend: function () {
+            $(this).siblings('label').text('Загрузка');
+        },
+        success: function (data) {
+
+            $('.chat__dialog-list').append(data);
+
+            $('.chat__dialog-list-wrap').scrollTop($('.chat__dialog-list-wrap').height() + 99999999);
+
+            setTimeout(afterDelay, 200);
+
+        },
+
+        complete: function () {
+            // success alerts
+        },
+
+        error: function (data) {
+            alert("There may a error on uploading. Try again later");
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+
+}
+
+$(document).ready(function(){
+    setTimeout(afterDelay, 250);
+})
+
+function afterDelay() {
+    $('.chat__dialog-list-wrap').scrollTop($('.chat__dialog-list-wrap').height() + 99999999);
 }
 
 function getMorePosts(object){

@@ -2911,7 +2911,7 @@ div#register_recapcha {
 }
 
 .chat__dialog {
-    width: 70%;
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2919,7 +2919,16 @@ div#register_recapcha {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    overflow: hidden;
     padding: 13px 11px 0 32px
+}
+.chat__dialog-list-wrap {
+    max-height: 450px;
+    overflow-y: scroll;
+    position: relative;
+    right: -23px;
+    padding-right: 10px;
+    margin-bottom: 15px;
 }
 
 .chat__dialog-name {
@@ -2930,6 +2939,7 @@ div#register_recapcha {
 
 .chat__dialog-list {
     margin: 41px 0 0 0;
+    min-height: 50vh;
     height: 100%
 }
 
@@ -2973,6 +2983,11 @@ div#register_recapcha {
     font-size: 14px
 }
 
+.chat__dialog-panel .btn-main {
+    max-width: 140px;
+    margin-left: 25px;
+}
+
 .chat__dialog-panel {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2990,7 +3005,6 @@ div#register_recapcha {
 
 .chat__dialog-panel textarea {
     margin-bottom: -19px;
-    max-width: 320px;
     width: 100%;
     resize: none;
     border: none;
