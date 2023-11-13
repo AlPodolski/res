@@ -63,8 +63,14 @@
                         <svg class="sidebar__menu-icon">
                             <use xlink:href='/svg/dest/stack/sprite.svg#feedback'></use>
                         </svg>
-                        <span class="sidebar__menu-text">
+                        <span class="sidebar__menu-text position-relative">
                             Обратная связь
+                            @php
+                                /* @var $notReadMessage \App\Models\ChatMessage */
+                            @endphp
+                            @if($notReadMessage and $notReadMessage->notRead->count())
+                                <span class="not-read-message position-absolute">{{$notReadMessage->notRead->count()}}</span>
+                            @endif
                         </span>
                     </a>
                 </li>

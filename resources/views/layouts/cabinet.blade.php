@@ -23,7 +23,7 @@
         gtag('config', 'G-G1KH2Z4KHE');
     </script>
 
-    <link href="/css/cabinet.css" rel="stylesheet">
+    <link href="/css/cabinet.css?v=1" rel="stylesheet">
 
 </head>
 <body>

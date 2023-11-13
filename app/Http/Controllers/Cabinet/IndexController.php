@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cabinet;
 
+use App\Models\UserChat;
 use App\Repositories\CityRepository;
 use App\Repositories\DataRepository;
 use App\Repositories\PostsRepository;
@@ -27,6 +28,8 @@ class IndexController extends Controller
 
         $metro = $dataRepository->metro($cityInfo['id']);
 
-        return view('cabinet.index', compact('postsList', 'metro', 'cityInfo'));
+        $notReadMessage = UserChat::where('user_id', auth()->user()->id)->with('notRead')->first();
+
+        return view('cabinet.index', compact('postsList', 'metro', 'cityInfo', 'notReadMessage'));
     }
 }

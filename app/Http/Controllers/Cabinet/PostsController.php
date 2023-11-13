@@ -13,6 +13,7 @@ use App\Models\PostNational;
 use App\Models\PostRayon;
 use App\Models\PostService;
 use App\Models\PostTime;
+use App\Models\UserChat;
 use App\Repositories\CityRepository;
 use App\Repositories\DataRepository;
 use App\Repositories\PostsRepository;
@@ -59,8 +60,11 @@ class PostsController extends Controller
 
         $cityList = $this->cityRepository->getAllCity();
 
+        $notReadMessage = UserChat::where('user_id', auth()->user()->id)->with('notRead')->first();
+
         return view('cabinet.post.add', compact('serviceList', 'metroList', 'rayonList',
-            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList', 'cityList'));
+            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList',
+            'cityList', 'notReadMessage'));
     }
 
     /**
@@ -204,8 +208,11 @@ class PostsController extends Controller
 
         $cityList = $this->cityRepository->getAllCity();
 
+        $notReadMessage = UserChat::where('user_id', auth()->user()->id)->with('notRead')->first();
+
         return view('cabinet.post.edit', compact('post', 'serviceList', 'metroList', 'rayonList',
-            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList', 'cityList'));
+            'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList',
+            'cityList', 'notReadMessage'));
     }
 
     /**

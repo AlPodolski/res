@@ -2988,6 +2988,26 @@ div#register_recapcha {
     margin-left: 25px;
 }
 
+.position-relative{
+    position: relative;
+}
+
+.position-absolute{
+    position: absolute;
+}
+
+.not-read-message{
+    width: 20px;
+    height: 20px;
+    background: #4926e8;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    top: -5px;
+    font-size: 14px;
+    line-height: 23px;
+}
+
 .chat__dialog-panel {
     display: -webkit-box;
     display: -ms-flexbox;
