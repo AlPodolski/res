@@ -7,6 +7,8 @@ Route::middleware('admin:admin')->group(function (){
 
     Route::get('/', 'Admin\IndexController@index');
 
+    Route::post('phone/update', 'Admin\PhoneController');
+
     Route::resource('obmenka', 'Admin\ObmenkaController');
 
     Route::get('/claim', 'Admin\ClaimController@index');

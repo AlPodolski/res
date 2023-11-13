@@ -1,0 +1,17 @@
+.chat__dialog .info{
+    display: flex;
+    align-items: center;
+}
+.chat__dialog .phone-edit{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.info-item {
+    margin-right: 15px;
+}
+.chat__list-item {
+    align-items: baseline!important;
+    cursor: pointer!important;
+    flex-direction: column;
+}

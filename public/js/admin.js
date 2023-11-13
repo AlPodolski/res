@@ -141,3 +141,28 @@ function sendMessageAdmin(object){
     })
 }
 
+function updatePhone(object){
+
+    var phone = $(object).siblings('.phone-change').val();
+    var userId = $(object).attr('data-id');
+
+    $.ajax({
+        type: 'POST',
+        url: "/admin/phone/update", //Путь к обработчику
+        data: 'user_id=' + userId + '&phone=' + phone ,
+        response: 'text',
+        dataType: "html",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        cache: false,
+        success: function (data) {
+
+            $(object).text('Готово');
+            $('#chatMessage').text('Готово');
+
+        }
+    })
+
+}
+
