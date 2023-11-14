@@ -26,6 +26,30 @@ $(document).ready(function(){
     setTimeout(afterDelay, 250);
 })
 
+function upPost(object) {
+
+    var id = $(object).attr('data-id');
+
+    $.ajax({
+        type: 'POST',
+        url: '/cabinet/post/up',
+        async:false,
+        data: 'id=' + id,
+        dataType: "html",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        cache: false,
+        success: function (data){
+
+            $(object).html(data);
+
+        },
+
+    })
+
+}
+
 function afterDelay() {
     $('.chat__dialog-list-wrap').scrollTop($('.chat__dialog-list-wrap').height() + 99999999);
 }

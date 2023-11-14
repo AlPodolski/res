@@ -395,4 +395,32 @@ class PostsController extends Controller
         return $result;
 
     }
+
+    public function up(Request $request)
+    {
+
+        $upCost = 70;
+
+        $id = $request->post('id');
+
+        $post = Post::where('id',$id)
+            ->where('user_id', auth()->user()->id)
+            ->with('user')->first();
+
+        if (!$post) abort(404);
+
+        if ($post->user->cash < $upCost) return 'Недостаточно средств';
+
+        $post->user->cash = $post->user->cash - $upCost;
+
+        $post->user->save();
+
+        $post->sorting = time();
+
+        $post->save();
+
+        return 'Анкета поднята';
+
+    }
+
 }

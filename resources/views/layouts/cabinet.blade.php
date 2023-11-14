@@ -82,7 +82,7 @@
     </div>
 </div>
 <script src="/js/bundle.js" defer></script>
-<script src="/js/script.js?v=16" defer></script>
+<script src="/js/script.js?v=17" defer></script>
 <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
         m[i] = m[i] || function () {
