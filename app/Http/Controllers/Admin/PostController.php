@@ -29,7 +29,7 @@ class PostController extends Controller
 
         $posts = Post::orderBy('id', 'desc')
             ->with('avatar', 'city')
-            ->paginate(40);
+            ->paginate(100);
 
         return view('admin.posts.index', compact('posts'));
     }
