@@ -579,6 +579,30 @@ video{
     background: #ff6163;
     border-radius: 50%;
 }
+.tarif{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 60px;
+    height: 60px;
+}
+
+.tarif_2 {
+    background: url("../images/vip.svg");
+    background-size: cover;
+}
+.tarif_3{
+    background: url("../images/premium.svg");
+    background-size: cover;
+}
+.tarif_4{
+    background: url("../images/premium_plus.svg");
+    background-size: cover;
+}
+.tarif_5{
+    background: url("../images/elit.svg");
+    background-size: cover;
+}
 .top-nav .balance{
     align-items: center;
     margin-right: 10px;

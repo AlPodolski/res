@@ -32,6 +32,10 @@ use App\Actions\Like;
                      srcset="/211-300/thumbs{{$post->avatar->file}}" alt="{{ $post->name }}">
             </picture>
         @endif
+            @if($post->tarif_id)
+                <div class="tarif tarif_{{ $post->tarif_id }}">
+                </div>
+            @endif
     </a>
     @if($post->video)
         <div class="video-stick">
