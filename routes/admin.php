@@ -10,6 +10,7 @@ Route::middleware('admin:admin')->group(function (){
     Route::post('phone/update', 'Admin\PhoneController');
 
     Route::resource('obmenka', 'Admin\ObmenkaController');
+    Route::get('/obmenka/user/{id}', 'Admin\ObmenkaController@user');
 
     Route::get('/claim', 'Admin\ClaimController@index');
     Route::get('/claim/delete', 'Admin\ClaimController@delete');
