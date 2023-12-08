@@ -22,6 +22,7 @@ class PhoneRepository
             'publication_status' => Post::POST_ON_PUBLICATION
         ])
             ->where('last_phone_view', '<', time() - 1100)
+            ->where('user_id', '<>', 592)
             ->orderByDesc('last_phone_view')
             ->first();
 
