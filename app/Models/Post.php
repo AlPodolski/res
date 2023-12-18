@@ -53,7 +53,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $time_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PostPlace[] $place
  * @property-read int|null $place_count
- * @property-read \App\Models\Files|null $avatar
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Files[] $gallery
  * @property-read int|null $gallery_count
  * @property string|null $old_url
@@ -104,7 +103,7 @@ class Post extends Model
     const POL_MAN = 1;
     const POL_TRANS = 2;
 
-    protected $fillable = ['name', 'user_id' , 'phone', 'about', 'price',
+    protected $fillable = ['name', 'user_id' , 'phone', 'about', 'price', 'avatar',
         'tarif_id', 'rost', 'ves', 'breast_size', 'city_id', 'age', 'fake', 'publication_status','check_photo_status'];
 
     public function getPublication()

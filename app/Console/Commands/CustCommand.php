@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\City;
+use App\Models\Files;
 use App\Models\IntimHair;
 use App\Models\Post;
 use App\Models\PostIntimHair;
@@ -45,36 +46,18 @@ class CustCommand extends Command
      */
     public function handle()
     {
-        $stream = \fopen(storage_path('city_kor.csv'), 'r');
+        $files = Files::where('type', Files::MAIN_PHOTO_TYPE)
+            ->where('related_class', Post::class)
+            ->get();
 
-        $csv = Reader::createFromStream($stream);
-        $csv->setDelimiter(';');
-        $csv->setHeaderOffset(0);
-        //build a statement
-        $stmt = (new Statement());
+        foreach ($files as $file){
 
-        $records = $stmt->process($csv);
+            $post = Post::where('id', $file->related_id)->first();
 
-        $data = array();
+            $post->photo = $file->file;
 
-        foreach ($records as $value) {
-
-            $data[] = $value;
+            $post->save();
 
         }
-
-        foreach ($data as $item){
-
-            if ($city = City::where('city', $item['city'])->first()){
-
-                $city->x = $item['x'];
-                $city->y = $item['y'];
-
-                $city->save();
-
-            }
-
-        }
-
     }
 }
