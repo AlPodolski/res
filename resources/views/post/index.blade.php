@@ -6,8 +6,8 @@
 @endphp
 @section('title', $metaData['title'])
 @section('des', $metaData['des'])
-@if(isset($post->avatar->file))
-    @section('img',  '/521-741/thumbs'.$post->avatar->file)
+@if($post->photo)
+    @section('img',  '/521-741/thumbs'.$post->photo)
 @endif
 @section('content')
 

@@ -147,7 +147,7 @@
         <div class="avatar">
             <label class="col-form-label text-md-right">Главное фото</label>
             <label for="addpost-image" id="cabinet-main-img-label"
-                   style="background-image: url('/211-300/thumbs{{$post->avatar->file}}')"
+                   style="background-image: url('/211-300/thumbs{{$post->photo}}')"
                    class=" img-label no-img-bg main-img">
 
             </label>

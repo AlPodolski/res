@@ -26,6 +26,6 @@ class TopList extends Model
 
     public function post()
     {
-        return $this->hasOne(Post::class, 'id', 'post_id')->with('avatar:related_id,file');
+        return $this->hasOne(Post::class, 'id', 'post_id');
     }
 }

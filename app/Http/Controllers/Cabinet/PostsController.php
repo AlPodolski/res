@@ -156,12 +156,7 @@ class PostsController extends Controller
 
         $avatar = $request->file('avatar')->store('/uploads/aa1', 'public');
 
-        $photo[] = [
-            'related_id' => $post->id,
-            'related_class' => Post::class,
-            'file' => '/' . $avatar,
-            'type' => Files::MAIN_PHOTO_TYPE
-        ];
+        $post->photo = $avatar;
 
         if ($photo) foreach ($photo as $item) {
             Files::create($item);
@@ -322,13 +317,7 @@ class PostsController extends Controller
 
             if ($avatar = $request->file('avatar')) {
 
-                $postAvatar = Files::where([
-                    'related_id' => $post->id,
-                    'type' => Files::MAIN_PHOTO_TYPE,
-                    'related_class' => Post::class
-                ])->get()->first();
-
-                $path = (storage_path('app/public' . $postAvatar->file));
+                $path = (storage_path('app/public' . $post->photo));
 
                 if (file_exists($path)) {
 
@@ -336,16 +325,11 @@ class PostsController extends Controller
 
                 }
 
-                $postAvatar->delete();
-
                 $avatar = $avatar->store('/uploads/aa1', 'public');
 
-                $photo[] = [
-                    'related_id' => $post->id,
-                    'related_class' => Post::class,
-                    'file' => '/' . $avatar,
-                    'type' => Files::MAIN_PHOTO_TYPE
-                ];
+                $post->photo = $avatar;
+
+                $post->save();
 
             }
 

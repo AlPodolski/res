@@ -38,8 +38,8 @@
                     </td>
                     <td>
                         <a href="/admin/posts/{{ $post->id }}/edit">
-                            @if(isset($post->avatar->file) and $post->avatar->file)
-                                <img loading="lazy" src="/139-185/thumbs{{$post->avatar->file}}" alt="">
+                            @if($post->photo)
+                                <img loading="lazy" src="/139-185/thumbs{{$post->photo}}" alt="">
                             @endif
                         </a>
                     </td>

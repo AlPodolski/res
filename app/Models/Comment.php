@@ -42,6 +42,6 @@ class Comment extends Model
     public function post()
     {
         return $this->hasOne(Post::class, 'id', 'related_id')
-            ->with('avatar', 'city');
+            ->with( 'city');
     }
 }

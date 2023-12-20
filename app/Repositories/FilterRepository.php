@@ -263,7 +263,7 @@ class FilterRepository
 
         $data = Cache::remember('more_posts_' . $city_id, $expire, function () use ($city_id, $limit) {
 
-            return Post::with('avatar', 'video')
+            return Post::with( 'video')
                 ->orderByRaw(\DB::raw('RAND()'))
                 ->limit($limit)
                 ->where(['city_id' => $city_id])

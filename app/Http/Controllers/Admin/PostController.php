@@ -28,7 +28,7 @@ class PostController extends Controller
     {
 
         $posts = Post::orderBy('id', 'desc')
-            ->with('avatar', 'city')
+            ->with('city')
             ->paginate(100);
 
         return view('admin.posts.index', compact('posts'));

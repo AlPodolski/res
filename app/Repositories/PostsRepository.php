@@ -15,7 +15,7 @@ class PostsRepository
 
         $sort = (new GetSort())->get($sort);
 
-        return Post::with('avatar', 'video', 'metro')
+        return Post::with('video', 'metro')
             ->orderByRaw($sort)
             ->where(['city_id' => $cityId])
             ->where(['publication_status' => Post::POST_ON_PUBLICATION])
@@ -30,15 +30,11 @@ class PostsRepository
 
         else{
 
-            $columns = ['url', 'id', 'name', 'phone', 'price', 'age', 'breast_size',
-                'ves', 'about', 'sorting', 'city_id', 'likes'];
-
             $relation = ['national', 'hair', 'metro', 'rayon',
-                'intimHair', 'time', 'place', 'avatar',
+                'intimHair', 'time', 'place',
                 'gallery', 'video', 'selphi', 'service', 'comments'];
 
             $post = Post::with($relation)
-                ->select($columns)
                 ->where(['url' => $url, 'city_id' => $cityId])
                 ->first();
 
@@ -56,11 +52,9 @@ class PostsRepository
 
             $data = unserialize($ids);
 
-            $columns = ['url', 'name', 'phone', 'price', 'id' ,'sorting', 'city_id', 'likes'];
-
-            $posts = Post::with('avatar', 'video', 'metro')
+            $posts = Post::with( 'video', 'metro')
                 ->whereIn('id', $data)
-                ->select($columns)->get();
+                ->get();
 
             return $posts;
 
@@ -75,9 +69,9 @@ class PostsRepository
 
         $sort = (new GetSort())->get($sort);
 
-        $columns = ['url', 'name', 'phone', 'price', 'id', 'sorting', 'city_id', 'likes'];
+        $columns = ['url', 'name', 'phone', 'price', 'id', 'sorting', 'city_id', 'likes', 'photo'];
 
-        $posts = Post::with('avatar', 'video', 'metro')
+        $posts = Post::with( 'video', 'metro')
             ->where('id', '<>', $post->id)
             ->orderByRaw($sort)
             ->select($columns)
@@ -96,15 +90,12 @@ class PostsRepository
 
     public function getPostForSingleMore($cityId ,$limit = 8, $ids = false, $price = false, $rayonId = false)
     {
-        $columns = ['url', 'id', 'name', 'phone', 'price', 'age',
-            'breast_size', 'ves', 'about', 'sorting', 'city_id', 'likes'];
 
         $relation = ['national', 'hair', 'metro', 'rayon',
-            'intimHair', 'time', 'place', 'avatar',
+            'intimHair', 'time', 'place',
             'gallery', 'video', 'selphi', 'service', 'comments'];
 
         $post = Post::with($relation)
-            ->select($columns)
             ->orderByRaw('RAND()')
             ->where(['publication_status' => Post::POST_ON_PUBLICATION])
             ->where(['city_id' => $cityId])
@@ -151,12 +142,8 @@ class PostsRepository
     public function getByUserId($userId)
     {
 
-        $columns = ['url', 'name', 'phone', 'price', 'id',
-            'publication_status', 'sorting', 'city_id', 'likes'];
-
-        return Post::with('avatar', 'video')
+        return Post::with( 'video')
             ->orderBy('id', 'desc')
-            ->select($columns)
             ->where(['user_id' => $userId])
             ->get();
     }
@@ -164,7 +151,7 @@ class PostsRepository
     public function getById($id)
     {
         $relation = ['national', 'hair', 'metro', 'rayon',
-            'intimHair', 'time', 'place', 'avatar',
+            'intimHair', 'time', 'place',
             'gallery', 'video', 'selphi', 'service', 'comments'];
 
         $post = Post::with($relation)
@@ -191,7 +178,7 @@ class PostsRepository
 
                     foreach ($item->posts as $postItem){
 
-                        if (isset($postItem->avatar->file)){
+                        if (isset($postItem->photo)){
 
                             $data['id'] = $postItem->id;
                             $data['url'] = $postItem->url;
@@ -200,7 +187,7 @@ class PostsRepository
                             $data['price'] = $postItem->price;
                             $data['name'] = $postItem->name;
                             $data['phone'] = $postItem->phone;
-                            $data['avatar'] = '/314-441/thumbs'.$postItem->avatar->file;
+                            $data['avatar'] = '/314-441/thumbs'.$postItem->photo;
 
                             $result[] = $data;
 

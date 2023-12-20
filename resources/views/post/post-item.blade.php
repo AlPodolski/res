@@ -7,15 +7,15 @@ use App\Actions\Like;
      data-rayon-id="{{ $post->rayon->rayon->id ?? '' }}">
     <div class="left">
         <picture>
-            <source srcset="/370-526/thumbs{{str_replace('.jpg', '.webp', $post->avatar->file)}}"
+            <source srcset="/370-526/thumbs{{str_replace('.jpg', '.webp', $post->photo)}}"
                     media="(max-width: 400px)" type="image/webp">
-            <source srcset="/370-526/thumbs{{$post->avatar->file}}"
+            <source srcset="/370-526/thumbs{{$post->photo}}"
                     media="(max-width: 400px)" type="image/jpeg">
 
-            <source srcset="/521-741/thumbs{{str_replace('.jpg', '.webp', $post->avatar->file)}}" type="image/webp">
-            <source srcset="/521-741/thumbs{{$post->avatar->file}}" type="image/jpeg">
+            <source srcset="/521-741/thumbs{{str_replace('.jpg', '.webp', $post->photo)}}" type="image/webp">
+            <source srcset="/521-741/thumbs{{$post->photo}}" type="image/jpeg">
 
-            <img title="Проститутка {{ $post->name }}" srcset="/521-741/thumbs{{$post->avatar->file}}"
+            <img title="Проститутка {{ $post->name }}" srcset="/521-741/thumbs{{$post->photo}}"
                  alt="{{ $post->name }}">
         </picture>
     </div>

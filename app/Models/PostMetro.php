@@ -38,6 +38,6 @@ class PostMetro extends Model
     public function posts()
     {
         return $this->hasMany(Post::class, 'id', 'posts_id')
-            ->with('avatar')->limit(2000);
+            ->limit(2000);
     }
 }

@@ -36,6 +36,6 @@
         </svg>
     </label>
     <div onclick="sendMessageAdmin(this)" data-id="{{ $chat->chat_id }}"
-         class="btn-main">Отрправить
+         class="btn-main">Отправить
     </div>
 </form>

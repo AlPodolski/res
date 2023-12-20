@@ -27,19 +27,17 @@ class PostController extends Controller
     {
         $cityId = $request->post('city');
 
-        $domain = 'rex-sex.com';
+        $domain = 'rexxx-sex.com';
 
         $cityInfo = $this->cityRepository->getAllCityInfoById($cityId);
 
         $post = Post::where(['fake' => Post::POST_REAL, 'city_id' => $cityInfo['id']])
-            ->with('avatar')
             ->inRandomOrder()
             ->first();
 
         if (!$post){
 
             $post = Post::where(['city_id' => $cityInfo['id']])
-                ->with('avatar')
                 ->inRandomOrder()
                 ->first();
 
@@ -51,7 +49,7 @@ class PostController extends Controller
                 'name' => $post->name,
                 'age' => $post->age,
                 'url' => 'https://' . $cityInfo['url'] . '.'.$domain.'/post/' . $post->url,
-                'photo' => 'https://' . $cityInfo['url'] . '.' . $domain . '/521-741/thumbs'.$post->avatar->file
+                'photo' => 'https://' . $cityInfo['url'] . '.' . $domain . '/521-741/thumbs'.$post->photo
             ];
 
             echo json_encode($result);
