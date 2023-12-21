@@ -158,6 +158,8 @@ class PostsController extends Controller
 
         $post->photo = $avatar;
 
+        $post->save();
+
         if ($photo) foreach ($photo as $item) {
             Files::create($item);
         }
