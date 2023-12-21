@@ -103,7 +103,7 @@ class Post extends Model
     const POL_MAN = 1;
     const POL_TRANS = 2;
 
-    protected $fillable = ['name', 'user_id' , 'phone', 'about', 'price', 'avatar',
+    protected $fillable = ['name', 'user_id' , 'phone', 'about', 'price',
         'tarif_id', 'rost', 'ves', 'breast_size', 'city_id', 'age', 'fake', 'publication_status','check_photo_status'];
 
     public function getPublication()
