@@ -17,15 +17,15 @@ use App\Models\Post;
         <picture>
             <source srcset="/314-441/thumbs{{$post->photo}}"
                     media="(max-width: 361px)">
-            <source srcset="/370-526/thumbs/{{$post->photo}}" media="(max-width: 400px)">
-            <source srcset="/211-300/thumbs/{{$post->photo}}">
+            <source srcset="/370-526/thumbs{{$post->photo}}" media="(max-width: 400px)">
+            <source srcset="/211-300/thumbs{{$post->photo}}">
             <img
                 class="ankets__item-img"
                 @if(!isset($posts) or $posts->first() != $post)
                     loading="lazy"
                 @endif
                 title="Проститутка {{ $post->name }}"
-                srcset="/211-300/thumbs/{{$post->photo}}" alt="{{ $post->name }}">
+                srcset="/211-300/thumbs{{$post->photo}}" alt="{{ $post->name }}">
         </picture>
 
     </div>

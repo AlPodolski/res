@@ -154,7 +154,7 @@ class PostsController extends Controller
 
         }
 
-        $avatar = $request->file('avatar')->store('/uploads/aa1', 'public');
+        $avatar = '/'. $request->file('avatar')->store('/uploads/aa1', 'public');
 
         $post->photo = $avatar;
 
@@ -327,7 +327,7 @@ class PostsController extends Controller
 
                 }
 
-                $avatar = $avatar->store('/uploads/aa1', 'public');
+                $avatar = '/'. $avatar->store('/uploads/aa1', 'public');
 
                 $post->photo = $avatar;
 
