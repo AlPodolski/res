@@ -9,14 +9,11 @@ use Illuminate\Http\Request;
 class SearchRepository
 {
 
-    private $columns = ['url', 'name', 'phone', 'price', 'id' , 'age', 'breast_size', 'rost', 'ves'];
-
     public function getForSearch($search, $cityId, $limit = 15)
     {
 
         return Post::with('avatar', 'video', 'metro')
             ->orderByRaw('RAND()')
-            ->select($this->columns)
             ->where('name' , 'like', '%'.$search.'%')
             ->orWhere('phone' , 'like', '%'.$search.'%')
             ->where(['city_id' => $cityId])
@@ -28,7 +25,6 @@ class SearchRepository
 
         $posts = Post::with('avatar', 'video')
             ->orderByRaw('RAND()')
-            ->select($this->columns)
             ->where('age' , '>=', $data['age-from'])
             ->where('age' , '<=', $data['age-to'])
             ->where('rost' , '>=', $data['rost-from'])

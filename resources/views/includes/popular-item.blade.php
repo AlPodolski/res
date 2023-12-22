@@ -1,7 +1,7 @@
 @php
     /* @var $topListItem \App\Models\TopList */
 @endphp
-@if($topListItem->post->photo))
+@if($topListItem->post->photo)
     <div class="popular-item post-photo-item">
         <a href="/post/{{ $topListItem->post->url }}">
             <picture>
