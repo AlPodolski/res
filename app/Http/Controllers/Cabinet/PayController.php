@@ -49,6 +49,9 @@ class PayController extends Controller
                 case 2 : $currency = 'visamaster.rur';
                 break;
 
+                case 3 : $currency = 'sbp.rub';
+                break;
+
             }
 
 

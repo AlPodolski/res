@@ -55,6 +55,12 @@
                             Карта
                         </label>
                     </div>
+                    <div class="ammount__info-balance-repl-radio-item">
+                        <input type="radio" name="currency" value="3" id="balanceReplSBP" class="ammount__info-balance-repl-radio-input">
+                        <label for="balanceReplSBP">
+                            СБП
+                        </label>
+                    </div>
                 </div>
 
                 <script defer src='https://www.google.com/recaptcha/api.js'></script>
