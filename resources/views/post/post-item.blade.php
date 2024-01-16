@@ -102,13 +102,11 @@ use App\Actions\Like;
         </div>
         <div class="decr-title">Скажите что звоните с сайта
             {{ $_SERVER['HTTP_HOST'] }}</div>
-        @if($post->phone)
-            <div class="phone-favorite-wrap d-flex">
-                <a data-city="{{ $post->city_id }}"
-                   data-id="{{ $post->id }}" onclick="show_phone(this)"
-                   class="phone single-phone">Показать телефон</a>
-            </div>
-        @endif
+        <div class="phone-favorite-wrap d-flex">
+            <a data-city="{{ $post->city_id }}"
+               data-id="{{ $post->id }}" onclick="show_phone(this)"
+               class="phone single-phone">Показать телефон</a>
+        </div>
         <div class="ya-share2" data-curtain data-shape="round"
              data-services="messenger,vkontakte,odnoklassniki,telegram,twitter,viber,whatsapp,skype,linkedin,reddit"></div>
         <form action="/call/request" method="post" class="request-call-form">

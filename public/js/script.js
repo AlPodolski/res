@@ -1,8 +1,8 @@
 $(document).scroll(function () {
 
-    if ($('.ya-share2').length > 0){
+    if (!$('.ya-share2').hasClass('active')){
         $.getScript("https://yastatic.net/share2/share.js", function (data, textStatus, jqxhr) {
-
+            $('.ya-share2').addClass('active')
         });
     }
 

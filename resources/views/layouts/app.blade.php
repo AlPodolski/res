@@ -32,7 +32,6 @@
 
     @if(View::hasSection('can'))
         <link rel="canonical" href="@yield('can')">
-        <meta name="robots" content="noindex, follow">
     @endif
 
     @if(View::hasSection('yandex'))
@@ -202,7 +201,7 @@
 </noscript>
 <!-- /Yandex.Metrika counter -->
 <script src="/js/wNumb.min.js" defer></script>
-<script src="/js/script.js?v=14" defer></script>
+<script src="/js/script.js?v=15" defer></script>
 @if(View::hasSection('map'))
     <script src="@yield('map')" defer></script>
 @endif
