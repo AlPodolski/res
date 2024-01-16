@@ -3,6 +3,21 @@
         <div class="panel-menu">
             <ul class="menu__list" id="accordion" itemscope itemtype="https://schema.org/SiteNavigationElement"
                 data-navigation="" data-menu-handle="main-menu" data-navigation-inited="true">
+                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
+                    <div class="menu__controls">
+                        <a class="menu__link" data-toggle="collapse" href="#collapseCity">
+                            Изменить город<img src="/img/img_1.png" alt="">
+                        </a>
+                        <div id="collapseCity" class="collapse" data-parent="#accordion">
+                            @foreach($cityList as $item)
+                                <a itemprop="url" class="collapse-item d-block menu__link"
+                                   href="https://{{$item->url}}.{{env('DOMAIN')}}">
+                                    <span itemprop="name">{{ $item->city }}</span>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
                 @if($metroList)
                     <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                         <div class="menu__controls">
@@ -182,23 +197,7 @@
                         </div>
                     </li>
                 @endif
-                @if($intimHairList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapseCity">
-                                Изменить город<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapseCity" class="collapse" data-parent="#accordion">
-                                @foreach($cityList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="https://{{$item->url}}.{{env('DOMAIN')}}">
-                                        <span itemprop="name">{{ $item->city }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
+
                 <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
                     <div class="menu__controls">
                         <a class="menu__link" data-toggle="collapse" href="#claimForm">
@@ -245,11 +244,6 @@
                 <li class="menu__item">
                     <div class="menu__controls">
                         <a class="menu__link" href="/prostitutki-s-otzyvami">С отзывами</a>
-                    </div>
-                </li>
-                <li class="menu__item">
-                    <div class="menu__controls">
-                        <a class="menu__link" href="/prostitutki-transy">Трансы</a>
                     </div>
                 </li>
                 @if($cityId == 1)
