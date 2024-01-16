@@ -41,7 +41,6 @@ class FilterRepository
         $sort = (new GetSort())->get($sort);
 
         $new = false;
-        $trans = false;
 
         $posts = Post::with('avatar' ,'video', 'metro')
             ->where(['city_id' => $cityInfo['id']]);
@@ -107,12 +106,6 @@ class FilterRepository
 
                 $posts = $posts->whereRaw(' id IN (select `posts_id` from `post_intim_hairs` where ' . $params->related_param . ' =  ?  and `city_id` = ?) ',
                     [$params->related_id, $cityInfo['id']]);
-
-            }
-
-            elseif ($params->short_name == 'trans'){
-
-                $trans = true;
 
             }
 
@@ -221,10 +214,8 @@ class FilterRepository
         if ($new) $posts = $posts->orderByRaw('id DESC');
         else $posts = $posts->orderByRaw($sort);
 
-        if ($trans) $posts = $posts->where(['pol' => Post::POL_TRANS]);
-        else $posts = $posts->where(['pol' => Post::POL_WOMAN]);
-
         $posts = $posts->where(['publication_status' => Post::POST_ON_PUBLICATION])
+            ->where(['pol' => Post::POL_WOMAN])
             ->paginate($limit);
 
         return $posts;
