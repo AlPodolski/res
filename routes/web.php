@@ -82,6 +82,7 @@ Route::middleware('redirect')->group(function () {
 
         Route::post('/', 'SiteController@more');
         Route::post('/post/more', 'PostController@more')->name('post.more');
+        Route::post('/post/check', 'PostController@check');
         Route::get('/post/{url}', 'PostController@index')->name('post.index');
         Route::get('/robots.txt', 'RobotController@index');
         Route::get('/search', 'SearchController@index');

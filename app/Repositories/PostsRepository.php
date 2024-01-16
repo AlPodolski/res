@@ -46,15 +46,18 @@ class PostsRepository
 
     }
 
-    public function getView()
+    public function getView($notPostId = false)
     {
         if ($ids = Cookie::get('post_view')){
 
             $data = unserialize($ids);
 
             $posts = Post::with( 'video', 'metro')
-                ->whereIn('id', $data)
-                ->get();
+                ->whereIn('id', $data);
+
+            if ($notPostId) $posts->where('id', '<>', $notPostId);
+
+            $posts = $posts->get();
 
             return $posts;
 

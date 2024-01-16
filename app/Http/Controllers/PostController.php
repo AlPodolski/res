@@ -6,6 +6,7 @@ use App\Actions\AddView;
 use App\Actions\AddViewToCookie;
 use App\Actions\GenerateBreadcrumbMicro;
 use App\Actions\GenerateImageMicro;
+use App\Models\Post;
 use App\Repositories\CityRepository;
 use App\Repositories\DataRepository;
 use App\Repositories\FilterRepository;
@@ -52,7 +53,7 @@ class PostController extends Controller
 
         $morePosts = $this->postRepository->getMoreByRayonAndPrice($post, $cityInfo['id'],'default');
 
-        $viewPosts = $this->postRepository->getView();
+        $viewPosts = $this->postRepository->getView($post->id);
 
         return view('post.index', compact('post', 'metro', 'cityInfo', 'metaData',
             'breadMicro', 'imageMicro', 'morePosts', 'viewPosts'));
@@ -72,4 +73,18 @@ class PostController extends Controller
         if ($post) return view('post.post-item', compact('post'))->render();
 
     }
+
+    public function check(Request $request)
+    {
+        $post = Post::where('id', $request->post('id'))->first();
+
+        if ($post){
+
+            if ($post->publication_status == Post::POST_ON_PUBLICATION) return 'active';
+
+            else return 'stop';
+
+        }
+    }
+
 }

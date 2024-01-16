@@ -23,8 +23,41 @@ $(document).scroll(function () {
 });
 
 $(document).ready(function(){
-    setTimeout(afterDelay, 250);
+    setTimeout(afterDelay, 250)
+    checkPublication();
 })
+
+function checkPublication() {
+
+    if ($('.post-content').length) {
+
+        let id = $('.post-content').attr('data-id');
+
+        $.ajax({
+            type: 'POST',
+            url: '/post/check',
+            async:false,
+            data: 'id=' + id,
+            dataType: "html",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+            },
+            cache: false,
+            success: function (data){
+
+                if (data == 'stop'){
+
+                    $('.post-content').addClass('blur-image');
+
+                }
+
+            },
+
+        })
+
+    }
+
+}
 
 function upPost(object) {
 

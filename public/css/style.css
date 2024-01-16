@@ -443,6 +443,9 @@ body{
     background: #fff;
     padding-bottom: 1px;
 }
+.blur-image img{
+    filter: blur(8px);
+}
 .add-to-favorite {
     width: 60px;
     height: 60px;
