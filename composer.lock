@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d03acc8fdb3893143a6c40a7c50705d6",
+    "content-hash": "9d16e7edd6d953d7d5ac7b6f38515b06",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -454,6 +454,61 @@
                 "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.2"
             },
             "time": "2022-02-09T13:33:34+00:00"
+        },
+        {
+            "name": "itstructure/laravel-grid-view",
+            "version": "1.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itstructure/laravel-grid-view.git",
+                "reference": "4975f74e114032775a840a451a94613a69878fea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itstructure/laravel-grid-view/zipball/4975f74e114032775a840a451a94613a69878fea",
+                "reference": "4975f74e114032775a840a451a94613a69878fea",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Itstructure\\GridView\\GridViewServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Itstructure\\GridView\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Girnik",
+                    "email": "girnikandrey@gmail.com"
+                }
+            ],
+            "description": "Grid view for laravel framework",
+            "keywords": [
+                "grid",
+                "gridview",
+                "laravel",
+                "table",
+                "view"
+            ],
+            "support": {
+                "issues": "https://github.com/itstructure/laravel-grid-view/issues",
+                "source": "https://github.com/itstructure/laravel-grid-view/tree/1.0.12"
+            },
+            "time": "2024-01-03T05:56:36+00:00"
         },
         {
             "name": "laravel/framework",
@@ -8186,5 +8241,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -9,6 +9,7 @@ use App\Models\Rayon;
 use App\Repositories\DataRepository;
 use App\Repositories\PostsRepository;
 use Illuminate\Http\Request;
+use Itstructure\GridView\DataProviders\EloquentDataProvider;
 
 class PostController extends Controller
 {
@@ -24,14 +25,81 @@ class PostController extends Controller
         parent::__construct();
     }
 
-    public function index()
+    public function index(Request $request)
     {
 
-        $posts = Post::orderBy('id', 'desc')
-            ->with('city')
-            ->paginate(100);
+        $posts = Post::query()->with('city', 'avatar');
 
-        return view('admin.posts.index', compact('posts'));
+        $dataProvider = new EloquentDataProvider($posts);
+
+        $gridData = [
+            'dataProvider' => $dataProvider,
+            'rowsPerPage' => 100,
+            'columnFields' => [
+                'id',
+                [
+                    'attribute' => 'name',
+                    'label' => 'Имя',
+                ],
+                [
+                    'attribute' => 'city_id',
+                    'label' => 'Город',
+                    'value' => function ($post) {
+                        /* @var $post Post */
+                        return $post->city->city . ' ' . $post->city->id;
+                    }
+                ],
+                [
+                    'attribute' => 'publication_status',
+                    'label' => 'Статус(0,1,3)',
+                    'format' => 'html',
+                    'value' => function ($row) {
+                        /* @var $row Post */
+
+                        if ($row->publication_status == \App\Models\Post::POST_DONT_PUBLICATION) return 'Не публикуется';
+
+                        if ($row->publication_status == \App\Models\Post::POST_ON_PUBLICATION) return 'Публикуется';
+
+                        if ($row->publication_status == \App\Models\Post::POST_ON_MODERATION)
+                            return '<div class="check"
+                                 data-url="/admin/posts/check"
+                                 onclick="check(this)" data-id="' . $row->id . '">
+                            Подтвердить
+                            </div>';
+
+                    }
+                ],
+                [
+                    'label' => 'avatar',
+                    'format' => 'html',
+                    'value' => function ($row) {
+                        /* @var $row Post */
+                        return '<img loading="lazy" src="/300-300/thumbs/' . $row->avatar->file . '" alt="">';
+
+                    },
+                ],
+                [
+                    'attribute' => 'phone_view_count',
+                    'label' => 'Прсм. телефона',
+                ],
+                [
+                    'attribute' => 'user_id',
+                    'label' => 'id юзера',
+                ],
+
+                [
+                    'label' => 'Удалить',
+                    'format' => 'html',
+                    'value' => function ($row) {
+                        /* @var $row Post */
+                        return '<div data-id="'.$row->id.'" onclick="deletePost(this)" class="delete">Удалить</div>';
+
+                    },
+                ],
+            ]
+        ];
+
+        return view('admin.posts.index', compact('request', 'dataProvider', 'gridData'));
     }
 
     public function check(Request $request)
