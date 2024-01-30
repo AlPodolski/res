@@ -1,6 +1,8 @@
 <div class="info">
     <div class="info-item">id - <a target="_blank" href="/admin/users/{{ $chat->user_id }}/edit">{{ $chat->user_id }}</a></div>
-    <a class="info-item" target="_blank" href="/admin/obmenka/user/{{ $chat->user_id }}">Оплаты</a>
+    <a class="info-item" target="_blank"
+       href="/admin/obmenka?filters%5Buser_id%5D={{ $chat->user_id }}&sort=-id"
+       >Оплаты</a>
     <div class="info-item phone-edit">
         <input type="text" name="phone" class="phone-change" placeholder="Телефон">
         <div onclick="updatePhone(this)" data-id="{{ $chat->user_id }}" class="btn btn-success">Сохранить</div>
@@ -14,7 +16,7 @@
             ">
                 <div class="chat__dialog-list-item-text">
                     @if($item->related_class == \App\Models\Files::class)
-                        <img src="/400-500/thumbs/{{ $item->file->file }}" alt="">
+                        <img src="/1500-1500/thumbs/{{ $item->file->file }}" alt="">
                     @else
                         {{ $item->message }}
                     @endif
@@ -39,3 +41,8 @@
          class="btn-main">Отправить
     </div>
 </form>
+
+<div class="link-wrap">
+    <div class="link" data-text="Нужна подробная квитанция" onclick="setText(this)" > Квитанция </div>
+    <div class="link" data-text="Отправили запрос в платежную систему" onclick="setText(this)" > Запрос </div>
+</div>

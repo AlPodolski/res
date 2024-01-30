@@ -15,3 +15,15 @@
     cursor: pointer!important;
     flex-direction: column;
 }
+.chat__list-item.selected-chat {
+    background: #dfdfdf42;
+    font-size: 16px;
+}
+
+.link-wrap{
+    display: flex;
+    padding-bottom: 10px;
+}
+.link{
+    margin-right: 15px;
+}

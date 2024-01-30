@@ -166,3 +166,10 @@ function updatePhone(object){
 
 }
 
+function setText(object){
+
+    var text = $(object).attr('data-text');
+    $('#chatMessage').text(text);
+
+}
+
