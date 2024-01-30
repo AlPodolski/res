@@ -1,12 +1,12 @@
 $(document).scroll(function () {
 
-    if (!$('.ya-share2').hasClass('active')){
+    if (!$('.ya-share2').hasClass('active')) {
         $.getScript("https://yastatic.net/share2/share.js", function (data, textStatus, jqxhr) {
             $('.ya-share2').addClass('active')
         });
     }
 
-    if (document.getElementById('lightbox-script') !== null){
+    if (document.getElementById('lightbox-script') !== null) {
 
         $.getScript("/js/lightbox.min.js", function (data, textStatus, jqxhr) {
             $("head").prepend('<link href="/css/lightbox.min.css" rel="stylesheet">');
@@ -22,7 +22,7 @@ $(document).scroll(function () {
 
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
     setTimeout(afterDelay, 250)
     checkPublication();
 })
@@ -36,16 +36,16 @@ function checkPublication() {
         $.ajax({
             type: 'POST',
             url: '/post/check',
-            async:false,
+            async: false,
             data: 'id=' + id,
             dataType: "html",
             headers: {
                 'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
             },
             cache: false,
-            success: function (data){
+            success: function (data) {
 
-                if (data == 'stop'){
+                if (data == 'stop') {
 
                     $('.post-content').addClass('blur-image');
 
@@ -66,14 +66,14 @@ function upPost(object) {
     $.ajax({
         type: 'POST',
         url: '/cabinet/post/up',
-        async:false,
+        async: false,
         data: 'id=' + id,
         dataType: "html",
         headers: {
             'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
         },
         cache: false,
-        success: function (data){
+        success: function (data) {
 
             $(object).html(data);
 
@@ -94,7 +94,7 @@ $(document).ready(function () {
         filter();
     });
 
-    if (document.getElementById('lightbox-script') !== null){
+    if (document.getElementById('lightbox-script') !== null) {
 
         $.getScript("/js/jquery.maskedinput.js", function (data, textStatus, jqxhr) {
             phone_mask();
@@ -104,14 +104,15 @@ $(document).ready(function () {
 
 });
 
-arrowTop.onclick = function() {
+arrowTop.onclick = function () {
     window.scrollTo(pageXOffset, 0);
     // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
 };
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
 });
+
 function showPanel(object) {
     $('.' + $(object).attr('data-target')).addClass('is-show')
     $(".header-overlay").addClass("is-show");
@@ -123,17 +124,17 @@ function closePanel(object) {
     $(".header-overlay").removeClass("is-show");
 }
 
-function showFilter(){
-    $( ".filter-wrap" ).toggleClass( "show-filter" )
+function showFilter() {
+    $(".filter-wrap").toggleClass("show-filter")
 }
 
-function setLimit(){
+function setLimit() {
 
     var redirectUrl = location.pathname;
 
     if ($('#limit-select').val()) {
 
-        document.cookie =  'post_limit=' + $('#limit-select').val();
+        document.cookie = 'post_limit=' + $('#limit-select').val();
 
     }
 
@@ -141,18 +142,18 @@ function setLimit(){
 
 }
 
-function publication(object){
+function publication(object) {
 
     var id = $(object).attr('data-id');
 
     $.ajax({
         type: 'POST',
         url: '/cabinet/post/publication',
-        data: 'id=' +id,
-        async:false,
+        data: 'id=' + id,
+        async: false,
         dataType: "html",
         cache: false,
-        success: function (data){
+        success: function (data) {
 
             $(object).html(data);
 
@@ -162,11 +163,11 @@ function publication(object){
 
 }
 
-function setSort(){
+function setSort() {
 
     if ($('#sort-select').val()) {
 
-        document.cookie =  'sort=' + $('#sort-select').val();
+        document.cookie = 'sort=' + $('#sort-select').val();
 
     }
 
@@ -174,7 +175,7 @@ function setSort(){
 
 }
 
-function showSearchForm(object){
+function showSearchForm(object) {
 
     let window_w = $(window).width();
     let search_block = $(object).parents(".header__search");
@@ -183,8 +184,7 @@ function showSearchForm(object){
 
     if (window_w > 1024) {
         search_field_width = window_w - (window_w - $(object).offset().left) - 550;
-    }
-    else {
+    } else {
         search_field_width = $('.nav-container').innerWidth() - 100;
         console.log(search_field_width);
     }
@@ -197,39 +197,39 @@ function showSearchForm(object){
         $('.top-nav').find(".logo").addClass("is-hide");
         search_block.addClass("is-show");
 
-        setTimeout(function() {
+        setTimeout(function () {
             search_block.find(".header__search-field").focus();
         }, 50);
     }
 
 }
 
-function show_phone(object){
+function show_phone(object) {
 
     var phone = $(object).attr('data-tel');
 
     var id = $(object).attr('data-id');
     var city = $(object).attr('data-city');
 
-    if (phone){
+    if (phone) {
 
         window.location.href = 'tel:+' + phone;
 
         return false;
 
-    }else{
+    } else {
 
         $.ajax({
             type: 'POST',
             url: '/view/phone',
-            data: 'id=' +id + '&city=' + city,
-            async:false,
+            data: 'id=' + id + '&city=' + city,
+            async: false,
             dataType: "html",
             cache: false,
             headers: {
                 'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
             },
-            success: function (data){
+            success: function (data) {
                 $(object).text(data);
                 $(object).attr('data-tel', data);
                 window.location.href = 'tel:+' + data;
@@ -241,24 +241,24 @@ function show_phone(object){
 
 }
 
-function like(object){
+function like(object) {
 
     var type = $(object).attr('data-type');
     var id = $(object).attr('data-id');
 
-    if (!$(object).hasClass('selected')){
+    if (!$(object).hasClass('selected')) {
 
         $.ajax({
             type: 'POST',
             url: '/like',
-            data: 'id=' +id + '&type=' + type,
-            async:false,
+            data: 'id=' + id + '&type=' + type,
+            async: false,
             dataType: "html",
             cache: false,
             headers: {
                 'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
             },
-            success: function (data){
+            success: function (data) {
 
                 $(object).siblings('.like-count').html(data)
 
@@ -268,12 +268,12 @@ function like(object){
 
     }
 
-    if (type == 'like'){
+    if (type == 'like') {
 
         $(object).siblings('.dislike').removeClass('selected')
         $(object).addClass('selected')
 
-    }else{
+    } else {
 
         $(object).siblings('.like').removeClass('selected')
         $(object).addClass('selected')
@@ -282,13 +282,13 @@ function like(object){
 
 }
 
-function getMorePost(){
+function getMorePost() {
 
     var id = '';
     var rayon = '';
     var price = '';
 
-    $('[data-id]').each(function() {
+    $('[data-id]').each(function () {
         id = id + $(this).attr('data-id') + ',';
     });
 
@@ -298,18 +298,18 @@ function getMorePost(){
     $.ajax({
         type: 'POST',
         url: '/post/more',
-        data: 'id=' +id + '&rayon=' + rayon + '&price=' + price,
-        async:false,
+        data: 'id=' + id + '&rayon=' + rayon + '&price=' + price,
+        async: false,
         dataType: "html",
         cache: false,
-        success: function (data){
+        success: function (data) {
 
-            if(data !== ''){
+            if (data !== '') {
 
                 $('.post-wrap').append(data);
                 phone_mask();
 
-            }else{
+            } else {
 
                 $('.get-more-post-btn').remove();
 
@@ -323,7 +323,7 @@ function getMorePost(){
 
 }
 
-function check(object){
+function check(object) {
 
     var id = $(object).attr('data-id');
     var url = $(object).attr('data-url');
@@ -332,7 +332,7 @@ function check(object){
         type: 'POST',
         url: url, //Путь к обработчику
         response: 'text',
-        data: 'id=' +id ,
+        data: 'id=' + id,
         dataType: "html",
         headers: {
             'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
@@ -345,32 +345,37 @@ function check(object){
 
 }
 
-function sendMessage(object){
+function sendMessage(object) {
 
-    var message = $('.chatMessage').val()
+    var message = $('.chatMessage').val();
 
-    $.ajax({
-        type: 'POST',
-        url: '/cabinet/chat',
-        async:false,
-        data: 'message=' + message,
-        dataType: "html",
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
-        },
-        cache: false,
-        success: function (data){
+    if (message.length > 0) {
 
-            $('.chatMessage').val('')
+        $.ajax({
+            type: 'POST',
+            url: '/cabinet/chat',
+            async: false,
+            data: 'message=' + message,
+            dataType: "html",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+            },
+            cache: false,
+            success: function (data) {
 
-            addMessage(data);
+                $('.chatMessage').val('')
 
-        },
+                addMessage(data);
 
-    })
+            },
+
+        })
+
+    }
+
 }
 
-function addMessage(text){
+function addMessage(text) {
 
     var message = '<div class="chat__dialog-list-item chat__dialog-list-item--qst">\n' +
         '                    <div class="chat__dialog-list-item-text">\n' +
@@ -384,7 +389,7 @@ function addMessage(text){
 
 }
 
-function send_photo(){
+function send_photo() {
 
     var formData = new FormData($("#send-message-photo-form")[0]);
 
@@ -426,7 +431,7 @@ function send_photo(){
 
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     setTimeout(afterDelay, 250);
 })
 
@@ -434,7 +439,7 @@ function afterDelay() {
     $('.chat__dialog-list-wrap').scrollTop($('.chat__dialog-list-wrap').height() + 99999999);
 }
 
-function getMorePosts(object){
+function getMorePosts(object) {
 
     var url = $(object).attr('data-url');
 
@@ -451,13 +456,13 @@ function getMorePosts(object){
 
             data = JSON.parse(data)
 
-            if (data){
+            if (data) {
 
                 window.history.pushState('', document.title, url);
 
                 if (data.posts) $('.posts').append(data.posts);
 
-                if (data.next_page) $(object).attr('data-url',data.next_page);
+                if (data.next_page) $(object).attr('data-url', data.next_page);
                 else $(object).remove();
 
             }
@@ -586,7 +591,7 @@ function filter() {
 
 }
 
-function phone_mask(){
+function phone_mask() {
 
     if ($('.request-call-form').length > 0) {
         $(".request-call-input").mask("+7(999)99-99-999");
@@ -598,27 +603,27 @@ function phone_mask(){
 
 }
 
-function sendDeleteForm(object){
+function sendDeleteForm(object) {
 
-    if( !confirm('Удалить анкету?') )
+    if (!confirm('Удалить анкету?'))
         event.preventDefault();
 
-        return true;
+    return true;
 
 }
 
-function publication(object){
+function publication(object) {
 
     var id = $(object).attr('data-id');
 
     $.ajax({
         type: 'POST',
         url: '/cabinet/post/publication',
-        data: 'id=' +id,
-        async:false,
+        data: 'id=' + id,
+        async: false,
         dataType: "html",
         cache: false,
-        success: function (data){
+        success: function (data) {
 
             $(object).html(data);
 
@@ -657,7 +662,7 @@ function publication(object){
         }
     })
 }(jQuery);
-$(document).ready(function() {
+$(document).ready(function () {
     $.uploadPreview({
         input_field: "#addpost-image",   // Default: .image-upload
         preview_box: "#cabinet-main-img-label",  // Default: .image-preview
@@ -670,13 +675,13 @@ $(document).ready(function() {
 
 var fileField = document.getElementById('addpost-photo');
 var preview = document.getElementById('preview');
-fileField.addEventListener('change', function(event) {
+fileField.addEventListener('change', function (event) {
     preview.innerHTML = '';
-    for(var x = 0; x < event.target.files.length; x++) {
-        (function(i) {
+    for (var x = 0; x < event.target.files.length; x++) {
+        (function (i) {
             var reader = new FileReader();
             var img = document.createElement('img');
-            reader.onload = function(event) {
+            reader.onload = function (event) {
                 img.setAttribute('src', event.target.result);
                 img.setAttribute('class', 'preview post-photo-item');
 
