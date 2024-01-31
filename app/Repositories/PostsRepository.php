@@ -145,7 +145,7 @@ class PostsRepository
     public function getByUserId($userId)
     {
 
-        return Post::with( 'video')
+        return Post::with( 'video','city')
             ->orderBy('id', 'desc')
             ->where(['user_id' => $userId])
             ->get();
