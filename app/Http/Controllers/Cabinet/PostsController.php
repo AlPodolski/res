@@ -386,6 +386,7 @@ class PostsController extends Controller
     {
         $posts = Post::where('user_id', auth()->user()->id)
             ->where('publication_status', Post::POST_DONT_PUBLICATION)
+            ->with('user', 'tarif')
             ->get();
 
         if ($posts) {
