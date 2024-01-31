@@ -59,6 +59,7 @@ Route::middleware('redirect')->group(function () {
             Route::prefix('/cabinet')->group(function () {
 
                 Route::resource('post', '\App\Http\Controllers\Cabinet\PostsController');
+                Route::post('post/start-all', ['\App\Http\Controllers\Cabinet\PostsController', 'startAll']);
 
                 Route::get('chat', ['\App\Http\Controllers\Cabinet\ChatController', 'index']);
                 Route::post('chat', ['\App\Http\Controllers\Cabinet\ChatController', 'send']);

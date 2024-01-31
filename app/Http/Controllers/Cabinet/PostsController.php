@@ -154,7 +154,7 @@ class PostsController extends Controller
 
         }
 
-        $avatar = '/'. $request->file('avatar')->store('/uploads/aa1', 'public');
+        $avatar = '/' . $request->file('avatar')->store('/uploads/aa1', 'public');
 
         $post->photo = $avatar;
 
@@ -327,7 +327,7 @@ class PostsController extends Controller
 
                 }
 
-                $avatar = '/'. $avatar->store('/uploads/aa1', 'public');
+                $avatar = '/' . $avatar->store('/uploads/aa1', 'public');
 
                 $post->photo = $avatar;
 
@@ -382,6 +382,28 @@ class PostsController extends Controller
 
     }
 
+    public function startAll()
+    {
+        $posts = Post::where('user_id', auth()->user()->id)
+            ->where('publication_status', Post::POST_DONT_PUBLICATION)
+            ->get();
+
+        if ($posts) {
+
+            foreach ($posts as $post) {
+
+                (new Publication())->publication($post);
+
+            }
+
+            return 'Готово, включено - ' .$posts->count() .' шт';
+
+        }
+
+        return 'Нет доступных анкет для публикации';
+
+    }
+
     public function up(Request $request)
     {
 
@@ -389,7 +411,7 @@ class PostsController extends Controller
 
         $id = $request->post('id');
 
-        $post = Post::where('id',$id)
+        $post = Post::where('id', $id)
             ->where('user_id', auth()->user()->id)
             ->with('user')->first();
 

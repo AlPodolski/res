@@ -23,7 +23,7 @@
         gtag('config', 'G-G1KH2Z4KHE');
     </script>
 
-    <link href="/css/cabinet.css?v=1" rel="stylesheet">
+    <link href="/css/cabinet.css?v=2" rel="stylesheet">
 
 </head>
 <body>
@@ -82,7 +82,7 @@
     </div>
 </div>
 <script src="/js/bundle.js" defer></script>
-<script src="/js/script.js?v=18" defer></script>
+<script src="/js/script.js?v=19" defer></script>
 <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
         m[i] = m[i] || function () {

@@ -3076,6 +3076,10 @@ div#register_recapcha {
     max-width: 150px
 }
 
+.fast-links .fast-link-item{
+    text-align: left;
+}
+
 @media (max-width: 1200px) {
     .anket__services-list {
         -webkit-column-count: 2;

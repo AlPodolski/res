@@ -18,6 +18,10 @@
 
         <h1>Кабинет</h1>
 
+        <div class="fast-links">
+            <div class="fast-link-item ankets__item-moder" onclick="start_all(this)">Включить все анкеты</div>
+        </div>
+
         <div class="ankets__items">
 
             @if(isset($postsList) and $postsList)
