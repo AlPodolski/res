@@ -53,6 +53,11 @@ class FilterRepository
                     [Files::VIDEO_TYPE]);
 
             }
+            if ($params->short_name == 'prostitutki-transy'){
+
+                abort(404);
+
+            }
 
             if ($params->short_name == 'metro'){
 
