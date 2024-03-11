@@ -53,7 +53,7 @@ class ObmenkaController extends Controller
 
         $monthCount = Order::where('created_at', '>=', Carbon::now()->month)
             ->where('status', Order::FINISH)
-            ->count('sum');
+            ->sum('sum');
 
         return view('admin.obmenka.index', compact('dataProvider', 'gridData', 'monthCount'));
     }
