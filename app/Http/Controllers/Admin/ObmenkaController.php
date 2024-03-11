@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use Carbon\Carbon;
 use Itstructure\GridView\DataProviders\EloquentDataProvider;
 
 class ObmenkaController extends Controller
@@ -50,7 +51,9 @@ class ObmenkaController extends Controller
             ]
         ];
 
-        return view('admin.obmenka.index', compact('dataProvider', 'gridData'));
+        $monthCount = Order::where('created_at', '>=', Carbon::now()->month)->count('sum');
+
+        return view('admin.obmenka.index', compact('dataProvider', 'gridData', 'monthCount'));
     }
 
     public function user($id)
