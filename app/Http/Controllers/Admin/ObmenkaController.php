@@ -51,7 +51,7 @@ class ObmenkaController extends Controller
             ]
         ];
 
-        $monthCount = Order::where('created_at', '>=', Carbon::now()->month)
+        $monthCount = Order::where('created_at', '>=', Carbon::now()->format('Y-m'))
             ->where('status', Order::FINISH)
             ->sum('sum');
 
