@@ -14,4 +14,10 @@
 
     @gridView($gridData)
 
+    <div class="control-panel">
+        <div class="control-panel-item btn btn-success" onclick="check_all()">
+            Одобрить все
+        </div>
+    </div>
+
 @endsection
