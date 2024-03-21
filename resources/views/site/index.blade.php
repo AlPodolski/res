@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.new_public')
 
 @section('title', $meta['title'])
 @section('des', $meta['des'])
@@ -27,7 +27,7 @@
 
     @include('includes.filter')
 
-    @if($topList)
+    @if($topList and false)
         <div class="popular-list d-flex">
             @foreach($topList as $topListItem)
                 @include('includes.popular-item')
@@ -35,26 +35,36 @@
         </div>
     @endif
 
-    @isset($filterParams)
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item home">
-                <a class="breadcrumb-link" title="Главная" href="/">Главная</a>
-            </li>
-            <li class="breadcrumb-item" data-breadcrumbs="2">
-                {{ $meta['h1'] }}
-            </li>
-        </ul>
-        @widget('labelMenu', ['filterParams' => $filterParams])
-    @endif
 
-    <h1>{{ $meta['h1'] }}</h1>
+    <div class="col-12">
+        @isset($filterParams)
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item home">
+                    <a class="breadcrumb-link" title="Главная" href="/">Главная</a>
+                </li>
+                <li class="breadcrumb-item" data-breadcrumbs="2">
+                    {{ $meta['h1'] }}
+                </li>
+            </ul>
+            @widget('labelMenu', ['filterParams' => $filterParams])
+        @endif
+    </div>
 
-    @include('includes.limit_and_order')
+    <div class="col-12">
+        <h1>{{ $meta['h1'] }}</h1>
+    </div>
 
-    <div class="posts">
-        @foreach($posts as $post)
-            @include('site.includes.post-item')
-        @endforeach
+    <div class="col-12">
+        @include('includes.limit_and_order')
+    </div>
+
+    <div class="col-12 posts">
+        <div class="row">
+            @foreach($posts as $post)
+                @include('site.includes.post-item')
+            @endforeach
+        </div>
+
     </div>
 
     @if(isset($metroInfo) and $metroInfo)

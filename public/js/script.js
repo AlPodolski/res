@@ -1,11 +1,5 @@
 $(document).scroll(function () {
 
-    if (!$('.ya-share2').hasClass('active')) {
-        $.getScript("https://yastatic.net/share2/share.js", function (data, textStatus, jqxhr) {
-            $('.ya-share2').addClass('active')
-        });
-    }
-
     if (document.getElementById('lightbox-script') !== null) {
 
         $.getScript("/js/lightbox.min.js", function (data, textStatus, jqxhr) {
@@ -20,6 +14,19 @@ $(document).scroll(function () {
 
     }
 
+});
+$(document).ready(function () {
+    $('.photo').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: !0,
+        arrows: !1,
+        customPaging: function (e, t) {
+            var n = $(e.$slides[t]).find(".profile-main-info__slider-main-img").attr("src");
+            return console.log($(e.$slides[t])), `<img src="${n}" alt="" /> `
+        }
+    });
+    console.log(1)
 });
 
 $(document).ready(function () {
@@ -375,7 +382,7 @@ function sendMessage(object) {
 
 }
 
-function start_all(object){
+function start_all(object) {
 
     $.ajax({
         type: 'POST',
@@ -710,3 +717,4 @@ fileField.addEventListener('change', function (event) {
         })(x);
     }
 }, false);
+

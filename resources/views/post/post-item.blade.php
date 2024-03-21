@@ -2,392 +2,332 @@
     /* @var $post \App\Models\Post */
 use App\Actions\Like;
 @endphp
-<div id="lightbox-script" data-script="/js/lightbox.min.js"></div>
-<div class="post-content" data-price="{{ $post->price }}" data-id="{{ $post->id }}"
-     data-rayon-id="{{ $post->rayon->rayon->id ?? '' }}">
-    <div class="left">
-        <picture>
-            <source srcset="/370-526/thumbs{{str_replace('.jpg', '.webp', $post->photo)}}"
-                    media="(max-width: 400px)" type="image/webp">
-            <source srcset="/370-526/thumbs{{$post->photo}}"
-                    media="(max-width: 400px)" type="image/jpeg">
+<div class="col-12">
+    <div class="row">
+        <div class="col-4 ">
+            <div class="photo">
 
-            <source srcset="/521-741/thumbs{{str_replace('.jpg', '.webp', $post->photo)}}" type="image/webp">
-            <source srcset="/521-741/thumbs{{$post->photo}}" type="image/jpeg">
-
-            <img title="Проститутка {{ $post->name }}" srcset="/521-741/thumbs{{$post->photo}}"
-                 alt="{{ $post->name }}">
-        </picture>
-    </div>
-    <div class="right">
-        <h1>{{ $post->name }}</h1>
-        <div class="likes-wrap d-flex">
-            <div class="like
-        @if(Like::isLike($post->id))
-        selected
-        @endif
-        " onclick="like(this)" data-type="like" data-id="{{ $post->id }}">
-                <svg fill="#000000" height="25px" width="25px" version="1.1" id="Capa_1"
-                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 0 512 512" xml:space="preserve">
-<g>
-    <path d="M498.323,297.032c0-7.992-1.901-15.683-5.553-22.635c12.034-9.18,19.23-23.438,19.23-38.914
-		c0-27.037-21.996-49.032-49.032-49.032H330.206c11.434-29.24,17.665-64.728,17.665-101.419c0-23.266-18.928-42.194-42.194-42.194
-		s-42.193,18.928-42.193,42.194c0,83.161-58.012,145.389-144.355,154.844c-0.592,0.065-1.159,0.197-1.7,0.38
-		C111.752,235.129,104.235,232,96,232H32c-17.645,0-32,14.355-32,32v152c0,17.645,14.355,32,32,32h64
-		c9.763,0,18.513-4.4,24.388-11.315c20.473,2.987,33.744,9.534,46.568,15.882c16.484,8.158,33.53,16.595,63.496,16.595h191.484
-		c27.037,0,49.032-21.996,49.032-49.032c0-7.991-1.901-15.683-5.553-22.635c12.034-9.18,19.23-23.438,19.23-38.914
-		c0-7.991-1.901-15.683-5.553-22.635C491.126,326.766,498.323,312.507,498.323,297.032z M465.561,325.727H452c-4.418,0-8,3.582-8,8
-		s3.582,8,8,8h11.958c3.061,5.1,4.687,10.847,4.687,16.854c0,12.106-6.56,23.096-17.163,28.919h-14.548c-4.418,0-8,3.582-8,8
-		s3.582,8,8,8h13.481c2.973,5.044,4.553,10.71,4.553,16.629c0,18.214-14.818,33.032-33.032,33.032H230.452
-		c-26.223,0-40.207-6.921-56.398-14.935c-12.358-6.117-26.235-12.961-46.56-16.594c0.326-1.83,0.506-3.71,0.506-5.632V295
-		c0-4.418-3.582-8-8-8s-8,3.582-8,8v121c0,8.822-7.178,16-16,16H32c-8.822,0-16-7.178-16-16V264c0-8.822,7.178-16,16-16h64
-		c8.822,0,16,7.178,16,16c0,4.418,3.582,8,8,8s8-3.582,8-8c0-3.105-0.453-6.105-1.282-8.947
-		c44.778-6.106,82.817-25.325,110.284-55.813c27.395-30.408,42.481-70.967,42.481-114.208c0-14.443,11.75-26.194,26.193-26.194
-		c14.443,0,26.194,11.75,26.194,26.194c0,39.305-7.464,76.964-21.018,106.04c-1.867,4.004-0.134,8.764,3.871,10.631
-		c1.304,0.608,2.687,0.828,4.025,0.719c0.201,0.015,0.401,0.031,0.605,0.031h143.613c18.214,0,33.032,14.818,33.032,33.032
-		c0,11.798-6.228,22.539-16.359,28.469h-14.975c-4.418,0-8,3.582-8,8s3.582,8,8,8h12.835c3.149,5.155,4.822,10.984,4.822,17.079
-		C482.323,308.985,475.927,319.848,465.561,325.727z"/>
-    <path
-        d="M422.384,325.727h-8.525c-4.418,0-8,3.582-8,8s3.582,8,8,8h8.525c4.418,0,8-3.582,8-8S426.802,325.727,422.384,325.727z"/>
-    <path
-        d="M436.934,263.953h-8.525c-4.418,0-8,3.582-8,8s3.582,8,8,8h8.525c4.418,0,8-3.582,8-8S441.352,263.953,436.934,263.953z"/>
-    <path
-        d="M407.833,387.5h-8.525c-4.418,0-8,3.582-8,8s3.582,8,8,8h8.525c4.418,0,8-3.582,8-8S412.252,387.5,407.833,387.5z"/>
-    <path d="M80,264c-8.822,0-16,7.178-16,16s7.178,16,16,16s16-7.178,16-16S88.822,264,80,264z"/>
-</g>
-</svg>
-            </div>
-            <div class="like-count">{{ $post->likes }}</div>
-            <div onclick="like(this)" data-type="dislike"
-                 data-id="{{ $post->id }}" class="dislike
-             @if(Like::isDislike($post->id))
-            selected
-            @endif
-             ">
-                <svg fill="#000000" height="25px" width="25px" version="1.1" id="Capa_1"
-                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 0 512 512" xml:space="preserve">
-<g>
-    <path d="M498.323,297.032c0-7.992-1.901-15.683-5.553-22.635c12.034-9.18,19.23-23.438,19.23-38.914
-		c0-27.037-21.996-49.032-49.032-49.032H330.206c11.434-29.24,17.665-64.728,17.665-101.419c0-23.266-18.928-42.194-42.194-42.194
-		s-42.193,18.928-42.193,42.194c0,83.161-58.012,145.389-144.355,154.844c-0.592,0.065-1.159,0.197-1.7,0.38
-		C111.752,235.129,104.235,232,96,232H32c-17.645,0-32,14.355-32,32v152c0,17.645,14.355,32,32,32h64
-		c9.763,0,18.513-4.4,24.388-11.315c20.473,2.987,33.744,9.534,46.568,15.882c16.484,8.158,33.53,16.595,63.496,16.595h191.484
-		c27.037,0,49.032-21.996,49.032-49.032c0-7.991-1.901-15.683-5.553-22.635c12.034-9.18,19.23-23.438,19.23-38.914
-		c0-7.991-1.901-15.683-5.553-22.635C491.126,326.766,498.323,312.507,498.323,297.032z M465.561,325.727H452c-4.418,0-8,3.582-8,8
-		s3.582,8,8,8h11.958c3.061,5.1,4.687,10.847,4.687,16.854c0,12.106-6.56,23.096-17.163,28.919h-14.548c-4.418,0-8,3.582-8,8
-		s3.582,8,8,8h13.481c2.973,5.044,4.553,10.71,4.553,16.629c0,18.214-14.818,33.032-33.032,33.032H230.452
-		c-26.223,0-40.207-6.921-56.398-14.935c-12.358-6.117-26.235-12.961-46.56-16.594c0.326-1.83,0.506-3.71,0.506-5.632V295
-		c0-4.418-3.582-8-8-8s-8,3.582-8,8v121c0,8.822-7.178,16-16,16H32c-8.822,0-16-7.178-16-16V264c0-8.822,7.178-16,16-16h64
-		c8.822,0,16,7.178,16,16c0,4.418,3.582,8,8,8s8-3.582,8-8c0-3.105-0.453-6.105-1.282-8.947
-		c44.778-6.106,82.817-25.325,110.284-55.813c27.395-30.408,42.481-70.967,42.481-114.208c0-14.443,11.75-26.194,26.193-26.194
-		c14.443,0,26.194,11.75,26.194,26.194c0,39.305-7.464,76.964-21.018,106.04c-1.867,4.004-0.134,8.764,3.871,10.631
-		c1.304,0.608,2.687,0.828,4.025,0.719c0.201,0.015,0.401,0.031,0.605,0.031h143.613c18.214,0,33.032,14.818,33.032,33.032
-		c0,11.798-6.228,22.539-16.359,28.469h-14.975c-4.418,0-8,3.582-8,8s3.582,8,8,8h12.835c3.149,5.155,4.822,10.984,4.822,17.079
-		C482.323,308.985,475.927,319.848,465.561,325.727z"/>
-    <path
-        d="M422.384,325.727h-8.525c-4.418,0-8,3.582-8,8s3.582,8,8,8h8.525c4.418,0,8-3.582,8-8S426.802,325.727,422.384,325.727z"/>
-    <path
-        d="M436.934,263.953h-8.525c-4.418,0-8,3.582-8,8s3.582,8,8,8h8.525c4.418,0,8-3.582,8-8S441.352,263.953,436.934,263.953z"/>
-    <path
-        d="M407.833,387.5h-8.525c-4.418,0-8,3.582-8,8s3.582,8,8,8h8.525c4.418,0,8-3.582,8-8S412.252,387.5,407.833,387.5z"/>
-    <path d="M80,264c-8.822,0-16,7.178-16,16s7.178,16,16,16s16-7.178,16-16S88.822,264,80,264z"/>
-</g>
-</svg>
-            </div>
-        </div>
-        <div class="post-price">
-            {{ $post->price }} ₽
-        </div>
-        <div class="decr-title">Скажите что звоните с сайта
-            {{ $_SERVER['HTTP_HOST'] }}</div>
-        <div class="phone-favorite-wrap d-flex">
-            <a data-city="{{ $post->city_id }}"
-               data-id="{{ $post->id }}" onclick="show_phone(this)"
-               class="phone single-phone">Показать телефон</a>
-        </div>
-        <div class="ya-share2" data-curtain data-shape="round"
-             data-services="messenger,vkontakte,odnoklassniki,telegram,twitter,viber,whatsapp,skype,linkedin,reddit"></div>
-        <form action="/call/request" method="post" class="request-call-form">
-            @csrf
-            <div class="property-name">Заказать звонок</div>
-            <div class="phone-wrap d-flex">
-                <input type="text" name="phone" class="request-call-input">
-                <input type="hidden" name="posts_id" value="{{$post->id}}">
-                <button class="red-btn">Заказать</button>
-            </div>
-        </form>
-
-        <div class="post-property-list">
-            @if($post->metro->first())
-                <div class="property-item metro-list">
-                    <div class="property-name">Метро</div>
-                    <div class="d-flex">
-                        @foreach($post->metro as $item)
-                            <a class="property-value"
-                               href="/{{ $item->metro->filterUrl->filter_url }}">{{ $item->metro->value }}
-                                @if($post->metro->last() != $item)
-                                    ,
-                                @endif
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
-            @endif
-
-            @if($post->rayon)
-                <div class="property-item metro-list">
-                    <div class="property-name">Район</div>
-                    <a class="property-value"
-                       href="/{{ $post->rayon->rayon->filterUrl->filter_url }}">{{ $post->rayon->rayon->value }}</a>
-
-                </div>
-            @endif
-
-            @if($post->time)
-                <div class="property-item metro-list">
-                    <div class="property-name">Время встречи</div>
-                    <div class="d-flex">
-                        @foreach($post->time as $item)
-                            <a href="/{{ $item->time->filterUrl->filter_url }}"
-                               class="property-value">{{ $item->time->value }}
-                                @if($post->time->last() != $item)
-                                    ,
-                                @endif
-                            </a>
-                        @endforeach
-                    </div>
-
-                </div>
-            @endif
-
-            @if($post->place)
-                <div class="property-item metro-list">
-                    <div class="property-name">Место встречи</div>
-                    <div class="d-flex">
-                        @foreach($post->place as $item)
-                            <a href="/{{ $item->place->filterUrl->filter_url }}"
-                               class="property-value">{{ $item->place->value }}
-                                @if($post->place->last() != $item)
-                                    ,
-                                @endif
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
-            @endif
-            @if($post->age)
-                <div class="property-item">
-                    <div class="property-name">Возраст</div>
-                    <div class="property-value">{{ $post->age }}</div>
-                </div>
-            @endif
-            @if($post->ves)
-                <div class="property-item">
-                    <div class="property-name">Вес</div>
-                    <div class="property-value">{{ $post->ves }}</div>
-                </div>
-            @endif
-            @if($post->breast_size)
-                <div class="property-item">
-                    <div class="property-name">Размер груди</div>
-                    <div class="property-value">{{ $post->breast_size }}</div>
-                </div>
-            @endif
-            @if($post->national)
-                <div class="property-item">
-                    <div class="property-name">Национальность</div>
-                    <a href="/{{ $post->national->national->filterUrl->filter_url }}"
-                       class="property-value">{{ $post->national->national->value }} </a>
-                </div>
-            @endif
-            @if($post->hair)
-                <div class="property-item">
-                    <div class="property-name">Цвет волос</div>
-                    <a href="/{{ $post->hair->hair->filterUrl->filter_url }}"
-                       class="property-value">{{ $post->hair->hair->value }}</a>
-                </div>
-            @endif
-            @if($post->intimHair and isset($post->intimHair->value->filterUrl->filter_url ))
-                <div class="property-item">
-                    <div class="property-name">Интимная стрижка</div>
-                    <a href="/{{ $post->intimHair->value->filterUrl->filter_url }}"
-                       class="property-value">{{ $post->intimHair->value->value }}</a>
-                </div>
-            @endif
-        </div>
-    </div>
+                <a href="/600-600/thumbs{{$post->photo}}" data-lightbox="image-{{ $post->id }}">
+                    <img title="Проститутка {{ $post->name }}" src="/500-500/thumbs{{$post->photo}}"
+                         class="profile-main-info__slider-main-img"
+                         alt="{{ $post->name }}">
+                </a>
 
 
-    @if($post->service->first())
-        <div class="property-item metro-list service-list">
-            <div class="decr-title">
-                Услуги
-            </div>
-            <div class="d-flex">
-                @foreach($post->service as $item)
-                    <a class="property-value"
-                       href="/{{ $item->service->filterUrl->filter_url }}">
-                        {{ $item->service->value }}@if($post->service->last() != $item),@endif</a>
+                @if($post->gallery and $post->gallery->count())
 
-                @endforeach
-            </div>
-        </div>
+                    @foreach($post->gallery as $item)
 
-    @endif
-
-    @if($post->about)
-        <div class="post-decr">
-            <div class="decr-title">
-                Описание
-            </div>
-            <div class="decr-text">
-                {{ $post->about }}
-            </div>
-        </div>
-    @endif
-
-    @if($post->gallery and $post->gallery->count())
-
-        <div class="photo-wrap">
-            <div class="decr-title">
-                Фото
-            </div>
-            <div class="popular-list post-photo">
-                @foreach($post->gallery as $item)
-                    <div class="post-photo-item">
                         <a href="/600-600/thumbs{{$item->file}}" data-lightbox="image-{{ $post->id }}">
-                            <picture>
-
-                                <source srcset="/181-257/thumbs{{str_replace('.jpg', '.webp', $item->file)}}"
-                                        type="image/webp">
-                                <source srcset="/181-257/thumbs{{$item->file}}" type="image/jpeg">
-
-                                <img data-lightbox="roadtrip" title="Проститутка {{ $post->name }}"
-                                     srcset="/181-257/thumbs{{$item->file}}"
-                                     loading="lazy"
-                                     alt="{{ $post->name }}">
-                            </picture>
+                            <img title="Проститутка {{ $post->name }}"
+                                 src="/500-500/thumbs{{$item->file}}"
+                                 loading="lazy"
+                                 class="profile-main-info__slider-main-img"
+                                 alt="{{ $post->name }}">
                         </a>
 
-                    </div>
-                @endforeach
-            </div>
-        </div>
+                    @endforeach
 
-    @endif
+                @endif
 
-    @if($post->selphi and $post->selphi->count())
+                @if($post->selphi and $post->selphi->count())
 
-        <div class="photo-wrap">
-            <div class="decr-title">
-                Селфи
-            </div>
-            <div class="popular-list post-photo">
-                @foreach($post->selphi as $item)
-                    <div class="post-photo-item">
+                    @foreach($post->selphi as $item)
+
                         <a href="/600-600/thumbs{{$item->file}}" data-lightbox="image-{{ $post->id }}">
-                            <picture>
-                                <source srcset="/181-257/thumbs{{$item->file}}">
-                                <img
-                                    loading="lazy"
-                                    title="Проститутка {{ $post->name }}" srcset="/181-257/thumbs{{$item->file}}"
-                                    alt="{{ $post->name }}">
-                            </picture>
+                            <img title="Проститутка {{ $post->name }}"
+                                 src="/500-500/thumbs{{$item->file}}"
+                                 loading="lazy"
+                                 class="profile-main-info__slider-main-img"
+                                 alt="{{ $post->name }}">
                         </a>
-                    </div>
-                @endforeach
+
+                    @endforeach
+
+                @endif
+
             </div>
+
         </div>
 
-    @endif
-    <div class="col-12"></div>
-    @if($post->video)
-        <div class="post-decr">
-            <div class="decr-title">
-                Видео
-            </div>
-            <div class="decr-text">
-                <video controls="controls" class="video">
-                    <source src="/storage{{ $post->video->file }}">
-                </video>
-            </div>
-        </div>
-    @endif
-
-
-    <div class="col-12"></div>
-
-    @if( $firstMetro = $post->metro->first() and isset($firstMetro->metro->x) or isset($cityInfo['x']) )
-        <div class="post-decr">
-            <div class="decr-title">
-                Я на карте
-            </div>
-            @php
-                if ($firstMetro){
-                    $x = $firstMetro->metro->x;
-                    $y = $firstMetro->metro->y;
-                }else{
-                    $x = $cityInfo['x'];
-                    $y = $cityInfo['y'];
-                }
-            @endphp
-            <div class="decr-text">
-                <div id="map"
-                     class="yandex-map map-not-exist"
-                     data-x="{{ $x }}"
-                     data-y="{{ $y }}" style="height: 300px">
+        <div class="col-8 right-info">
+            <div class="right-info-item">
+                <div class="small-heading">
+                    О проститутке:
                 </div>
-            </div>
-        </div>
-    @endif
-
-    <div class="decr-title">
-        Отзывы
-    </div>
-    <div class="review-list">
-        @if($post->comments->first())
-
-            @foreach($post->comments as $item)
-                <div class="review-item review-form">
-                    <div class="name">
-                        {{ $item->name }}
-                    </div>
-                    <div class="text">
-                        {{ $item->text }}
+                <div class="single-phone-wrap">
+                    <div class="phone"
+                         data-city="{{ $post->city_id }}"
+                         data-id="{{ $post->id }}"
+                         onclick="show_phone(this)">
+                        <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_300_1129)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M13.8277 10.6784C14.7593 11.1961 15.6915 11.714 16.6231 12.2317C17.0241 12.4544 17.2 12.9268 17.0422 13.3577C16.2406 15.5475 13.8931 16.7033 11.6842 15.8972C7.16109 14.2462 3.8084 10.8934 2.1573 6.37028C1.35108 4.16142 2.50698 1.81381 4.69676 1.01228C5.12765 0.854409 5.6001 1.03031 5.8233 1.43131C6.3405 2.36297 6.85834 3.29516 7.37606 4.22676C7.61875 4.66381 7.56171 5.18259 7.22953 5.55581C6.79451 6.04533 6.35957 6.53474 5.92456 7.02375C6.85314 9.28499 8.7694 11.2013 11.0307 12.1299C11.5197 11.6948 12.0091 11.2599 12.4986 10.8249C12.8724 10.4927 13.3907 10.4357 13.8277 10.6784L13.8277 10.6784Z"
+                                      fill="white"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_300_1129">
+                                    <rect width="19" height="19" fill="white" transform="translate(0 0.954742)"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        Показать телефон
                     </div>
                 </div>
-            @endforeach
 
-        @else
-            <div class="review-item">
-                Отзывов еще никто не оставлял
+                @if($post->metro->first())
+
+                    <div class="single-metro-wrap">
+                        <div class="metro-left">Метро:</div>
+                        <div class="metro-right">
+
+                            @foreach($post->metro as $metro)
+
+                                <div class="metro">
+                                    <a href="/{{ $metro->metro->filterUrl->filter_url }}"
+                                       class="metro-link">
+                                        <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.9017 5.33234L9.54563 10.1963L7.22003 5.33234L5.2896 11.1995H4.9552V11.8531H6.91605V11.2299H6.61208L7.5696 8.60029L9.3024 11.8531H9.77357L11.5065 8.56989L12.4793 11.1996H12.1296V11.8531H14.1361V11.1996H13.7865L11.9017 5.33234Z"
+                                                fill="white"/>
+                                            <path
+                                                d="M9.50002 2.77872C7.66077 2.77872 5.92802 3.50829 4.63602 4.81549C3.35925 6.12269 2.66 7.84029 2.67517 9.64909C2.67517 11.2298 3.23754 12.7803 4.25591 14.0115C4.31667 14.0875 4.39269 14.1179 4.48387 14.1179H6.49033C8.0255 14.1179 10.0015 14.1331 11.6431 14.1331C12.9808 14.1331 14.1055 14.1331 14.6071 14.1179C14.6983 14.1179 14.7743 14.0724 14.8351 13.9963C15.8383 12.7499 16.3703 11.2299 16.3703 9.63393C16.3705 5.86433 13.2849 2.77873 9.50013 2.77873L9.50002 2.77872ZM14.44 13.5099C13.1328 13.5403 8.98322 13.5251 6.47522 13.5099H4.62082C3.75437 12.4155 3.26802 11.0475 3.26802 9.64912C3.26802 7.99234 3.9065 6.42672 5.07685 5.24112C6.26245 4.05541 7.82805 3.38672 9.50005 3.38672C12.9505 3.38672 15.7625 6.19872 15.7625 9.64912C15.7625 11.0627 15.3065 12.4003 14.4401 13.5099H14.44Z"
+                                                fill="white"/>
+                                        </svg>
+                                        {{ $metro->metro->value }} </a>
+                                </div>
+
+                            @endforeach
+
+                        </div>
+
+                    </div>
+
+                @endif
+
+                @if($post->rayon->first())
+
+                    <div class="single-metro-wrap">
+                        <div class="metro-left">Район:</div>
+                        <div class="metro-right">
+
+                            <div class="metro">
+                                <a href="/{{ $post->rayon->rayon->filterUrl->filter_url }}"
+                                   class="metro-link">
+                                    <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.9017 5.33234L9.54563 10.1963L7.22003 5.33234L5.2896 11.1995H4.9552V11.8531H6.91605V11.2299H6.61208L7.5696 8.60029L9.3024 11.8531H9.77357L11.5065 8.56989L12.4793 11.1996H12.1296V11.8531H14.1361V11.1996H13.7865L11.9017 5.33234Z"
+                                            fill="white"/>
+                                        <path
+                                            d="M9.50002 2.77872C7.66077 2.77872 5.92802 3.50829 4.63602 4.81549C3.35925 6.12269 2.66 7.84029 2.67517 9.64909C2.67517 11.2298 3.23754 12.7803 4.25591 14.0115C4.31667 14.0875 4.39269 14.1179 4.48387 14.1179H6.49033C8.0255 14.1179 10.0015 14.1331 11.6431 14.1331C12.9808 14.1331 14.1055 14.1331 14.6071 14.1179C14.6983 14.1179 14.7743 14.0724 14.8351 13.9963C15.8383 12.7499 16.3703 11.2299 16.3703 9.63393C16.3705 5.86433 13.2849 2.77873 9.50013 2.77873L9.50002 2.77872ZM14.44 13.5099C13.1328 13.5403 8.98322 13.5251 6.47522 13.5099H4.62082C3.75437 12.4155 3.26802 11.0475 3.26802 9.64912C3.26802 7.99234 3.9065 6.42672 5.07685 5.24112C6.26245 4.05541 7.82805 3.38672 9.50005 3.38672C12.9505 3.38672 15.7625 6.19872 15.7625 9.64912C15.7625 11.0627 15.3065 12.4003 14.4401 13.5099H14.44Z"
+                                            fill="white"/>
+                                    </svg>
+                                    {{ $post->rayon->rayon->value }} </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                @endif
+
+                <div class="single-price">
+                    <div class="place-image">
+                        <img src="/img/dom.svg" alt="">
+                        Апартаменты:
+                    </div>
+                    <div class="single-price-item">
+                        <div class="left-single-price">
+                            <div class="left-price-item">Час:</div>
+                            <div class="left-price-item">Два часа:</div>
+                            <div class="left-price-item">Ночь:</div>
+                        </div>
+                        <div class="right-single-price">
+                            <div class="right-price-item">{{ $post->price }}</div>
+                            <div class="right-price-item">{{ $post->price * 2 }}</div>
+                            <div class="right-price-item">{{ $post->price * 4}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="params-wrap">
+                    <div class="params-heading">
+                        Параметры
+                    </div>
+                    <div class="params-item-wrap">
+                        <div class="params-item">
+                            <div class="param-value">{{ $post->age }}</div>
+                            <div class="param-name">
+                                Возраст
+                            </div>
+                        </div>
+                        <div class="params-item">
+                            <div class="param-value">{{ $post->rost }}</div>
+                            <div class="param-name">
+                                Рост
+                            </div>
+                        </div>
+                        <div class="params-item">
+                            <div class="param-value">{{ $post->ves }}</div>
+                            <div class="param-name">
+                                Вес
+                            </div>
+                        </div>
+                        <div class="params-item">
+                            <div class="param-value">{{ $post->breast_size }}</div>
+                            <div class="param-name">
+                                Грудь
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="params-wrap">
+                    <div class="params-heading">
+                        Дополнительные параметры
+                    </div>
+                    <div class="params-item-wrap">
+                        <div class="params-item">
+                            <div class="param-value">{{ $post->national->national->value }}</div>
+                            <div class="param-name">
+                                Национальность
+                            </div>
+                        </div>
+                        <div class="params-item">
+                            <div class="param-value">{{ $post->intimHair->value->value }}</div>
+                            <div class="param-name">
+                                Интимная стрижка
+                            </div>
+                        </div>
+                        <div class="params-item">
+                            <div class="param-value">{{ $post->hair->hair->value }}</div>
+                            <div class="param-name">
+                                Цвет волос
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
-        @endif
+
+            @if($post->about)
+
+                <div class="right-info-item">
+                    <div class="small-heading">
+                        О себе:
+                    </div>
+                    {{ $post->about }}
+                </div>
+
+            @endif
+
+            <div class="right-info-item">
+                <div class="small-heading">
+                    Предоставляемые услуги:
+                </div>
+                <div class="service-wrap">
+                    @foreach($post->service as $item)
+                        <a class="property-value"
+                           href="/{{ $item->service->filterUrl->filter_url }}">
+                            <img src="/images/check.svg" alt="">
+                            {{ $item->service->value }}</a>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="right-info-item">
+                <div class="small-heading">
+                    Отзывы:
+                </div>
+                @if(!$post->comments->first())
+                    <div class="no-review">
+                        К этой анкете ещё нет ни одного отзыва.<br> Вы можете быть первым
+                    </div>
+                @endif
+
+                <div class="red-btn review-btn" data-bs-toggle="modal" data-bs-target="#commentModal">
+                    Оставить отзыв
+                </div>
+
+                @if($post->comments->first())
+
+                    @foreach($post->comments as $item)
+                        <div class="review-wrap">
+                            <div class="name-date-wrap">
+                                <div class="name">{{ $item->name }}</div>
+                                <div class="date">{{ $item->created_at }}</div>
+                            </div>
+                            <div class="review">
+                                {{ $item->text }}
+                            </div>
+                        </div>
+                    @endforeach
+
+                @endif
+
+            </div>
+
+            @if($morePosts)
+                <div class="right-info-item">
+
+                    <div class="photo-wrap more-posts">
+                        <div class="small-heading">
+                            Похожие анкеты
+                        </div>
+
+                        <div class="row more-posts-wrap">
+                            @foreach($morePosts as $post)
+                                @include('site.includes.post-item-more')
+                            @endforeach
+                        </div>
+
+                    </div>
+                </div>
+            @endif
+
+        </div>
+
     </div>
-    <form action="/comment/add" class="review-form" method="post">
-        @csrf
-        <div class="form-review-title">
-            Оставить отзыв
-        </div>
-        <div class="field d-flex">
-            <label for="name-{{ $post->id }}">Имя</label>
-            <input type="text" required id="name-{{ $post->id }}" name="name" value="{{ old('name', '')  }}"
-                   placeholder="Имя">
-        </div>
 
-        <input type="hidden" name="related_id" value="{{ $post->id }}">
-        <input type="hidden" name="related_class" value="{{ \App\Models\Post::class }}">
-
-        <div class="field d-flex">
-            <label for="text-{{ $post->id }}">Комментарий</label>
-            <textarea class="comment-text" required placeholder="Комментарий" name="text" id="text-{{ $post->id }}">
-                    {{ old('text', '')  }}
-                </textarea>
-        </div>
-        <button class="send-btn">Отправить</button>
-    </form>
 </div>
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
-<script src="/js/map_yandex.js?v=1" defer></script>
+
+<div id="lightbox-script" data-script="/js/lightbox.min.js"></div>
+
+<div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="commentModalLabel">Добавить отзыв</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <img src="/images/close.svg" alt="">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/comment/add" class="review-form" method="post">
+                    @csrf
+                    <div class="field d-flex">
+                        <input type="text" required id="name-{{ $post->id }}" name="name" value="{{ old('name', '')  }}"
+                               placeholder="Имя" class="text-input">
+                    </div>
+
+                    <input type="hidden" name="related_id" value="{{ $post->id }}">
+                    <input type="hidden" name="related_class" value="{{ \App\Models\Post::class }}">
+
+                    <div class="field d-flex">
+                        <textarea class="comment-text"
+                                  required
+                                  placeholder="Комментарий"
+                                  name="text"
+                                  id="text-{{ $post->id }}">{{ old('text', '')  }}</textarea>
+                    </div>
+                    <button class="send-btn review-btn">Оставить отзыв</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

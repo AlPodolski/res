@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.new_public')
 @php
     /* @var $post \App\Models\Post */
     /* @var $morePosts \App\Models\Post[] */
@@ -6,6 +6,9 @@
 @endphp
 @section('title', $metaData['title'])
 @section('des', $metaData['des'])
+@section('slick-css', '/new/css/slick.css')
+@section('slick-theme', '/new/css/slick-theme.css')
+@section('slick-js', '/new/js/slick.js')
 @if($post->photo)
     @section('img',  '/521-741/thumbs'.$post->photo)
 @endif
@@ -24,51 +27,21 @@
 
     @include('includes.filter')
 
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item home">
-            <a class="breadcrumb-link" title="Главная" href="/">Главная</a>
-        </li>
-        <li class="breadcrumb-item" data-breadcrumbs="2">
-            {{ $post->name }}
-        </li>
-    </ul>
+    <div class="col-12">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item home">
+                <a class="breadcrumb-link" title="Главная" href="/">Главная</a>
+            </li>
+            <li class="breadcrumb-item" data-breadcrumbs="2">
+                {{ $post->name }}
+            </li>
+        </ul>
+    </div>
 
     @include('includes.message')
 
-    <div class="post-wrap">
-        @include('post.post-item')
-    </div>
+    @include('post.post-item')
 
-    @if($morePosts)
-
-        <div class="photo-wrap more-posts">
-            <div class="decr-title">
-                Похожие анкеты
-            </div>
-            <div class="popular-list post-photo">
-                @foreach($morePosts as $post)
-                    @include('site.includes.post-item')
-                @endforeach
-            </div>
-        </div>
-
-    @endif
-
-    @if($viewPosts)
-
-        <div class="photo-wrap more-posts">
-            <div class="decr-title">
-                Просмотренные анкеты
-            </div>
-            <div class="popular-list post-photo">
-                @foreach($viewPosts as $post)
-                    @include('site.includes.post-item')
-                @endforeach
-            </div>
-        </div>
-
-    @endif
-
-    @widget('menu', ['city_id' =>  $cityInfo['id']  ])
+    @widget('menu', ['city_id' =>  $cityInfo['id']])
 
 @endsection

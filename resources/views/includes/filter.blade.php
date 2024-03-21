@@ -1,29 +1,26 @@
-<div class="filter-wrap">
-    <div class="filter position-relative">
-        <div class="close-panel" onclick="showFilter(this)">
-            <img src="/img/close.svg" alt="">
-        </div>
+<div class="col-12">
+    <div class="filter-wrap">
         <form action="/filter" class="d-flex filter-form">
             @csrf
 
             @if(isset($metro) and $metro->first())
 
-            <div class="filter-item">
-                <div class="metro-select-wrap position-relative">
+                <div class="filter-item">
+                    <div class="metro-select-wrap position-relative">
 
-                    <select name="metro" id="" class="metro-select">
+                        <select name="metro" id="" class="metro-select">
 
-                        <option value="">Выберите метро</option>
+                            <option value="">Выберите метро</option>
 
-                        @foreach($metro as $metroItem)
+                            @foreach($metro as $metroItem)
 
-                            <option value="{{ $metroItem['id'] }}"> {{ $metroItem['value'] }}</option>
+                                <option value="{{ $metroItem['id'] }}"> {{ $metroItem['value'] }}</option>
 
-                        @endforeach
+                            @endforeach
 
-                    </select>
+                        </select>
+                    </div>
                 </div>
-            </div>
 
             @endif
 
@@ -99,3 +96,4 @@
         </form>
     </div>
 </div>
+
