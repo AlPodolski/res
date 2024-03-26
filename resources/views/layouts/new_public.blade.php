@@ -118,7 +118,20 @@
             </div>
             <div class="col-3 center">
                 <div class="cabinet_link">
-                    Вход
+                    <a @auth
+                           href="/cabinet"
+                       @endauth
+                       @guest
+                           href="/login"
+                        @endguest
+                    >
+                        @auth
+                            Кабинет
+                        @endauth
+                        @guestВход
+                        @endguest
+                        </a>
+
                 </div>
             </div>
         </div>
