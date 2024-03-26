@@ -44,7 +44,7 @@
     <div class="container">
         <div class="row">
             <div class="col-3 center">
-                <div class="burger-menu">
+                <div class="burger-menu" onclick="showPanel(this)" data-target="side-panel">
                     <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M2.875 8.625V14.375H43.125V8.625H2.875ZM2.875 20.125V25.875H43.125V20.125H2.875ZM2.875 31.625V37.375H43.125V31.625H2.875Z"

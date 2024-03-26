@@ -1,14 +1,91 @@
+@php
+    $titles = array(
+        'metro' => 'Выбрать метро',
+        'rayon' => 'Выбрать район',
+        'service' => 'Выбрать услугу',
+        'time' => 'Выбрать время',
+        'age' => 'Выбрать возраст',
+        'price' => 'Выбрать цену',
+        'place' => 'Выбрать место',
+        'national' => 'Выбрать национальсность',
+        'hairColor' => 'Выбрать цвет волос',
+        'intimHair' => 'Выбрать интимную стрижку',
+        )
+@endphp
 <div class="side-panel">
     <div class="side-panel-content">
         <div class="panel-menu">
-            <ul class="menu__list" id="accordion" itemscope itemtype="https://schema.org/SiteNavigationElement"
-                data-navigation="" data-menu-handle="main-menu" data-navigation-inited="true">
-                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                    <div class="menu__controls">
-                        <a class="menu__link" data-toggle="collapse" href="#collapseCity">
-                            Изменить город<img src="/img/img_1.png" alt="">
-                        </a>
-                        <div id="collapseCity" class="collapse" data-parent="#accordion">
+            <nav class="first-menu">
+                <a href="/proverennye-prostitutki">
+                    <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.25472 17.8861C14.148 14.184 15.9058 11.1685 16.5537 5.11499C16.6768 3.9636 15.4704 3.09929 13.7452 2.56198C11.1154 1.74304 7.39354 1.74304 4.76408 2.56198C3.03858 3.09929 1.83215 3.96344 1.9556 5.11499C2.58349 10.9885 4.51588 14.2923 9.25497 17.8861H9.25472ZM8.69426 10.6839L12.4859 6.48111C13.3325 5.54266 14.7684 6.83465 13.9215 7.7737L9.47826 12.6983C9.11743 13.1425 8.45033 13.175 8.04618 12.7703L5.67154 10.3957C4.77578 9.50011 6.14328 8.13294 7.03887 9.02869L8.69422 10.6844L8.69426 10.6839ZM10.1763 19.6227C9.49874 20.1319 8.99876 20.1195 8.33293 19.6227C3.01916 15.6691 0.722802 11.8684 0.0220725 5.32013C-0.22166 3.04278 1.5781 1.51657 4.18501 0.70466C7.20278 -0.234887 11.3056 -0.234887 14.3235 0.70466C16.931 1.51661 18.7305 3.04294 18.4868 5.32013C17.7648 12.0597 15.6485 15.5504 10.1759 19.6227H10.1763Z"
+                            fill="#FF005C"/>
+                    </svg>
+                    Проверенные</a>
+                <a href="/novye-prostitutki">
+                    <svg width="28" height="13" viewBox="0 0 28 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M27.4775 11.7281L24.3197 6.39528L27.4453 1.28C27.5195 1.15811 27.56 1.01868 27.5626 0.875997C27.5653 0.733313 27.5299 0.592488 27.4603 0.467931C27.3906 0.343375 27.2891 0.239558 27.1662 0.167102C27.0433 0.0946453 26.9033 0.0561511 26.7606 0.0555573H1.61111C1.18382 0.0555573 0.774025 0.225299 0.471884 0.527441C0.169742 0.829583 0 1.23938 0 1.66667L0 11.3333C0 11.7606 0.169742 12.1704 0.471884 12.4726C0.774025 12.7747 1.18382 12.9444 1.61111 12.9444H26.7847C26.9269 12.9444 27.0666 12.9068 27.1895 12.8353C27.3124 12.7638 27.4142 12.6611 27.4846 12.5376C27.5549 12.414 27.5913 12.274 27.5901 12.1319C27.5889 11.9897 27.55 11.8504 27.4775 11.7281ZM8.46639 9.06167H7.56417L4.93806 5.56556V9.06972H4.02778V4.08333H4.93806L7.57222 7.5875V4.08333H8.47445L8.46639 9.06167ZM13.5656 4.88889H10.7219V6.08917H13.2997V6.89472H10.7219V8.19167H13.5656V8.99722H9.81167V4.08333H13.5575L13.5656 4.88889ZM20.2436 9.04556H19.3333L18.0847 5.34806L16.8361 9.06167H15.9339L14.3228 4.08333H15.3056L16.3689 7.65195L17.5933 4.08333H18.5761L19.7522 7.65195L20.8236 4.08333H21.8144L20.2436 9.04556Z"
+                            fill="#FF005C"/>
+                    </svg>
+                    Новые</a>
+                <a href="/novye-prostitutki">
+                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.35003 19.3335H24.65C24.9159 19.3335 25.1334 19.116 25.1334 18.8501V4.35009C25.1334 4.0842 24.9159 3.8667 24.65 3.8667H4.35003C4.08414 3.8667 3.86664 4.0842 3.86664 4.35009V7.97509C3.86664 8.24098 4.08414 8.45848 4.35003 8.45848C6.09003 8.45848 7.49164 9.86009 7.49164 11.6001C7.49164 13.3401 6.09003 14.7417 4.35003 14.7417C4.08414 14.7417 3.86664 14.9592 3.86664 15.2251V18.8501C3.86664 19.116 4.08414 19.3335 4.35003 19.3335ZM4.83342 4.83348H9.66689V5.31687C9.66689 5.58275 9.88439 5.80025 10.1503 5.80025C10.4162 5.80025 10.6337 5.58275 10.6337 5.31687V4.83348H24.1671V18.3669L10.6337 18.3668V17.8834C10.6337 17.6175 10.4162 17.4 10.1503 17.4C9.88439 17.4 9.66689 17.6175 9.66689 17.8834V18.3668H4.83383V15.6843C4.90633 15.6843 4.97883 15.6602 5.05133 15.6359C5.09972 15.6359 5.14794 15.6118 5.19633 15.6118C5.31722 15.5877 5.41383 15.5634 5.53472 15.5152H5.58311C5.704 15.4668 5.82472 15.4427 5.94561 15.3702C5.994 15.3461 6.01811 15.3461 6.04222 15.3218C6.11472 15.2734 6.21133 15.2493 6.28383 15.2009C6.33222 15.1768 6.35633 15.1525 6.40472 15.1284C6.47722 15.08 6.54972 15.0559 6.59811 15.0075C6.6465 14.9834 6.69472 14.935 6.719 14.9109C6.7915 14.8625 6.83988 14.8143 6.88811 14.7659C6.9365 14.7418 6.96061 14.6934 7.009 14.6693C7.05738 14.6209 7.12988 14.5727 7.17811 14.5243L7.299 14.4034C7.34738 14.355 7.39561 14.3068 7.444 14.2343C7.49238 14.1859 7.5165 14.1377 7.54061 14.1134C7.589 14.065 7.63722 13.9925 7.6615 13.9443C7.68561 13.8959 7.734 13.8477 7.75811 13.7993C7.8065 13.7509 7.83061 13.6784 7.879 13.6059C7.90311 13.5575 7.92738 13.5093 7.9515 13.4609C7.97561 13.3884 8.024 13.34 8.04811 13.2675C8.07222 13.2191 8.0965 13.1709 8.12061 13.1225C8.14472 13.05 8.169 12.9775 8.19311 12.905C8.21722 12.8566 8.2415 12.8084 8.2415 12.76C8.26561 12.6875 8.28988 12.615 8.28988 12.5184C8.28988 12.47 8.314 12.4218 8.314 12.3734C8.33811 12.2768 8.33811 12.2043 8.36239 12.1075C8.36239 12.0591 8.3865 12.0109 8.3865 11.9866C8.45884 11.8661 8.45884 11.7452 8.45884 11.6002C8.45884 11.4552 8.45884 11.3343 8.43472 11.1893C8.43472 11.1409 8.41061 11.0927 8.41061 11.0684C8.41061 10.9718 8.3865 10.8993 8.36222 10.8025C8.36222 10.7541 8.33811 10.7059 8.33811 10.6575C8.314 10.585 8.28972 10.5125 8.28972 10.4159C8.26561 10.3675 8.26561 10.3193 8.24133 10.2709C8.21722 10.1984 8.19294 10.1259 8.16883 10.0534C8.14472 10.005 8.12044 9.95678 8.09633 9.90839C8.07222 9.83589 8.02383 9.7875 7.99972 9.715C7.97561 9.66662 7.95133 9.61839 7.92722 9.57C7.90311 9.4975 7.85472 9.44912 7.80633 9.37662C7.78222 9.32823 7.73383 9.28 7.70972 9.23162C7.66133 9.18323 7.63722 9.11073 7.58883 9.0625C7.56472 9.01412 7.51633 8.96589 7.49222 8.94162C7.44383 8.89323 7.39561 8.845 7.34722 8.7725L7.22633 8.65162C7.17794 8.60323 7.12972 8.555 7.05722 8.50662C7.00883 8.4825 6.98472 8.43412 6.93633 8.41C6.88794 8.36162 6.81544 8.31339 6.76722 8.265C6.71883 8.24089 6.67061 8.1925 6.64633 8.16839C6.57383 8.12 6.50133 8.09589 6.45294 8.0475C6.40456 8.02339 6.38044 7.99912 6.33206 7.975C6.25956 7.92662 6.16294 7.9025 6.09044 7.85412C6.04206 7.83 6.01794 7.83 5.99383 7.80573C5.87294 7.75734 5.75222 7.70912 5.63133 7.66073H5.58294C5.46206 7.63661 5.36544 7.58823 5.24456 7.56412C5.19617 7.56412 5.14794 7.54 5.09956 7.54C5.02706 7.51589 4.95456 7.51589 4.88206 7.49161V4.83356L4.83342 4.83348Z"
+                            fill="#FF005C"/>
+                        <path
+                            d="M20.7835 12.325C20.3244 12.325 19.9135 12.4941 19.5994 12.8325C19.261 13.1466 19.0917 13.5575 19.0917 14.0166C19.0917 14.4757 19.2608 14.8866 19.5992 15.2007C19.9133 15.5148 20.3483 15.7082 20.7833 15.7082C21.2183 15.7082 21.6533 15.5391 21.9675 15.2007C22.2816 14.8866 22.475 14.4516 22.475 14.0166C22.475 13.5816 22.3058 13.1466 21.9675 12.8325C21.6535 12.4941 21.2426 12.325 20.7835 12.325ZM21.291 14.5241C21.0251 14.79 20.5419 14.79 20.276 14.5241C20.131 14.4034 20.0585 14.21 20.0585 14.0166C20.0585 13.8232 20.131 13.63 20.276 13.5091C20.421 13.3641 20.5901 13.2916 20.7835 13.2916C20.9769 13.2916 21.1701 13.3641 21.291 13.5091C21.436 13.6541 21.5085 13.8232 21.5085 14.0166C21.5085 14.21 21.436 14.4034 21.291 14.5241Z"
+                            fill="#FF005C"/>
+                        <path
+                            d="M15.95 10.875C16.4091 10.875 16.82 10.7059 17.1341 10.3675C17.4483 10.0534 17.6416 9.6184 17.6416 9.1834C17.6416 8.7484 17.4725 8.3134 17.1341 7.99929C16.82 7.6609 16.4091 7.49162 15.95 7.49162C15.4909 7.49162 15.08 7.66073 14.7659 7.99912C14.4275 8.3134 14.2584 8.72412 14.2584 9.1834C14.2584 9.64251 14.4275 10.0534 14.7659 10.3675C15.08 10.7059 15.4909 10.875 15.95 10.875ZM15.4425 8.6759C15.5875 8.5309 15.7566 8.4584 15.95 8.4584C16.1434 8.4584 16.3366 8.5309 16.4575 8.6759C16.6025 8.8209 16.675 8.99001 16.675 9.1834C16.675 9.37679 16.6025 9.57001 16.4575 9.6909C16.1916 9.95679 15.7084 9.95679 15.4425 9.6909C15.2975 9.57001 15.225 9.37663 15.225 9.1834C15.225 8.99001 15.2975 8.79663 15.4425 8.6759Z"
+                            fill="#FF005C"/>
+                        <path
+                            d="M14.8865 15.08C14.9833 15.1766 15.104 15.225 15.2249 15.225C15.3458 15.225 15.4665 15.1766 15.5633 15.08L21.8468 8.79654C22.0402 8.60315 22.0402 8.31315 21.8468 8.11993C21.6534 7.92654 21.3634 7.92654 21.1702 8.11993L14.8867 14.4034C14.6933 14.5966 14.6933 14.8866 14.8865 15.08Z"
+                            fill="#FF005C"/>
+                        <path
+                            d="M10.15 8.70001C10.4159 8.70001 10.6334 8.48251 10.6334 8.21662V7.00823C10.6334 6.74234 10.4159 6.52484 10.15 6.52484C9.88413 6.52484 9.66663 6.74234 9.66663 7.00823V8.21662C9.66663 8.48251 9.88413 8.70001 10.15 8.70001Z"
+                            fill="#FF005C"/>
+                        <path
+                            d="M10.15 11.3585C10.4159 11.3585 10.6334 11.141 10.6334 10.8751V9.66671C10.6334 9.40082 10.4159 9.18332 10.15 9.18332C9.88413 9.18332 9.66663 9.40082 9.66663 9.66671V10.8751C9.66663 11.141 9.88413 11.3585 10.15 11.3585Z"
+                            fill="#FF005C"/>
+                        <path
+                            d="M10.15 14.0165C10.4159 14.0165 10.6334 13.799 10.6334 13.5331V12.3248C10.6334 12.0589 10.4159 11.8414 10.15 11.8414C9.88413 11.8414 9.66663 12.0589 9.66663 12.3248V13.5331C9.66663 13.799 9.88413 14.0165 10.15 14.0165Z"
+                            fill="#FF005C"/>
+                        <path
+                            d="M10.15 16.675C10.4159 16.675 10.6334 16.4575 10.6334 16.1916V14.9832C10.6334 14.7173 10.4159 14.4998 10.15 14.4998C9.88413 14.4998 9.66663 14.7173 9.66663 14.9832V16.1916C9.66663 16.4575 9.88413 16.675 10.15 16.675Z"
+                            fill="#FF005C"/>
+                    </svg>
+                    Дешевые</a>
+                <a href="/novye-prostitutki">
+                    <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M23.573 4.9344C23.5841 4.90207 23.5909 4.86833 23.5934 4.8344C23.5934 4.82243 23.6002 4.81243 23.6002 4.79993C23.6002 4.79672 23.5982 4.79386 23.5982 4.79029C23.5973 4.74136 23.5877 4.69297 23.5695 4.64761C23.5639 4.63761 23.5581 4.62797 23.5514 4.61868C23.5377 4.58832 23.52 4.55975 23.4989 4.53386L20.2989 0.933858C20.2966 0.931001 20.2925 0.930287 20.2897 0.92743C20.2868 0.924572 20.2861 0.920287 20.2829 0.917072H20.2831C20.26 0.897608 20.2347 0.880822 20.2079 0.86707C20.1918 0.854749 20.175 0.843499 20.1573 0.833498C20.1079 0.811891 20.0543 0.800463 20.0002 0.799927H4.00019C3.94609 0.800462 3.89251 0.811891 3.84305 0.833498C3.82537 0.843498 3.80859 0.854748 3.79251 0.86707C3.76573 0.88082 3.74037 0.897606 3.71734 0.917072C3.71412 0.920287 3.71341 0.924215 3.71055 0.92743C3.70769 0.930644 3.70377 0.931001 3.70127 0.933858L0.501266 4.53386H0.501444C0.480373 4.55993 0.462516 4.58868 0.448589 4.61922C0.443411 4.62922 0.435375 4.63689 0.430911 4.64761C0.412696 4.69297 0.403053 4.74136 0.402161 4.79029V4.79993C0.402161 4.81189 0.408232 4.82225 0.408946 4.8344C0.411446 4.86832 0.418232 4.90208 0.429482 4.9344C0.436446 4.95279 0.445018 4.97047 0.455018 4.98761C0.461446 5.00315 0.468946 5.0185 0.477339 5.03315L11.6773 20.6331C11.6989 20.6633 11.7247 20.6901 11.7538 20.7131C11.7618 20.7196 11.7706 20.7244 11.7789 20.7299C11.8031 20.746 11.8288 20.7594 11.8557 20.7699C11.8659 20.7744 11.8764 20.7783 11.887 20.7815C11.9616 20.8071 12.0427 20.8071 12.1173 20.7815C12.1281 20.7783 12.1384 20.7744 12.1486 20.7699C12.1756 20.7594 12.2013 20.746 12.2254 20.7299C12.2338 20.7244 12.2425 20.7196 12.2506 20.7131C12.2797 20.6901 12.3056 20.6631 12.3273 20.6331L23.5273 5.03315C23.5357 5.01833 23.5431 5.00315 23.5495 4.98761C23.5588 4.97047 23.5666 4.95261 23.573 4.9344ZM4.01739 1.78281L6.63472 4.39995H1.69072L4.01739 1.78281ZM15.872 5.19995L12.0004 18.9266L8.12884 5.19995H15.872ZM8.83202 4.39995L12.0004 2.0944L15.1704 4.39995H8.83202ZM12.6804 1.59995H19.0347L16.3603 4.27547L12.6804 1.59995ZM7.64043 4.27547L4.96596 1.59995H11.3203L7.64043 4.27547ZM7.29758 5.19995L10.9969 18.3163L1.58018 5.19995H7.29758ZM16.7033 5.19995H22.4208L13.0041 18.3163L16.7033 5.19995ZM17.3661 4.39995L19.9833 1.78281L22.3102 4.39995H17.3661Z"
+                            fill="#FF005C"/>
+                    </svg>
+                    Элитные</a>
+                <a href="/novye-prostitutki">
+                    <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.09997 0.216003C2.65057 0.216003 0.659973 2.2066 0.659973 4.656V12.944C0.659973 15.3936 2.65057 17.384 5.09997 17.384H19.9C22.3494 17.384 24.34 15.3934 24.34 12.944V4.656C24.34 2.2066 22.3494 0.216003 19.9 0.216003H5.09997ZM5.09997 1.3999H19.9C21.714 1.3999 23.1561 2.84189 23.1561 4.656V12.944C23.1561 14.7581 21.7141 16.2001 19.9 16.2001H5.09997C3.28592 16.2001 1.84387 14.7581 1.84387 12.944V4.656C1.84387 2.84195 3.28586 1.3999 5.09997 1.3999ZM10.1319 5.24795V12.352L16.0519 8.8L10.1319 5.24795Z"
+                            fill="#FF005C"/>
+                    </svg>
+                    С видео</a>
+            </nav>
+            <div class="accordion" id="accordionExample">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingCity">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseCity" aria-expanded="false"
+                                aria-controls="collapseCity">
+                            Выбрать город
+                        </button>
+                    </h2>
+                    <div id="collapseCity" class="accordion-collapse collapse"
+                         aria-labelledby="headingCity" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             @foreach($cityList as $item)
                                 <a itemprop="url" class="collapse-item d-block menu__link"
                                    href="https://{{$item->url}}.{{env('DOMAIN')}}">
@@ -17,273 +94,32 @@
                             @endforeach
                         </div>
                     </div>
-                </li>
-                @if($metroList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapseMetro">
-                                Метро <img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapseMetro" class="collapse" data-parent="#accordion">
-                                @foreach($metroList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="/{{$item->filter_url}}">
-                                        <span itemprop="name">{{ $item->metro->value }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
+                </div>
 
-                @if($rayonList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapseRayon">
-                                Район<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapseRayon" class="collapse" data-parent="#accordion">
-                                @foreach($rayonList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="/{{$item->filter_url}}">
-                                        <span itemprop="name">{{ $item->rayon->value }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if($serviceList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapseService">
-                                Услуги<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapseService" class="collapse" data-parent="#accordion">
-                                @foreach($serviceList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="/{{$item->filter_url}}">
-                                        <span itemprop="name">{{ $item->service->value }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if($timeList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapseTime">
-                                Время встречи<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapseTime" class="collapse" data-parent="#accordion">
-                                @foreach($timeList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="/{{$item->filter_url}}">
-                                        <span itemprop="name">{{ $item->time->value }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-                @if($ageList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapseAge">
-                                Возраст<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapseAge" class="collapse" data-parent="#accordion">
-                                @foreach($ageList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="/{{$item->filter_url}}">
-                                        <span itemprop="name">{{ $item->age->value }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-                @if($priceList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapsePrice">
-                                Цена<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapsePrice" class="collapse" data-parent="#accordion">
-                                @foreach($priceList as $item)
-                                    @if(isset($item->price->value))
-                                        <a itemprop="url" class="collapse-item d-block menu__link"
-                                           href="/{{$item->filter_url}}">
-                                            <span itemprop="name">{{ $item->price->value }}</span>
+                @foreach(['metro', 'rayon', 'service', 'time', 'age', 'price', 'place', 'national', 'hairColor', 'intimHair'] as $item)
+                    @if(${$item.'List'})
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading{{$item}}">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse{{$item}}" aria-expanded="false"
+                                        aria-controls="collapse{{$item}}">
+                                    {{ $titles[$item] }}
+                                </button>
+                            </h2>
+                            <div id="collapse{{$item}}" class="accordion-collapse collapse"
+                                 aria-labelledby="heading{{$item}}" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    @foreach(${$item.'List'} as $value)
+                                        <a href="/{{$value->filter_url}}" itemprop="url" class="d-block">
+                                            <span itemprop="name"> {{ $value->$item->value }} </span>
                                         </a>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if($placeList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapsePlace">
-                                Место встречи<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapsePlace" class="collapse" data-parent="#accordion">
-                                @foreach($placeList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="/{{$item->filter_url}}">
-                                        <span itemprop="name">{{ $item->place->value }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if($nationalList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapseNational">
-                                Национальность<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapseNational" class="collapse" data-parent="#accordion">
-                                @foreach($nationalList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="/{{$item->filter_url}}">
-                                        <span itemprop="name">{{ $item->national->value }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if($hairColorList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapseHair">
-                                Цвет волос<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapseHair" class="collapse" data-parent="#accordion">
-                                @foreach($hairColorList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="/{{$item->filter_url}}">
-                                        <span itemprop="name">{{ $item->hairColor->value }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if($intimHairList)
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                        <div class="menu__controls">
-                            <a class="menu__link" data-toggle="collapse" href="#collapseHairIntim">
-                                Интимная стрижка<img src="/img/img_1.png" alt="">
-                            </a>
-                            <div id="collapseHairIntim" class="collapse" data-parent="#accordion">
-                                @foreach($intimHairList as $item)
-                                    <a itemprop="url" class="collapse-item d-block menu__link"
-                                       href="/{{$item->filter_url}}">
-                                        <span itemprop="name">{{ $item->intimHair->value }}</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                <li class="menu__item" data-navigation-item="" data-menu-item-id="11971292">
-                    <div class="menu__controls">
-                        <a class="menu__link" data-toggle="collapse" href="#claimForm">
-                            Обратная связь<img src="/img/img_1.png" alt="">
-                        </a>
-                        <div id="claimForm" class="collapse" data-parent="#accordion">
-                            <form class="claim-form" action="/claim/add" method="post">
-                                @csrf
-                                <div class="form-group d-flex">
-                                    <input id="name" type="text"
-                                           class="form-control request-call-input"
-                                           name="name" required placeholder="Ваше имя">
+                                    @endforeach
                                 </div>
-                                <input type="hidden" name="city_id" value="{{ $cityId }}">
-                                <div class="form-group d-flex">
-                                    <input id="email" type="text"
-                                           class="form-control request-call-input"
-                                           name="email" required placeholder="Ваша почта">
-                                </div>
-                                <div class="text-wrap form-group">
-                                    <textarea name="text" required
-                                              id="about" cols="30" rows="10" placeholder="Комментарий"></textarea>
-                                </div>
-                                <button class="get-more-post-btn" type="submit">Отправить</button>
-                            </form>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="menu__item">
-                    <div class="menu__controls">
-                        <a class="menu__link" href="/proverennye-prostitutki">Проверенные</a>
-                    </div>
-                </li>
-                <li class="menu__item">
-                    <div class="menu__controls">
-                        <a class="menu__link" href="/prostitutki-s-video">Проститутки с видео</a>
-                    </div>
-                </li>
-                <li class="menu__item">
-                    <div class="menu__controls">
-                        <a class="menu__link" href="/novye-prostitutki">Новые анкеты</a>
-                    </div>
-                </li>
-                <li class="menu__item">
-                    <div class="menu__controls">
-                        <a class="menu__link" href="/prostitutki-s-otzyvami">С отзывами</a>
-                    </div>
-                </li>
-                @if($cityId == 1)
-                    <li class="menu__item">
-                        <div class="menu__controls">
-                            <a class="menu__link" href="/prostitutki-na-karte">Проститутки на карте</a>
-                        </div>
-                    </li>
-                @endif
-                @auth()
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971302">
-                        <div class="menu__controls">
-
-                            <a href="/cabinet" class="menu__link"
-                               data-navigation-link="/client_account/login">
-                                Кабинет
-                            </a>
-                        </div>
-                    </li>
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971302">
-                        <div class="menu__controls">
-                            <a href="/logout" class="menu__link"
-                               data-navigation-link="/client_account/login">
-                                Выйти
-                            </a>
-                        </div>
-                    </li>
-                @endauth
-                @guest()
-                    <li class="menu__item" data-navigation-item="" data-menu-item-id="11971302">
-                        <div class="menu__controls">
-                            <a href="/login" class="menu__link"
-                               data-navigation-link="/client_account/login">
-                                Войти в кабинет
-                            </a>
-                        </div>
-                    </li>
-                @endguest
-
-            </ul>
+                    @endif
+                @endforeach
+            </div>
         </div>
     </div>
     <div class="close-panel" onclick="closePanel(this)">

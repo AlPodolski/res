@@ -28,7 +28,14 @@ $(document).ready(function () {
     });
     console.log(1)
 });
+function closePanel(object) {
+    $(object).closest('.side-panel').removeClass('is-show');
+    $(".header-overlay").removeClass("is-show");
+}
 
+function showFilter() {
+    $(".filter-wrap").toggleClass("show-filter")
+}
 $(document).ready(function () {
     setTimeout(afterDelay, 250)
     checkPublication();
@@ -124,15 +131,6 @@ function showPanel(object) {
     $('.' + $(object).attr('data-target')).addClass('is-show')
     $(".header-overlay").addClass("is-show");
     $(".side-panel").css("visibility", "");
-}
-
-function closePanel(object) {
-    $(object).closest('.side-panel').removeClass('is-show');
-    $(".header-overlay").removeClass("is-show");
-}
-
-function showFilter() {
-    $(".filter-wrap").toggleClass("show-filter")
 }
 
 function setLimit() {

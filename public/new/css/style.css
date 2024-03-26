@@ -101,7 +101,9 @@ button.red-btn {
 }
 .post-item{
     background: #26253E;
+    margin-bottom: 15px;
 }
+
 .age-name{
     color: #FF005C;
     font-size: 20px;
@@ -432,4 +434,82 @@ img{
     margin-top: 10px;
     display: block;
     text-decoration: none;
+}
+.side-panel-content {
+    height: 100%;
+    padding: 2rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+.side-panel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 500px;
+    z-index: 10;
+    background-color: #26253e;
+    transform: translate3d(-100%, 0, 0);
+    visibility: hidden;
+    transition: .3s;
+    max-width: 79%;
+}
+.is-show {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+}
+.first-menu{
+    display: flex;
+    flex-direction: column;
+}
+.first-menu svg{
+    margin-right: 20px;
+    width: 23px;
+}
+.first-menu a{
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+.accordion-item{
+    border:none;
+    background: none;
+}
+.accordion-button{
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    box-shadow:none;
+}
+.accordion-button:not(.collapsed){
+    background: none;
+    color: #fff;
+    border: none;
+    box-shadow:none;
+}
+.accordion-button:focus{
+    box-shadow: none;
+}
+.accordion-body a{
+    color: #fff;
+    text-decoration: none;
+}
+.accordion-body{
+    padding-left: 30px;
+}
+.close-panel{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    top: 10px;
+    right: 40px;
+    display: flex;
+    border-radius: 50%;
+}
+.is-show {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
 }
