@@ -93,6 +93,10 @@
 
             <button class="red-btn">Найти</button>
 
+            <div class="close-panel" onclick="showFilter(this)">
+                <img src="/img/close.svg" alt="">
+            </div>
+
         </form>
     </div>
 </div>

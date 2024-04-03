@@ -58,7 +58,7 @@
                             </linearGradient>
                         </defs>
                     </svg>
-                    Каталог
+                    <span class="burger-menu-text">Каталог</span>
                 </div>
             </div>
             <div class="col-6">
@@ -116,9 +116,12 @@
                     </a>
                 </div>
             </div>
-            <div class="col-3 center">
+            <div class="col-3 center filter-cabinet">
+                <div class="filter-btn" onclick="showFilter()">
+                    <img src="/img/filter.svg" alt="">
+                </div>
                 <div class="cabinet_link">
-                    <a @auth
+                    <a class="cabinet_link" @auth
                            href="/cabinet"
                        @endauth
                        @guest
@@ -133,6 +136,7 @@
                         </a>
 
                 </div>
+
             </div>
         </div>
     </div>

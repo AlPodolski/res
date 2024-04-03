@@ -50,11 +50,8 @@
         @endif
     </div>
 
-    <div class="col-12">
+    <div class="col-12 h1-sort">
         <h1>{{ $meta['h1'] }}</h1>
-    </div>
-
-    <div class="col-12">
         @include('includes.limit_and_order')
     </div>
 

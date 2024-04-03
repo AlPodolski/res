@@ -3,7 +3,7 @@
 use App\Actions\GenerateImageMicro;
 use App\Actions\Like;
 @endphp
-<div class="col-3">
+<div class="col-12 col-xl-3 col-lg-4 col-md-6">
     <div class="post-item position-relative ">
         <script type="application/ld+json">
             {!!(new GenerateImageMicro)->generate($post, $cityInfo['city'])!!}
