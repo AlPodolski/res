@@ -555,12 +555,15 @@ li.page-item {
     justify-content: center;
 }
 .page-link{
-    background: #26253E;
+    background: none;
     color: #ff005c;
     border: none;
     width: 35px;
     height: 35px;
     border-radius: 50%;
+}
+.page-link:hover{
+    background: none;
 }
 .page-item:first-child .page-link, .page-item:last-child .page-link{
     border-radius: 50%;

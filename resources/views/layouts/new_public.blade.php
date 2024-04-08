@@ -35,7 +35,7 @@
     @if(View::hasSection('slick-theme'))
         <link rel="stylesheet" href="@yield('slick-theme')">
     @endif
-    <link rel="stylesheet" href="/new/css/style.css">
+    <link rel="stylesheet" href="/new/css/style.css?v=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
