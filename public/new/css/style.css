@@ -545,6 +545,31 @@ h1{
 .form-group .cabinet_link{
     margin-left: inherit;
 }
+li.page-item {
+    margin-right: 15px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+}
+.page-link{
+    background: #26253E;
+    color: #ff005c;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.page-item:first-child .page-link, .page-item:last-child .page-link{
+    border-radius: 50%;
+}
+.active>.page-link, .page-link.active{
+    background: none;
+}
+.disabled>.page-link, .page-link.disabled{
+    background: #26253E;
+    color: #ff005c;
+}
 .g-recaptcha{
     margin-bottom: 15px;
     margin-top: 23px;
