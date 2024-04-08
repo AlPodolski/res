@@ -3,8 +3,10 @@
 use App\Actions\Like;
 @endphp
 <div class="col-12">
+
     <div class="row">
-        <div class="col-4 ">
+
+        <div class="col-12 col-lg-4 ">
             <div class="photo">
 
                 <a href="/600-600/thumbs{{$post->photo}}" data-lightbox="image-{{ $post->id }}">
@@ -50,7 +52,7 @@ use App\Actions\Like;
 
         </div>
 
-        <div class="col-8 right-info">
+        <div class="col-12 col-lg-8 right-info">
             <div class="right-info-item">
                 <div class="small-heading">
                     О проститутке:

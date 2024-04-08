@@ -43,7 +43,7 @@
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-3 center">
+            <div class="col-2 col-sm-3 center">
                 <div class="burger-menu" onclick="showPanel(this)" data-target="side-panel">
                     <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -116,7 +116,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-3 center filter-cabinet">
+            <div class="col-4 col-sm-3 center filter-cabinet">
                 <div class="filter-btn" onclick="showFilter()">
                     <img src="/img/filter.svg" alt="">
                 </div>
