@@ -55,8 +55,8 @@
         @include('includes.limit_and_order')
     </div>
 
-    <div class="col-12 posts">
-        <div class="row">
+    <div class="col-12 ">
+        <div class="row posts">
             @foreach($posts as $post)
                 @include('site.includes.post-item')
             @endforeach
@@ -81,14 +81,16 @@
 
         <p>Популярные анкеты</p>
 
-        <div class="posts">
+        <div class="col-12">
+            <div class="row posts">
 
-            @foreach($morePosts as $post)
+                @foreach($morePosts as $post)
 
-                @include('site.includes.post-item')
+                    @include('site.includes.post-item')
 
-            @endforeach
+                @endforeach
 
+            </div>
         </div>
 
     @endif
@@ -96,7 +98,8 @@
     @if($posts->total() > $posts->count())
 
         <div data-url="{{ str_replace('http', 'https', $posts->nextPageUrl()) }}" onclick="getMorePosts(this)"
-             class="review-btn">Показать еще</div>
+             class="review-btn">Показать еще
+        </div>
 
         <div class="col-12">{{ $posts->links() }}</div>
 

@@ -59,7 +59,7 @@ class FilterController extends Controller
 
         $morePosts = false;
 
-        if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id'], 10);
+        if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id']);
 
         $metro = $dataRepository->metro($cityInfo['id']);
 

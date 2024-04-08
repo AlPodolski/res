@@ -16,7 +16,7 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        $this->limit = \Cookie::get('post_limit') ?? 15;
+        $this->limit = \Cookie::get('post_limit') ?? 16;
         $this->sort = \Cookie::get('sort') ?? 'default';
     }
 }
