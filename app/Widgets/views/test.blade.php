@@ -110,9 +110,12 @@
                                  aria-labelledby="heading{{$item}}" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     @foreach(${$item.'List'} as $value)
-                                        <a href="/{{$value->filter_url}}" itemprop="url" class="d-block">
-                                            <span itemprop="name"> {{ $value->$item->value }} </span>
-                                        </a>
+                                        @if(isset($value->filter_url) and isset($value->$item->value))
+                                            <a href="/{{$value->filter_url}}" itemprop="url" class="d-block">
+                                                <span itemprop="name"> {{ $value->$item->value }} </span>
+                                            </a>
+                                        @endif
+
                                     @endforeach
                                 </div>
                             </div>

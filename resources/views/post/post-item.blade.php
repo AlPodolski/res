@@ -109,7 +109,7 @@ use App\Actions\Like;
 
                 @endif
 
-                @if($post->rayon->first())
+                @if(isset($post->rayon) and $post->rayon->first())
 
                     <div class="single-metro-wrap">
                         <div class="metro-left">Район:</div>
@@ -194,19 +194,20 @@ use App\Actions\Like;
                     </div>
                     <div class="params-item-wrap">
                         <div class="params-item">
-                            <div class="param-value">{{ $post->national->national->value }}</div>
+                            <div class="param-value">
+                                {{ $post->national->national->value ?? '-' }}</div>
                             <div class="param-name">
                                 Национальность
                             </div>
                         </div>
                         <div class="params-item">
-                            <div class="param-value">{{ $post->intimHair->value->value }}</div>
+                            <div class="param-value">{{ $post->intimHair->value->value ?? '-' }}</div>
                             <div class="param-name">
                                 Интимная стрижка
                             </div>
                         </div>
                         <div class="params-item">
-                            <div class="param-value">{{ $post->hair->hair->value }}</div>
+                            <div class="param-value">{{ $post->hair->hair->value ?? '-' }}</div>
                             <div class="param-name">
                                 Цвет волос
                             </div>
