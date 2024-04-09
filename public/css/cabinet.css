@@ -1489,7 +1489,7 @@ footer {
 
 .ammount__info-balance-repl-radio-item {
     position: relative;
-    margin-right: 20px
+    margin-right: 10px
 }
 
 .ammount__info-balance-repl-radio-item label {
@@ -1506,7 +1506,8 @@ footer {
     -ms-flex-align: center;
     align-items: center;
     padding: 4px 0;
-    width: 55px;
+    width: 70px;
+    font-size: 14px;
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s

@@ -52,6 +52,9 @@ class PayController extends Controller
                 case 3 : $currency = 'sbp.rub';
                 break;
 
+                case 4 : $currency = 'yandex';
+                break;
+
             }
 
 
