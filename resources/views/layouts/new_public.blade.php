@@ -148,6 +148,7 @@
         </div>
     </div>
 </main>
+
 <script src="/new/js/jquery.js"></script>
 @if(View::hasSection('slick-js'))
     <script src="@yield('slick-js')"></script>
@@ -155,5 +156,24 @@
 <script src="/new/js/bootstrap.bundle.min.js"></script>
 <script src="/js/wNumb.min.js" defer></script>
 <script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" defer></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(88595241, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+    });
+</script>
 </body>
 </html>

@@ -326,8 +326,11 @@ img{
 }
 .single-price-item{
     display: flex;
-    width: 120px;
+    width: 150px;
     justify-content: space-between;
+}
+.pagination{
+    flex-wrap: wrap;
 }
 .left-price-item{
     font-size: 18px;
