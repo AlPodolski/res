@@ -100,7 +100,7 @@
                     <tr>
                         <th>{{ $item->id }}</th>
                         <th>{{ $item->sum }}</th>
-                        <th>{{ $item->status }}</th>
+                        <th>{{ $item->payStatus }}</th>
                         <th>{{ $item->created_at }}</th>
                         <th>
                             @if($item->created_at != $item->updated_at)
