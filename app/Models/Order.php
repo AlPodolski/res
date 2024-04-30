@@ -28,4 +28,12 @@ class Order extends Model
 {
     const WAIT = 1;
     const FINISH = 2;
+
+    public function getPayStatusAttribute(): string
+    {
+        if ($this->status == self::WAIT) return 'Ожидает оплаты';
+
+        return 'Оплачен';
+
+    }
 }

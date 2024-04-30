@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Cabinet;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PayRequest;
+use App\Models\History;
 use App\Models\Order;
 use App\Models\UserChat;
 use App\Repositories\CityRepository;
@@ -26,7 +27,9 @@ class PayController extends Controller
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
         $notReadMessage = UserChat::where('user_id', auth()->user()->id)->with('notRead')->first();
 
-        return view('cabinet.pay.index', compact('cityInfo', 'notReadMessage'));
+        $history = Order::where('user_id', auth()->user()->id)->limit(50)->get();
+
+        return view('cabinet.pay.index', compact('cityInfo', 'notReadMessage', 'history'));
     }
 
     public function processing($city, PayRequest $request, Obmenka $obmenka)

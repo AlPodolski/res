@@ -3216,7 +3216,7 @@ div#register_recapcha {
     }
 
     .main {
-        padding-left: 15px
+        padding-left: 15px!important;
     }
 
     .ankets__item {
