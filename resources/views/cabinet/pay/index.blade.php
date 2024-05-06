@@ -17,6 +17,9 @@
         @endif
 
         <div class="ammount__info ammount__block">
+            <p><strong>Сейчас есть проблемы с оплатой, если не получилось оплатить попробуйте другой способ, оплата
+                    в USDT должна работать</strong></p>
+
             <div class="ammount__info-balance">
                 <h2 class="ammount__info-balance-title">
                     Баланс
@@ -40,13 +43,25 @@
                         </span>
 
                 </div>
+                <p><strong>USDT TRC20, При оплате USDT курс конвертации 1 USDT
+                        = <span class="red">
+                            {{ env('USDT_TRC20') }}
+                        руб.</span> </strong>
+                </p>
                 <div class="ammount__info-balance-repl-label">
                     Выберите способ оплаты:
                 </div>
                 <div class="ammount__info-balance-repl-radio-items">
                     <div class="ammount__info-balance-repl-radio-item">
-                        <input type="radio" name="currency" value="1" id="balanceReplQiwi"
+                        <input type="radio" name="currency" value="5" id="balanceReplUSDT"
                                class="ammount__info-balance-repl-radio-input" checked>
+                        <label for="balanceReplUSDT">
+                            USDT
+                        </label>
+                    </div>
+                    <div class="ammount__info-balance-repl-radio-item">
+                        <input type="radio" name="currency" value="1" id="balanceReplQiwi"
+                               class="ammount__info-balance-repl-radio-input" >
                         <label for="balanceReplQiwi">
                             Киви
                         </label>

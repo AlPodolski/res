@@ -58,6 +58,9 @@ class PayController extends Controller
                 case 4 : $currency = 'yandex';
                 break;
 
+                case 5 : $currency = 'usdt_trc20';
+                break;
+
             }
 
 

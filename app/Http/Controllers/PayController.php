@@ -20,17 +20,23 @@ class PayController extends Controller
 
             if (isset($orderInfo->amount) and $orderInfo->status == 'FINISHED') {
 
+                $sum = $orderInfo->accrual_amount;
+
+                if ($orderInfo->currency == 'USDT_TRC20') $sum = $sum * env('USDT_TRC20');
+
+                $sum = (int)$sum;
+
                 $order->status = Order::FINISH;
 
                 $order->save();
 
-                $user->cash = $user->cash + $order->sum;
+                $user->cash = $user->cash + $sum;
 
                 $user->save();
 
                 $payType = History::REPLENISHMENT_TYPE;
 
-                event(new PayEvent($order->sum, $user->id, $payType, $user->cash ));
+                event(new PayEvent($sum, $user->id, $payType, $user->cash ));
 
             }
 
