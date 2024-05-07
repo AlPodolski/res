@@ -42,29 +42,35 @@ class PayController extends Controller
         $order->sum = $data['sum'];
         $order->status = Order::WAIT;
 
-        if ($order->save()){
+        if ($order->save()) {
 
-            switch ($data['currency']){
+            switch ($data['currency']) {
 
-                case 1 : $currency = 'qiwi';
-                break;
+                case 1 :
+                    $currency = 'qiwi';
+                    break;
 
-                case 2 : $currency = 'visamaster.rur';
-                break;
+                case 2 :
+                    $currency = 'visamaster.rur';
+                    break;
 
-                case 3 : $currency = 'sbp.rub';
-                break;
+                case 3 :
+                    $currency = 'sbp.rub';
+                    break;
 
-                case 4 : $currency = 'yandex';
-                break;
+                case 4 :
+                    $currency = 'yandex';
+                    break;
 
-                case 5 : $currency = 'usdt_trc20';
-                break;
+                case 5 :
+                    $currency = 'usdt_trc20';
+                    $data['sum'] = $data['sum'] / env('USDT_TRC20');
+                    break;
 
             }
 
 
-            if ($result = $obmenka->getPayUrl($order->id, $data['sum'], $city, $currency)){
+            if ($result = $obmenka->getPayUrl($order->id, $data['sum'], $city, $currency)) {
 
                 return redirect($result->pay_link);
 
