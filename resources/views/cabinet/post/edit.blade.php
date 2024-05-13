@@ -109,7 +109,10 @@
 
                             @foreach($tarifList as $item)
 
-                                <option value="{{ $item->id }}">{{ $item->value }} {{ $item->price }}р. в час</option>
+                                <option
+                                    @if($post->tarif_id == $item->id) selected @endif
+                                    value="{{ $item->id }}"
+                                >{{ $item->value }} {{ $item->price }}р. в час</option>
 
                             @endforeach
                         </select>
