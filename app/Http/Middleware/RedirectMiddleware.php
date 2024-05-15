@@ -31,8 +31,6 @@ class RedirectMiddleware
 
         }
 
-        dd($cityInfo);
-
         if ($cityInfo) {
 
             $actualHost = $cityInfo->actual_city . '.' . $cityInfo->domain;
