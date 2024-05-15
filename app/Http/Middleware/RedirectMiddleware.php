@@ -18,6 +18,8 @@ class RedirectMiddleware
 
         $actualCity = preg_replace("/[0-9]/", '', $actualCity);
 
+        $request->route()->setParameter('city', $actualCity);
+
         $cityInfo = \Cache::get('city_info-' . $actualCity);
 
         if (!$cityInfo) {
@@ -28,6 +30,8 @@ class RedirectMiddleware
             \Cache::set('city_info-' . $actualCity , $cityInfo);
 
         }
+
+        dd($cityInfo);
 
         if ($cityInfo) {
 
