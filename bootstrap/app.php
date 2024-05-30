@@ -15,6 +15,19 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+if (strpos($_SERVER['HTTP_HOST'], 'sextime24.com')){
+    define("SITE", 'sextime24.com');
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'proctitytkis.com')){
+    define("SITE", 'proctitytkis.com');
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'rex.loc2')){
+    define("SITE", 'rex.loc2');
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'rex.loc')){
+    define("SITE", 'rex.loc');
+}
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
