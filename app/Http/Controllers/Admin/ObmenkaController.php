@@ -63,7 +63,7 @@ class ObmenkaController extends Controller
 
             $startPeriod = Carbon::parse($startPeriod)->addDay(1)->format('Y-m-d');
 
-            $weekPay[$startPeriod] = Order::where('created_at', 'like', $startPeriod)
+            $weekPay[$startPeriod] = Order::where('created_at', 'like', '%'.$startPeriod.'%')
                 ->where('status', Order::FINISH)
                 ->sum('sum');
 
