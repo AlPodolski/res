@@ -1,3 +1,4 @@
+<a href="/admin">Главная</a>
 <a href="/admin/posts?sort=-id">Анкеты</a>
 <a href="/admin/comments">Комментарии</a>
 <a href="/admin/claim">Жалобы</a>
