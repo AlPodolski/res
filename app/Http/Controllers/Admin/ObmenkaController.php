@@ -59,7 +59,7 @@ class ObmenkaController extends Controller
 
         $weekPay = array();
 
-        while ($startPeriod <= Carbon::now()->format('Y-m-d')){
+        while ($startPeriod < Carbon::now()->format('Y-m-d')){
 
             $startPeriod = Carbon::parse($startPeriod)->addDay(1)->format('Y-m-d');
 
