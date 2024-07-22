@@ -48,7 +48,7 @@ Route::post('/view/phone', [\App\Http\Controllers\ViewController::class, 'phone'
 
 Route::middleware('redirect')->group(function () {
 
-    Route::domain('{city}.' . env('DOMAIN'))->group(function () {
+    Route::domain('{city}.' . SITE)->group(function () {
 
         Route::get('/prostitutki-na-karte', 'MapController@index');
 

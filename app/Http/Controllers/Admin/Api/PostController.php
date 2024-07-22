@@ -27,7 +27,7 @@ class PostController extends Controller
     {
         $cityId = $request->post('city');
 
-        $domain = 'rexxx-sex.com';
+        $domain = 'sextime24.com';
 
         $cityInfo = $this->cityRepository->getAllCityInfoById($cityId);
 
