@@ -27,9 +27,9 @@ class PostController extends Controller
     {
         $cityId = $request->post('city');
 
-        $domain = 'sextime24.com';
-
         $cityInfo = $this->cityRepository->getAllCityInfoById($cityId);
+
+        $domain = $cityInfo->domain;
 
         $post = Post::where(['fake' => Post::POST_REAL, 'city_id' => $cityInfo['id']])
             ->inRandomOrder()
