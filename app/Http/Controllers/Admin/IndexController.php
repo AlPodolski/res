@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\CityBlock;
 use App\Models\PayCashDay;
 
 class IndexController extends Controller
@@ -12,6 +13,8 @@ class IndexController extends Controller
 
         $spisaniya = PayCashDay::limit(7)->orderByDesc('id')->get();
 
-        return view('admin.index.index', compact('spisaniya'));
+         $cityBlock = CityBlock::get();
+
+        return view('admin.index.index', compact('spisaniya', 'cityBlock'));
     }
 }
