@@ -97,8 +97,6 @@ class RknCommand extends Command
 
             $newCityBlock->save();
 
-            dd($newCityBlock);
-
         }
 
     }
