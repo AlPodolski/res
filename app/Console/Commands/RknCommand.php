@@ -85,7 +85,7 @@ class RknCommand extends Command
         $cityInfo = City::where(['url' => $cityUrl])->first();
 
         $oldCity = $blockCityItem.'.'.$cityInfo->domain;
-dd(CityBlock::where(['old_city' => $oldCity])->first());
+
         if (!CityBlock::where(['old_city' => $oldCity])->first()) {
 
             $newCityBlock = new CityBlock();

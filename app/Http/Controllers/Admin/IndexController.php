@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\BlockDomain;
 use App\Models\CityBlock;
 use App\Models\PayCashDay;
 
@@ -15,6 +16,8 @@ class IndexController extends Controller
 
          $cityBlock = CityBlock::get();
 
-        return view('admin.index.index', compact('spisaniya', 'cityBlock'));
+         $blockDomains = BlockDomain::get();
+
+        return view('admin.index.index', compact('spisaniya', 'cityBlock', 'blockDomains'));
     }
 }
