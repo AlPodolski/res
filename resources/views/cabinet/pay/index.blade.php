@@ -25,7 +25,7 @@
                     Баланс
                 </h2>
                 <div class="ammount__info-balance-value">
-                    0
+                    {{ auth()->user()->cash }}
                 </div>
                 <div class="ammount__info-balance-descr">
                     Пополните счет любым удобным для вас споссбом
@@ -35,9 +35,9 @@
                 @csrf
                 <label for="balanceReplCur">Введите сумму пополнения:</label>
                 <div class="ammount__info-balance-repl-input-wrap">
-                        <span data-val="500">
+                        <span data-val="1000">
                             <input class="ammount__info-balance-repl-input" type="text" id="balanceReplCur" name="sum"
-                                   value="500"
+                                   value="1000"
                                    oninput="this.parentElement.setAttribute('data-val',  this.value)"
                             >
                         </span>
