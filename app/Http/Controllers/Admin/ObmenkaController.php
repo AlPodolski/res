@@ -55,7 +55,21 @@ class ObmenkaController extends Controller
             ->where('status', Order::FINISH)
             ->sum('sum');
 
-        return view('admin.obmenka.index', compact('dataProvider', 'gridData', 'monthCount'));
+        $startPeriod = Carbon::now()->subDay(7)->format('Y-m-d');
+
+        $weekPay = array();
+
+        while ($startPeriod < Carbon::now()->format('Y-m-d')){
+
+            $startPeriod = Carbon::parse($startPeriod)->addDay(1)->format('Y-m-d');
+
+            $weekPay[$startPeriod] = Order::where('created_at', 'like', '%'.$startPeriod.'%')
+                ->where('status', Order::FINISH)
+                ->sum('sum');
+
+        }
+
+        return view('admin.obmenka.index', compact('dataProvider', 'gridData', 'monthCount', 'weekPay'));
     }
 
     public function user($id)

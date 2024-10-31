@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Events\PayEvent;
 use App\Models\History;
+use App\Models\PayCashDay;
 use App\Models\Post;
 use Illuminate\Console\Command;
 
@@ -45,6 +46,8 @@ class PayForPuplication extends Command
             ->where(['publication_status' => Post::POST_ON_PUBLICATION])
             ->where(['fake' => Post::POST_REAL])->get();
 
+        $sum = 0;
+
         foreach ($posts as $post){
 
             if ($post->user->cash >= $post->tarif->price){
@@ -59,6 +62,8 @@ class PayForPuplication extends Command
 
                 $payType = History::PAY_FOR_POST_PUBLICATION_TYPE;
 
+                $sum = $sum + $post->tarif->price;
+
                 event(new PayEvent($post->tarif->price, $post->user->id,$payType,$post->user->cash));
 
             }else{
@@ -70,5 +75,8 @@ class PayForPuplication extends Command
             }
 
         }
+
+        if ($sum) PayCashDay::add($sum);
+
     }
 }

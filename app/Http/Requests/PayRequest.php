@@ -24,7 +24,7 @@ class PayRequest extends FormRequest
     public function rules()
     {
         return [
-            'sum' => 'integer:required',
+            'sum' => 'integer:required|min:1000',
             'currency' => 'integer:required',
         ];
     }
