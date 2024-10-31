@@ -60,24 +60,10 @@
                         </label>
                     </div>
                     <div class="ammount__info-balance-repl-radio-item">
-                        <input type="radio" name="currency" value="1" id="balanceReplQiwi"
-                               class="ammount__info-balance-repl-radio-input" >
-                        <label for="balanceReplQiwi">
-                            Киви
-                        </label>
-                    </div>
-                    <div class="ammount__info-balance-repl-radio-item">
                         <input type="radio" name="currency" value="2" id="balanceReplVisaMastercard"
                                class="ammount__info-balance-repl-radio-input">
                         <label for="balanceReplVisaMastercard">
                             Карта
-                        </label>
-                    </div>
-                    <div class="ammount__info-balance-repl-radio-item">
-                        <input type="radio" name="currency" value="3" id="balanceReplSBP"
-                               class="ammount__info-balance-repl-radio-input">
-                        <label for="balanceReplSBP">
-                            СБП
                         </label>
                     </div>
                     <div class="ammount__info-balance-repl-radio-item">
