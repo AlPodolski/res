@@ -28,6 +28,9 @@ $(document).ready(function () {
     });
     console.log(1)
 });
+$(document).ready(function() {
+    $("#anketPhone").mask("+7(999)99-99-999");
+});
 function closePanel(object) {
     $(object).closest('.side-panel').removeClass('is-show');
     $(".header-overlay").removeClass("is-show");

@@ -81,6 +81,8 @@ class PostsController extends Controller
 
         $post->publication_status = Post::POST_ON_MODERATION;
 
+        $post->phone = preg_replace('/[^0-9]/', '', $post->phone);
+
         $post->save();
 
         PostNational::create([
@@ -231,6 +233,10 @@ class PostsController extends Controller
         $data = $request->validated();
 
         if ($post->update($data)) {
+
+            $post->phone = preg_replace('/[^0-9]/', '', $post->phone);
+
+            $post->save();
 
             \DB::table('post_nationals')->where('post_nationals_id', $post->id)->delete();
 
