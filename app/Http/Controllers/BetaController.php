@@ -14,6 +14,8 @@ class BetaController extends Controller
         $amount = $request->post('amount');
         $status = $request->post('status');
 
+        $orderId = str_replace('-rex', '', $orderId);
+
         $order = Order::where('id',$orderId )->where('status', Order::WAIT)->first();
 
         if ($order and ($status == 'success' or $status == 'partial_payment')){
