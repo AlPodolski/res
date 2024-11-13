@@ -46,6 +46,8 @@ Route::post('/claim/add', [\App\Http\Controllers\ClaimController::class, 'index'
 
 Route::post('/view/phone', [\App\Http\Controllers\ViewController::class, 'phone']);
 
+Route::post('/beta/pay/success', [\App\Http\Controllers\BetaController::class, 'index']);
+
 Route::middleware('redirect')->group(function () {
 
     Route::domain('{city}.' . SITE)->group(function () {
