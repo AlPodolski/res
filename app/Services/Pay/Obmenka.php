@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Pay;
 
-class Obmenka
+class Obmenka implements PaymentInterface
 {
 
     private $secret;
@@ -32,7 +32,9 @@ class Obmenka
                 $rayRequestResult->payment_id
             )){
 
-            return \json_decode($createPayUrl);
+            $result = \json_decode($createPayUrl);
+
+            if ($result) return $result->pay_link;
 
         }
 

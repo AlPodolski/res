@@ -1484,9 +1484,13 @@ footer {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    margin-right: 10px;
     margin-bottom: 13px
 }
-
+.ammount__info-balance-repl-radio-items-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
 .ammount__info-balance-repl-radio-item {
     position: relative;
     margin-right: 10px

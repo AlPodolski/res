@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Cabinet;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PayRequest;
-use App\Models\History;
+use App\Models\Curency;
 use App\Models\Order;
 use App\Models\UserChat;
 use App\Repositories\CityRepository;
-use App\Services\Obmenka;
+use App\Services\Pay\PaymentFactory;
 
 class PayController extends Controller
 {
@@ -27,52 +27,39 @@ class PayController extends Controller
         $cityInfo = $this->cityRepository->getCityInfoByUrl($city);
         $notReadMessage = UserChat::where('user_id', auth()->user()->id)->with('notRead')->first();
 
+        $currency = Curency::all();
+
         $history = Order::where('user_id', auth()->user()->id)->limit(50)->get();
 
-        return view('cabinet.pay.index', compact('cityInfo', 'notReadMessage', 'history'));
+        return view('cabinet.pay.index', compact('cityInfo', 'notReadMessage', 'history', 'currency'));
     }
 
-    public function processing($city, PayRequest $request, Obmenka $obmenka)
+    public function processing($city, PayRequest $request)
     {
         $data = $request->validated();
+
+        $currency = Curency::where('value', $data['currency'] )->first();
 
         $order = new Order();
 
         $order->user_id = auth()->id();
         $order->sum = $data['sum'];
         $order->status = Order::WAIT;
+        $order->payment_system = $currency->payment_system;
 
         if ($order->save()) {
 
-            switch ($data['currency']) {
+            if ($currency->value == 'usdt_trc20'){
 
-                case 1 :
-                    $currency = 'qiwi';
-                    break;
-
-                case 2 :
-                    $currency = 'visamaster.rur';
-                    break;
-
-                case 3 :
-                    $currency = 'sbp.rub';
-                    break;
-
-                case 4 :
-                    $currency = 'yandex';
-                    break;
-
-                case 5 :
-                    $currency = 'usdt_trc20';
-                    $data['sum'] = $data['sum'] / env('USDT_TRC20');
-                    break;
+                $data['sum'] = $data['sum'] / env('USDT_TRC20');
 
             }
 
+            $payService = PaymentFactory::create($currency->payment_system);
 
-            if ($result = $obmenka->getPayUrl($order->id, $data['sum'], $city, $currency)) {
+            if ($payLink = $payService->getPayUrl($order->id, $data['sum'], $city, $data['currency'])) {
 
-                return redirect($result->pay_link);
+                return redirect($payLink);
 
             }
 

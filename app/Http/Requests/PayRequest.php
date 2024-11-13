@@ -25,7 +25,7 @@ class PayRequest extends FormRequest
     {
         return [
             'sum' => 'integer:required|min:1000',
-            'currency' => 'integer:required',
+            'currency' => 'string:required',
         ];
     }
 }

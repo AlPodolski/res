@@ -6,7 +6,7 @@ use App\Events\PayEvent;
 use App\Models\History;
 use App\Models\Order;
 use App\Models\User;
-use App\Services\Obmenka;
+use App\Services\Pay\Obmenka;
 
 class PayController extends Controller
 {

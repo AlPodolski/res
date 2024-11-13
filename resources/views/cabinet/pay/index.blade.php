@@ -51,29 +51,29 @@
                 <div class="ammount__info-balance-repl-label">
                     Выберите способ оплаты:
                 </div>
-                <div class="ammount__info-balance-repl-radio-items">
-                    <div class="ammount__info-balance-repl-radio-item">
-                        <input type="radio" name="currency" value="5" id="balanceReplUSDT"
-                               class="ammount__info-balance-repl-radio-input" checked>
-                        <label for="balanceReplUSDT">
-                            USDT
-                        </label>
-                    </div>
-                    <div class="ammount__info-balance-repl-radio-item">
-                        <input type="radio" name="currency" value="2" id="balanceReplVisaMastercard"
-                               class="ammount__info-balance-repl-radio-input">
-                        <label for="balanceReplVisaMastercard">
-                            Карта
-                        </label>
-                    </div>
-                    <div class="ammount__info-balance-repl-radio-item">
-                        <input type="radio" name="currency" value="4" id="balanceReplyandex"
-                               class="ammount__info-balance-repl-radio-input">
-                        <label for="balanceReplyandex">
-                            ЮМАНИ
-                        </label>
 
-                    </div>
+                <div class="ammount__info-balance-repl-radio-items-wrap">
+
+                    @php
+                    $firstCurrency = $currency->first()
+                    @endphp
+
+                    @foreach($currency as $item)
+
+                        <div class="ammount__info-balance-repl-radio-items">
+                            <div class="ammount__info-balance-repl-radio-item">
+                                <input type="radio" name="currency" value="{{ $item->value }}"
+                                       id="balanceRepl{{ $item->value }}"
+                                       class="ammount__info-balance-repl-radio-input"
+                                       @if($firstCurrency == $item) checked @endif>
+                                <label for="balanceReplUSDT">
+                                    {{ $item->name }}
+                                </label>
+                            </div>
+                        </div>
+
+                    @endforeach
+
                 </div>
 
                 <script defer src='https://www.google.com/recaptcha/api.js'></script>
@@ -119,6 +119,7 @@
 
     </main>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 @endsection
