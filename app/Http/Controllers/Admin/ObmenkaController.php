@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Curency;
 use App\Models\Order;
 use Carbon\Carbon;
 use Itstructure\GridView\DataProviders\EloquentDataProvider;
@@ -37,6 +38,18 @@ class ObmenkaController extends Controller
 
                         if ($row->status == Order::WAIT) return 'Ожидает оплаты';
                         if ($row->status == Order::FINISH) return 'Подтвержден';
+
+                    }
+                ],
+                [
+                    'attribute' => 'payment_system',
+                    'label' => 'Способ оплаты',
+                    'format' => 'html',
+                    'value' => function ($row) {
+                        /* @var $row Order */
+
+                        if ($row->payment_system == Curency::OBMENKA_PAY_SYSTEM) return 'Обменка';
+                        if ($row->payment_system == Curency::BETA_PAY_SYSTEM) return 'Бета';
 
                     }
                 ],
