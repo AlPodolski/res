@@ -23,6 +23,7 @@ class VerifyCsrfToken extends Middleware
         '/post/more',
         '/api/*',
         '/pay/*',
+        '/beta/*',
         '/cabinet/post/publication',
     ];
 }
