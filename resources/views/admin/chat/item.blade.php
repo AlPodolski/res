@@ -16,7 +16,11 @@
             ">
                 <div class="chat__dialog-list-item-text">
                     @if($item->related_class == \App\Models\Files::class)
-                        <img src="/1500-1500/thumbs/{{ $item->file->file }}" alt="">
+                        @if(strpos($item->file->file, '.pdf'))
+                            <a target="_blank" href="/storage/{{$item->file->file}}">Открыть</a>
+                        @else
+                            <img src="/400-500/thumbs/{{ $item->file->file }}" alt="">
+                        @endif
                     @else
                         {{ $item->message }}
                     @endif
