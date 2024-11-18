@@ -28,7 +28,11 @@
                                 ">
                                 <div class="chat__dialog-list-item-text">
                                     @if($item->related_class == \App\Models\Files::class)
-                                        <img src="/400-500/thumbs/{{ $item->file->file }}" alt="">
+                                        @if(strpos($item->file->file, '.pdf'))
+                                            <a target="_blank" href="/storage/{{$item->file->file}}">Открыть</a>
+                                        @else
+                                            <img src="/400-500/thumbs/{{ $item->file->file }}" alt="">
+                                        @endif
                                     @else
                                         {{ $item->message }}
                                     @endif
@@ -58,7 +62,9 @@
                 <textarea name="chatMessage" class="chatMessage" placeholder="Напишите сообщение..."></textarea>
                 <form action="" id="send-message-photo-form" enctype="multipart/form-data">
                     <label for="chatFile">
-                        <svg version="1.1" width="28px" height="28px" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.875 477.875" style="enable-background:new 0 0 477.875 477.875;" xml:space="preserve">
+                        <svg version="1.1" width="28px" height="28px" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.875 477.875"
+                             style="enable-background:new 0 0 477.875 477.875;" xml:space="preserve">
 <g>
     <g>
         <path fill="#D134C2 " d="M329.622,142.691c6.517-6.517,6.517-17.283,0-24.083c-6.517-6.517-17.283-6.517-24.083,0L127.322,296.825
@@ -75,7 +81,7 @@
 </g>
 </svg>
                     </label>
-                    <input onchange="send_photo()" type="file" name="chatFile" id="chatFile" accept=".jpg, .jpeg">
+                    <input onchange="send_photo()" type="file" name="chatFile" id="chatFile" accept=".jpg, .jpeg, .pdf">
                 </form>
 
                 <div onclick="sendMessage(this)"
