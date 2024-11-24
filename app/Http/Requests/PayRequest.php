@@ -24,8 +24,14 @@ class PayRequest extends FormRequest
     public function rules()
     {
         return [
-            'sum' => 'integer:required|min:1000',
+            'sum' => 'integer:required|min:2000',
             'currency' => 'string:required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'sum.min' => 'Минимальная сумма пополнения 2000'
         ];
     }
 }

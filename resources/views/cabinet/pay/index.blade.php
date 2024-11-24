@@ -12,13 +12,11 @@
 
         @if($errors)
             @foreach($errors->all() as $error)
-                <div class="error">{{$error}}</div>
+                <div class="error alert alert-danger">{{$error}}</div>
             @endforeach
         @endif
 
         <div class="ammount__info ammount__block">
-            <p><strong>Сейчас есть проблемы с оплатой, если не получилось оплатить попробуйте другой способ, оплата
-                    в USDT должна работать</strong></p>
 
             <div class="ammount__info-balance">
                 <h2 class="ammount__info-balance-title">
@@ -35,9 +33,9 @@
                 @csrf
                 <label for="balanceReplCur">Введите сумму пополнения:</label>
                 <div class="ammount__info-balance-repl-input-wrap">
-                        <span data-val="1000">
+                        <span data-val="2000">
                             <input class="ammount__info-balance-repl-input" type="text" id="balanceReplCur" name="sum"
-                                   value="1000"
+                                   value="2000"
                                    oninput="this.parentElement.setAttribute('data-val',  this.value)"
                             >
                         </span>

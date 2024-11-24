@@ -23,7 +23,7 @@ class SearchRepository
     public function getForFilter($data, $cityId, $limit = 15)
     {
 
-        $posts = Post::with('avatar', 'video')
+        $posts = Post::with( 'video')
             ->orderByRaw('RAND()')
             ->where('age' , '>=', $data['age-from'])
             ->where('age' , '<=', $data['age-to'])
