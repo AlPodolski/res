@@ -49,4 +49,7 @@
 <div class="link-wrap">
     <div class="link" data-text="Нужна подробная квитанция" onclick="setText(this)" > Квитанция </div>
     <div class="link" data-text="Отправили запрос в платежную систему" onclick="setText(this)" > Запрос </div>
+    <div class="link" data-text="Нужен чек с финальным статусом" onclick="setText(this)" > Ф. чек </div>
+    <div class="link" data-text="Еще идет проверка оплаты" onclick="setText(this)" > Проверка </div>
+    <div class="link" data-text="Нужна выписка по карте в формате пдф с этим платежом" onclick="setText(this)" > Выписка </div>
 </div>
