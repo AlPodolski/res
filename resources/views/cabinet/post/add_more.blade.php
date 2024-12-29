@@ -7,6 +7,7 @@
 @endif
 
 @php
+    /* @var $post \App\Models\Post */
     /* @var $serviceList \App\Models\Service[] */
     /* @var $metroList \App\Models\Metro[] */
     /* @var $rayonList \App\Models\Rayon[] */
@@ -49,7 +50,7 @@
 
                     <div class="anket__main-info-item input-wrap">
                         <label for="anketName" class="@error('name') is-invalid @enderror">Имя</label>
-                        <input type="text" name="name" class="anket__main-info-input input"
+                        <input type="text" name="name" value="{{ $post->name }}" class="anket__main-info-input input"
                                id="anketName" required>
                         @error('name')
                         <div class="invalid-feedback" role="alert">
@@ -61,7 +62,7 @@
                     <div class="anket__main-info-item input-wrap">
 
                         <label for="anketAge" class="@error('age') is-invalid @enderror">Возраст</label>
-                        <input type="text" name="age" class="anket__main-info-input input"
+                        <input type="text" name="age" value="{{ $post->age }}" class="anket__main-info-input input"
                                id="anketAge">
                         @error('age')
                         <div class="invalid-feedback" role="alert">
@@ -73,7 +74,7 @@
                     <div class="anket__main-info-item input-wrap">
 
                         <label for="anketPrice" class="@error('price') is-invalid @enderror">Цена</label>
-                        <input type="text" name="price" class="anket__main-info-input input"
+                        <input type="text" name="price" value="{{ $post->price }}" class="anket__main-info-input input"
                                id="anketPrice">
                         @error('price')
                         <div class="invalid-feedback" role="alert">
@@ -86,7 +87,7 @@
                     <div class="anket__main-info-item input-wrap">
 
                         <label for="anketPhone" class="@error('phone') is-invalid @enderror">Телефон</label>
-                        <input type="text" name="phone" class="anket__main-info-input input"
+                        <input type="text" name="phone" value="{{ $post->phone }}" class="anket__main-info-input input"
                                id="anketPhone">
 
                         @error('phone')
@@ -107,7 +108,10 @@
 
                             @foreach($tarifList as $item)
 
-                                <option value="{{ $item->id }}">{{ $item->value }} {{ $item->price }}р. в час</option>
+                                <option
+                                    @if($post->tarif_id == $item->id) selected @endif
+                                value="{{ $item->id }}"
+                                >{{ $item->value }} {{ $item->price }}р. в час</option>
 
                             @endforeach
                         </select>
@@ -129,7 +133,7 @@
 
                                         <label class="@error('ves') is-invalid @enderror"
                                                for="anketWeight">Вес: </label>
-                                        <input type="text" name="ves" id="anketWeight">
+                                        <input type="text" name="ves" id="anketWeight" value="{{ $post->ves }}">
 
 
                                         @error('ves')
@@ -150,7 +154,8 @@
 
                                         <label class="@error('breast_size') is-invalid @enderror"
                                                for="anketBust">Грудь: </label>
-                                        <input type="text" name="breast_size" id="anketBust">
+                                        <input type="text" name="breast_size" id="anketBust"
+                                               value="{{ $post->breast_size }}">
 
                                         @error('breast_size')
 
@@ -170,7 +175,7 @@
 
                                         <label for="anketHeight"
                                                class="@error('rost') is-invalid @enderror">Рост:</label>
-                                        <input type="text" name="rost" id="anketHeight">
+                                        <input type="text" value="{{ $post->rost }}" name="rost" id="anketHeight">
 
                                         @error('rost')
 
@@ -194,7 +199,13 @@
 
                                             @foreach($hairColorList as $item)
 
-                                                <option value="{{ $item->id }}">{{ $item->value }}</option>
+                                                <option
+
+                                                    @if($post->hair->hair_colors_id == $item->id)
+                                                        selected
+                                                    @endif
+
+                                                    value="{{ $item->id }}">{{ $item->value }}</option>
 
                                             @endforeach
 
@@ -210,7 +221,13 @@
                                         <select type="text" name="national_id" id="anketNational">
                                             @foreach($nationalList as $item)
 
-                                                <option value="{{ $item->id }}">{{ $item->value }}</option>
+                                                <option
+
+                                                    @if($post->national->nationals_id == $item->id)
+                                                        selected
+                                                    @endif
+
+                                                    value="{{ $item->id }}">{{ $item->value }}</option>
 
                                             @endforeach
                                         </select>
@@ -227,7 +244,13 @@
                                         <select type="text" name="intim_hair_color_id" id="anketPhair">
                                             @foreach($intimHairList as $item)
 
-                                                <option value="{{ $item->id }}">{{ $item->value }}</option>
+                                                <option
+
+                                                    @if(isset($post->intimHair->intim_hair_id) and $post->intimHair->intim_hair_id == $item->id)
+                                                        selected
+                                                    @endif
+
+                                                    value="{{ $item->id }}">{{ $item->value }}</option>
 
                                             @endforeach
                                         </select>
@@ -238,7 +261,7 @@
                         <div class="anket__sidebar-adapt anket__sidebar-adapt--2"></div>
                         <h2 class="anket__subtitle subtitle">О себе:</h2>
                         <div class="anket__info-about">
-                            <textarea name="about" placeholder="Расскажите о себе..."></textarea>
+                            <textarea name="about">{{ $post->about }}</textarea>
                         </div>
                         <h2 class="anket__subtitle subtitle">Местоположение:</h2>
                         <div class="anket__info-location">
@@ -255,7 +278,13 @@
                                                     /* @var $item \App\Models\City */
                                                 @endphp
 
-                                                <option value="{{ $item->id }}">{{ $item->city }}</option>
+                                                <option
+
+                                                    @if($post->city_id == $item->id)
+                                                        selected
+                                                    @endif
+
+                                                    value="{{ $item->id }}">{{ $item->city }}</option>
 
                                             @endforeach
 
@@ -275,7 +304,13 @@
                                                         /* @var $item \App\Models\City */
                                                     @endphp
 
-                                                    <option value="{{ $item->id }}">{{ $item->value }}</option>
+                                                    <option
+
+                                                        @if(isset($post->rayon->rayons_id) and $post->rayon->rayons_id == $item->id)
+                                                            selected
+                                                        @endif
+
+                                                        value="{{ $item->id }}">{{ $item->value }}</option>
 
                                                 @endforeach
 
@@ -295,6 +330,11 @@
                     @foreach($serviceList as $item)
                         <div class="check-box-group-item">
                             <input type="checkbox" class="custom-checkbox" id="service-{{ $item->id }}" name="service[]"
+                                   @foreach($post->service as $dataItem)
+                                       @if($dataItem->service_id == $item->id)
+                                           checked
+                                   @endif
+                                   @endforeach
                                    value="{{ $item->id }}">
                             <label for="service-{{ $item->id }}">{{ $item->value }}</label>
                         </div>
@@ -309,7 +349,11 @@
                         @foreach($metroList as $item)
                             <div class="check-box-group-item">
                                 <input type="checkbox" class="custom-checkbox" id="metro-{{ $item->id }}" name="metro[]"
-
+                                       @foreach($post->metro as $dataItem)
+                                           @if($dataItem->metros_id == $item->id)
+                                               checked
+                                       @endif
+                                       @endforeach
                                        value="{{ $item->id }}">
                                 <label for="metro-{{ $item->id }}">{{ $item->value }}</label>
                             </div>
@@ -325,6 +369,11 @@
                 @foreach($timeList as $item)
                     <div class="check-box-group-item">
                         <input type="checkbox" class="custom-checkbox" id="time-{{ $item->id }}" name="time[]"
+                               @foreach($post->time as $dataItem)
+                                   @if($dataItem->param_id == $item->id)
+                                       checked
+                               @endif
+                               @endforeach
                                value="{{ $item->id }}">
                         <label for="time-{{ $item->id }}">{{ $item->value }}</label>
                     </div>

@@ -41,6 +41,7 @@ class AddPostRequest extends FormRequest
             'national_id' => 'integer',
             'intim_hair_color_id' => 'integer',
             'hair_color_id' => 'integer',
+            'add_more' => 'integer',
             'avatar' => 'mimes:jpg,bmp,png',
             'gallery.*' => 'mimes:jpg,bmp,png',
             'user_id' => 'exists:users,id',

@@ -166,6 +166,32 @@ class PostsController extends Controller
             Files::create($item);
         }
 
+        if (isset($_POST['add_more']) and $_POST['add_more']){
+
+            $serviceList = $this->dataRepository->service();
+            $metroList = $this->dataRepository->metroList($post->city_id);
+            $rayonList = $this->dataRepository->rayon($post->city_id);
+
+            $timeList = $this->dataRepository->time();
+            $placeList = $this->dataRepository->place();
+            $nationalList = $this->dataRepository->national();
+            $hairColorList = $this->dataRepository->hairColor();
+            $intimHairList = $this->dataRepository->intimHair();
+
+            $tarifList = $this->dataRepository->tarif();
+
+            $cityList = $this->cityRepository->getAllCity();
+
+            $cityInfo = $this->cityRepository->getAllCityInfoById($post->city_id);
+
+            $notReadMessage = UserChat::where('user_id', auth()->user()->id)->with('notRead')->first();
+
+            return view('cabinet.post.add_more', compact('serviceList', 'metroList', 'rayonList',
+                'timeList', 'placeList', 'nationalList', 'hairColorList', 'intimHairList', 'cityInfo', 'tarifList',
+                'cityList', 'notReadMessage', 'post'));
+
+        }
+
         return redirect('/cabinet');
 
     }
