@@ -58,16 +58,6 @@
     <link href="/css/style.css?v=9" rel="stylesheet">
     <link href="/css/admin.css?v=3" rel="stylesheet">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1KH2Z4KHE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-G1KH2Z4KHE');
-    </script>
-
 </head>
 <body>
 <div id="app">
@@ -185,7 +175,7 @@
 <!-- /Yandex.Metrika counter -->
 <script src="/js/wNumb.min.js" defer></script>
 <script src="/js/script.js?v=13" defer></script>
-<script src="/js/admin.js?v=17" defer></script>
+<script src="/js/admin.js?v=18" defer></script>
 @if(View::hasSection('map'))
     <script src="@yield('map')" defer></script>
 @endif

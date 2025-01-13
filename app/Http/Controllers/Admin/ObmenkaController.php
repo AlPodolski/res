@@ -20,7 +20,15 @@ class ObmenkaController extends Controller
             'dataProvider' => $dataProvider,
             'rowsPerPage' => 100,
             'columnFields' => [
-                'id',
+                [
+                    'attribute' => 'id',
+                    'label' => 'id',
+                    'format' => 'html',
+                    'value' => function ($row) {
+                        /* @var $row Order */
+                        return '<span onclick="copyDataText(this)" data-text="' . $row->id . '-rex" >' . $row->id . '</span>';
+                    }
+                ],
                 [
                     'attribute' => 'sum',
                     'label' => 'Сумма',
@@ -64,7 +72,7 @@ class ObmenkaController extends Controller
             ]
         ];
 
-        $monthCount = Order::where('created_at', '>=', Carbon::now()->format('Y-m').'-01')
+        $monthCount = Order::where('created_at', '>=', Carbon::now()->format('Y-m') . '-01')
             ->where('status', Order::FINISH)
             ->sum('sum');
 
@@ -72,11 +80,11 @@ class ObmenkaController extends Controller
 
         $weekPay = array();
 
-        while ($startPeriod < Carbon::now()->format('Y-m-d')){
+        while ($startPeriod < Carbon::now()->format('Y-m-d')) {
 
             $startPeriod = Carbon::parse($startPeriod)->addDay(1)->format('Y-m-d');
 
-            $weekPay[$startPeriod] = Order::where('created_at', 'like', '%'.$startPeriod.'%')
+            $weekPay[$startPeriod] = Order::where('created_at', 'like', '%' . $startPeriod . '%')
                 ->where('status', Order::FINISH)
                 ->sum('sum');
 
