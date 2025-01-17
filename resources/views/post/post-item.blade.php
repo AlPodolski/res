@@ -229,6 +229,19 @@ use App\Actions\Like;
 
             @endif
 
+            @if($post->video)
+
+                <div class="right-info-item">
+                    <div class="small-heading">
+                        Видео:
+                    </div>
+                    <video controls="controls" class="video">
+                        <source src="/storage/{{ $post->video }}">
+                    </video>
+                </div>
+
+            @endif
+
             <div class="right-info-item">
                 <div class="small-heading">
                     Предоставляемые услуги:
