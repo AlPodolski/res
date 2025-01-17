@@ -236,7 +236,7 @@ use App\Actions\Like;
                         Видео:
                     </div>
                     <video controls="controls" class="video">
-                        <source src="/storage/{{ $post->video }}">
+                        <source src="/storage/{{ $post->video->file }}">
                     </video>
                 </div>
 
