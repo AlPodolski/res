@@ -76,13 +76,13 @@
             <div class="accordion" id="accordionExample">
 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingCity">
+                    <p class="accordion-header" id="headingCity">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseCity" aria-expanded="false"
                                 aria-controls="collapseCity">
                             Выбрать город
                         </button>
-                    </h2>
+                    </p>
                     <div id="collapseCity" class="accordion-collapse collapse"
                          aria-labelledby="headingCity" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
@@ -99,13 +99,13 @@
                 @foreach(['metro', 'rayon', 'service', 'time', 'age', 'price', 'place', 'national', 'hairColor', 'intimHair'] as $item)
                     @if(${$item.'List'})
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading{{$item}}">
+                            <p class="accordion-header" id="heading{{$item}}">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapse{{$item}}" aria-expanded="false"
                                         aria-controls="collapse{{$item}}">
                                     {{ $titles[$item] }}
                                 </button>
-                            </h2>
+                            </p>
                             <div id="collapse{{$item}}" class="accordion-collapse collapse"
                                  aria-labelledby="heading{{$item}}" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
