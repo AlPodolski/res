@@ -9,8 +9,8 @@ use App\Actions\Like;
         <div class="col-12 col-lg-4 ">
             <div class="photo">
 
-                <a href="/600-600/thumbs{{$post->photo}}" data-lightbox="image-{{ $post->id }}">
-                    <img title="Проститутка {{ $post->name }}" src="/500-500/thumbs{{$post->photo}}"
+                <a href="/900-900/thumbs{{$post->photo}}" data-lightbox="image-{{ $post->id }}">
+                    <img title="Проститутка {{ $post->name }}" src="/700-700/thumbs{{$post->photo}}"
                          class="profile-main-info__slider-main-img"
                          alt="{{ $post->name }}">
                 </a>
@@ -20,9 +20,9 @@ use App\Actions\Like;
 
                     @foreach($post->gallery as $item)
 
-                        <a href="/600-600/thumbs{{$item->file}}" data-lightbox="image-{{ $post->id }}">
+                        <a href="/900-900/thumbs{{$item->file}}" data-lightbox="image-{{ $post->id }}">
                             <img title="Проститутка {{ $post->name }}"
-                                 src="/500-500/thumbs{{$item->file}}"
+                                 src="/700-700/thumbs{{$item->file}}"
                                  loading="lazy"
                                  class="profile-main-info__slider-main-img"
                                  alt="{{ $post->name }}">
