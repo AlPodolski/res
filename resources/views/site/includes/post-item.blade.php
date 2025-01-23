@@ -12,15 +12,15 @@ use App\Actions\Like;
             @if(isset($post->photo))
                 <picture>
 
-                    <source srcset="/360-500/thumbs{{str_replace('.jpg', '.webp', $post->photo)}}" type="image/webp">
-                    <source srcset="/360-500/thumbs{{$post->photo }}" type="image/jpeg">
+                    <source srcset="/450-600/thumbs{{str_replace('.jpg', '.webp', $post->photo)}}" type="image/webp">
+                    <source srcset="/450-600/thumbs{{$post->photo }}" type="image/jpeg">
 
                     <img
                         @if(!isset($posts) or $posts->first() != $post)
                             loading="lazy"
                         @endif
                         title="Проститутка {{ $post->name }}"
-                        srcset="/360-500/thumbs{{$post->photo}}" alt="{{ $post->name }}">
+                        srcset="/450-600/thumbs{{$post->photo}}" alt="{{ $post->name }}">
                 </picture>
             @endif
             @if($post->tarif_id)
