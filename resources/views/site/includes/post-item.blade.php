@@ -61,7 +61,7 @@ use App\Actions\Like;
                 <div class="phone"
                      data-city="{{ $post->city_id }}"
                      data-id="{{ $post->id }}"
-                     onclick="show_phone(this)">
+                     onclick="show_phone(this);ym(88595241,'reachGoal','Call')">
                     <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_300_1129)">
                             <path fill-rule="evenodd" clip-rule="evenodd"
