@@ -56,6 +56,13 @@ use App\Models\Post;
             </a>
         </div>
 
+        <div href="#" class="ankets__item-phone ankets__item-phone-view">
+            <svg>
+                <use xlink:href='/svg/dest/stack/sprite.svg#phone'></use>
+            </svg>
+            Просмотров телефона {{ $post->phone_view_count }}
+        </div>
+
         <div class="ankets__item-tarif-select">
 
             <select name="tarif" id="" class="nice-select" data-id="{{ $post->id }}" onchange="updateTarif(this)">

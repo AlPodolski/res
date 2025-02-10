@@ -3081,6 +3081,10 @@ div#register_recapcha {
     max-width: 150px
 }
 
+.ankets__item-phone-view {
+    font-size: 12px;
+}
+
 .fast-links .fast-link-item{
     text-align: left;
 }

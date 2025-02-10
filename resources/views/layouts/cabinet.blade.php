@@ -12,7 +12,7 @@
     <!-- Google tag (gtag.js) -->
 
 
-    <link href="/css/cabinet.css?v=4" rel="stylesheet">
+    <link href="/css/cabinet.css?v=5" rel="stylesheet">
 
 </head>
 <body>
@@ -73,7 +73,7 @@
 <script src="/js/bundle.js?v=1" defer></script>
 <script src="/js/jquery.maskedinput.js" defer></script>
 <script src="/js/script.js?v=20" defer></script>
-<script src="/js/cabinet.js?v=1" defer></script>
+<script src="/js/cabinet.js?v=2" defer></script>
 <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
         m[i] = m[i] || function () {
