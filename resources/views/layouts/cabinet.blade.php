@@ -10,18 +10,7 @@
 
     <meta name="description" content="@yield('des')">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1KH2Z4KHE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'G-G1KH2Z4KHE');
-    </script>
 
     <link href="/css/cabinet.css?v=4" rel="stylesheet">
 
@@ -81,9 +70,10 @@
         </div>
     </div>
 </div>
-<script src="/js/bundle.js" defer></script>
+<script src="/js/bundle.js?v=1" defer></script>
 <script src="/js/jquery.maskedinput.js" defer></script>
 <script src="/js/script.js?v=20" defer></script>
+<script src="/js/cabinet.js?v=1" defer></script>
 <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
         m[i] = m[i] || function () {
@@ -101,8 +91,6 @@
         webvisor: true
     });
 </script>
-<noscript>
-    <div><img src="https://mc.yandex.ru/watch/88595241" style="position:absolute; left:-9999px;" alt=""/></div>
-</noscript>
+
 </body>
 </html>

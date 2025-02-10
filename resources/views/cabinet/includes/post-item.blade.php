@@ -55,6 +55,17 @@ use App\Models\Post;
                 <span>{{ $post->city->city }}</span>
             </a>
         </div>
+
+        <div class="ankets__item-tarif-select">
+
+            <select name="tarif" id="" class="nice-select" data-id="{{ $post->id }}" onchange="updateTarif(this)">
+                @foreach($tarifList as $tarifItem)
+                    <option @if($tarifItem->id == $post->tarif_id) selected @endif value="{{ $tarifItem->id }}">{{ $tarifItem->value }} - {{ $tarifItem->price }} р/час</option>
+                @endforeach
+            </select>
+
+        </div>
+
         @if($post->publication_status != \App\Models\Post::POST_ON_MODERATION)
             <div onclick="upPost(this)" data-id="{{ $post->id }}" class="ankets__item-moder">Поднять анкету(70р)</div>
         @endif

@@ -13,6 +13,7 @@ use App\Models\PostNational;
 use App\Models\PostRayon;
 use App\Models\PostService;
 use App\Models\PostTime;
+use App\Models\Tarif;
 use App\Models\UserChat;
 use App\Repositories\CityRepository;
 use App\Repositories\DataRepository;
@@ -461,6 +462,51 @@ class PostsController extends Controller
         $post->save();
 
         return 'Анкета поднята';
+
+    }
+
+    public function updateTarif(Request $request)
+    {
+
+        $postId = $request->post('id');
+        $tarifId = $request->post('tarif_id');
+
+        $post = Post::where('id', $postId)->where('user_id', auth()->user()->id)->first();
+
+        $tarif = Tarif::where('id', $tarifId)->first();
+
+        if ($post and $tarif){
+
+            $post->tarif_id = $tarif->id;
+
+            $post->save();
+
+        }
+
+    }
+    public function updateTarifAll(Request $request)
+    {
+
+        $ids = $request->input('ids', []);
+
+        $tarifId = $request->post('tarif');
+
+        $posts = Post::whereIn('id',  $ids)
+            ->where('user_id', auth()->user()->id)->get();
+
+        $tarif = Tarif::where('id', $tarifId)->first();
+
+        if ($tarif and $posts->count()){
+
+            foreach ($posts as $post){
+
+                $post->tarif_id = $tarif->id;
+
+                $post->save();
+
+            }
+
+        }
 
     }
 

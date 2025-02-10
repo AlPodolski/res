@@ -2543,7 +2543,7 @@
         }
     }
 }(jQuery), document.addEventListener("DOMContentLoaded", function () {
-    if ($("select").niceSelect(), window.innerWidth < 1e3) {
+    if ($(".n-select").niceSelect(), window.innerWidth < 1e3) {
         console.log("ok");
         const r = document.querySelector(".header__burger"), o = document.querySelector(".mobile-menu");
         var e = document.querySelector(".sidebar");

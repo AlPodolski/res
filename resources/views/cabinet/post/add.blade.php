@@ -103,7 +103,7 @@
 
                         <label for="tarif_id" class="col-form-label text-md-right">Выбрать тариф</label>
 
-                        <select class="metro-select" name="tarif_id" id="tarif_id">
+                        <select class="metro-select n-select" name="tarif_id" id="tarif_id">
 
                             @foreach($tarifList as $item)
 
@@ -190,7 +190,7 @@
                                     </svg>
                                     <div class="anket__info-params-input">
                                         <label for="anketHair">Волосы:</label>
-                                        <select type="text" name="hair_color_id" id="anketHair">
+                                        <select type="text" class="n-select" name="hair_color_id" id="anketHair">
 
                                             @foreach($hairColorList as $item)
 
@@ -207,7 +207,7 @@
                                     </svg>
                                     <div class="anket__info-params-input">
                                         <label for="anketNational">Национальсность:</label>
-                                        <select type="text" name="national_id" id="anketNational">
+                                        <select type="text" class="n-select" name="national_id" id="anketNational">
                                             @foreach($nationalList as $item)
 
                                                 <option value="{{ $item->id }}">{{ $item->value }}</option>
@@ -224,7 +224,7 @@
                                     </svg>
                                     <div class="anket__info-params-input">
                                         <label for="anketPhair">Интим. стрижка:</label>
-                                        <select type="text" name="intim_hair_color_id" id="anketPhair">
+                                        <select class="n-select" type="text" name="intim_hair_color_id" id="anketPhair">
                                             @foreach($intimHairList as $item)
 
                                                 <option value="{{ $item->id }}">{{ $item->value }}</option>
@@ -247,7 +247,7 @@
                                 <div class="anket__info-location-select" id="anketCityWrap">
                                     <label for="anketCity">Город:</label>
                                     <div class="anket__info-location-select-input">
-                                        <select name="city_id" id="anketCity">
+                                        <select name="city_id" id="anketCity" class="n-select">
 
                                             @foreach($cityList as $item)
 
@@ -267,7 +267,7 @@
                                     <div class="anket__info-location-select" id="anketRegionWrap">
                                         <label for="anketRegion">Район:</label>
                                         <div class="anket__info-location-select-input">
-                                            <select name="rayon_id" id="anketRegion">
+                                            <select class="n-select" name="rayon_id" id="anketRegion">
 
                                                 @foreach($rayonList as $item)
 

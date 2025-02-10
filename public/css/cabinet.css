@@ -3085,6 +3085,15 @@ div#register_recapcha {
     text-align: left;
 }
 
+.ankets__item-tarif-select .nice-select {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.ankets__item-locallist{
+    margin-bottom: 5px;
+}
+
 @media (max-width: 1200px) {
     .anket__services-list {
         -webkit-column-count: 2;

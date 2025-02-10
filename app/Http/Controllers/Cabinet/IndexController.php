@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cabinet;
 
+use App\Models\Tarif;
 use App\Models\UserChat;
 use App\Repositories\CityRepository;
 use App\Repositories\DataRepository;
@@ -30,6 +31,9 @@ class IndexController extends Controller
 
         $notReadMessage = UserChat::where('user_id', auth()->user()->id)->with('notRead')->first();
 
-        return view('cabinet.index', compact('postsList', 'metro', 'cityInfo', 'notReadMessage'));
+        $tarifList = Tarif::all();
+
+        return view('cabinet.index', compact('postsList', 'metro',
+            'cityInfo', 'notReadMessage', 'tarifList'));
     }
 }

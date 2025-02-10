@@ -69,6 +69,9 @@ Route::middleware('redirect')->group(function () {
 
                 Route::post('chat/file', ['\App\Http\Controllers\Cabinet\ChatController', 'file']);
 
+                Route::post('post/update-tarif', ['\App\Http\Controllers\Cabinet\PostsController', 'updateTarif']);
+                Route::post('post/update-tarif-all', ['\App\Http\Controllers\Cabinet\PostsController', 'updateTarifAll']);
+
                 Route::post('post/up', ['\App\Http\Controllers\Cabinet\PostsController', 'up']);
 
                 Route::post('post/publication', ['\App\Http\Controllers\Cabinet\PostsController', 'publication']);
