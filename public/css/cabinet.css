@@ -955,7 +955,38 @@ footer {
     font-weight: bold;
     cursor: pointer;
 }
-
+.ankets__item .ankets__item-moder{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.update_tarif-wrap{
+    display: flex;
+    flex-direction: column;
+}
+.all-actions-wrap label {
+    font-size: 12px;
+}
+.update_tarif{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 6px 30px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg width='20' height='11' xmlns='http://www.w3.org/2000/svg'><path d='M0 0 L10 10 L20 0' fill='none' stroke='black' stroke-width='2'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 6px;
+    max-width: 220px;
+}
 .ankets__item-select input {
     position: absolute;
     left: 15px;

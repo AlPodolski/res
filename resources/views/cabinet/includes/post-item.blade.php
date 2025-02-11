@@ -12,6 +12,7 @@ use App\Models\Post;
                 data-id="{{ $post->id }}"
             @endif
         >
+            <input type="checkbox" class="action-check" data-id="{{ $post->id }}">
             {{ $post->getPublication() }}
         </div>
         <picture>

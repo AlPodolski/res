@@ -74,7 +74,7 @@
 <script src="/js/bundle.js?v=1" defer></script>
 <script src="/js/jquery.maskedinput.js" defer></script>
 <script src="/js/script.js?v=20" defer></script>
-<script src="/js/cabinet.js?v=2" defer></script>
+<script src="/js/cabinet.js?v=3" defer></script>
 <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
         m[i] = m[i] || function () {
