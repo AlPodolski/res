@@ -87,3 +87,70 @@ $(".action-check").on("change", function () {
 $(document).ready(function () {
     toggleSelectState();
 });
+
+function get_phone_modal() {
+
+    var check = false;
+
+    $(".action-check").each(function () {
+
+        if (this.checked) {
+
+            $('#phoneModal').modal('toggle');
+
+            check = true;
+
+            return false;
+        }
+    });
+
+    if (!check) alert("Нужно выделить анкеты");
+
+}
+
+$(document).ready(function () {
+    $("#posts-phone-update").mask("+7(999)99-99-999");
+});
+
+function updatePhone(object) {
+
+    var phone = $('#posts-phone-update').val();
+
+    let selectedIds = []; // Массив для ID отмеченных чекбоксов
+
+    $(".action-check:checked").each(function () {
+        selectedIds.push($(this).data("id")); // Собираем data-id чекбоксов
+        let postId = $(this).data("id");
+        $(".post-phone[data-id='" + postId + "']").text(phone);
+        $(this).prop("checked", !$(this).prop("checked"));
+    });
+
+    toggleSelectState();
+
+    $.ajax({
+        type: 'POST',
+        url: '/cabinet/post/update-phone',
+        async:false,
+        data: {
+            phone: phone,
+            ids: selectedIds
+        },
+        dataType: "html",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        cache: false,
+        success: function (data){
+
+            $('#phoneModal').modal('toggle');
+
+        },
+
+    })
+
+}
+
+$(document).on("pointerdown", ".update_tarif:disabled", function(event) {
+    alert("Нужно выделить анкеты");
+    event.preventDefault();
+});

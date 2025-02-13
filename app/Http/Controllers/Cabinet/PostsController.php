@@ -510,4 +510,25 @@ class PostsController extends Controller
 
     }
 
+    public function updatePhone(Request $request)
+    {
+
+        $ids = $request->input('ids', []);
+
+        $phone = $request->post('phone');
+
+        $posts = Post::whereIn('id',  $ids)
+            ->where('user_id', auth()->user()->id)->get();
+
+        foreach ($posts as $post){
+
+            $post->phone = preg_replace('/[^0-9]/', '', $phone);
+
+            $post->save();
+
+        }
+
+    }
+
+
 }

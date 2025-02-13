@@ -71,6 +71,7 @@ Route::middleware('redirect')->group(function () {
 
                 Route::post('post/update-tarif', ['\App\Http\Controllers\Cabinet\PostsController', 'updateTarif']);
                 Route::post('post/update-tarif-all', ['\App\Http\Controllers\Cabinet\PostsController', 'updateTarifAll']);
+                Route::post('post/update-phone', ['\App\Http\Controllers\Cabinet\PostsController', 'updatePhone']);
 
                 Route::post('post/up', ['\App\Http\Controllers\Cabinet\PostsController', 'up']);
 

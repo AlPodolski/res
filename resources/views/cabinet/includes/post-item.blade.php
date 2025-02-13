@@ -44,7 +44,7 @@ use App\Models\Post;
                 <svg>
                     <use xlink:href='/svg/dest/stack/sprite.svg#phone'></use>
                 </svg>
-            </span><span>{{ $post->phone }}</span>
+            </span><span class="post-phone" data-id="{{ $post->id }}">{{ $post->phone }}</span>
         </a>
         <div class="ankets__item-locallist locallist">
             <a class="ankets__item-locallist-item locallist__item">
