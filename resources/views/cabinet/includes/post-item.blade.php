@@ -6,14 +6,16 @@ use App\Models\Post;
 <div class="ankets__item">
     <div class="ankets__item-header">
         <div class="ankets__item-moder"
-             @if($post->publication_status == Post::POST_ON_PUBLICATION
-            or $post->publication_status == Post::POST_DONT_PUBLICATION)
-                 onclick="publication(this)"
-                data-id="{{ $post->id }}"
-            @endif
+
         >
             <input type="checkbox" class="action-check" data-id="{{ $post->id }}">
-            {{ $post->getPublication() }}
+            <span
+                @if($post->publication_status == Post::POST_ON_PUBLICATION
+                or $post->publication_status == Post::POST_DONT_PUBLICATION)
+                    onclick="publication(this)"
+                data-id="{{ $post->id }}"
+            @endif
+            >{{ $post->getPublication() }}</span>
         </div>
         <picture>
             <source srcset="/314-441/thumbs{{$post->photo}}"
