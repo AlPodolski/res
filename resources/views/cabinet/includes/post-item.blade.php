@@ -17,19 +17,22 @@ use App\Models\Post;
             @endif
             >{{ $post->getPublication() }}</span>
         </div>
-        <picture>
-            <source srcset="/314-441/thumbs{{$post->photo}}"
-                    media="(max-width: 361px)">
-            <source srcset="/370-526/thumbs{{$post->photo}}" media="(max-width: 400px)">
-            <source srcset="/211-300/thumbs{{$post->photo}}">
-            <img
-                class="ankets__item-img"
-                @if(!isset($posts) or $posts->first() != $post)
-                    loading="lazy"
-                @endif
-                title="Проститутка {{ $post->name }}"
-                srcset="/211-300/thumbs{{$post->photo}}" alt="{{ $post->name }}">
-        </picture>
+
+        <label for="avatar-{{ $post->id }}">
+            <img src="/storage/{{ $post->photo }}" alt="" id="photo-{{ $post->id }}" class="ankets__item-img">
+
+            <div class="update-photo">
+                Сменить фото
+            </div>
+        </label>
+
+        <input class="cabinet-listing-file"
+               type="file"
+               data-id="{{ $post->id }}"
+               id="avatar-{{ $post->id }}"
+               name="avatar"
+               onchange="updateAvatar(this)"
+               accept="image/png, image/jpeg" />
 
     </div>
     <div class="ankets__item-body">

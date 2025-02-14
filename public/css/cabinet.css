@@ -986,6 +986,15 @@ footer {
     margin-bottom: 15px;
     text-align: center;
 }
+.update-photo {
+    text-align: center;
+    text-decoration: underline;
+    color: #32acfb;
+    cursor: pointer;
+}
+.cabinet-listing-file {
+    display: none;
+}
 .update_tarif{
     appearance: none;
     -webkit-appearance: none;
