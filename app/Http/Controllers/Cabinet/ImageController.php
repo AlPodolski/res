@@ -36,7 +36,7 @@ class ImageController extends Controller
         // Удалить старый аватар, если он есть
         if ($avatar) {
 
-            \Cache::delete('post_' . $post->url);
+            \Cache::delete('post_' . $post->url.'_'.$post->city_id);
 
             $avatar = $avatar->store('/uploads/' . $dir, 'public');
 
@@ -73,7 +73,7 @@ class ImageController extends Controller
 
         foreach ($posts as $post){
 
-            \Cache::delete('post_' . $post->url);
+            \Cache::delete('post_' . $post->url.'_'.$post->city_id);
 
             $path = (storage_path('app/public/' . $post->photo));
 
