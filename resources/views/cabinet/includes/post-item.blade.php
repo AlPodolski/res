@@ -22,7 +22,7 @@ use App\Models\Post;
             <img src="/storage/{{ $post->photo }}" alt="" id="photo-{{ $post->id }}" class="ankets__item-img">
 
             <div class="update-photo">
-                Сменить фото
+                Сменить главное фото
             </div>
         </label>
 

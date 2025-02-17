@@ -107,10 +107,31 @@ function get_phone_modal() {
     if (!check) alert("Нужно выделить анкеты");
 
 }
+function get_photo_modal() {
+
+    var check = false;
+
+    $(".action-check").each(function () {
+
+        if (this.checked) {
+
+            $('#photoModal').modal('toggle');
+
+            check = true;
+
+            return false;
+        }
+    });
+
+    if (!check) alert("Нужно выделить анкеты");
+
+}
 
 $(document).ready(function () {
     $("#posts-phone-update").mask("+7(999)99-99-999");
 });
+
+
 
 function updatePhone(object) {
 
@@ -155,6 +176,49 @@ $(document).on("pointerdown", ".update_tarif:disabled", function(event) {
     event.preventDefault();
 });
 
+function updateAvatars(object){
+
+    let selectedIds = []; // Массив для ID отмеченных чекбоксов
+
+    $(".action-check:checked").each(function () {
+        selectedIds.push($(this).data("id")); // Собираем data-id чекбоксов
+    });
+
+    var file_data = $(object).prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('file', file_data);
+    form_data.append('ids', selectedIds);
+    $.ajax({
+        url: '/cabinet/image/add-many', // ваш URL для обработки
+        dataType: 'text',
+        cache: false,
+        contentType: false,
+        processData: false,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        data: form_data,
+        type: 'post',
+        success: function(response){
+
+            $(".action-check:checked").each(function () {
+
+                $('#photo-'+$(this).data("id")).attr('src', response);
+
+                $(this).prop("checked", !$(this).prop("checked"));
+
+            });
+
+            $('#photoModal').modal('toggle');
+
+        },
+        error: function(response){
+            alert('Ошибка');
+        }
+    });
+
+}
+
 function updateAvatar(object){
     var file_data = $(object).prop('files')[0];
     var form_data = new FormData();
@@ -175,7 +239,7 @@ function updateAvatar(object){
             $('#photo-'+$(object).attr('data-id')).attr('src', response)
         },
         error: function(response){
-            alert('Ошибка:');
+            alert('Ошибка');
         }
     });
 }

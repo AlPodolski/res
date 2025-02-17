@@ -995,6 +995,10 @@ footer {
 .cabinet-listing-file {
     display: none;
 }
+#photoModal .claim__modal img{
+    border: 1px dashed #ededed;
+    margin-bottom: 10px;
+}
 .update_tarif{
     appearance: none;
     -webkit-appearance: none;

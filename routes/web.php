@@ -66,6 +66,7 @@ Route::middleware('redirect')->group(function () {
                 Route::post('post/start-all', ['\App\Http\Controllers\Cabinet\PostsController', 'startAll']);
 
                 Route::post('image/add', ['\App\Http\Controllers\Cabinet\ImageController', 'add']);
+                Route::post('image/add-many', ['\App\Http\Controllers\Cabinet\ImageController', 'addMany']);
 
                 Route::get('chat', ['\App\Http\Controllers\Cabinet\ChatController', 'index']);
                 Route::post('chat', ['\App\Http\Controllers\Cabinet\ChatController', 'send']);
