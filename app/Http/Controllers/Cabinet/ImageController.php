@@ -48,7 +48,7 @@ class ImageController extends Controller
 
             }
 
-            $post->photo = $avatar;
+            $post->photo = '/' .$avatar;
 
             $post->save();
 
@@ -83,7 +83,7 @@ class ImageController extends Controller
 
             }
 
-            $post->photo = $avatar;
+            $post->photo = '/' .$avatar;
 
             $post->save();
 
