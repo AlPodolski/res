@@ -202,7 +202,7 @@
 
                                                 <option
 
-                                                    @if($post->hair->hair_colors_id == $item->id)
+                                                    @if(isset($post->hair->hair_colors_id) and $post->hair->hair_colors_id == $item->id)
                                                         selected
                                                     @endif
 
