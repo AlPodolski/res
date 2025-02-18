@@ -402,6 +402,25 @@ function start_all(object) {
 
 }
 
+function stop_all(object) {
+
+    $.ajax({
+        type: 'POST',
+        url: '/cabinet/post/stop-all',
+        async: false,
+        dataType: "html",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        },
+        cache: false,
+        success: function (data) {
+            $(object).html(data)
+        },
+
+    })
+
+}
+
 function addMessage(text) {
 
     var message = '<div class="chat__dialog-list-item chat__dialog-list-item--qst">\n' +

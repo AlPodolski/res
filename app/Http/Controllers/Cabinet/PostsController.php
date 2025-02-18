@@ -437,6 +437,28 @@ class PostsController extends Controller
         return 'Нет доступных анкет для публикации';
 
     }
+    public function stopAll()
+    {
+        $posts = Post::where('user_id', auth()->user()->id)
+            ->where('publication_status', Post::POST_ON_PUBLICATION)
+            ->with('user', 'tarif')
+            ->get();
+
+        if ($posts) {
+
+            foreach ($posts as $post) {
+
+                (new Publication())->publication($post);
+
+            }
+
+            return 'Готово, отключено - ' .$posts->count() .' шт';
+
+        }
+
+        return 'Нет доступных анкет для публикации';
+
+    }
 
     public function up(Request $request)
     {

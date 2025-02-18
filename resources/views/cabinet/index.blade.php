@@ -21,6 +21,7 @@
         @if($postsList->count())
             <div class="fast-links">
                 <div class="fast-link-item ankets__item-moder" onclick="start_all(this)">Включить все анкеты</div>
+                <div class="fast-link-item ankets__item-moder" onclick="stop_all(this)">Отключить все анкеты</div>
                 <div class="fast-link-item ankets__item-moder" onclick="get_phone_modal(this)">Изменить номер на
                     анкетах
                 </div>
