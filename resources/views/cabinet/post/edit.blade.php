@@ -43,7 +43,7 @@
                          alt="">
                     <div class="anket__main-photo-input">
                         <label for="anketPhoto" tabindex="0">+</label>
-                        <input name="avatar" type="file" id="anketPhoto" accept=".png, .jpg, .jpeg">
+                        <input name="avatar" type="file" id="anketPhoto" accept=".jpg, .jpeg">
                     </div>
                 </div>
 
@@ -394,7 +394,7 @@
                             Загрузить фото
                         </label>
 
-                        <input name="gallery[]" type="file" multiple id="anketPhotos" accept=".png, .jpg, .jpeg">
+                        <input name="gallery[]" type="file" multiple id="anketPhotos" accept=".jpg, .jpeg">
 
                     </div>
 
