@@ -61,7 +61,7 @@ class FilterController extends Controller
 
         if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id']);
 
-        $metro = $dataRepository->metro($cityInfo['id']);
+        $data = $dataRepository->all($cityInfo['id']);
 
         $limit = $this->limit;
         $sort = $this->sort;
@@ -74,7 +74,7 @@ class FilterController extends Controller
         return view('site.index',
             compact(
                 'posts', 'cityInfo', 'meta', 'filterParams', 'topList',
-                'path', 'morePosts', 'microData', 'breadMicro', 'limit', 'sort','metro', 'metroInfo'
+                'path', 'morePosts', 'microData', 'breadMicro', 'limit', 'sort','data', 'metroInfo'
             ));
     }
 

@@ -44,13 +44,13 @@ class SiteController extends Controller
 
         $yandexTag = $yandexRepository->getTag($cityInfo['id']);
 
-        $metro = $dataRepository->metro($cityInfo['id']);
+        $data = $dataRepository->all($cityInfo['id']);
 
         $limit = $this->limit;
         $sort = $this->sort;
 
-        return view('site.index', compact('posts', 'metro', 'cityInfo',
-            'meta', 'topList', 'path', 'yandexTag', 'limit', 'sort'));
+        return view('site.index', compact('posts', 'cityInfo',
+            'meta', 'topList', 'path', 'yandexTag', 'limit', 'sort', 'data'));
     }
 
     public function more($city)

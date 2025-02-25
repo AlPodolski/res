@@ -28,9 +28,10 @@ $(document).ready(function () {
     });
     console.log(1)
 });
-$(document).ready(function() {
+$(document).ready(function () {
     $("#anketPhone").mask("+7(999)99-99-999");
 });
+
 function closePanel(object) {
     $(object).closest('.side-panel').removeClass('is-show');
     $(".header-overlay").removeClass("is-show");
@@ -39,6 +40,7 @@ function closePanel(object) {
 function showFilter() {
     $(".filter-wrap").toggleClass("show-filter")
 }
+
 $(document).ready(function () {
     setTimeout(afterDelay, 250)
     checkPublication();
@@ -523,7 +525,10 @@ function filter() {
     var slider = document.getElementById('slider-range-age');
 
     noUiSlider.create(slider, {
-        start: [18, 65],
+        start: [
+            document.getElementById('age-from').getAttribute('data-value'),
+            document.getElementById('age-to').getAttribute('data-value')
+        ],
         connect: true,
         step: 1,
         format: wNumb({
@@ -536,32 +541,8 @@ function filter() {
     });
 
     slider.noUiSlider.on('update', function (values, handle) {
-        console.log(values);
         var age_from = document.getElementById('age-from')
         var age_to = document.getElementById('age-to')
-        age_from.value = values[0];
-        age_to.value = values[1];
-    });
-
-    var sliderAge = document.getElementById('rost-range-age');
-
-    noUiSlider.create(sliderAge, {
-        start: [150, 200],
-        connect: true,
-        step: 1,
-        format: wNumb({
-            decimals: 0
-        }),
-        range: {
-            'min': 150,
-            'max': 200
-        }
-    });
-
-    sliderAge.noUiSlider.on('update', function (values, handle) {
-        console.log(values);
-        var age_from = document.getElementById('rost-from')
-        var age_to = document.getElementById('rost-to')
         age_from.value = values[0];
         age_to.value = values[1];
     });
@@ -569,7 +550,10 @@ function filter() {
     var sliderVes = document.getElementById('slider-range-ves');
 
     noUiSlider.create(sliderVes, {
-        start: [35, 130],
+        start: [
+            document.getElementById('ves-from').getAttribute('data-value'),
+            document.getElementById('ves-to').getAttribute('data-value')
+        ],
         connect: true,
         step: 1,
         format: wNumb({
@@ -582,7 +566,6 @@ function filter() {
     });
 
     sliderVes.noUiSlider.on('update', function (values, handle) {
-        console.log(values);
         var age_from = document.getElementById('ves-from')
         var age_to = document.getElementById('ves-to')
         age_from.value = values[0];
@@ -592,7 +575,10 @@ function filter() {
     var sliderGrud = document.getElementById('slider-range-grud');
 
     noUiSlider.create(sliderGrud, {
-        start: [0, 9],
+        start: [
+            document.getElementById('grud-from').getAttribute('data-value'),
+            document.getElementById('grud-to').getAttribute('data-value')
+        ],
         connect: true,
         step: 1,
         format: wNumb({
@@ -605,7 +591,6 @@ function filter() {
     });
 
     sliderGrud.noUiSlider.on('update', function (values, handle) {
-        console.log(values);
         var age_from = document.getElementById('grud-from')
         var age_to = document.getElementById('grud-to')
         age_from.value = values[0];
@@ -615,7 +600,10 @@ function filter() {
     var sliderPrice = document.getElementById('slider-range-price-1-hour');
 
     noUiSlider.create(sliderPrice, {
-        start: [1500, 25000],
+        start: [
+            document.getElementById('price-1-from').getAttribute('data-value'),
+            document.getElementById('price-1-to').getAttribute('data-value')
+        ],
         connect: true,
         step: 1,
         format: wNumb({
@@ -628,7 +616,6 @@ function filter() {
     });
 
     sliderPrice.noUiSlider.on('update', function (values, handle) {
-        console.log(values);
         var age_from = document.getElementById('price-1-from')
         var age_to = document.getElementById('price-1-to')
         age_from.value = values[0];

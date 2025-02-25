@@ -39,7 +39,7 @@ class SearchController extends Controller
 
         $morePosts = false;
 
-        $metro = $dataRepository->metro($cityInfo['id']);
+        $data = $dataRepository->all($cityInfo['id']);
 
         if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id'], 10);
 
@@ -53,7 +53,7 @@ class SearchController extends Controller
         $sort = $this->sort;
 
         return view('site.index', compact('posts', 'meta', 'topList',
-            'cityInfo', 'morePosts', 'metro', 'sort', 'limit'));
+            'cityInfo', 'morePosts', 'data', 'sort', 'limit'));
     }
 
     public function filter($city, Request $request, DataRepository $dataRepository)
@@ -62,13 +62,13 @@ class SearchController extends Controller
 
         $topList = $this->topPostListRepository->getTopList($cityInfo['id'], 15);
 
-        $data = $request->all();
+        $dataSearch = $request->all();
 
-        $posts = $this->searchRepository->getForFilter($data, $cityInfo['id']);
+        $posts = $this->searchRepository->getForFilter($dataSearch, $cityInfo['id']);
 
         $morePosts = false;
 
-        $metro = $dataRepository->metro($cityInfo['id']);
+        $data = $dataRepository->all($cityInfo['id']);
 
         if ($posts->total() < 8) $morePosts = $this->filterRepository->getMorePosts($cityInfo['id'], 10);
 
@@ -82,7 +82,7 @@ class SearchController extends Controller
         $sort = $this->sort;
 
         return view('site.index', compact('posts', 'sort','limit','meta', 'topList',
-            'cityInfo', 'morePosts', 'metro'));
+            'cityInfo', 'morePosts', 'data', 'dataSearch'));
 
     }
 }

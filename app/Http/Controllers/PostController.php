@@ -49,13 +49,13 @@ class PostController extends Controller
 
         $imageMicro = $microImage->generate($post, $cityInfo['city']);
 
-        $metro = $dataRepository->metro($cityInfo['id']);
+        $data = $dataRepository->all($cityInfo['id']);
 
         $morePosts = $this->postRepository->getMoreByRayonAndPrice($post, $cityInfo['id'],'default');
 
         $viewPosts = $this->postRepository->getView($post->id);
 
-        return view('post.index', compact('post', 'metro', 'cityInfo', 'metaData',
+        return view('post.index', compact('post', 'data', 'cityInfo', 'metaData',
             'breadMicro', 'imageMicro', 'morePosts', 'viewPosts'));
     }
 

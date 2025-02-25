@@ -27,8 +27,6 @@ class SearchRepository
             ->orderByRaw('RAND()')
             ->where('age' , '>=', $data['age-from'])
             ->where('age' , '<=', $data['age-to'])
-            ->where('rost' , '>=', $data['rost-from'])
-            ->where('rost' , '<=', $data['rost-to'])
             ->where('ves' , '>=', $data['ves-from'])
             ->where('ves' , '<=', $data['ves-to'])
             ->where('breast_size' , '>=', $data['grud-from'])

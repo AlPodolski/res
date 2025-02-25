@@ -54,7 +54,7 @@
     @if(View::hasSection('slick-theme'))
         <link rel="stylesheet" href="@yield('slick-theme')">
     @endif
-    <link rel="stylesheet" href="/new/css/style.css?v=2">
+    <link rel="stylesheet" href="/new/css/style.css?v=3">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
@@ -174,7 +174,7 @@
 @endif
 <script src="/new/js/bootstrap.bundle.min.js"></script>
 <script src="/js/wNumb.min.js" defer></script>
-<script src="/js/script.js"></script>
+<script src="/js/script.js?v=1"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" defer></script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
